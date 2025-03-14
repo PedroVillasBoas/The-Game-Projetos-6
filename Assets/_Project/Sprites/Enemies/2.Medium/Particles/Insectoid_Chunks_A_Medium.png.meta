@@ -1,0 +1,530 @@
+fileFormatVersion: 2
+guid: a6e9be44c6b771641811a4223a35be47
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -5458595914368730043
+    second: Insectoid_Chunks_A_Medium_0
+  - first:
+      213: -8336487068305996251
+    second: Insectoid_Chunks_A_Medium_1
+  - first:
+      213: -822949332317602925
+    second: Insectoid_Chunks_A_Medium_2
+  - first:
+      213: -4962684116320249876
+    second: Insectoid_Chunks_A_Medium_3
+  - first:
+      213: -7686097045197223125
+    second: Insectoid_Chunks_A_Medium_4
+  - first:
+      213: -2216875176476882786
+    second: Insectoid_Chunks_A_Medium_5
+  - first:
+      213: -8365393649576536707
+    second: Insectoid_Chunks_A_Medium_6
+  - first:
+      213: -582929501645781663
+    second: Insectoid_Chunks_A_Medium_7
+  - first:
+      213: -187452967868312207
+    second: Insectoid_Chunks_A_Medium_8
+  - first:
+      213: 4570337329917232653
+    second: Insectoid_Chunks_A_Medium_9
+  - first:
+      213: -4509341970584982026
+    second: Insectoid_Chunks_A_Medium_10
+  - first:
+      213: 7280835481668812881
+    second: Insectoid_Chunks_A_Medium_11
+  - first:
+      213: -3248787228227323977
+    second: Insectoid_Chunks_A_Medium_12
+  - first:
+      213: 1241135361737735711
+    second: Insectoid_Chunks_A_Medium_13
+  - first:
+      213: 2619519321480347996
+    second: Insectoid_Chunks_A_Medium_14
+  - first:
+      213: 3248231570549814364
+    second: Insectoid_Chunks_A_Medium_15
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_0
+      rect:
+        serializedVersion: 2
+        x: 25
+        y: 402
+        width: 78
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 54c37afcfeb2f34b0800000000000000
+      internalID: -5458595914368730043
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_1
+      rect:
+        serializedVersion: 2
+        x: 135
+        y: 385
+        width: 114
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 526cbf21e29de4c80800000000000000
+      internalID: -8336487068305996251
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_2
+      rect:
+        serializedVersion: 2
+        x: 275
+        y: 394
+        width: 91
+        height: 106
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 39b701341fb4494f0800000000000000
+      internalID: -822949332317602925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_3
+      rect:
+        serializedVersion: 2
+        x: 420
+        y: 400
+        width: 56
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce71242f611012bb0800000000000000
+      internalID: -4962684116320249876
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_4
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 261
+        width: 114
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b2b07d7c57f755590800000000000000
+      internalID: -7686097045197223125
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_5
+      rect:
+        serializedVersion: 2
+        x: 154
+        y: 271
+        width: 76
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e98c6b2c5c31c31e0800000000000000
+      internalID: -2216875176476882786
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_6
+      rect:
+        serializedVersion: 2
+        x: 264
+        y: 260
+        width: 112
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d759ea62cc628eb80800000000000000
+      internalID: -8365393649576536707
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_7
+      rect:
+        serializedVersion: 2
+        x: 392
+        y: 257
+        width: 112
+        height: 124
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 165ce4de4b409e7f0800000000000000
+      internalID: -582929501645781663
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_8
+      rect:
+        serializedVersion: 2
+        x: 17
+        y: 134
+        width: 94
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 175dd16d488066df0800000000000000
+      internalID: -187452967868312207
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_9
+      rect:
+        serializedVersion: 2
+        x: 141
+        y: 137
+        width: 102
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d068c6d36991d6f30800000000000000
+      internalID: 4570337329917232653
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_10
+      rect:
+        serializedVersion: 2
+        x: 258
+        y: 128
+        width: 124
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6fda5888e599b61c0800000000000000
+      internalID: -4509341970584982026
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_11
+      rect:
+        serializedVersion: 2
+        x: 394
+        y: 132
+        width: 108
+        height: 118
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1500ee88b49ba0560800000000000000
+      internalID: 7280835481668812881
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_12
+      rect:
+        serializedVersion: 2
+        x: 5
+        y: 14
+        width: 118
+        height: 98
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7b73fae8a3df9e2d0800000000000000
+      internalID: -3248787228227323977
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_13
+      rect:
+        serializedVersion: 2
+        x: 144
+        y: 2
+        width: 96
+        height: 122
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f1ebd822906693110800000000000000
+      internalID: 1241135361737735711
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_14
+      rect:
+        serializedVersion: 2
+        x: 265
+        y: 12
+        width: 110
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c51cb1fa1f66a5420800000000000000
+      internalID: 2619519321480347996
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Insectoid_Chunks_A_Medium_15
+      rect:
+        serializedVersion: 2
+        x: 393
+        y: 9
+        width: 110
+        height: 108
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: c54b4de4769041d20800000000000000
+      internalID: 3248231570549814364
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable: {}
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
