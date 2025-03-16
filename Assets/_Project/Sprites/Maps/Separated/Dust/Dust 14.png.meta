@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 97119f1969a3ded4a948a007cd115864
+guid: 11e9901b7d8612b46a7b784557a39a7d
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2326841328648432431
-    second: 18_25 space ships-06_0
+      213: -7427231087011024060
+    second: Dust 14_0
+  - first:
+      213: 8379590167197423895
+    second: Dust 14_1
+  - first:
+      213: 2033042912189418970
+    second: Dust 14_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -113,13 +119,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: 18_25 space ships-06_0
+      name: Dust 14_0
       rect:
         serializedVersion: 2
-        x: 7
-        y: 16
-        width: 108
-        height: 123
+        x: 0
+        y: 0
+        width: 102
+        height: 138
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +134,52 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f2ba9ca3cd99a4020800000000000000
-      internalID: 2326841328648432431
+      spriteID: 44338f17dac2de890800000000000000
+      internalID: -7427231087011024060
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dust 14_1
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 69
+        width: 16
+        height: 21
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 719982f2cd84a4470800000000000000
+      internalID: 8379590167197423895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Dust 14_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 54
+        width: 6
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: add0d22d1c1d63c10800000000000000
+      internalID: 2033042912189418970
       vertices: []
       indices: 
       edges: []
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      18_25 space ships-06_0: 2326841328648432431
+      Dust 14_0: -7427231087011024060
+      Dust 14_1: 8379590167197423895
+      Dust 14_2: 2033042912189418970
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

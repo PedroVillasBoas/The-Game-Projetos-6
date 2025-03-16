@@ -2,8 +2,9 @@
 %TAG !u! tag:unity3d.com,2011:
 --- !u!78 &1
 TagManager:
-  serializedVersion: 2
-  tags: []
+  serializedVersion: 3
+  tags:
+  - FirePoint
   layers:
   - Default
   - TransparentFX
@@ -41,3 +42,35 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Stars
+    uniqueID: 60622931
+    locked: 0
+  - name: Dust
+    uniqueID: 656040811
+    locked: 0
+  - name: Nebula
+    uniqueID: 2015554971
+    locked: 0
+  - name: Planet
+    uniqueID: 3249937813
+    locked: 0
+  - name: Meteors
+    uniqueID: 4291797799
+    locked: 0
+  - name: PickUp
+    uniqueID: 2809745709
+    locked: 0
+  - name: Entity
+    uniqueID: 3743572599
+    locked: 0
+  - name: Player
+    uniqueID: 578198035
+    locked: 0
+  - name: Projectile
+    uniqueID: 4150250299
+    locked: 0
+  - name: VFX
+    uniqueID: 1664819705
+    locked: 0
+  m_RenderingLayers:
+  - Default
