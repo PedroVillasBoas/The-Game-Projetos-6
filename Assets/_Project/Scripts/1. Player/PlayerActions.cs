@@ -1,3 +1,4 @@
+using DG.Tweening;
 using GoodVillageGames.Game.Core.Manager;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,6 +12,9 @@ namespace GoodVillageGames.Game.Core
         private Rigidbody2D _playerRb;
 
         private Vector2 _movementInput = Vector2.zero;
+        private Vector2 _targetVelocity = Vector2.zero;
+
+        private Tweener _movementTweener;
 
         // Events
         public UnityEvent<Vector2> onPlayerMovingEvent;
@@ -51,8 +55,31 @@ namespace GoodVillageGames.Game.Core
 
         void ProcessMovement()
         {
-            _playerRb.linearVelocity = _movementInput * _playerStatsManager.MaxSpeed;
-            onPlayerMovingEvent?.Invoke(_movementInput);
+            ProcessAcceleration();
+        }
+
+        void ProcessAcceleration()
+        {
+            _targetVelocity = _movementInput.y > 0 ? transform.up * _playerStatsManager.MaxSpeed : Vector2.zero;
+            _targetVelocity += _movementInput.y < 0 ? -transform.up * _playerStatsManager.MaxSpeed : Vector2.zero;
+            _targetVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
+
+            Debug.Log(_targetVelocity);
+
+            if (_movementTweener != null && _movementTweener.IsActive())
+            {
+                _movementTweener.Kill();
+            }
+
+            float duration = Vector2.Distance(_playerRb.linearVelocity, _targetVelocity) / _playerStatsManager.Acceleration;
+            duration = Mathf.Max(duration, 0.01f);
+
+            _movementTweener = DOTween.To(
+            () => _playerRb.linearVelocity,
+            x => _playerRb.linearVelocity = x,
+            _targetVelocity,
+            duration
+            ).SetEase(Ease.Linear).OnUpdate(() => onPlayerMovingEvent?.Invoke(_playerRb.linearVelocity));
         }
 
     }

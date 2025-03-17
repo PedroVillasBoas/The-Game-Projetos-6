@@ -15,10 +15,10 @@ MonoBehaviour:
   Name: Name
   EntityPrefab: {fileID: 0}
   MaxHealth: 100
-  MaxSpeed: 10
+  MaxSpeed: 500
   PassiveName: 
   PassiveDescription: 
-  Acceleration: 0
+  Acceleration: 10
   AttackDamage: 0
   AttackSpeed: 0
   BulletPrefab: {fileID: 0}
