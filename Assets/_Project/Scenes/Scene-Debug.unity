@@ -168,7 +168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f28d0c2a47fd0444bbff2ad06ccc35f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _parallaxeffect: 0.9
+  _parallaxeffect: 0
 --- !u!1 &153847596
 GameObject:
   m_ObjectHideFlags: 0
@@ -692,7 +692,7 @@ MonoBehaviour:
   IgnoreTimeScale: 0
   WorldUpOverride: {fileID: 0}
   ChannelMask: -1
-  UpdateMethod: 0
+  UpdateMethod: 2
   BlendUpdateMethod: 1
   LensModeOverride:
     Enabled: 0

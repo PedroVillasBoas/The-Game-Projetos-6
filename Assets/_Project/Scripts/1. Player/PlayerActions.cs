@@ -64,8 +64,6 @@ namespace GoodVillageGames.Game.Core
             _targetVelocity += _movementInput.y < 0 ? -transform.up * _playerStatsManager.MaxSpeed : Vector2.zero;
             _targetVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
 
-            Debug.Log(_targetVelocity);
-
             if (_movementTweener != null && _movementTweener.IsActive())
             {
                 _movementTweener.Kill();
