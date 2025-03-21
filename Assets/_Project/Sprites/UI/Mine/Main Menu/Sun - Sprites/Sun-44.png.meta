@@ -67,7 +67,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -313,7 +313,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -322,7 +322,15 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Sun-44_0: -617461200230970750
+      Sun-44_1: -2189983346904945384
+      Sun-44_2: 5842382966909529014
+      Sun-44_3: 6697594674989964409
+      Sun-44_4: -2790025771777939627
+      Sun-44_5: 9173283776163992249
+      Sun-44_6: -6946528184445817745
+      Sun-44_7: 8774973684307402355
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
