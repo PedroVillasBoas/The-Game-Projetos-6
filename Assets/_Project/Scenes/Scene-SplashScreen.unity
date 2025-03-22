@@ -568,6 +568,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Splash Screen - Canvas - UI
       objectReference: {fileID: 0}
+    - target: {fileID: 3721339470644917591, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: _duration
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 4609037488218224130, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_LocalScale.x
       value: 0
@@ -678,7 +682,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8739186138992942312, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: _fadeIN
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739186138992942312, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: _duration
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8739186138992942312, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: _fadeAmount
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

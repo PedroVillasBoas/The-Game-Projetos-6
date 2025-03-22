@@ -26,18 +26,26 @@ namespace GoodVillageGames.Game.Core.Manager
             {
                 AnimationID id = item.AnimationID;
                 Tweener tweener = item.ComponentTween;
-            
+
                 if (!_sequenceDict.TryGetValue(id, out SequenceActionType sequenceActionType))
                 {
                     Sequence sequence = DOTween.Sequence();
-                    sequenceActionType = new(sequence);
-                    
-                    _sequenceDict.Add(id, sequenceActionType);
+                    sequence.Append(tweener); // Required for all new sequences
 
+                    sequenceActionType = new SequenceActionType(sequence);
+                    _sequenceDict.Add(id, sequenceActionType);
+                }
+                else
+                {
+                    // Append/Join based on animation type if there's a sequence already (:
                     if (item.UIAnimationType == UIAnimationType.SEQUENTIAL)
-                        sequenceActionType.Sequence.Append(tweener).AppendInterval(tweener.Duration());
+                    {
+                        sequenceActionType.Sequence.Append(tweener);
+                    }
                     else
+                    {
                         sequenceActionType.Sequence.Join(tweener);
+                    }
                 }
             }
 
@@ -61,7 +69,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void AddAnimationsToStack(GameObject _gameObject)
         {
-            if(_gameObject.TryGetComponent<IComponentAnimation>(out var componentAnimation))
+            if (_gameObject.TryGetComponent<IComponentAnimation>(out var componentAnimation))
             {
                 _componentAnimationStack.Push(componentAnimation);
             }

@@ -36,7 +36,6 @@ namespace GoodVillageGames.Game.General.UI.Animations
         void Zoom()
         {
             _componentTweener = _componentRectTransform.DOSizeDelta(_sizeAfterZoom, _duration);
-            _componentTweener.Pause();
         }
 
         public void BuildAnimation()

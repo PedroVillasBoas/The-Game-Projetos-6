@@ -9,7 +9,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
 {
     public class FadeInOutAnimation : MonoBehaviour, IComponentAnimation
     {
-        [SerializeField] private bool _fadeIN = false;
+        [SerializeField] private float _fadeAmount;
         [SerializeField] private float _duration;
         [SerializeField] private AnimationID _animationID;
         [SerializeField] private UIAnimationType _UIAnimationType;
@@ -29,23 +29,15 @@ namespace GoodVillageGames.Game.General.UI.Animations
             BuildAnimation();
             AddComponentToSceneManagerStack();
         }
-        void FadeIN()
+
+        void Fade()
         {
-            _componentTweener = _image.DOFade(1f, _duration);
-            _componentTweener.Pause();
-        }
-        void FadeOUT()
-        {
-            _componentTweener = _image.DOFade(0f, _duration);
-            _componentTweener.Pause();
+            _componentTweener = _image.DOFade(_fadeAmount, _duration).Pause();
         }
 
         public void BuildAnimation()
         {
-            if (_fadeIN)
-                FadeIN();
-            else
-                FadeOUT();
+            Fade();
         }
 
         public void AddComponentToSceneManagerStack()

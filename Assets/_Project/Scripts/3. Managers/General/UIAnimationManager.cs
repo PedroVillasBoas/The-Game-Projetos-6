@@ -29,8 +29,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
             EventsManager.Instance.AnimationTriggerEvent(_uiState);
             sequence.Play();
-            Debug.Log($"Tempo da Sequence é de: {sequence.Duration()}");
-            yield return sequence.WaitForCompletion();
+            yield return new WaitForSeconds(sequence.Duration());
 
             if (sceneSO != null)
                 EventsManager.Instance.ChangeSceneTriggerEvent(sceneSO);
