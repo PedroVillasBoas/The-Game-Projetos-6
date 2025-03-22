@@ -1,6 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using GoodVillageGames.Game.Handlers;
+using static GoodVillageGames.Game.Enums.Enums;
+using System.Text.RegularExpressions;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -26,6 +28,7 @@ namespace GoodVillageGames.Game.Core.Manager
             _inputActions.UI.Disable();
 
             _playerInputComponent.onActionTriggered += OnActionTriggered;
+            EventsManager.Instance.OnAnimationEventTriggered += OnUIPlayingAnimation;
         }
 
         void OnDisable()
@@ -92,6 +95,25 @@ namespace GoodVillageGames.Game.Core.Manager
                 _playerActions.HandleMissile(true);
             else if (context.canceled)
                 _playerActions.HandleMissile(false);
+        }
+
+        void OnUIPlayingAnimation(UIState _UIState)
+        {
+            switch (_UIState)
+            {
+                case UIState.NORMAL_UI:
+                    _inputActions.UI.Enable();
+                    break;
+                
+                case UIState.PLAYING_UI_ANIM:
+                    _inputActions.UI.Disable();
+                    _playerInputComponent.onActionTriggered -= OnActionTriggered;
+                    break;
+                
+                default:
+                    Debug.Log($"No UIState Case for: '{_UIState}'!");
+                    break;
+            }
         }
 
     }

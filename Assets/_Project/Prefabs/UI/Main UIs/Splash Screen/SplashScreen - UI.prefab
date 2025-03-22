@@ -4764,7 +4764,7 @@ ParticleSystemRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 657976484207509858}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 0
   m_ReceiveShadows: 0
   m_DynamicOccludee: 1
@@ -4867,9 +4867,9 @@ RectTransform:
   - {fileID: 8611130266491524400}
   m_Father: {fileID: 509279405565293177}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -175}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 831.9143, y: 173.9861}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &8117177535680389984
@@ -4934,6 +4934,7 @@ GameObject:
   - component: {fileID: 1886714832097296638}
   - component: {fileID: 5298705139987017782}
   - component: {fileID: 3142432859790018228}
+  - component: {fileID: 167573019791678938}
   m_Layer: 5
   m_Name: Black Hole - Image
   m_TagString: Untagged
@@ -5020,6 +5021,22 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &167573019791678938
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4045592260128588732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 59343a139cbba8242890fcd3aada9ed0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _sizeAfterZoom: {x: 2000, y: 2000}
+  _duration: 1
+  _animationID: 0
+  _UIAnimationType: 1
 --- !u!1 &4592220731469784093
 GameObject:
   m_ObjectHideFlags: 0
@@ -5047,7 +5064,7 @@ RectTransform:
   m_GameObject: {fileID: 4592220731469784093}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7617297742983923308}
@@ -5134,9 +5151,9 @@ RectTransform:
   m_Children: []
   m_Father: {fileID: 2630841347966452220}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0, y: 1}
-  m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 960, y: -166.44751}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 1920, y: 332.89502}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2333516136685836105
@@ -5247,13 +5264,15 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1591384699431648665}
+  - component: {fileID: 5753499046695678733}
+  - component: {fileID: 4449392398606758064}
   m_Layer: 5
   m_Name: SplashScreen - UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1591384699431648665
 RectTransform:
   m_ObjectHideFlags: 0
@@ -5261,7 +5280,7 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6989596374859481965}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -5278,6 +5297,77 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &5753499046695678733
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989596374859481965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4e29b1a8efbd4b44bb3f3716e73f07ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Navigation:
+    m_Mode: 3
+    m_WrapAround: 0
+    m_SelectOnUp: {fileID: 0}
+    m_SelectOnDown: {fileID: 0}
+    m_SelectOnLeft: {fileID: 0}
+    m_SelectOnRight: {fileID: 0}
+  m_Transition: 0
+  m_Colors:
+    m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
+    m_SelectedColor: {r: 0.9607843, g: 0.9607843, b: 0.9607843, a: 1}
+    m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
+    m_ColorMultiplier: 1
+    m_FadeDuration: 0.1
+  m_SpriteState:
+    m_HighlightedSprite: {fileID: 0}
+    m_PressedSprite: {fileID: 0}
+    m_SelectedSprite: {fileID: 0}
+    m_DisabledSprite: {fileID: 0}
+  m_AnimationTriggers:
+    m_NormalTrigger: Normal
+    m_HighlightedTrigger: Highlighted
+    m_PressedTrigger: Pressed
+    m_SelectedTrigger: Selected
+    m_DisabledTrigger: Disabled
+  m_Interactable: 1
+  m_TargetGraphic: {fileID: 0}
+  m_OnClick:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 4449392398606758064}
+        m_TargetAssemblyTypeName: GoodVillageGames.Game.General.UI.Buttons.SplashScreenButton,
+          Assembly-CSharp
+        m_MethodName: ButtomAction
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+--- !u!114 &4449392398606758064
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6989596374859481965}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a6549ce757035de428bf177c9b5b2598, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationID: 0
+  _scene: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
 --- !u!1 &7892989860595348018
 GameObject:
   m_ObjectHideFlags: 0
@@ -5289,7 +5379,7 @@ GameObject:
   - component: {fileID: 5948427486163524235}
   - component: {fileID: 8437980163861810419}
   - component: {fileID: 723710563421198116}
-  - component: {fileID: 8401587440304636983}
+  - component: {fileID: 5237791043478385765}
   m_Layer: 5
   m_Name: Panel - Fade
   m_TagString: Untagged
@@ -5354,7 +5444,7 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &8401587440304636983
+--- !u!114 &5237791043478385765
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -5363,9 +5453,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 7892989860595348018}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 72e89a0d60638ee429dc13de79ab0c56, type: 3}
+  m_Script: {fileID: 11500000, guid: 937116678e2c6754cb04df0720bd9d62, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _fadeIN: 1
+  _duration: 1
+  _animationID: 0
+  _UIAnimationType: 1
 --- !u!1 &9157184821183820816
 GameObject:
   m_ObjectHideFlags: 0
