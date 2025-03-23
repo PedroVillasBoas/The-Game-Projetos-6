@@ -11,16 +11,15 @@ namespace GoodVillageGames.Game.Core.Manager
         private UIState _uiState = UIState.NORMAL_UI;
         private Coroutine _animationsCoroutine;
 
-        void OnAnimationAsked(Sequence sequence, SceneScriptableObject sceneSO)
+        void OnAnimationAsked(Sequence sequence, AnimationID _animationID, SceneScriptableObject sceneSO)
         {
             _animationsCoroutine = StartCoroutine(PlayAnimationAskedRoutine(sequence, sceneSO));
-            
         }
         
         private IEnumerator PlayAnimationAskedRoutine(Sequence sequence, SceneScriptableObject sceneSO)
         {
             _uiState = UIState.PLAYING_UI_ANIM;
-
+            
             EventsManager.Instance.AnimationTriggerEvent(_uiState);
             sequence.Play();
             yield return new WaitForSeconds(sequence.Duration());
@@ -28,6 +27,7 @@ namespace GoodVillageGames.Game.Core.Manager
             if (sceneSO != null)
                 EventsManager.Instance.ChangeSceneTriggerEvent(sceneSO);
 
+            EventsManager.Instance.TriggerEvent("Stop"); // UI Particles to Stop Emmiting
             _uiState = UIState.NORMAL_UI;
             EventsManager.Instance.AnimationTriggerEvent(_uiState);
         }

@@ -25,8 +25,10 @@ namespace GoodVillageGames.Game.Core.Manager
         // Animations 
         // State
         public event Action<UIState> OnAnimationEventTriggered;
-            // Start
-        public event Action<Sequence, SceneScriptableObject> OnAnimationAskedEventTriggered;
+            // Ask Animation
+        public event Action<Sequence, AnimationID, SceneScriptableObject> OnAnimationAskedEventTriggered;
+            // Broadcast Which Animation
+        public event Action<AnimationID> OnPlayingAnimationEventTriggered;
             // Complete
         public event Action<SceneScriptableObject> OnChangeSceneEventTriggered;
 
@@ -60,14 +62,19 @@ namespace GoodVillageGames.Game.Core.Manager
             OnAddComponentToStackTriggered?.Invoke(_gameObject);
         }
 
-        public void ButtonAnimationEventTriggered(AnimationID animationID, SceneScriptableObject _sceneSO = null)
+        public void ButtonAnimationEventTriggered(AnimationID _animationID, SceneScriptableObject _sceneSO = null)
         {
-            OnButtonAnimationEventTriggered?.Invoke(animationID, _sceneSO);
+            OnButtonAnimationEventTriggered?.Invoke(_animationID, _sceneSO);
         }
 
-        public void AnimationAskedEventTriggered(Sequence sequence, SceneScriptableObject _sceneSO = null)
+        public void AnimationAskedEventTriggered(Sequence sequence, AnimationID _animationID = AnimationID.NONE, SceneScriptableObject _sceneSO = null)
         {
-            OnAnimationAskedEventTriggered?.Invoke(sequence, _sceneSO);
+            OnAnimationAskedEventTriggered?.Invoke(sequence, _animationID,  _sceneSO);
+        }
+
+        public void PlayingAnimationEventTriggered(AnimationID _animationID)
+        {
+            OnPlayingAnimationEventTriggered?.Invoke(_animationID);
         }
 
         public void AnimationTriggerEvent(UIState _uiState)

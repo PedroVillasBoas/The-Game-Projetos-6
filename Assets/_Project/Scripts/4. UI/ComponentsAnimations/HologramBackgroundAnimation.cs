@@ -16,7 +16,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
 
         private Sequence _componentTweener = DOTween.Sequence();
         private Vector2 _finalSize;
-        private Vector2 _originalSize = new(0f, 0f);
+        private Vector2 _originalSize = new(600f, 0f);
         private RectTransform _componentRectTransform;
         private Image _componentImage;
 
@@ -29,7 +29,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
         {
             _componentImage = GetComponent<Image>();
             _componentRectTransform = _componentImage.rectTransform;
-            _finalSize = _componentRectTransform.sizeDelta;
+            _finalSize = new(_originalSize.x, 550f);
 
             BuildAnimation();
             AddComponentToSceneManagerStack();
@@ -43,9 +43,9 @@ namespace GoodVillageGames.Game.General.UI.Animations
         public void BuildAnimation()
         {
             _componentTweener.Append(_componentImage.DOFade(0, _duration).SetLoops(10, LoopType.Yoyo));
-            _componentTweener.Insert(0, _componentRectTransform.DOSizeDelta(new(_componentRectTransform.sizeDelta.x, _finalSize.y), _duration));
-            _componentTweener.Join(_componentRectTransform.DOSizeDelta(new(_finalSize.x, _componentRectTransform.sizeDelta.y), _duration))
+            _componentTweener.Insert(0, _componentRectTransform.DOSizeDelta(_finalSize, _duration))
             .SetEase(Ease.InExpo).OnComplete(EnableChildren);
+            //_componentTweener.Join(_componentRectTransform.DOSizeDelta(new(_finalSize.x, _componentRectTransform.sizeDelta.y), _duration))
         }
 
         public void EnableChildren()

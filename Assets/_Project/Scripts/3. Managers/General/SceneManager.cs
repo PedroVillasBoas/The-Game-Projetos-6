@@ -13,7 +13,7 @@ namespace GoodVillageGames.Game.Core.Manager
     {
 
         [SerializeField] private bool _playAnimationOnAwake = false;
-        [SerializeField, ShowIf(nameof(_playAnimationOnAwake))]  private AnimationID _animationIDToPlayOnSceneShow;
+        [SerializeField, ShowIf(nameof(_playAnimationOnAwake))] private AnimationID _animationIDToPlayOnSceneShow;
 
         private Stack<IComponentAnimation> _componentAnimationStack = new();
         private Dictionary<AnimationID, SequenceActionType> _sequenceDict = new();
@@ -43,22 +43,19 @@ namespace GoodVillageGames.Game.Core.Manager
                 if (!_sequenceDict.TryGetValue(id, out SequenceActionType sequenceActionType))
                 {
                     Sequence sequence = DOTween.Sequence();
-                    sequence.Append(tweener); // Required for all new sequences
+                    sequence.Append(tweener); // Required for all new sequences !!
 
                     sequenceActionType = new SequenceActionType(sequence);
                     _sequenceDict.Add(id, sequenceActionType);
                 }
                 else
                 {
-                    // Append/Join based on animation type if there's a sequence already (:
+                    // Append/Insert based on animation type if there's a sequence already (:
                     if (item.UIAnimationType == UIAnimationType.SEQUENTIAL)
-                    {
                         sequenceActionType.Sequence.Append(tweener);
-                    }
+
                     else
-                    {
-                        sequenceActionType.Sequence.Join(tweener);
-                    }
+                        sequenceActionType.Sequence.Insert(0, tweener);
                 }
             }
 
@@ -72,7 +69,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 if (value == null)
                     Debug.LogError($"Key '{animationID}' exists but has no value (null).");
                 else
-                    EventsManager.Instance.AnimationAskedEventTriggered(value.Sequence, scene);
+                    EventsManager.Instance.AnimationAskedEventTriggered(value.Sequence, animationID, scene);
             }
             else
             {

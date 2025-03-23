@@ -2,29 +2,47 @@ namespace GoodVillageGames.Game.Enums
 {
     public class Enums
     {
-        public enum AnimationID {
-            SPLASH_SCREEN,
-            MAIN_MENU,
-            MM_DIFFICULTY,
-            MM_DIFFICULTY_MM,
-            MM_OPTIONS,
-            MM_OPTIONS_MM,
-            IG_PAUSE,
-            IG_PAUSE_IG,
-            MODS,
-            OPTIONS,
-            QUIT,
-            QUIT_POPUP,
-            MM_IG,
-            IG_MM,
+        public enum AnimationID
+        {
+            // Basic
+            NONE,
+            SPLASH_SCREEN_TO_MAIN_MENU,
+            // Main Menu
+            DEFAULT_MAIN_MENU,
+            MAIN_MENU_TO_DIFFICULTY_SELECT,
+            DIFFICULTY_SELECT_TO_PLAY_GAME,
+            RETURN_DIFFICULTY_SELECT_TO_MAIN_MENU,
+            MAIN_MENU_TO_OPTIONS,
+            RETURN_OPTIONS_SELECT_TO_MAIN_MENU,
+            // In Game
+            DEFAULT_PLAYER_GUI,
+            PLAYER_GUI_TO_PAUSE,
+            DEFAULT_PAUSE,
+            RETURN_PAUSE_TO_PLAYER_GUI,
+            DEFAULT_IN_GAME_QUIT_POPUP,
+            // Popup
+            OPEN_POPUP,
+            CLOSE_POPUP,
+            // Options Specific
+            DEFAULT_OPTIONS,
+            OPTIONS_MODS_TO_SETTINGS,
+            OPTIONS_SETTINGS_TO_MODS,
+            // Upgrade - Mods
+            DEFAULT_UPGRADES,
+            CLOSE_UPGRADES,
+            // Game Over
+            DEFAULT_GAME_OVER,
+            GAME_OVER_TO_MAIN_MENU,
         }
 
-        public enum UIState {
+        public enum UIState
+        {
             PLAYING_UI_ANIM,
             NORMAL_UI,
         }
 
-        public enum GameState {
+        public enum GameState
+        {
             MAIN_MENU,
             IN_GAME,
             UPGRADE_SCREEN,
@@ -33,12 +51,14 @@ namespace GoodVillageGames.Game.Enums
             GAME_OVER,
         }
 
-        public enum UIButtonActionType {
+        public enum UIButtonActionType
+        {
             UI_CHANGE,
             SCENE_CHANGE,
         }
 
-        public enum UIAnimationType {
+        public enum UIAnimationType
+        {
             SEQUENTIAL,
             PARALLEL,
         }

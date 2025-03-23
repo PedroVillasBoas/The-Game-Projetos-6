@@ -24,6 +24,7 @@ namespace GoodVillageGames.Game.General.UI.Buttons
         public void ButtomAction()
         {
             EventsManager.Instance.ButtonAnimationEventTriggered(_animationID, _scene);
+            EventsManager.Instance.TriggerEvent("Move");
         }
     }
 }
