@@ -1,5 +1,6 @@
 using UnityEngine;
 using DG.Tweening;
+using TriInspector;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Interfaces;
 using static GoodVillageGames.Game.Enums.Enums;
@@ -10,6 +11,10 @@ namespace GoodVillageGames.Game.Core.Manager
 {
     public class SceneManager : MonoBehaviour
     {
+
+        [SerializeField] private bool _playAnimationOnAwake = false;
+        [SerializeField, ShowIf(nameof(_playAnimationOnAwake))]  private AnimationID _animationIDToPlayOnSceneShow;
+
         private Stack<IComponentAnimation> _componentAnimationStack = new();
         private Dictionary<AnimationID, SequenceActionType> _sequenceDict = new();
 
@@ -17,15 +22,23 @@ namespace GoodVillageGames.Game.Core.Manager
         void Start()
         {
             FillAnimationsDict();
+            PlayAnimationOnSceneShow();
         }
 
+        void PlayAnimationOnSceneShow()
+        {
+            if (_playAnimationOnAwake && _sequenceDict.ContainsKey(_animationIDToPlayOnSceneShow))
+            {
+                PlayThisAnimation(_animationIDToPlayOnSceneShow);
+            }
+        }
 
         private void FillAnimationsDict()
         {
             foreach (IComponentAnimation item in _componentAnimationStack)
             {
                 AnimationID id = item.AnimationID;
-                Tweener tweener = item.ComponentTween;
+                Tween tweener = item.ComponentTween;
 
                 if (!_sequenceDict.TryGetValue(id, out SequenceActionType sequenceActionType))
                 {
@@ -52,7 +65,7 @@ namespace GoodVillageGames.Game.Core.Manager
             _componentAnimationStack.Clear();
         }
 
-        private void PlayThisAnimation(AnimationID animationID, SceneScriptableObject scene)
+        private void PlayThisAnimation(AnimationID animationID, SceneScriptableObject scene = null)
         {
             if (_sequenceDict.TryGetValue(animationID, out var value))
             {

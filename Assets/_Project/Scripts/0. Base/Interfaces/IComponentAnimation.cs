@@ -5,7 +5,7 @@ namespace GoodVillageGames.Game.Interfaces
 {
     public interface IComponentAnimation
     {
-        Tweener ComponentTween { get; set; }
+        Tween ComponentTween { get; set; }
         float Duration { get; set; }
         AnimationID AnimationID { get; set; }
         UIAnimationType UIAnimationType { get; set; }

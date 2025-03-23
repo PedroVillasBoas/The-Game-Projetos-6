@@ -11,14 +11,14 @@ namespace GoodVillageGames.Game.General.UI.Animations
     {
         [SerializeField] private Vector2 _sizeAfterZoom;
         [SerializeField] private float _duration;
-        [SerializeField] private Tweener _componentTweener;
         [SerializeField] private AnimationID _animationID;
         [SerializeField] private UIAnimationType _UIAnimationType;
 
+        private Tweener _componentTweener;
         private RectTransform _componentRectTransform;
         private Vector2 _originalSize;
 
-        public Tweener ComponentTween { get => _componentTweener; set => _componentTweener = value; }
+        public Tween ComponentTween { get => _componentTweener; set => _componentTweener = (Tweener)value; }
         public float Duration { get => _duration; set => _duration = value; }
         public AnimationID AnimationID { get => _animationID; set => _animationID = value; }
         public UIAnimationType UIAnimationType { get => _UIAnimationType; set => _UIAnimationType = value; }
@@ -30,18 +30,11 @@ namespace GoodVillageGames.Game.General.UI.Animations
 
             BuildAnimation();
             AddComponentToSceneManagerStack();
-
-        }
-
-        void Zoom()
-        {
-            _componentTweener = _componentRectTransform.DOSizeDelta(_sizeAfterZoom, _duration);
         }
 
         public void BuildAnimation()
         {
-            Zoom();
-
+            _componentTweener = _componentRectTransform.DOSizeDelta(_sizeAfterZoom, _duration);
         }
 
         public void AddComponentToSceneManagerStack()

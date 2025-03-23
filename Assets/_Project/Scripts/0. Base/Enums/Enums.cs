@@ -4,6 +4,7 @@ namespace GoodVillageGames.Game.Enums
     {
         public enum AnimationID {
             SPLASH_SCREEN,
+            MAIN_MENU,
             MM_DIFFICULTY,
             MM_DIFFICULTY_MM,
             MM_OPTIONS,

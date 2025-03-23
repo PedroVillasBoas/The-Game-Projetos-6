@@ -11,12 +11,6 @@ namespace GoodVillageGames.Game.Core.Manager
         private UIState _uiState = UIState.NORMAL_UI;
         private Coroutine _animationsCoroutine;
 
-
-        void Start()
-        {
-            EventsManager.Instance.OnAnimationAskedEventTriggered += OnAnimationAsked;
-        }
-
         void OnAnimationAsked(Sequence sequence, SceneScriptableObject sceneSO)
         {
             _animationsCoroutine = StartCoroutine(PlayAnimationAskedRoutine(sequence, sceneSO));
@@ -37,7 +31,12 @@ namespace GoodVillageGames.Game.Core.Manager
             _uiState = UIState.NORMAL_UI;
             EventsManager.Instance.AnimationTriggerEvent(_uiState);
         }
-            
+
+        void OnEnable()
+        {
+            EventsManager.Instance.OnAnimationAskedEventTriggered += OnAnimationAsked;
+        }
+
         void OnDisable()
         {
             EventsManager.Instance.OnAnimationAskedEventTriggered -= OnAnimationAsked;

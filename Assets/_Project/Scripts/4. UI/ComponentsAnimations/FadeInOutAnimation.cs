@@ -19,7 +19,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
         private Tweener _componentTweener;
 
         public float Duration { get => _duration; set => _duration = value; }
-        public Tweener ComponentTween { get => _componentTweener; set => _componentTweener = value; }
+        public Tween ComponentTween { get => _componentTweener; set => _componentTweener = (Tweener)value; }
         public AnimationID AnimationID { get => _animationID; set => _animationID = value; }
         public UIAnimationType UIAnimationType { get => _UIAnimationType; set => _UIAnimationType = value; }
 
