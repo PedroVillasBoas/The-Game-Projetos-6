@@ -27,45 +27,25 @@ namespace GoodVillageGames.Game.General.UI.Animations
         {
             foreach (var config in _moveConfigs)
             {
-                // Validating...
-                Component target = config.ComponentToAnimate switch
+                if (config.ComponentToAnimate == null)
                 {
-                    RectTransform rect => _rectTranform,
-                    _ => null
-                };
-
-                if (target == null)
-                {
-                    Debug.LogError($"Invalid Component to Fade: {gameObject.name}");
+                    Debug.LogError($"Component not defined in {gameObject.name}");
                     continue;
                 }
 
-                // Making Tween
-                Tween tween = target switch
-                {
-                    RectTransform rec => rec.DOAnchorPos(config.FinalPosition, config.Duration),
-                    _ => null
-                };
+                // Tween
+                Tween tween = _rectTranform.DOAnchorPos(config.FinalPosition, config.Duration)
+                    .SetAutoKill(false);
 
-                if (tween != null)
+                // Add to Dict
+                if (!_animationsDict.ContainsKey(config.AnimationTransitionID))
                 {
-                    _animationsDict[config.Animation].Add(tween);
+                    _animationsDict[config.AnimationTransitionID] = new List<Tween>();
                 }
+                _animationsDict[config.AnimationTransitionID].Add(tween);
             }
         }
 
-
-        public UIAnimationType GetAnimationType(UIAnimationType animationType)
-        {
-            foreach (var config in _moveConfigs)
-            {
-                if (config.UIAnimationType == animationType)
-                    return config.UIAnimationType;
-            }
-
-            Debug.LogError($"AnimationID {animationType} não encontrado neste componente!");
-            return UIAnimationType.SEQUENTIAL;
-        }
 
         public UIAnimationType GetAnimationType(AnimationTransitionID transitionID)
         {
@@ -75,32 +55,21 @@ namespace GoodVillageGames.Game.General.UI.Animations
                     return config.UIAnimationType;
             }
 
-            Debug.LogError($"AnimationID {transitionID} não encontrado neste componente!");
+            Debug.LogError($"TransitionID {transitionID} not found in {gameObject.name}!");
             return UIAnimationType.SEQUENTIAL;
         }
 
-        public AnimationTransitionID GetTransitionID(AnimationTransitionID transitionID)
+        public AnimationTransitionID GetTransitionID(UIAnimationType animationType)
         {
             foreach (var config in _moveConfigs)
             {
-                if (config.AnimationTransitionID == transitionID)
+                if (config.UIAnimationType == animationType)
+                {
                     return config.AnimationTransitionID;
+                }
             }
-
-            Debug.LogError($"AnimationTransitionID {transitionID} Not found in {gameObject.name}!");
+            Debug.LogError($"TransitionID {animationType} not found in {gameObject.name}!");
             return AnimationTransitionID.NONE;
-        }
-
-        UIAnimationType IComponentAnimation.GetTransitionID(AnimationTransitionID transitionID)
-        {
-            foreach (var config in _moveConfigs)
-            {
-                if (config.AnimationTransitionID == transitionID)
-                    return config.UIAnimationType;
-            }
-
-            Debug.LogError($"AnimationTransitionID {transitionID} Not found in {gameObject.name}!");
-            return UIAnimationType.SEQUENTIAL;
         }
     }
 }

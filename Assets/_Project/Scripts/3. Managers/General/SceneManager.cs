@@ -18,15 +18,9 @@ namespace GoodVillageGames.Game.Core.Manager
         private Dictionary<AnimationTransitionID, Tween> _sequenceDict = new();
         private Dictionary<AnimationTransitionID, SceneScriptableObject> _transitionsOnSceneDict;
 
-
-        void Awake()
-        {
-            FillAnimationTransitionDict();
-            GetAllAnimationsInScene();
-        }
-
         void Start()
         {
+            FillAnimationTransitionDict();
             PlayAnimationOnSceneShow();
         }
 
@@ -52,6 +46,8 @@ namespace GoodVillageGames.Game.Core.Manager
                     _transitionsOnSceneDict.Add(key, value);
                 }
             }
+
+            GetAllAnimationsInScene();
         }
 
         private void GetAllAnimationsInScene()

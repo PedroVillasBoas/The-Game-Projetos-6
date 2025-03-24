@@ -28,32 +28,38 @@ namespace GoodVillageGames.Game.General.UI.Animations
 
         public void BuildAnimations()
         {
-            foreach (var _hologramAnimations in _hologramConfigs)
+            foreach (var config in _hologramConfigs)
             {
+                if (config.ComponentToAnimate == null)
+                {
+                    Debug.LogError($"Component not defined in {gameObject.name}");
+                    continue;
+                }
+
                 var sequence = DOTween.Sequence();
 
                 // Size Animation
-                sequence.Append(_rectTransform.DOSizeDelta(_hologramAnimations.FinalSize, _hologramAnimations.SizeChangeDuration)
+                sequence.Append(_rectTransform.DOSizeDelta(config.FinalSize, config.SizeChangeDuration)
                     .SetEase(Ease.InExpo));
 
                 // Blink Effect
-                if (_hologramAnimations.Blink)
+                if (config.Blink)
                 {
-                    sequence.Join(_image.DOFade(_hologramAnimations.TargetAlpha, _hologramAnimations.Duration)
-                        .SetLoops(_hologramAnimations.BlinkLoops, LoopType.Yoyo));
+                    sequence.Join(_image.DOFade(config.TargetAlpha, config.Duration)
+                        .SetLoops(config.BlinkLoops, LoopType.Yoyo));
                 }
 
                 // Children Activation
-                if (_hologramAnimations.EnableChildrenOnComplete)
+                if (config.EnableChildrenOnComplete)
                 {
                     sequence.OnComplete(ToggleChildren);
                 }
 
-                if (!_animationsDict.ContainsKey(_hologramAnimations.Animation))
+                if (!_animationsDict.ContainsKey(config.Animation))
                 {
-                    _animationsDict[_hologramAnimations.Animation] = new List<Tween>();
+                    _animationsDict[config.Animation] = new List<Tween>();
                 }
-                _animationsDict[_hologramAnimations.Animation].Add(sequence);
+                _animationsDict[config.Animation].Add(sequence);
             }
         }
 
@@ -65,18 +71,6 @@ namespace GoodVillageGames.Game.General.UI.Animations
             }
         }
 
-        public UIAnimationType GetAnimationType(UIAnimationType animationType)
-        {
-            foreach (var config in _hologramConfigs)
-            {
-                if (config.UIAnimationType == animationType)
-                    return config.UIAnimationType;
-            }
-
-            Debug.LogError($"AnimationID {animationType} não encontrado neste componente!");
-            return UIAnimationType.SEQUENTIAL;
-        }
-
         public UIAnimationType GetAnimationType(AnimationTransitionID transitionID)
         {
             foreach (var config in _hologramConfigs)
@@ -85,32 +79,21 @@ namespace GoodVillageGames.Game.General.UI.Animations
                     return config.UIAnimationType;
             }
 
-            Debug.LogError($"AnimationID {transitionID} não encontrado neste componente!");
+            Debug.LogError($"TransitionID {transitionID} not found in {gameObject.name}!");
             return UIAnimationType.SEQUENTIAL;
         }
 
-        public AnimationTransitionID GetTransitionID(AnimationTransitionID transitionID)
+        public AnimationTransitionID GetTransitionID(UIAnimationType animationType)
         {
             foreach (var config in _hologramConfigs)
             {
-                if (config.AnimationTransitionID == transitionID)
+                if (config.UIAnimationType == animationType)
+                {
                     return config.AnimationTransitionID;
+                }
             }
-
-            Debug.LogError($"AnimationTransitionID {transitionID} Not found in {gameObject.name}!");
+            Debug.LogError($"TransitionID {animationType} not found in {gameObject.name}!");
             return AnimationTransitionID.NONE;
-        }
-
-        UIAnimationType IComponentAnimation.GetTransitionID(AnimationTransitionID transitionID)
-        {
-            foreach (var config in _hologramConfigs)
-            {
-                if (config.AnimationTransitionID == transitionID)
-                    return config.UIAnimationType;
-            }
-
-            Debug.LogError($"AnimationTransitionID {transitionID} Not found in {gameObject.name}!");
-            return UIAnimationType.SEQUENTIAL;
         }
     }
 

@@ -7,9 +7,8 @@ namespace GoodVillageGames.Game.Interfaces
     public interface IComponentAnimation
     {
         void BuildAnimations();
-        UIAnimationType GetAnimationType(UIAnimationType animationType);
         UIAnimationType GetAnimationType(AnimationTransitionID transitionID);
-        UIAnimationType GetTransitionID(AnimationTransitionID transitionID);
+        AnimationTransitionID GetTransitionID(UIAnimationType animationType);
         Dictionary<AnimationTransitionID, List<Tween>> Animations { get; }
 
     }
