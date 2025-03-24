@@ -9,6 +9,7 @@ namespace GoodVillageGames.Game.Interfaces
         void BuildAnimations();
         UIAnimationType GetAnimationType(AnimationTransitionID transitionID);
         AnimationTransitionID GetTransitionID(UIAnimationType animationType);
+        int GetInsertAtPosition(AnimationTransitionID transitionID);
         Dictionary<AnimationTransitionID, List<Tween>> Animations { get; }
 
     }

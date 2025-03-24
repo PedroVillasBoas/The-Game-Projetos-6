@@ -885,7 +885,19 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _playAnimationOnAwake
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
       propertyPath: '_scenesSO.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _scenesSOList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: '_scenesSOList.Array.data[0]'
       value: 
       objectReference: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
     - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
@@ -898,6 +910,14 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
       propertyPath: '_transicionsOnScene.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _transicionsOnSceneList.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: '_transicionsOnSceneList.Array.data[0]'
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7600586251405911583, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}

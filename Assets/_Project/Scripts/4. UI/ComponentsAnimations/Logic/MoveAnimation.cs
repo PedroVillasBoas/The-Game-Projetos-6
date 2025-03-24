@@ -71,5 +71,18 @@ namespace GoodVillageGames.Game.General.UI.Animations
             Debug.LogError($"TransitionID {animationType} not found in {gameObject.name}!");
             return AnimationTransitionID.NONE;
         }
+
+        public int GetInsertAtPosition(AnimationTransitionID transitionID)
+        {
+            foreach (var config in _moveConfigs)
+            {
+                if (config.AnimationTransitionID == transitionID)
+                {
+                    return config.InsertPosition;
+                }
+            }
+            Debug.LogError($"InsertPosition of {transitionID} not found in {gameObject.name}!");
+            return 0; // Default value 
+        }
     }
 }

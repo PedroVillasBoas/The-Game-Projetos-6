@@ -21,13 +21,14 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
         public UIAnimationType UIAnimationType { get; private set; }
 
         [field: SerializeField, 
+            LabelText("Insert at Position"),
+            ShowIf(nameof(UIAnimationType), UIAnimationType.PARALLEL)]
+        public int InsertPosition { get; private set; } = -1;
+
+        [field: SerializeField, 
                 Range(0.05f, 3f), 
                 GUIColor(0.8f, 1.0f, 0.6f)] 
         public float Duration { get; private set; } = 0.5f;
-
-        [field: SerializeField,  
-                GUIColor(1.0f, 0.6f, 0.6f)] 
-        public Component ComponentToAnimate { get; private set; }
     }
 
 }

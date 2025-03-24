@@ -10,13 +10,23 @@ namespace GoodVillageGames.Game.Core.Manager
 {
     public class SceneManager : MonoBehaviour
     {
-        [SerializeField] List<AnimationTransitionID> _transicionsOnScene = new();
-        [SerializeField] List<SceneScriptableObject> _scenesSO = new();
+        [SerializeField] List<AnimationTransitionID> _transicionsOnSceneList = new();
+        [SerializeField] List<SceneScriptableObject> _scenesSOList = new();
         [SerializeField] private bool _playAnimationOnAwake = false;
         [SerializeField, ShowIf(nameof(_playAnimationOnAwake))] private AnimationTransitionID _animationIDToPlayOnSceneShow;
 
         private Dictionary<AnimationTransitionID, Tween> _sequenceDict = new();
         private Dictionary<AnimationTransitionID, SceneScriptableObject> _transitionsOnSceneDict;
+
+        void OnEnable()
+        {
+            EventsManager.Instance.OnButtonAskingAnimationEventTriggered += PlayThisAnimation;
+        }
+
+        void OnDisable()
+        {
+            EventsManager.Instance.OnButtonAskingAnimationEventTriggered -= PlayThisAnimation;
+        }
 
         void Start()
         {
@@ -26,25 +36,49 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void PlayAnimationOnSceneShow()
         {
-            if (_playAnimationOnAwake && _sequenceDict.ContainsKey(_animationIDToPlayOnSceneShow))
+            if (!_playAnimationOnAwake) return;
+
+            if (!_transitionsOnSceneDict.ContainsKey(_animationIDToPlayOnSceneShow))
             {
-                PlayThisAnimation(_animationIDToPlayOnSceneShow);
+                Debug.LogError($"ID {_animationIDToPlayOnSceneShow} does not exist in _transitionsOnSceneDict!");
+                return;
             }
+
+            if (_sequenceDict.ContainsKey(_animationIDToPlayOnSceneShow))
+                PlayThisAnimation(_animationIDToPlayOnSceneShow);
+            else
+                Debug.LogError($"No animation found for ID: {_animationIDToPlayOnSceneShow}");
         }
 
         private void FillAnimationTransitionDict()
         {
             _transitionsOnSceneDict = new();
 
-            for (int i = 0; i < _transicionsOnScene.Count; i++)
+            if (_transicionsOnSceneList.Count != _scenesSOList.Count)
             {
-                var key = _transicionsOnScene[i];
-                var value = _scenesSO[i];
+                Debug.LogError($"{_transicionsOnSceneList} and {_scenesSOList} has different sizes on {gameObject.name}");
+                return;
+            }
 
-                if (key != AnimationTransitionID.NONE)
+            for (int i = 0; i < _transicionsOnSceneList.Count; i++)
+            {
+                var key = _transicionsOnSceneList[i];
+                var value = _scenesSOList[i];
+
+
+                if (key == AnimationTransitionID.NONE)
                 {
-                    _transitionsOnSceneDict.Add(key, value);
+                    Debug.LogError($"No Transition ID in {_transicionsOnSceneList} in position {i}!");
+                    continue;
                 }
+
+                if (_transitionsOnSceneDict.ContainsKey(key))
+                {
+                    Debug.LogError($"Chave duplicada: {key}");
+                    continue;
+                }
+
+                _transitionsOnSceneDict.Add(key, value);
             }
 
             GetAllAnimationsInScene();
@@ -70,19 +104,22 @@ namespace GoodVillageGames.Game.Core.Manager
                 AnimationTransitionID transitionID = animationPair.Key;
                 List<Tween> tweens = animationPair.Value;
                 UIAnimationType animType = componentAnimation.GetAnimationType(transitionID);
-
-                ProcessAnimationTransition(transitionID, tweens, animType);
+                int insertPosition = componentAnimation.GetInsertAtPosition(transitionID);
+                if (insertPosition != -1)
+                    ProcessAnimationTransition(transitionID, tweens, animType);
+                else
+                    ProcessAnimationTransition(transitionID, tweens, animType, insertPosition);
             }
         }
 
-        private void ProcessAnimationTransition(AnimationTransitionID transitionID, List<Tween> tweens, UIAnimationType animType)
+        private void ProcessAnimationTransition(AnimationTransitionID transitionID, List<Tween> tweens, UIAnimationType animType, int insertPosition = -1)
         {
             if (!_sequenceDict.TryGetValue(transitionID, out Tween sequence))
             {
                 sequence = CreateNewSequence(transitionID);
             }
 
-            AddTweensToSequence((Sequence)sequence, tweens, animType);
+            AddTweensToSequence((Sequence)sequence, tweens, animType, insertPosition);
         }
 
         private Sequence CreateNewSequence(AnimationTransitionID transitionID)
@@ -93,14 +130,17 @@ namespace GoodVillageGames.Game.Core.Manager
             return newSequence;
         }
 
-        private void AddTweensToSequence(Sequence sequence, List<Tween> tweens, UIAnimationType animType)
+        private void AddTweensToSequence(Sequence sequence, List<Tween> tweens, UIAnimationType animType, int insertPosition)
         {
             foreach (Tween tween in tweens)
             {
                 if (animType == UIAnimationType.SEQUENTIAL)
                     sequence.Append(tween);
                 else
-                    sequence.Join(tween);
+                    if (insertPosition == -1)
+                        sequence.Insert(0, tween); // Start with the first tween added
+                    else
+                        sequence.Insert(insertPosition, tween); // Insert at the desired position
             }
         }
 
@@ -128,16 +168,5 @@ namespace GoodVillageGames.Game.Core.Manager
             else
                 Debug.LogError($"Key '{_animationTransitionID}' exists but has no value (null) in Transitions Dictonary.");
         }
-
-        void OnEnable()
-        {
-            EventsManager.Instance.OnButtonAskingAnimationEventTriggered += PlayThisAnimation;
-        }
-
-        void OnDisable()
-        {
-            EventsManager.Instance.OnButtonAskingAnimationEventTriggered -= PlayThisAnimation;
-        }
-
     }
 }

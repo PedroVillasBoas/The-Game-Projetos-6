@@ -30,9 +30,9 @@ namespace GoodVillageGames.Game.General.UI.Animations
         {
             foreach (var config in _hologramConfigs)
             {
-                if (config.ComponentToAnimate == null)
+                if (config.ComponentToAnimate == null || config.ComponentToAnimate2 == null)
                 {
-                    Debug.LogError($"Component not defined in {gameObject.name}");
+                    Debug.LogError($"{config.ComponentToAnimate} or {config.ComponentToAnimate2} not defined in {gameObject.name}");
                     continue;
                 }
 
@@ -94,6 +94,19 @@ namespace GoodVillageGames.Game.General.UI.Animations
             }
             Debug.LogError($"TransitionID {animationType} not found in {gameObject.name}!");
             return AnimationTransitionID.NONE;
+        }
+
+        public int GetInsertAtPosition(AnimationTransitionID transitionID)
+        {
+            foreach (var config in _hologramConfigs)
+            {
+                if (config.AnimationTransitionID == transitionID)
+                {
+                    return config.InsertPosition;
+                }
+            }
+            Debug.LogError($"InsertPosition of {transitionID} not found in {gameObject.name}!");
+            return 0; // Default value 
         }
     }
 
