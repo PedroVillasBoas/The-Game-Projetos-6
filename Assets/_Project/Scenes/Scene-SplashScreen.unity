@@ -586,6 +586,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 885210893925095485, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: _animationID
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 1327733288647601254, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_AnchorMax.y
       value: 0
@@ -620,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3721339470644917591, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: _animationID
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3721339470644917591, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: _sizeAfterZoom.x
@@ -629,6 +633,10 @@ PrefabInstance:
     - target: {fileID: 3721339470644917591, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: _sizeAfterZoom.y
       value: 3000
+      objectReference: {fileID: 0}
+    - target: {fileID: 4322521755158216617, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4609037488218224130, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_LocalScale.x
@@ -742,6 +750,10 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8682733435603065019, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_RaycastTarget
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8739186138992942312, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: _fadeIN
       value: 1
@@ -754,14 +766,112 @@ PrefabInstance:
       propertyPath: _fadeAmount
       value: 1
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 8739186138992942312, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: _animationID
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092491294284536704, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 3221807598289916737}
+    - target: {fileID: 9092491294284536704, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtomAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 9092491294284536704, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GoodVillageGames.Game.General.UI.Buttons.ButtonLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 885210893925095485, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4609037488218224130, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1939440311}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 708007387964484401, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3221807598289916743}
+    - targetCorrespondingSourceObject: {fileID: 6664769152730454719, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3221807598289916742}
   m_SourcePrefab: {fileID: 100100000, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+--- !u!114 &3221807598289916737 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 5200361566328492787, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+  m_PrefabInstance: {fileID: 3221807598289916735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2a881b577b4dd4e9e2488d72da2066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!1 &3221807598289916738 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6664769152730454719, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+  m_PrefabInstance: {fileID: 3221807598289916735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3221807598289916739 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 4322521755158216617, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+  m_PrefabInstance: {fileID: 3221807598289916735}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221807598289916738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!224 &3221807598289916740 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3200621159871680650, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+  m_PrefabInstance: {fileID: 3221807598289916735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3221807598289916741 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 708007387964484401, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+  m_PrefabInstance: {fileID: 3221807598289916735}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &3221807598289916742
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221807598289916738}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3f5a3735a201fe340a5b46db6e48c6fa, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _fadeConfigs:
+  - <Animation>k__BackingField: 1
+    <AnimationTransitionID>k__BackingField: 1
+    <UIAnimationType>k__BackingField: 1
+    <Duration>k__BackingField: 2.5
+    <ComponentToAnimate>k__BackingField: {fileID: 3221807598289916739}
+    <TargetAlpha>k__BackingField: 1
+--- !u!114 &3221807598289916743
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3221807598289916741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a9e494418d122764590f0263016e88ec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _zoomConfigs:
+  - <Animation>k__BackingField: 1
+    <AnimationTransitionID>k__BackingField: 1
+    <UIAnimationType>k__BackingField: 1
+    <Duration>k__BackingField: 2.5
+    <ComponentToAnimate>k__BackingField: {fileID: 3221807598289916740}
+    <FinalSize>k__BackingField: {x: 3000, y: 3000}
 --- !u!1001 &8912961998880958602
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -770,6 +880,26 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _scenesSO.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: '_scenesSO.Array.data[0]'
+      value: 
+      objectReference: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _transicionsOnScene.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: '_transicionsOnScene.Array.data[0]'
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: '_transicionsOnScene.Array.data[1]'
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7600586251405911583, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
       propertyPath: m_Name
       value: Scene Manager

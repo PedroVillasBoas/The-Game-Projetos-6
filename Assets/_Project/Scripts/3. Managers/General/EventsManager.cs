@@ -10,25 +10,21 @@ namespace GoodVillageGames.Game.Core.Manager
 {
     public class EventsManager : MonoBehaviour
     {
-        // Singleton
+        // Singleton Instance
         public static EventsManager Instance { get; private set; }
 
         // Generic event
         public event Action<string> OnEventTriggered;
 
-        // Component To Add
-        public event Action<GameObject> OnAddComponentToStackTriggered;
-
-        // Button Animation
-        public event Action<AnimationID, SceneScriptableObject> OnButtonAnimationEventTriggered;
-
         // Animations 
         // State
         public event Action<UIState> OnAnimationEventTriggered;
             // Ask Animation
-        public event Action<Sequence, AnimationID, SceneScriptableObject> OnAnimationAskedEventTriggered;
+        public event Action<Sequence, AnimationTransitionID, SceneScriptableObject> OnAnimationAskedEventTriggered;
+            // Send Animation
+        public event Action<AnimationTransitionID> OnButtonAskingAnimationEventTriggered;
             // Broadcast Which Animation
-        public event Action<AnimationID> OnPlayingAnimationEventTriggered;
+        public event Action<AnimationTransitionID> OnPlayingAnimationEventTriggered;
             // Complete
         public event Action<SceneScriptableObject> OnChangeSceneEventTriggered;
 
@@ -36,6 +32,8 @@ namespace GoodVillageGames.Game.Core.Manager
         public event Action<GameState> OnGameStateEventTriggered;
 
         // Scene
+            // Preload
+        public event Action<Scene, LoadSceneMode> OnScenePreloadedEventTriggered;
             // Loaded
         public event Action<Scene, LoadSceneMode> OnSceneHasLoadedEventTriggered;
 
@@ -52,46 +50,54 @@ namespace GoodVillageGames.Game.Core.Manager
             }
         }
 
+        // Generalized
         public void TriggerEvent(string _event)
         {
             OnEventTriggered?.Invoke(_event);
         }
 
-        public void AddComponentToStackTriggered(GameObject _gameObject)
+        // Sent to UI Animation Manager by Scene Manager
+        public void AnimationAskedEventTriggered(Sequence sequence, AnimationTransitionID _animationTransitionID, SceneScriptableObject _sceneSO = null)
         {
-            OnAddComponentToStackTriggered?.Invoke(_gameObject);
+            OnAnimationAskedEventTriggered?.Invoke(sequence, _animationTransitionID,  _sceneSO);
         }
 
-        public void ButtonAnimationEventTriggered(AnimationID _animationID, SceneScriptableObject _sceneSO = null)
+        // Button Pressed, Play Animation
+        public void ButtonAskingAnimationEventTriggered(AnimationTransitionID _animationTransitionID)
         {
-            OnButtonAnimationEventTriggered?.Invoke(_animationID, _sceneSO);
+            OnButtonAskingAnimationEventTriggered?.Invoke(_animationTransitionID);
         }
 
-        public void AnimationAskedEventTriggered(Sequence sequence, AnimationID _animationID = AnimationID.NONE, SceneScriptableObject _sceneSO = null)
+        // Broadcasting the currently animation
+        public void PlayingAnimationEventTriggered(AnimationTransitionID _animationTransitionID)
         {
-            OnAnimationAskedEventTriggered?.Invoke(sequence, _animationID,  _sceneSO);
+            OnPlayingAnimationEventTriggered?.Invoke(_animationTransitionID);
         }
 
-        public void PlayingAnimationEventTriggered(AnimationID _animationID)
-        {
-            OnPlayingAnimationEventTriggered?.Invoke(_animationID);
-        }
-
+        // Broadcast that is playing an UI animation
         public void AnimationTriggerEvent(UIState _uiState)
         {
             OnAnimationEventTriggered?.Invoke(_uiState);
         }
 
+        // Change the Scene
         public void ChangeSceneTriggerEvent(SceneScriptableObject _sceneSO)
         {
             OnChangeSceneEventTriggered?.Invoke(_sceneSO);
         }
 
+        // Change Game State
         public void GameStateTriggerEvent(GameState _gameState)
         {
             OnGameStateEventTriggered?.Invoke(_gameState);
         }
 
+        public void ScenePreloadedEventTriggered(Scene _scene, LoadSceneMode _loadSceneMode)
+        {
+            OnScenePreloadedEventTriggered?.Invoke(_scene, _loadSceneMode);
+        }
+
+        // Scene Loaded
         public void SceneHasLoadedEventTriggered(Scene _scene, LoadSceneMode _mode)
         {
             OnSceneHasLoadedEventTriggered?.Invoke(_scene, _mode);

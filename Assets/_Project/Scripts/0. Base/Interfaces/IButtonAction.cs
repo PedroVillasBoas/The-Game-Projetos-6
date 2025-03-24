@@ -7,9 +7,7 @@ namespace GoodVillageGames.Game.Interfaces
     public interface IButtonAction
     {
         SequenceActionType SequenceActionType { get; set; }
-        AnimationID AnimationID { get; set; }
-        SceneScriptableObject SceneSO { get; set; }
+        AnimationTransitionID AnimationTransitionID { get; set; }
         void ButtomAction();
-        void SendButtonActionToSceneManager();
     }
 }

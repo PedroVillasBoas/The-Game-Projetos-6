@@ -4,6 +4,15 @@ namespace GoodVillageGames.Game.Enums
     {
         public enum AnimationID
         {
+            FADE,
+            MOVE_TO,
+            SCTRETCH,
+            PULSE,
+            HOLOGRAM,
+        }
+
+        public enum AnimationTransitionID
+        {
             // Basic
             NONE,
             SPLASH_SCREEN_TO_MAIN_MENU,
@@ -61,6 +70,18 @@ namespace GoodVillageGames.Game.Enums
         {
             SEQUENTIAL,
             PARALLEL,
+        }
+
+        public enum UIScreenID
+        {
+            MAIN_MENU,
+            MM_DIFICULTY_SELECT,
+            MM_OPTIONS,
+            PLAYER_HUD,
+            PAUSED,
+            MODS,
+            SETTINGS,
+            GAME_OVER,
         }
     }
 }

@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.Core.Manager
         private UIState _uiState = UIState.NORMAL_UI;
         private Coroutine _animationsCoroutine;
 
-        void OnAnimationAsked(Sequence sequence, AnimationID _animationID, SceneScriptableObject sceneSO)
+        void OnAnimationAsked(Sequence sequence, AnimationTransitionID AnimationTransitionID, SceneScriptableObject sceneSO)
         {
             _animationsCoroutine = StartCoroutine(PlayAnimationAskedRoutine(sequence, sceneSO));
         }

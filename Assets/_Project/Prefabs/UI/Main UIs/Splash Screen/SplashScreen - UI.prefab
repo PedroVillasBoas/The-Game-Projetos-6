@@ -101,7 +101,6 @@ GameObject:
   - component: {fileID: 1886714832097296638}
   - component: {fileID: 5298705139987017782}
   - component: {fileID: 3142432859790018228}
-  - component: {fileID: 167573019791678938}
   m_Layer: 5
   m_Name: Black Hole - Image
   m_TagString: Untagged
@@ -188,22 +187,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &167573019791678938
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4045592260128588732}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 59343a139cbba8242890fcd3aada9ed0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _sizeAfterZoom: {x: 2000, y: 2000}
-  _duration: 1
-  _animationID: 0
-  _UIAnimationType: 1
 --- !u!1 &6390074673750581405
 GameObject:
   m_ObjectHideFlags: 0
@@ -350,7 +333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1591384699431648665}
   - component: {fileID: 5753499046695678733}
-  - component: {fileID: 4449392398606758064}
+  - component: {fileID: 8781149579042880126}
   m_Layer: 5
   m_Name: SplashScreen - UI
   m_TagString: Untagged
@@ -426,7 +409,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 4449392398606758064}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: GoodVillageGames.Game.General.UI.Buttons.SplashScreenButton,
           Assembly-CSharp
         m_MethodName: ButtomAction
@@ -439,7 +422,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
---- !u!114 &4449392398606758064
+--- !u!114 &8781149579042880126
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -448,11 +431,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 6989596374859481965}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a6549ce757035de428bf177c9b5b2598, type: 3}
+  m_Script: {fileID: 11500000, guid: 2e2a881b577b4dd4e9e2488d72da2066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationID: 0
-  _scene: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
+  _animationTransitionID: 1
+  _starsMovementType: Move
 --- !u!1 &7892989860595348018
 GameObject:
   m_ObjectHideFlags: 0
@@ -464,7 +447,6 @@ GameObject:
   - component: {fileID: 5948427486163524235}
   - component: {fileID: 8437980163861810419}
   - component: {fileID: 723710563421198116}
-  - component: {fileID: 5237791043478385765}
   m_Layer: 5
   m_Name: Panel - Fade
   m_TagString: Untagged
@@ -529,22 +511,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &5237791043478385765
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7892989860595348018}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 937116678e2c6754cb04df0720bd9d62, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _fadeAmount: 0
-  _duration: 1
-  _animationID: 0
-  _UIAnimationType: 1
 --- !u!1 &9157184821183820816
 GameObject:
   m_ObjectHideFlags: 0
@@ -953,6 +919,18 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
       propertyPath: m_SizeDelta.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
+      propertyPath: m_LocalScale.z
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}

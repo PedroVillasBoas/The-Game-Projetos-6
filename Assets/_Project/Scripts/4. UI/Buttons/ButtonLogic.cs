@@ -7,17 +7,15 @@ using GoodVillageGames.Game.Core.ScriptableObjects;
 
 namespace GoodVillageGames.Game.General.UI.Buttons
 {
-    public class MainMenuButton : MonoBehaviour, IButtonAction
+    public class ButtonLogic : MonoBehaviour, IButtonAction
     {
         [SerializeField] private AnimationTransitionID _animationTransitionID;
-        [SerializeField] private SceneScriptableObject _scene;
         [SerializeField] private SequenceActionType _sequenceActionType;
 
         [PropertyTooltip("Move or MoveBack")]
         [SerializeField] private string _starsMovementType;
 
         public AnimationTransitionID AnimationTransitionID { get => _animationTransitionID; set => _animationTransitionID = value; }
-        public SceneScriptableObject SceneSO { get => _scene; set => _scene = value; }
         public SequenceActionType SequenceActionType { get => _sequenceActionType; set => _sequenceActionType = value; }
 
         public void ButtomAction()
