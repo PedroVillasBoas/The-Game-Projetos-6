@@ -74,6 +74,7 @@ namespace GoodVillageGames.Game.Enums
 
         public enum UIScreenID
         {
+            NONE,
             MAIN_MENU,
             MM_DIFICULTY_SELECT,
             MM_OPTIONS,

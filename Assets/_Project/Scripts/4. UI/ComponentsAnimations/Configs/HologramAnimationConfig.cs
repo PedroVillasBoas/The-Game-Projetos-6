@@ -27,6 +27,15 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
         public bool EnableChildrenOnComplete { get; private set; } = false;
 
         [field: SerializeField]
+        public bool DisableChildren { get; private set; } = false;
+        
+        [field: ShowIf(nameof(DisableChildren)),
+                SerializeField,
+                Min(0f),
+                LabelText("Disable At Time (Seconds)")]
+        public float DisableAt { get; private set; } = 0f;
+
+        [field: SerializeField]
         public bool Blink { get; private set; } = false;
 
         [field: SerializeField,  

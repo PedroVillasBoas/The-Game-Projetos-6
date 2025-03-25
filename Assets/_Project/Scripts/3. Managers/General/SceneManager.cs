@@ -74,7 +74,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
                 if (_transitionsOnSceneDict.ContainsKey(key))
                 {
-                    Debug.LogError($"Chave duplicada: {key}");
+                    Debug.LogError($"Duplicate key: {key}");
                     continue;
                 }
 

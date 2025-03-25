@@ -9,19 +9,17 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
     [Serializable]
     public class AnimationTransitionConfig
     {
-        [TableList(Draggable = true,
-           HideAddButton = false,
-           HideRemoveButton = false,
-           AlwaysExpanded = false)]
-        public List<AnimationTransitionConfig> AnimationTransitionConfigs;
+        [field: SerializeField,  
+                LabelText("Completed Animation")] 
+        public AnimationTransitionID CompletedAnimation { get; private set; }
 
-        [Required]
-        AnimationTransitionID CompletedAnimation;
+        [field: SerializeField,  
+                LabelText("Enable?")] 
+        public bool ChildrenValue { get; private set; }
 
-        [Required]
-        UIScreenID NextScreen;
+        [field: SerializeField,
+                LabelText("Components To Toggle")] 
+        public List<GameObject> ObjectToToggle { get; private set; }
 
-        [Required]
-        AnimationTransitionID NextAnimation;
     }
 }

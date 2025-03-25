@@ -30,10 +30,10 @@ namespace GoodVillageGames.Game.General.UI.Animations
         {
             foreach (var config in _hologramConfigs)
             {
-                if (config.ComponentToAnimate == null || config.ComponentToAnimate2 == null)
+                if (config.ComponentToAnimate == null || (config.ComponentToAnimate2 == null && config.Blink))
                 {
-                    Debug.LogError($"{config.ComponentToAnimate} or {config.ComponentToAnimate2} not defined in {gameObject.name}");
-                    continue;
+                    Debug.LogError($"Image and/or RectTranform not defined in {gameObject.name}");
+                    return;
                 }
 
                 var sequence = DOTween.Sequence();
@@ -52,8 +52,18 @@ namespace GoodVillageGames.Game.General.UI.Animations
                 // Children Activation
                 if (config.EnableChildrenOnComplete)
                 {
-                    sequence.OnComplete(ToggleChildren);
+                    sequence.OnComplete(() => ToggleChildren(true));
                 }
+
+                if (config.DisableChildren)
+                {
+                    sequence.Insert(
+                        config.DisableAt,
+                        DOTween.To(() => 0, x => { }, 0, 0) // Empty Tween, just to deactivate on the right time
+                            .OnComplete(() => ToggleChildren(false))
+                    );
+                }
+
 
                 if (!_animationsDict.ContainsKey(config.Animation))
                 {
@@ -63,11 +73,11 @@ namespace GoodVillageGames.Game.General.UI.Animations
             }
         }
 
-        private void ToggleChildren()
+        private void ToggleChildren(bool value)
         {
             foreach (Transform child in transform)
             {
-                child.gameObject.SetActive(!child.gameObject.activeSelf);
+                child.gameObject.SetActive(value);
             }
         }
 

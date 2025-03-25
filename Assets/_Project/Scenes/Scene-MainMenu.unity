@@ -1926,6 +1926,33 @@ MonoBehaviour:
     <Duration>k__BackingField: 1
     <ComponentToAnimate>k__BackingField: {fileID: 920171791}
     <FinalSize>k__BackingField: {x: 600, y: 600}
+  - <Animation>k__BackingField: 3
+    <AnimationTransitionID>k__BackingField: 3
+    <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
+    <Duration>k__BackingField: 2
+    <ComponentToAnimate>k__BackingField: {fileID: 920171791}
+    <FinalSize>k__BackingField: {x: 900, y: 900}
+--- !u!114 &920171794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 920171792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: af3f3faccb53b1f458f3803ebb4a930c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _moveConfigs:
+  - <Animation>k__BackingField: 3
+    <AnimationTransitionID>k__BackingField: 3
+    <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
+    <Duration>k__BackingField: 2
+    <ComponentToAnimate>k__BackingField: {fileID: 920171791}
+    <FinalPosition>k__BackingField: {x: 1500, y: 0}
 --- !u!1 &987973129 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6924324474609844120, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
@@ -2113,6 +2140,25 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!1 &1109726280 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7846450133071491272, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1109726281
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1109726280}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e2a881b577b4dd4e9e2488d72da2066, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationTransitionID: 3
+  _starsMovementType: Move
 --- !u!1 &1364160037
 GameObject:
   m_ObjectHideFlags: 0
@@ -2188,6 +2234,29 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1364160037}
   m_CullTransparentMesh: 1
+--- !u!1 &1637129815 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5687720801488009648, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1637129816
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1637129815}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ac9ebed1cd4e69a45a66a0fc5ab92522, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _animationTransitionConfigs:
+  - <CompletedAnimation>k__BackingField: 3
+    <ChildrenValue>k__BackingField: 0
+    <ObjectToToggle>k__BackingField:
+    - {fileID: 920171792}
+    - {fileID: 7035158847425050199}
 --- !u!1 &1852903764 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7819740552551430291, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
@@ -2864,6 +2933,34 @@ PrefabInstance:
     - target: {fileID: 3772185017110263113, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1109726281}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ButtomAction
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GoodVillageGames.Game.General.UI.Buttons.ButtonLogic, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3778390329853455309, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3791892892858346126, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       propertyPath: m_AnchorMax.y
@@ -3824,12 +3921,21 @@ PrefabInstance:
       insertIndex: 2
       addedObject: {fileID: 531438976}
     m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 5687720801488009648, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1637129816}
     - targetCorrespondingSourceObject: {fileID: 604713118498224960, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 920171793}
+    - targetCorrespondingSourceObject: {fileID: 604713118498224960, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 920171794}
     - targetCorrespondingSourceObject: {fileID: 817875194189810482, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 7035158847425050200}
+    - targetCorrespondingSourceObject: {fileID: 7846450133071491272, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1109726281}
     - targetCorrespondingSourceObject: {fileID: 6924324474609844120, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 987973130}
@@ -3864,6 +3970,38 @@ MonoBehaviour:
     <SizeChangeDuration>k__BackingField: 0.5
     <ComponentToAnimate>k__BackingField: {fileID: 7035158847425050201}
     <EnableChildrenOnComplete>k__BackingField: 1
+    <DisableChildren>k__BackingField: 0
+    <DisableAt>k__BackingField: 0
+    <Blink>k__BackingField: 1
+    <ComponentToAnimate2>k__BackingField: {fileID: 7035158847425050203}
+    <TargetAlpha>k__BackingField: 0
+    <BlinkLoops>k__BackingField: 10
+  - <Animation>k__BackingField: 3
+    <AnimationTransitionID>k__BackingField: 3
+    <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
+    <Duration>k__BackingField: 0.05
+    <FinalSize>k__BackingField: {x: 600, y: 0}
+    <SizeChangeDuration>k__BackingField: 0.7
+    <ComponentToAnimate>k__BackingField: {fileID: 7035158847425050201}
+    <EnableChildrenOnComplete>k__BackingField: 0
+    <DisableChildren>k__BackingField: 1
+    <DisableAt>k__BackingField: 0.5
+    <Blink>k__BackingField: 0
+    <ComponentToAnimate2>k__BackingField: {fileID: 7035158847425050203}
+    <TargetAlpha>k__BackingField: 0
+    <BlinkLoops>k__BackingField: 1
+  - <Animation>k__BackingField: 5
+    <AnimationTransitionID>k__BackingField: 5
+    <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
+    <Duration>k__BackingField: 0.05
+    <FinalSize>k__BackingField: {x: 600, y: 630}
+    <SizeChangeDuration>k__BackingField: 0.5
+    <ComponentToAnimate>k__BackingField: {fileID: 7035158847425050201}
+    <EnableChildrenOnComplete>k__BackingField: 1
+    <DisableChildren>k__BackingField: 0
+    <DisableAt>k__BackingField: 0
     <Blink>k__BackingField: 1
     <ComponentToAnimate2>k__BackingField: {fileID: 7035158847425050203}
     <TargetAlpha>k__BackingField: 0
