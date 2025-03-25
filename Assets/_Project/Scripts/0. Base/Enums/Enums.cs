@@ -42,6 +42,8 @@ namespace GoodVillageGames.Game.Enums
             // Game Over
             DEFAULT_GAME_OVER,
             GAME_OVER_TO_MAIN_MENU,
+            // Difficulty Select
+            DEFAULT_DIFFICULTY_SELECT,
         }
 
         public enum UIState

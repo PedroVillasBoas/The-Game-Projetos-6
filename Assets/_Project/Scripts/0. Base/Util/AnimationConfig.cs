@@ -11,9 +11,6 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
     {
         [Title("Animation Configuration")]
         [field: SerializeField] 
-        public AnimationTransitionID Animation { get; private set; }
-
-        [field: SerializeField] 
         public AnimationTransitionID AnimationTransitionID { get; private set; }
 
         [field: SerializeField, 
@@ -22,8 +19,9 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
 
         [field: SerializeField, 
             LabelText("Insert at Position"),
+            Min(0),
             ShowIf(nameof(UIAnimationType), UIAnimationType.PARALLEL)]
-        public int InsertPosition { get; private set; } = -1;
+        public int InsertPosition { get; private set; } = 0;
 
         [field: SerializeField, 
                 Range(0.05f, 3f), 

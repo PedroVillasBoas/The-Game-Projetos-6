@@ -105,10 +105,9 @@ namespace GoodVillageGames.Game.Core.Manager
                 List<Tween> tweens = animationPair.Value;
                 UIAnimationType animType = componentAnimation.GetAnimationType(transitionID);
                 int insertPosition = componentAnimation.GetInsertAtPosition(transitionID);
-                if (insertPosition != -1)
-                    ProcessAnimationTransition(transitionID, tweens, animType);
-                else
-                    ProcessAnimationTransition(transitionID, tweens, animType, insertPosition);
+
+                Debug.Log($"Processando animação para ID: {transitionID}");
+                ProcessAnimationTransition(transitionID, tweens, animType, insertPosition);
             }
         }
 
@@ -135,12 +134,16 @@ namespace GoodVillageGames.Game.Core.Manager
             foreach (Tween tween in tweens)
             {
                 if (animType == UIAnimationType.SEQUENTIAL)
+                {
                     sequence.Append(tween);
+                }
                 else
-                    if (insertPosition == -1)
-                        sequence.Insert(0, tween); // Start with the first tween added
+                {
+                    if (insertPosition == 0)
+                        sequence.Join(tween); // Parallel, don't care about the position
                     else
-                        sequence.Insert(insertPosition, tween); // Insert at the desired position
+                        sequence.Insert(insertPosition, tween); // Specific Position
+                }
             }
         }
 
@@ -157,6 +160,15 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             else
             {
+                /* 
+                    Opa peu do Futuro, peu do passado aqui, saca:
+                        Ta dando erro porque ele não ta pegando as animações dos children desativados. Porque? Nao sei;
+                        Ideias que eu tive:
+                            1. Ver como funciona o async loading ou vai ter uma real tela de loading, onde todos os objects da proxima scene 
+                                vão estar ativos, fazer as animações, quando tiver tudo pronto, ai muda a tela.
+                            2. Criar um script pra colocar no parent dos objects que tem animação, o parent construir a sequence dos children,
+                                juntar tudo e finalmente mandar pra cá, o SceneManager;
+                */ 
                 Debug.LogError($"Key '{_animationTransitionID}' does not exist in Sequence Dictionary.");
             }
         }

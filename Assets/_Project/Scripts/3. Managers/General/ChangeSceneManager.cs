@@ -1,6 +1,7 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using GoodVillageGames.Game.Core.ScriptableObjects;
+using DG.Tweening;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -28,11 +29,10 @@ namespace GoodVillageGames.Game.Core.Manager
             if (_sceneSO != null)
             {
                 UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneSO.Scene.ToString(), LoadSceneMode.Single);
+                DOTween.KillAll();
             }
             else
-            {
                 Debug.LogError($"Trying to load Scene: {_sceneSO.Scene}");
-            }
         }
 
         void SceneHasLoaded(Scene scene, LoadSceneMode mode)
@@ -43,13 +43,13 @@ namespace GoodVillageGames.Game.Core.Manager
         void OnEnable()
         {
             EventsManager.Instance.OnChangeSceneEventTriggered += ChangeScene;
-           UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneHasLoaded;
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneHasLoaded;
         }
 
         void OnDisable()
         {
             EventsManager.Instance.OnChangeSceneEventTriggered -= ChangeScene;
-           UnityEngine.SceneManagement.SceneManager.sceneLoaded -= SceneHasLoaded;
+            UnityEngine.SceneManagement.SceneManager.sceneLoaded -= SceneHasLoaded;
         }
 
     }

@@ -65,11 +65,11 @@ namespace GoodVillageGames.Game.General.UI.Animations
                 }
 
 
-                if (!_animationsDict.ContainsKey(config.Animation))
+                if (!_animationsDict.ContainsKey(config.AnimationTransitionID))
                 {
-                    _animationsDict[config.Animation] = new List<Tween>();
+                    _animationsDict[config.AnimationTransitionID] = new List<Tween>();
                 }
-                _animationsDict[config.Animation].Add(sequence);
+                _animationsDict[config.AnimationTransitionID].Add(sequence);
             }
         }
 

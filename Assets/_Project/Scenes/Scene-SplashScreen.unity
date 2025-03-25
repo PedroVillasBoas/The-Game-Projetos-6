@@ -847,9 +847,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _fadeConfigs:
-  - <Animation>k__BackingField: 1
-    <AnimationTransitionID>k__BackingField: 1
+  - <AnimationTransitionID>k__BackingField: 1
     <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 2.5
     <ComponentToAnimate>k__BackingField: {fileID: 3221807598289916739}
     <TargetAlpha>k__BackingField: 1
@@ -866,9 +866,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _zoomConfigs:
-  - <Animation>k__BackingField: 1
-    <AnimationTransitionID>k__BackingField: 1
+  - <AnimationTransitionID>k__BackingField: 1
     <UIAnimationType>k__BackingField: 1
+    <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 2.5
     <ComponentToAnimate>k__BackingField: {fileID: 3221807598289916740}
     <FinalSize>k__BackingField: {x: 3000, y: 3000}

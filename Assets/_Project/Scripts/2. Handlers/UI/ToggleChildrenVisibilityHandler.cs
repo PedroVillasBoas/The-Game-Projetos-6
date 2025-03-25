@@ -55,14 +55,23 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         void ToggleChildren(AnimationTransitionID animationTransitionID)
         {
-            if (_componentsToToggle.ContainsKey(animationTransitionID))
+            if (_componentsToToggle.TryGetValue(animationTransitionID, out List<GameObject> objectsList))
             {
-                IList list = _componentsToToggle[animationTransitionID];
-                for (int i = 0; i < list.Count; i++)
+                AnimationTransitionConfig config = _animationTransitionConfigs.Find(animID => animID.CompletedAnimation == animationTransitionID);
+                if (config == null)
                 {
-                    bool toggleValue = _animationTransitionConfigs[i].ChildrenValue;
-                    GameObject child = (GameObject)list[i];
-                    child.SetActive(toggleValue);
+                    Debug.LogError($"Config for {animationTransitionID} was not found!");
+                    return;
+                }
+
+                foreach (GameObject gameObject in objectsList)
+                {
+                    gameObject.SetActive(config.ChildrenValue);
+                }
+
+                if (config.AskAnimationDefault && config.DefaultAnimationToPlay != AnimationTransitionID.NONE)
+                {
+                    EventsManager.Instance.ButtonAskingAnimationEventTriggered(config.DefaultAnimationToPlay);
                 }
             }
         }

@@ -17,6 +17,15 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
                 LabelText("Enable?")] 
         public bool ChildrenValue { get; private set; }
 
+        [field: SerializeField,  
+                LabelText("Play Default Animation?")] 
+        public bool AskAnimationDefault { get; private set; }
+
+        [field: SerializeField,  
+                LabelText("Default Animation To Play"),
+                ShowIf(nameof(AskAnimationDefault))] 
+        public AnimationTransitionID DefaultAnimationToPlay { get; private set; }
+
         [field: SerializeField,
                 LabelText("Components To Toggle")] 
         public List<GameObject> ObjectToToggle { get; private set; }
