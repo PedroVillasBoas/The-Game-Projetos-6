@@ -106,7 +106,6 @@ namespace GoodVillageGames.Game.Core.Manager
                 UIAnimationType animType = componentAnimation.GetAnimationType(transitionID);
                 int insertPosition = componentAnimation.GetInsertAtPosition(transitionID);
 
-                Debug.Log($"Processando animação para ID: {transitionID}");
                 ProcessAnimationTransition(transitionID, tweens, animType, insertPosition);
             }
         }
