@@ -55,7 +55,6 @@ namespace GoodVillageGames.Game.Core
 
         void ProcessAcceleration()
         {
-            // Calcula a velocidade desejada
             Vector2 desiredVelocity = Vector2.zero;
 
             if (_movementInput.y > 0)
@@ -65,14 +64,12 @@ namespace GoodVillageGames.Game.Core
 
             desiredVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
 
-            // Aplica aceleração suave em direção à velocidade desejada
             _playerRb.linearVelocity = Vector2.MoveTowards(
                 _playerRb.linearVelocity,
                 desiredVelocity,
                 _playerStatsManager.Acceleration * Time.fixedDeltaTime
             );
 
-            // Atualiza o evento de movimento
             onPlayerMovingEvent?.Invoke(_playerRb.linearVelocity);
         }
 
