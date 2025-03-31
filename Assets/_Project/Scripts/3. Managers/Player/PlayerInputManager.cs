@@ -2,7 +2,6 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 using GoodVillageGames.Game.Handlers;
 using static GoodVillageGames.Game.Enums.Enums;
-using System.Text.RegularExpressions;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -24,19 +23,14 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void OnEnable()
         {
-            _inputActions.Player.Enable();
-            _inputActions.UI.Disable();
-
             _playerInputComponent.onActionTriggered += OnActionTriggered;
-            EventsManager.Instance.OnAnimationEventTriggered += OnUIPlayingAnimation;
+            //EventsManager.Instance.OnAnimationEventTriggered += OnUIPlayingAnimation;
         }
 
         void OnDisable()
         {
-            _inputActions.Player.Disable();
-            _inputActions.UI.Enable();
-
             _playerInputComponent.onActionTriggered -= OnActionTriggered;
+            //EventsManager.Instance.OnAnimationEventTriggered -= OnUIPlayingAnimation;
         }
 
         void Update()

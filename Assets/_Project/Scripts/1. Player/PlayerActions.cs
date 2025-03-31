@@ -28,7 +28,7 @@ namespace GoodVillageGames.Game.Core
 
         void FixedUpdate()
         {
-            ProcessMovement();
+            ProcessAcceleration();
         }
 
         public void HandleMove(Vector2 input)
@@ -53,31 +53,27 @@ namespace GoodVillageGames.Game.Core
             // Later I'll implement the Coroutine to handle the pew BOOM pew BOOM pew BOOM in auto/single mode based on the missile attack speed
         }
 
-        void ProcessMovement()
-        {
-            ProcessAcceleration();
-        }
-
         void ProcessAcceleration()
         {
-            _targetVelocity = _movementInput.y > 0 ? transform.up * _playerStatsManager.MaxSpeed : Vector2.zero;
-            _targetVelocity += _movementInput.y < 0 ? -transform.up * _playerStatsManager.MaxSpeed : Vector2.zero;
-            _targetVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
+            // Calcula a velocidade desejada
+            Vector2 desiredVelocity = Vector2.zero;
 
-            if (_movementTweener != null && _movementTweener.IsActive())
-            {
-                _movementTweener.Kill();
-            }
+            if (_movementInput.y > 0)
+                desiredVelocity += (Vector2)transform.up * _playerStatsManager.MaxSpeed;
+            else if (_movementInput.y < 0)
+                desiredVelocity -= (Vector2)transform.up * _playerStatsManager.MaxSpeed;
 
-            float duration = Vector2.Distance(_playerRb.linearVelocity, _targetVelocity) / _playerStatsManager.Acceleration;
-            duration = Mathf.Max(duration, 0.01f);
+            desiredVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
 
-            _movementTweener = DOTween.To(
-            () => _playerRb.linearVelocity,
-            x => _playerRb.linearVelocity = x,
-            _targetVelocity,
-            duration
-            ).SetEase(Ease.Linear).OnUpdate(() => onPlayerMovingEvent?.Invoke(_playerRb.linearVelocity));
+            // Aplica aceleração suave em direção à velocidade desejada
+            _playerRb.linearVelocity = Vector2.MoveTowards(
+                _playerRb.linearVelocity,
+                desiredVelocity,
+                _playerStatsManager.Acceleration * Time.fixedDeltaTime
+            );
+
+            // Atualiza o evento de movimento
+            onPlayerMovingEvent?.Invoke(_playerRb.linearVelocity);
         }
 
     }
