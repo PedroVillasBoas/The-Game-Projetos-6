@@ -1,31 +1,29 @@
+using GoodVillageGames.Game.Interfaces;
 using UnityEngine;
 
 namespace GoodVillageGames.Game.Handlers
 {
-    public class PlayerAimHandler : MonoBehaviour
+    public class PlayerAimHandler : MonoBehaviour, IAimHandler
     {
-        private Camera _mainCamera;
+        // Local
         private Vector3 _mouseWorldPosition;
-
         private Vector3 _rotateDiretion;
 
-        void Awake()
-        {
-            _mainCamera = Camera.main;
-        }
+        public Vector3 TargetPosition { get => _mouseWorldPosition; set => _mouseWorldPosition = value; }
+        public Vector3 RotateDirection { get => _rotateDiretion; set => _rotateDiretion = value; }
 
         void Update()
         {
-            RotatePlayer();
+            Rotate();
         }
 
-        public void HandleLook(Vector2 input)
+        public void HandleLook(Vector2 lookDirection)
         {
-            _mouseWorldPosition = Camera.main.ScreenToWorldPoint(input);
+            _mouseWorldPosition = Camera.main.ScreenToWorldPoint(lookDirection);
             _mouseWorldPosition.z = 0f;
         }
 
-        void RotatePlayer()
+        public void Rotate()
         {
             _rotateDiretion = new Vector2(_mouseWorldPosition.x - transform.position.x, _mouseWorldPosition.y - transform.position.y);
 

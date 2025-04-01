@@ -1,16 +1,12 @@
 using UnityEngine;
 
-public class IAimHandler : MonoBehaviour
+namespace GoodVillageGames.Game.Interfaces
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
-    void Start()
+    public interface IAimHandler
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        Vector3 TargetPosition { get; set; }
+        Vector3 RotateDirection { get; set; }
+        void HandleLook(Vector2 lookDirection);
+        void Rotate();
     }
 }

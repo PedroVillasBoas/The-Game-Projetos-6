@@ -1,10 +1,10 @@
+using UnityEngine;
 using System.Collections;
 using System.Collections.Generic;
-using GoodVillageGames.Game.Core.Manager;
-using GoodVillageGames.Game.General.UI.Animations.Config;
 using GoodVillageGames.Game.Interfaces;
-using UnityEngine;
+using GoodVillageGames.Game.Core.Manager;
 using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.General.UI.Animations.Config;
 
 namespace GoodVillageGames.Game.Handlers.UI
 {

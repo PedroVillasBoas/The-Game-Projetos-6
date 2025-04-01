@@ -7,14 +7,12 @@ namespace GoodVillageGames.Game.Core
 {
     public class PlayerActions : MonoBehaviour
     {
+        
+
+        // Local
         private PlayerStatsManager _playerStatsManager;
-
         private Rigidbody2D _playerRb;
-
         private Vector2 _movementInput = Vector2.zero;
-        private Vector2 _targetVelocity = Vector2.zero;
-
-        private Tweener _movementTweener;
 
         // Events
         public UnityEvent<Vector2> onPlayerMovingEvent;

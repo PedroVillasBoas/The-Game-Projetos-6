@@ -30,7 +30,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
                         break;
                 
                 default:
-                    Debug.Log("Nothing to stop on the Stars, it is not playing.");
+                    Debug.Log("Value unknown to the moving stars.");
                     break;
 
             }

@@ -1,5 +1,6 @@
 using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
+using Unity.Cinemachine;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -7,19 +8,14 @@ namespace GoodVillageGames.Game.Handlers
     {
         private Vector2 _startPosition;
         private Vector2 _distance;
-        private Camera _mainCamera;
-
+    
+        [SerializeField] private CinemachineCamera _mainCamera;
         [SerializeField] private float _parallaxeffect;
 
         public Vector2 StartPosition { get => _startPosition; set => _startPosition = value; }
         public Vector2 Distance { get => _distance; set => _distance = value; }
-        public Camera MainCamera { get => _mainCamera; set => _mainCamera = value; }
+        public CinemachineCamera MainCamera { get => _mainCamera; set => _mainCamera = value; }
         public float ParallaxEffect { get => _parallaxeffect; set => _parallaxeffect = value; }
-
-        void Awake()
-        {
-            MainCamera = Camera.main;
-        }
 
         protected virtual void Start()
         {
