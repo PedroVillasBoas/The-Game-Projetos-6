@@ -1,27 +1,30 @@
-using DG.Tweening;
-using GoodVillageGames.Game.Core.Manager;
 using UnityEngine;
-using UnityEngine.Events;
+using TriInspector;
+using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Core.Manager.Player;
 
 namespace GoodVillageGames.Game.Core
 {
     public class PlayerActions : MonoBehaviour
     {
-        
+        // Public
+        [HideInInspector] public PlayerStatsManager PlayerStatsManager;
+        [HideInInspector] public PlayerEventsManager PlayerEventsManager;
 
         // Local
-        private PlayerStatsManager _playerStatsManager;
         private Rigidbody2D _playerRb;
         private Vector2 _movementInput = Vector2.zero;
 
-        // Events
-        public UnityEvent<Vector2> onPlayerMovingEvent;
-        public UnityEvent<bool> onPlayerBoostingEvent;
-
         void Awake()
         {
-            _playerStatsManager = GetComponentInChildren<PlayerStatsManager>();
+            PlayerStatsManager = GetComponentInChildren<PlayerStatsManager>();
+            PlayerEventsManager = GetComponentInChildren<PlayerEventsManager>();
             _playerRb = GetComponent<Rigidbody2D>();
+        }
+
+        void OnEnable()
+        {
+            
         }
 
         void FixedUpdate()
@@ -43,7 +46,7 @@ namespace GoodVillageGames.Game.Core
         {
             // Here I'll put the boosting check
             // I'll have to create a new handler to handle the boost and boost amount
-            onPlayerBoostingEvent?.Invoke(value);
+            PlayerEventsManager.PlayerBoostingEvent(value);
         }
         public void HandleMissile(bool value)
         {
@@ -56,19 +59,19 @@ namespace GoodVillageGames.Game.Core
             Vector2 desiredVelocity = Vector2.zero;
 
             if (_movementInput.y > 0)
-                desiredVelocity += (Vector2)transform.up * _playerStatsManager.MaxSpeed;
+                desiredVelocity += (Vector2)transform.up * PlayerStatsManager.MaxSpeed;
             else if (_movementInput.y < 0)
-                desiredVelocity -= (Vector2)transform.up * _playerStatsManager.MaxSpeed;
+                desiredVelocity -= (Vector2)transform.up * PlayerStatsManager.MaxSpeed;
 
-            desiredVelocity += _movementInput.x * _playerStatsManager.MaxSpeed * (Vector2)transform.right;
+            desiredVelocity += _movementInput.x * PlayerStatsManager.MaxSpeed * (Vector2)transform.right;
 
             _playerRb.linearVelocity = Vector2.MoveTowards(
                 _playerRb.linearVelocity,
                 desiredVelocity,
-                _playerStatsManager.Acceleration * Time.fixedDeltaTime
+                PlayerStatsManager.Acceleration * Time.fixedDeltaTime
             );
 
-            onPlayerMovingEvent?.Invoke(_playerRb.linearVelocity);
+            PlayerEventsManager.PlayerMovingEvent(_playerRb.linearVelocity);
         }
 
     }

@@ -1,13 +1,14 @@
 using UnityEngine;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Util;
+using GoodVillageGames.Game.Core.Manager.Player;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
     public class PlayerThrusterManager : MonoBehaviour
     {
         private List<ParticleSystem> _thrusters = new();
-        private PlayerActions _playerActions;
+        private PlayerEventsManager _playerEventsManager;
 
         void Awake()
         {
@@ -16,14 +17,17 @@ namespace GoodVillageGames.Game.Core.Manager
                 if (child.TryGetComponent<ParticleSystem>(out var ps))
                     _thrusters.Add(ps);
             }
-
-            _playerActions = GetComponentInParent<PlayerActions>();
         }
 
         void Start()
         {
-            _playerActions.onPlayerMovingEvent.AddListener(OnPlayerMovingEvent);
-            _playerActions.onPlayerBoostingEvent.AddListener(OnPlayerBoostingEvent);
+            if (transform.root.TryGetComponent<PlayerActions>(out var player))
+            {
+                _playerEventsManager = player.PlayerEventsManager;
+            }
+
+            _playerEventsManager.OnPlayerMovingEventTriggered.AddListener(OnPlayerMovingEvent);
+            _playerEventsManager.OnPlayerBoostingEventTriggered.AddListener(OnPlayerBoostingEvent);
         }
 
         void OnPlayerMovingEvent(Vector2 vector)
