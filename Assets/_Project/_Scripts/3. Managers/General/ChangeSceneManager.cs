@@ -1,15 +1,21 @@
 using UnityEngine;
+using DG.Tweening;
+using System.Collections;
 using UnityEngine.SceneManagement;
 using GoodVillageGames.Game.Core.ScriptableObjects;
-using DG.Tweening;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
     public class ChangeSceneManager : MonoBehaviour
     {
         // Singleton
-        public ChangeSceneManager Instance { get; private set; }
+        public static ChangeSceneManager Instance { get; private set; }
 
+        // Loading Scene
+        [SerializeField] SceneScriptableObject _loadingScene;
+
+        private SceneScriptableObject _sceneToLoad;
+        private string _lastSceneLoaded;
 
         private void Awake()
         {
@@ -28,28 +34,33 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             if (_sceneSO != null)
             {
-                UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneSO.Scene.ToString(), LoadSceneMode.Single);
+                _lastSceneLoaded = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;;
+                _sceneToLoad = _sceneSO;
                 DOTween.KillAll();
+                UnityEngine.SceneManagement.SceneManager.LoadScene(_loadingScene.Scene, LoadSceneMode.Single);
             }
             else
                 Debug.LogError($"Trying to load Scene: {_sceneSO.Scene}");
         }
 
-        void SceneHasLoaded(Scene scene, LoadSceneMode mode)
+        public SceneScriptableObject GetPendingScene()
         {
-            Debug.Log($"Loaded scene: {scene.name} in mode: {mode}");
+            return _sceneToLoad;
+        }
+
+        public string GetLastLoadedScene()
+        {
+            return _lastSceneLoaded;
         }
 
         void OnEnable()
         {
             EventsManager.Instance.OnChangeSceneEventTriggered += ChangeScene;
-            UnityEngine.SceneManagement.SceneManager.sceneLoaded += SceneHasLoaded;
         }
 
         void OnDisable()
         {
             EventsManager.Instance.OnChangeSceneEventTriggered -= ChangeScene;
-            UnityEngine.SceneManagement.SceneManager.sceneLoaded -= SceneHasLoaded;
         }
 
     }

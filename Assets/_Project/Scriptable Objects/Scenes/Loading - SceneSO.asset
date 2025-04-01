@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: fdd75a3f9568d694b81cb614d757b8d5, type: 3}
-  m_Name: MainMenu - SceneSO
+  m_Name: Loading - SceneSO
   m_EditorClassIdentifier: 
-  Scene: Scene-MainMenu
+  Scene: Scene-Loading

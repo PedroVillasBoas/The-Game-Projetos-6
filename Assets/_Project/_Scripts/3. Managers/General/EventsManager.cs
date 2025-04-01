@@ -31,11 +31,8 @@ namespace GoodVillageGames.Game.Core.Manager
         // Game State
         public event Action<GameState> OnGameStateEventTriggered;
 
-        // Scene
-            // Preload
-        public event Action<Scene, LoadSceneMode> OnScenePreloadedEventTriggered;
-            // Loaded
-        public event Action<Scene, LoadSceneMode> OnSceneHasLoadedEventTriggered;
+        // Scene Loading
+        public event Action OnSceneLoadedEventTriggered;
 
         private void Awake()
         {
@@ -92,15 +89,9 @@ namespace GoodVillageGames.Game.Core.Manager
             OnGameStateEventTriggered?.Invoke(_gameState);
         }
 
-        public void ScenePreloadedEventTriggered(Scene _scene, LoadSceneMode _loadSceneMode)
+        public void SceneLoadedTriggerEvent()
         {
-            OnScenePreloadedEventTriggered?.Invoke(_scene, _loadSceneMode);
-        }
-
-        // Scene Loaded
-        public void SceneHasLoadedEventTriggered(Scene _scene, LoadSceneMode _mode)
-        {
-            OnSceneHasLoadedEventTriggered?.Invoke(_scene, _mode);
+            OnSceneLoadedEventTriggered?.Invoke();
         }
     }
 }

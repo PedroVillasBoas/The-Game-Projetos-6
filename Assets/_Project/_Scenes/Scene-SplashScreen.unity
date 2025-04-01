@@ -148,6 +148,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292027af82b10424284803e62be4e712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _loadingScene: {fileID: 11400000, guid: 9404ec6d72cb2e04eb1c71d81e9450fd, type: 2}
 --- !u!4 &329876522
 Transform:
   m_ObjectHideFlags: 0
@@ -880,6 +881,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
+      propertyPath: _debugSimulateLoad
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1818887797862663542, guid: a6b9cc4bca1bade4a8dc3615a9078397, type: 3}
       propertyPath: _scenesSO.Array.size
       value: 1

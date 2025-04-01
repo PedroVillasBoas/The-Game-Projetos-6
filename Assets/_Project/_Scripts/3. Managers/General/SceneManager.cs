@@ -1,7 +1,9 @@
 using UnityEngine;
 using DG.Tweening;
 using TriInspector;
+using System.Collections;
 using System.Collections.Generic;
+using UnityEngine.SceneManagement;
 using GoodVillageGames.Game.Interfaces;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.ScriptableObjects;
@@ -10,31 +12,70 @@ namespace GoodVillageGames.Game.Core.Manager
 {
     public class SceneManager : MonoBehaviour
     {
-        [SerializeField] List<AnimationTransitionID> _transicionsOnSceneList = new();
-        [SerializeField] List<SceneScriptableObject> _scenesSOList = new();
+
+        public bool IsInitialized { get; private set; }
+
+        [Header("Initialization Settings")]
+        [SerializeField] private float _minLoadTime = 1f;
+
+        [SerializeField] private List<AnimationTransitionID> _transicionsOnSceneList = new();
+        [SerializeField] private List<SceneScriptableObject> _scenesSOList = new();
         [SerializeField] private bool _playAnimationOnAwake = false;
         [SerializeField, ShowIf(nameof(_playAnimationOnAwake))] private AnimationTransitionID _animationIDToPlayOnSceneShow;
+        [SerializeField] private List<GameObject> _objectsAnimationsToDeactivate;
 
         private Dictionary<AnimationTransitionID, Tween> _sequenceDict = new();
         private Dictionary<AnimationTransitionID, SceneScriptableObject> _transitionsOnSceneDict;
 
         void OnEnable()
         {
+            UnityEngine.SceneManagement.SceneManager.sceneUnloaded += PlayAnimationOnSceneShow;
             EventsManager.Instance.OnButtonAskingAnimationEventTriggered += PlayThisAnimation;
         }
 
         void OnDisable()
         {
             EventsManager.Instance.OnButtonAskingAnimationEventTriggered -= PlayThisAnimation;
+            UnityEngine.SceneManagement.SceneManager.sceneUnloaded -= PlayAnimationOnSceneShow;
         }
 
         void Start()
         {
-            FillAnimationTransitionDict();
-            PlayAnimationOnSceneShow();
+            StartCoroutine(SceneInitializationRoutine());
         }
 
-        void PlayAnimationOnSceneShow()
+        private IEnumerator SceneInitializationRoutine()
+        {
+            float startTime = Time.realtimeSinceStartup;
+
+            yield return StartCoroutine(InitializeCoreSystems());
+            yield return StartCoroutine(SetupUIComponents());
+
+            float enlapsedTime = Time.realtimeSinceStartup - startTime;
+            if (enlapsedTime < _minLoadTime)
+                yield return new WaitForSeconds(_minLoadTime - enlapsedTime);
+            
+            IsInitialized = true;
+        }
+
+        #region Initialization Steps
+
+        private IEnumerator InitializeCoreSystems()
+        {
+            FillAnimationTransitionDict();
+            yield return null;
+        }
+
+        private IEnumerator SetupUIComponents()
+        {
+            DeactivateAnimationsObjects();
+            yield return null;
+        }
+
+        #endregion
+
+
+        void PlayAnimationOnSceneShow(Scene scene = default)
         {
             if (!_playAnimationOnAwake) return;
 
@@ -49,6 +90,8 @@ namespace GoodVillageGames.Game.Core.Manager
             else
                 Debug.LogError($"No animation found for ID: {_animationIDToPlayOnSceneShow}");
         }
+
+        #region Animations Setup
 
         private void FillAnimationTransitionDict()
         {
@@ -82,6 +125,7 @@ namespace GoodVillageGames.Game.Core.Manager
             }
 
             GetAllAnimationsInScene();
+
         }
 
         private void GetAllAnimationsInScene()
@@ -146,6 +190,27 @@ namespace GoodVillageGames.Game.Core.Manager
             }
         }
 
+        #endregion
+
+        #region Setup UI
+
+        private void DeactivateAnimationsObjects()
+        {
+            if (_objectsAnimationsToDeactivate != null)
+            {
+                foreach (GameObject go in _objectsAnimationsToDeactivate)
+                {
+                    go.SetActive(false);
+                }
+
+                EventsManager.Instance.SceneLoadedTriggerEvent();
+            }
+        }
+
+        #endregion
+
+        #region Animation Playing
+
         private void PlayThisAnimation(AnimationTransitionID _animationTransitionID)
         {
             if (_sequenceDict.TryGetValue(_animationTransitionID, out var value))
@@ -159,15 +224,6 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             else
             {
-                /* 
-                    Opa peu do Futuro, peu do passado aqui, saca:
-                        Ta dando erro porque ele não ta pegando as animações dos children desativados. Porque? Nao sei;
-                        Ideias que eu tive:
-                            1. Ver como funciona o async loading ou vai ter uma real tela de loading, onde todos os objects da proxima scene 
-                                vão estar ativos, fazer as animações, quando tiver tudo pronto, ai muda a tela.
-                            2. Criar um script pra colocar no parent dos objects que tem animação, o parent construir a sequence dos children,
-                                juntar tudo e finalmente mandar pra cá, o SceneManager;
-                */ 
                 Debug.LogError($"Key '{_animationTransitionID}' does not exist in Sequence Dictionary.");
             }
         }
@@ -179,5 +235,7 @@ namespace GoodVillageGames.Game.Core.Manager
             else
                 Debug.LogError($"Key '{_animationTransitionID}' exists but has no value (null) in Transitions Dictonary.");
         }
+
+        #endregion
     }
 }
