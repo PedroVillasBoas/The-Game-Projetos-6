@@ -16,13 +16,9 @@ MonoBehaviour:
   EntityPrefab: {fileID: 0}
   MaxHealth: 100
   MaxSpeed: 500
-  PassiveName: 
-  PassiveDescription: 
-  Acceleration: 10
   AttackDamage: 0
   AttackSpeed: 0
-  BulletPrefab: {fileID: 0}
-  MissileDamage: 0
-  MissileCooldown: 0
-  MissileAttackSpeed: 0
-  MissilePrefab: {fileID: 0}
+  BulletPrefab: {fileID: 5309018301895870835, guid: cfb6bf7876ff98a4f87383fd050b790a, type: 3}
+  Acceleration: 10
+  PassiveName: 
+  PassiveDescription: 

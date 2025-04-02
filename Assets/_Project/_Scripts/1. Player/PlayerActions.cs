@@ -2,6 +2,7 @@ using UnityEngine;
 using TriInspector;
 using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Manager.Player;
+using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core
 {
@@ -16,7 +17,7 @@ namespace GoodVillageGames.Game.Core
         private Vector2 _movementInput = Vector2.zero;
 
         void Awake()
-        {
+        {            
             PlayerStatsManager = GetComponentInChildren<PlayerStatsManager>();
             PlayerEventsManager = GetComponentInChildren<PlayerEventsManager>();
             _playerRb = GetComponent<Rigidbody2D>();

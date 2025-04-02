@@ -86,5 +86,14 @@ namespace GoodVillageGames.Game.Enums
             SETTINGS,
             GAME_OVER,
         }
+
+        public enum ProjectileStatsEnum
+        {
+            PROJECTILE_DAMAGE,
+            PROJECTILE_AMOUNT,
+            PROJECTILE_TRAVEL_SPEED,
+            PROJECTILE_LIFETIME,
+            PROJECTILE_EXPLOSION_RADIUS,
+        }
     }
 }

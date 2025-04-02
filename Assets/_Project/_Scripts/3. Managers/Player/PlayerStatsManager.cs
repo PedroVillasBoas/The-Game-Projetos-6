@@ -13,20 +13,7 @@ namespace GoodVillageGames.Game.Core.Manager
         public string PassiveName { get; set; }
         public string PassiveDescription  { get; set; }
 
-
-        [Title("Player Stats")]
-        public float Acceleration  { get; set; }
-        
-        [Title("Attack")]
-        public int AttackDamage  { get; set; }
-        public float AttackSpeed  { get; set; }
-        public GameObject BulletPrefab  { get; set; }
-
-        [Title("Missile")]
-        public int MissileDamage  { get; set; }
-        public float MissileCooldown  { get; set; }
-        public float MissileAttackSpeed  { get; set; }
-        public GameObject MissilePrefab  { get; set; }
+        Stats IStatsProvider.Stats => PlayerStats;
 
         protected override void Awake()
         {
@@ -41,15 +28,6 @@ namespace GoodVillageGames.Game.Core.Manager
 
             PassiveName = PlayerStats.PassiveName;
             PassiveDescription = PlayerStats.PassiveDescription;
-            Acceleration = PlayerStats.Acceleration;
-            AttackDamage = PlayerStats.AttackDamage;
-            AttackSpeed = PlayerStats.AttackSpeed;
-            BulletPrefab = PlayerStats.BulletPrefab;
-            MissileDamage = PlayerStats.MissileDamage;
-            MissileCooldown = PlayerStats.MissileCooldown;
-            MissileAttackSpeed = PlayerStats.MissileAttackSpeed;
-            MissilePrefab = PlayerStats.MissilePrefab;
-
         }
     }
 }

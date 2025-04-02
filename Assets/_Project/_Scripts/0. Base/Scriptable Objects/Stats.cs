@@ -14,5 +14,17 @@ namespace GoodVillageGames.Game.General
         [Title("Base Stats")]
         public int MaxHealth = 100;
         public float MaxSpeed = 20f;
+
+        [Title("Basic Attack")]
+        public int AttackDamage = 10;
+        public float AttackSpeed = 1f;
+        public GameObject BulletPrefab;
+
+        [Title("Movement")]
+        public float Acceleration = 10f;
+
+        // [Title("Projectile")]
+        // public BaseProjectile ProjectilePrefab;
+        // public BaseProjectile MissilePrefab;
     }
 }
