@@ -7,7 +7,8 @@
 # 🚀 Void Protocol
 
 **Sobreviva. Evolua. Salve a Galáxia.**  
-Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike espacial onde suas habilidades e upgrades estratégicos determinam a sobrevivência da humanidade! Enfrente hordas alienígenas em planetas com dificuldades progressivas, colete XP para melhorias poderosas e ajude-nos a desvendar um mistério científico: *Como a dificuldade dos jogos impacta a diversão dos jogadores?*
+Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike espacial onde suas habilidades e upgrades estratégicos determinam a sobrevivência da humanidade! Enfrente hordas alienígenas em planetas com dificuldades progressivas, colete XP para melhorias poderosas e ajude-nos a desvendar um mistério científico do mundo dos jogos: 
+*Como a dificuldade dos jogos impacta a diversão dos jogadores?*
 
 <div align="center">
   <img src="https://via.placeholder.com/800x400?text=Captura+de+Tela+do+Jogo" width="600" alt="Prévia do Jogo">
