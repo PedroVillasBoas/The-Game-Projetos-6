@@ -9,21 +9,11 @@ namespace GoodVillageGames.Game.General.UI.Buttons
 {
     public class MainMenuButton : MonoBehaviour, IButtonAction
     {
-        [SerializeField] private AnimationTransitionID _animationTransitionID;
-        [SerializeField] private SceneScriptableObject _scene;
-        [SerializeField] private SequenceActionType _sequenceActionType;
+        public SceneScriptableObject SceneNameSO { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-        [PropertyTooltip("Move or MoveBack")]
-        [SerializeField] private string _starsMovementType;
-
-        public AnimationTransitionID AnimationTransitionID { get => _animationTransitionID; set => _animationTransitionID = value; }
-        public SceneScriptableObject SceneSO { get => _scene; set => _scene = value; }
-        public SequenceActionType SequenceActionType { get => _sequenceActionType; set => _sequenceActionType = value; }
-
-        public void ButtomAction()
+        public void CallChangeScene()
         {
-            EventsManager.Instance.ButtonAskingAnimationEventTriggered(_animationTransitionID);
-            EventsManager.Instance.TriggerEvent(_starsMovementType);
+            throw new System.NotImplementedException();
         }
     }
 }

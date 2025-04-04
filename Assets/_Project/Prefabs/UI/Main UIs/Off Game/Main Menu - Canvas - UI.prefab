@@ -344,8 +344,8 @@ RectTransform:
   m_Children:
   - {fileID: 7034474834139871550}
   - {fileID: 5313006691009355774}
-  - {fileID: 1735999852001238523}
   - {fileID: 5274348290425793072}
+  - {fileID: 1735999852001238523}
   - {fileID: 971541982833311997}
   - {fileID: 4116007308072338686}
   m_Father: {fileID: 0}
@@ -716,6 +716,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 8582181355348251915}
     m_Modifications:
+    - target: {fileID: 1237367274394230358, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
       propertyPath: m_Pivot.x
       value: 0.5
@@ -806,6 +810,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4979749248731400819, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6662845397966489696, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
+      propertyPath: m_SortingLayer
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8403818615388926177, guid: 906d15f7a89fc314792762f4c958baa1, type: 3}
@@ -944,8 +952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _zoomConfigs:
-  - <Animation>k__BackingField: 2
-    <AnimationTransitionID>k__BackingField: 2
+  - <AnimationTransitionID>k__BackingField: 2
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 1
     <Duration>k__BackingField: 1
@@ -2521,15 +2528,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _zoomConfigs:
-  - <Animation>k__BackingField: 2
-    <AnimationTransitionID>k__BackingField: 2
+  - <AnimationTransitionID>k__BackingField: 2
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 1
     <Duration>k__BackingField: 1
     <ComponentToAnimate>k__BackingField: {fileID: 2779439740653261418}
     <FinalSize>k__BackingField: {x: 600, y: 600}
-  - <Animation>k__BackingField: 3
-    <AnimationTransitionID>k__BackingField: 3
+  - <AnimationTransitionID>k__BackingField: 3
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 2
@@ -2548,8 +2553,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _moveConfigs:
-  - <Animation>k__BackingField: 3
-    <AnimationTransitionID>k__BackingField: 3
+  - <AnimationTransitionID>k__BackingField: 3
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 2
@@ -2573,8 +2577,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _hologramConfigs:
-  - <Animation>k__BackingField: 2
-    <AnimationTransitionID>k__BackingField: 2
+  - <AnimationTransitionID>k__BackingField: 2
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 0.05
@@ -2588,8 +2591,7 @@ MonoBehaviour:
     <ComponentToAnimate2>k__BackingField: {fileID: 6737790119237755846}
     <TargetAlpha>k__BackingField: 0
     <BlinkLoops>k__BackingField: 10
-  - <Animation>k__BackingField: 3
-    <AnimationTransitionID>k__BackingField: 3
+  - <AnimationTransitionID>k__BackingField: 3
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 0.05
@@ -2603,8 +2605,7 @@ MonoBehaviour:
     <ComponentToAnimate2>k__BackingField: {fileID: 6737790119237755846}
     <TargetAlpha>k__BackingField: 0
     <BlinkLoops>k__BackingField: 1
-  - <Animation>k__BackingField: 5
-    <AnimationTransitionID>k__BackingField: 5
+  - <AnimationTransitionID>k__BackingField: 5
     <UIAnimationType>k__BackingField: 1
     <InsertPosition>k__BackingField: 0
     <Duration>k__BackingField: 0.05

@@ -30,14 +30,14 @@ namespace GoodVillageGames.Game.Core.Manager
             }
         }
 
-        void ChangeScene(SceneScriptableObject _sceneSO)
+        public void ChangeScene(SceneScriptableObject _sceneSO)
         {
             if (_sceneSO != null)
             {
-                _lastSceneLoaded = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;;
+                _lastSceneLoaded = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
                 _sceneToLoad = _sceneSO;
                 DOTween.KillAll();
-                UnityEngine.SceneManagement.SceneManager.LoadScene(_loadingScene.Scene, LoadSceneMode.Single);
+                UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad.Scene, LoadSceneMode.Single);
             }
             else
                 Debug.LogError($"Trying to load Scene: {_sceneSO.Scene}");

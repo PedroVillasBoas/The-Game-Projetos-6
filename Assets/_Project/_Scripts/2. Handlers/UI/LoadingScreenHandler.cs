@@ -46,26 +46,13 @@ namespace GoodVillageGames.Game.Handlers.UI
                 yield break;
             }
 
-            Core.Manager.SceneManager sceneManager = FindSceneManager(targetScene);
-
-            if (sceneManager != null)
+            if (op.isDone)
             {
-                yield return new WaitUntil(() => sceneManager.IsInitialized);
                 loadingbarUI.SetActive(false);
                 promptUI.SetActive(true);
             }
             else
-                Debug.LogError("SceneManager not found in loaded scene!");
-        }
-
-        Core.Manager.SceneManager FindSceneManager(Scene scene)
-        {
-            foreach (GameObject rootObject in scene.GetRootGameObjects())
-            {
-                Core.Manager.SceneManager manager = rootObject.GetComponent<Core.Manager.SceneManager>();
-                if (manager != null) return manager;
-            }
-            return null;
+                Debug.LogError("Async Operation did something wrong!");
         }
 
         public void OnPromptClicked()
