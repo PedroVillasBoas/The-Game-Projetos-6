@@ -87,7 +87,7 @@ Nenhum dado pessoal (como nomes ou IPs) é coletado.
 | :---: |
 
 ### Licença
-[MIT License](LICENSE.md) - veja o arquivo completo.
+[MIT License](LICENSE) - veja o arquivo completo.
 
 Projeto de Ciência da Computação da CESAR School.
 © 2025 - Good Village Games.
