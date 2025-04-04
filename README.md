@@ -36,7 +36,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 
 ### Build no Unity (Para Desenvolvedores)
 **Pré-requisitos**:
-- Unity 2022.3+ (com Unity Hub)
+- Unity 6
 
 **Passos**:
 ```bash
