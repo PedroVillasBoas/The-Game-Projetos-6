@@ -28,7 +28,22 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         public void TurnOffMoveStars()
         {
-            EventsManager.Instance.TriggerEvent("Strop");
+            EventsManager.Instance.TriggerEvent("Stop");
+        }
+
+        public void StartGame()
+        {
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.IN_GAME);
+        }
+
+        public void PauseGame()
+        {
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.PAUSED);
+        }
+
+        public void UpgradeTime()
+        {
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.UPGRADE_SCREEN);
         }
     }
 }

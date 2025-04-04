@@ -32,17 +32,6 @@ namespace GoodVillageGames.Game.Core.Manager
             EventsManager.Instance.TriggerEvent("Stop"); // UI Particles to Stop Emmiting
             _uiState = UIState.NORMAL_UI;
             EventsManager.Instance.AnimationTriggerEvent(_uiState);
-            EventsManager.Instance.PlayingAnimationEventTriggered(_animationTransitionID);
-        }
-
-        void OnEnable()
-        {
-            EventsManager.Instance.OnAnimationAskedEventTriggered += OnAnimationAsked;
-        }
-
-        void OnDisable()
-        {
-            EventsManager.Instance.OnAnimationAskedEventTriggered -= OnAnimationAsked;
         }
 
     }

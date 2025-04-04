@@ -25,7 +25,6 @@ namespace GoodVillageGames.Game.General.UI.Animations
                         break;
                 
                 case "Stop":
-                    if (_starsParticleSystem.isPlaying)
                         _starsParticleSystem.Stop();
                         break;
                 

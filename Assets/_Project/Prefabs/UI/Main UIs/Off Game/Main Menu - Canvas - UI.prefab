@@ -342,12 +342,12 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 4116007308072338686}
   - {fileID: 7034474834139871550}
   - {fileID: 5313006691009355774}
   - {fileID: 5274348290425793072}
   - {fileID: 1735999852001238523}
   - {fileID: 971541982833311997}
-  - {fileID: 4116007308072338686}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -2704,5 +2704,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2e2a881b577b4dd4e9e2488d72da2066, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _animationTransitionID: 3
-  _starsMovementType: Move
+  _sceneName: {fileID: 0}

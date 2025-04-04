@@ -14,17 +14,6 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         private Dictionary<AnimationTransitionID,List<GameObject>> _componentsToToggle = new();
 
-
-        void OnEnable()
-        {
-            EventsManager.Instance.OnPlayingAnimationEventTriggered += ToggleChildren;
-        }
-
-        void OnDisable()
-        {
-            EventsManager.Instance.OnPlayingAnimationEventTriggered -= ToggleChildren;
-        }
-
         void Start()
         {
             FillTransitionComponentsToToggle();
@@ -71,7 +60,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 
                 if (config.AskAnimationDefault && config.DefaultAnimationToPlay != AnimationTransitionID.NONE)
                 {
-                    EventsManager.Instance.ButtonAskingAnimationEventTriggered(config.DefaultAnimationToPlay);
+                    Debug.LogWarning($"Should not be using {gameObject.name} anymore.");
                 }
             }
         }

@@ -30,12 +30,10 @@ namespace GoodVillageGames.Game.Core.Manager
         void OnEnable()
         {
             UnityEngine.SceneManagement.SceneManager.sceneUnloaded += PlayAnimationOnSceneShow;
-            EventsManager.Instance.OnButtonAskingAnimationEventTriggered += PlayThisAnimation;
         }
 
         void OnDisable()
         {
-            EventsManager.Instance.OnButtonAskingAnimationEventTriggered -= PlayThisAnimation;
             UnityEngine.SceneManagement.SceneManager.sceneUnloaded -= PlayAnimationOnSceneShow;
         }
 
@@ -231,7 +229,7 @@ namespace GoodVillageGames.Game.Core.Manager
         private void CheckSceneInDictionary(AnimationTransitionID _animationTransitionID, Tween value)
         {
             if (_transitionsOnSceneDict.TryGetValue(_animationTransitionID, out SceneScriptableObject scene))
-                EventsManager.Instance.AnimationAskedEventTriggered((Sequence)value, _animationTransitionID, scene);
+                Debug.LogError($"Should be using the {gameObject.name} anymore.");
             else
                 Debug.LogError($"Key '{_animationTransitionID}' exists but has no value (null) in Transitions Dictonary.");
         }
