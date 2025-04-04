@@ -17,6 +17,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/_Project/_Scenes/Scene-Loading.unity
     guid: 93d97ec79cadece419906554b2a497d4
+  - enabled: 1
+    path: Assets/_Project/_Scenes/Scene-GameOver.unity
+    guid: 78ffb78dd1980024f842773b3a7be393
   m_configObjects:
     com.unity.addressableassets: {fileID: 11400000, guid: e4e76e036a5a03249abb8e021fa6bca2, type: 2}
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}

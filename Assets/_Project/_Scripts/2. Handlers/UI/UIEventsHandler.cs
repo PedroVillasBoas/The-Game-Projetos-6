@@ -45,5 +45,20 @@ namespace GoodVillageGames.Game.Handlers.UI
         {
             EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.UPGRADE_SCREEN);
         }
+
+        public void OpenQuitGamePopUp()
+        {
+            EventsManager.Instance.TriggerEvent("OpenGamePopUp");
+        }
+
+        public void QuitGamePopUp()
+        {
+            EventsManager.Instance.TriggerEvent("QuitGamePopUp");
+        }
+
+        public void CloseGamePopUp()
+        {
+            EventsManager.Instance.TriggerEvent("CloseGamePopUp");
+        }
     }
 }
