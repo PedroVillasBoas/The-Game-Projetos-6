@@ -84,8 +84,9 @@ Nenhum dado pessoal (como nomes ou IPs) é coletado.
 ---
 
 ## Equipe
-| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/47667167?v=4" width=115><br><sub>Pedro Villas Boas</sub>](https://github.com/PedroVillasBoas) |
-| :---: |
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/47667167?v=4" width=115><br><sub>Pedro Vilas Bôas</sub>](https://github.com/PedroVillasBoas) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/107653834?v=4" width=115><br><sub>Bruna Carvalho</sub>](https://github.com/brunacarvalho202)  | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/116602650?v=4" width=115><br><sub>Gislaine Reis</sub>](https://github.com/lainereis2002) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/75703772?v=4" width=115><br><sub>Guilherme Oliveira</sub>](https://github.com/Juillerms) |  
+| :---: | :---: | :---: | :---: |
+| [<img loading="lazy" src="https://avatars.githubusercontent.com/u/116356964?v=4" width=115><br><sub>Mariane Fontes</sub>](https://github.com/Dricalucia) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/39159963?v=4" width=115><br><sub>Francisco Luz</sub>](https://github.com/fantonioluz)  | [<img loading="lazy" src="https://avatars.githubusercontent.com/u/112591325?v=4" width=115><br><sub>Thiago de Araújo</sub>](https://github.com/tharaujo17) |  [<img loading="lazy" src="https://avatars.githubusercontent.com/u/88670170?v=4" width=115><br><sub>Lorena Seabra</sub>](https://github.com/lorenaaseabra)  |   | 
 
 ### Licença
 [MIT License](LICENSE) - veja o arquivo completo.
