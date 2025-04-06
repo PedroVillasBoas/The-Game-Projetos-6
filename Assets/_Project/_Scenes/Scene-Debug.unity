@@ -129,7 +129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1599086}
   m_Layer: 0
-  m_Name: PoolContainer
+  m_Name: Player - Projectile - PoolContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -635,6 +635,7 @@ GameObject:
   - component: {fileID: 310318772}
   - component: {fileID: 310318774}
   - component: {fileID: 310318773}
+  - component: {fileID: 310318775}
   m_Layer: 5
   m_Name: HP - Fill - Image
   m_TagString: Untagged
@@ -699,6 +700,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 310318771}
   m_CullTransparentMesh: 1
+--- !u!114 &310318775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 310318771}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1aa1693832421784cbe26527e51442be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _playerHealthHandler: {fileID: 1851115391}
 --- !u!1 &312152411
 GameObject:
   m_ObjectHideFlags: 0
@@ -3246,7 +3260,7 @@ MonoBehaviour:
   - poolId: 1
     prefab: {fileID: 2253066425081621800, guid: 978ac342e4d36f641a6111c70da144d5, type: 3}
     config: {fileID: 11400000, guid: 4d160e730a114ce4b9d2225cab4b3829, type: 2}
-  poolContainer: {fileID: 1599086}
+    poolContainer: {fileID: 1599085}
 --- !u!4 &1055098067
 Transform:
   m_ObjectHideFlags: 0
@@ -3530,6 +3544,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 408295286}
+  - {fileID: 1851115390}
   m_Father: {fileID: 1823016962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1166575309
@@ -15215,6 +15230,50 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 3030411372683659598, guid: 463fe9b5fb722e64cb8c77c971184842, type: 3}
   m_PrefabInstance: {fileID: 1839694775}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1851115389
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1851115390}
+  - component: {fileID: 1851115391}
+  m_Layer: 0
+  m_Name: HealthHandler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1851115390
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851115389}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1159807790}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1851115391
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1851115389}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7845a71c77b1af840be6de10530b0529, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1880877719
 GameObject:
   m_ObjectHideFlags: 0
