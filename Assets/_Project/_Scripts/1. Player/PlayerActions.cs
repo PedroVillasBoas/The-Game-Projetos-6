@@ -40,8 +40,7 @@ namespace GoodVillageGames.Game.Core
 
         public void HandleAttack(bool value)
         {
-            // Here I'll just implement the check logic -> pressing the button
-            // Later I'll implement the Coroutine to handle the pew pew pew in auto/single mode based on the attackspeed
+            PlayerEventsManager.PlayerBulletEvent(value);
         }
         public void HandleBoost(bool value)
         {

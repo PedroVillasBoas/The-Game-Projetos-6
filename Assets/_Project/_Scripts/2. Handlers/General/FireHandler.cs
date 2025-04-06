@@ -3,7 +3,9 @@ using UnityEngine;
 using TriInspector;
 using System.Collections;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Manager.Player;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -12,8 +14,8 @@ namespace GoodVillageGames.Game.Handlers
         [Title("Components")]
         [SerializeField] private Transform _firepoint;
 
-        [Title("Projectile")]
-        [SerializeField] private GameObject _projectilePrefab;
+        [Title("Projectile Pool")]
+        [SerializeField] private PoolID _poolID;
 
         private IAimHandler _aimHandler;
         private ReloadHandler _reloadHandler;
@@ -23,7 +25,7 @@ namespace GoodVillageGames.Game.Handlers
         public IAimHandler AimHandler { get => _aimHandler; set => _aimHandler = value; }
         public ReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
         public Transform Firepoint { get => _firepoint; set => _firepoint = value; }
-        public GameObject ProjectilePrefab { get => _projectilePrefab; set => _projectilePrefab = value; }
+        public PoolID ProjectilePoolID { get => _poolID; set => _poolID = value; }
         public Coroutine FireCoroutine { get => _fireCoroutine; set => _fireCoroutine = value; }
 
         void Awake()
@@ -84,25 +86,19 @@ namespace GoodVillageGames.Game.Handlers
         {
             if (!_reloadHandler.IsReloading)
             {
-                //Fire(_projectilePrefab);
-                StartCoroutine(_reloadHandler.Reload());
+                Fire(_poolID);
             }
         }
 
-        // public void Fire(GameObject prefab)
-        // {
-        //     GameObject projectile = ProjectilePoolManager.Instance.GetPooledObject(prefab);
-        //     if (projectile != null)
-        //     {
-        //         projectile.transform.position = _firepoint.position;
-        //         projectile.transform.rotation = _firepoint.rotation;
-        //         projectile.SetActive(true);
-
-        //         if (projectile.TryGetComponent<Projectile>(out var projectileComponent))
-        //         {
-        //             projectileComponent.Initialize(new StatsHolder(), Vector2.zero); // THIS IS WRONG!!!!
-        //         }
-        //     }
-        // }
+        public void Fire(PoolID poolId)
+        {
+            // Getting the pooled projectile from the PoolManager
+            GameObject projectile = PoolManager.Instance.GetPooledObject(poolId);
+            if (projectile != null)
+            {
+                projectile.transform.SetPositionAndRotation(_firepoint.position, _firepoint.rotation);
+                projectile.SetActive(true);
+            }
+        }
     }
 }

@@ -95,5 +95,15 @@ namespace GoodVillageGames.Game.Enums
             PROJECTILE_LIFETIME,
             PROJECTILE_EXPLOSION_RADIUS,
         }
+
+        public enum PoolID
+        {
+            NONE,
+            PLAYER_PROJECTILE,
+            PLAYER_MISSILE,
+            ENEMY_PROJECTILE,
+            ENEMY_PREFAB,
+            ENEMY_MISSILE,
+        }
     }
 }

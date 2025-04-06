@@ -1,5 +1,6 @@
 using UnityEngine;
 using GoodVillageGames.Game.Handlers;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Interfaces
 {
@@ -8,7 +9,7 @@ namespace GoodVillageGames.Game.Interfaces
         IAimHandler AimHandler { get; set; }
         ReloadHandler ReloadHandler { get; set; }
         Transform Firepoint { get; set; }
-        GameObject ProjectilePrefab { get; set; }
+        PoolID ProjectilePoolID { get; set; }
         Coroutine FireCoroutine { get; set; }
         void FireProjectile();
     }

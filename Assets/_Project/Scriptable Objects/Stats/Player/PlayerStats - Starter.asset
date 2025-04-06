@@ -17,7 +17,7 @@ MonoBehaviour:
   MaxHealth: 100
   MaxSpeed: 500
   AttackDamage: 0
-  AttackSpeed: 0
+  AttackSpeed: 1
   BulletPrefab: {fileID: 5309018301895870835, guid: cfb6bf7876ff98a4f87383fd050b790a, type: 3}
   Acceleration: 10
   PassiveName: 
