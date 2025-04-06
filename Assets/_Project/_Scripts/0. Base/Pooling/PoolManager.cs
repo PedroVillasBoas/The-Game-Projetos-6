@@ -13,9 +13,8 @@ namespace GoodVillageGames.Game.Core.Manager
 
         [Title("Pool Setup")]
         [SerializeField] private List<PoolEntry> poolEntries = new();
-        [SerializeField] private Transform poolContainer;
 
-        private Dictionary<PoolID, ObjectPool> pools = new();
+        private readonly Dictionary<PoolID, ObjectPool> pools = new();
 
         void Awake()
         {
@@ -26,11 +25,7 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             Instance = this;
 
-            if (poolContainer == null)
-            {
-                poolContainer = new GameObject("PoolContainer").transform;
-                poolContainer.SetParent(transform);
-            }
+
 
             // Creating an ObjectPool for each PoolEntry
             foreach (var entry in poolEntries)
@@ -45,7 +40,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 bool autoExpand = entry.config != null ? entry.config.AutoExpand : true;
                 int expandAmount = entry.config != null ? entry.config.ExpandAmount : 5;
 
-                ObjectPool pool = new ObjectPool(entry.poolId, entry.prefab, poolSize, poolContainer, autoExpand, expandAmount);
+                ObjectPool pool = new(entry.poolId, entry.prefab, poolSize, entry.poolContainer.transform, autoExpand, expandAmount);
                 pools.Add(entry.poolId, pool);
             }
         }

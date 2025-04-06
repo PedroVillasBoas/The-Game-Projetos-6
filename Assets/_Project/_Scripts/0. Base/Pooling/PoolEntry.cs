@@ -10,5 +10,6 @@ namespace GoodVillageGames.Game.Core.Pooling
         public PoolID poolId;
         public GameObject prefab;
         public PoolConfig config;
+        public GameObject poolContainer;
     }
 }
