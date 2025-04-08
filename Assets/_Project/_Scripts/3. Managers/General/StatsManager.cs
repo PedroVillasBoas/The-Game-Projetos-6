@@ -12,7 +12,6 @@ namespace GoodVillageGames.Game.Core.Manager
         public float MaxSpeed { get; set; }
         public int AttackDamage { get; set; }
         public float AttackSpeed { get; set; }
-        public GameObject BulletPrefab { get; set; }
         public float Acceleration { get; set; }
 
 
@@ -22,7 +21,6 @@ namespace GoodVillageGames.Game.Core.Manager
             MaxSpeed = Stats.MaxSpeed;
             AttackDamage = Stats.AttackDamage;
             AttackSpeed = Stats.AttackSpeed;
-            BulletPrefab = Stats.BulletPrefab;
             Acceleration = Stats.Acceleration;
         }
     }
