@@ -18,12 +18,12 @@ namespace GoodVillageGames.Game.Handlers
         [SerializeField] private PoolID _poolID;
 
         private IAimHandler _aimHandler;
-        private ReloadHandler _reloadHandler;
+        private IReloadHandler _reloadHandler;
         private bool _inputValue = false;
         private Coroutine _fireCoroutine;
 
         public IAimHandler AimHandler { get => _aimHandler; set => _aimHandler = value; }
-        public ReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
+        public IReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
         public Transform Firepoint { get => _firepoint; set => _firepoint = value; }
         public PoolID ProjectilePoolID { get => _poolID; set => _poolID = value; }
         public Coroutine FireCoroutine { get => _fireCoroutine; set => _fireCoroutine = value; }
@@ -36,10 +36,8 @@ namespace GoodVillageGames.Game.Handlers
         void OnEnable()
         {
             var entityEventsProvider = transform.root.GetComponentInChildren<PlayerEventsManager>();
-            if (entityEventsProvider != null)
-            {
-                entityEventsProvider.OnPlayerBulletEventTriggered.AddListener(UpdateFireInput);
-            }
+            
+            entityEventsProvider.OnPlayerBulletEventTriggered.AddListener(UpdateFireInput);
         }
 
         void OnDisable()

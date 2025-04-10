@@ -1,5 +1,6 @@
 using UnityEngine;
 using UnityEngine.Events;
+using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core.Manager.Player
 {
@@ -13,7 +14,6 @@ namespace GoodVillageGames.Game.Core.Manager.Player
             // Projectiles
         public UnityEvent<bool> OnPlayerBulletEventTriggered;
         public UnityEvent<bool> OnPlayerMissileEventTriggered;
-
 
         public void PlayerMovingEvent(Vector2 value)
         {

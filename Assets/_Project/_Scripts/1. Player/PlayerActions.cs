@@ -23,11 +23,6 @@ namespace GoodVillageGames.Game.Core
             _playerRb = GetComponent<Rigidbody2D>();
         }
 
-        void OnEnable()
-        {
-            
-        }
-
         void FixedUpdate()
         {
             ProcessAcceleration();
@@ -52,6 +47,7 @@ namespace GoodVillageGames.Game.Core
         {
             // Here I'll just implement the check logic -> see if has missile avaliable
             // Later I'll implement the Coroutine to handle the pew BOOM pew BOOM pew BOOM in auto/single mode based on the missile attack speed
+            PlayerEventsManager.PlayerMissileEvent(value);
         }
 
         void ProcessAcceleration()

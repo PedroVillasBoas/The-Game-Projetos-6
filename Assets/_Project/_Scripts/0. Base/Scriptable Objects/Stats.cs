@@ -21,9 +21,5 @@ namespace GoodVillageGames.Game.General
 
         [Title("Movement")]
         public float Acceleration = 10f;
-
-        // [Title("Projectile")]
-        // public BaseProjectile ProjectilePrefab;
-        // public BaseProjectile MissilePrefab;
     }
 }

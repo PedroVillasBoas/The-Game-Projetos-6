@@ -9,10 +9,6 @@ namespace GoodVillageGames.Game.Core.Manager
     {
         public PlayerStats PlayerStats;
 
-        [Title("Passive")]
-        public string PassiveName { get; set; }
-        public string PassiveDescription  { get; set; }
-
         Stats IStatsProvider.Stats => PlayerStats;
 
         protected override void Awake()
@@ -25,9 +21,6 @@ namespace GoodVillageGames.Game.Core.Manager
                 Debug.LogError("PlayerStats Scriptable Object was not Assigned!");
                 return;
             }
-
-            PassiveName = PlayerStats.PassiveName;
-            PassiveDescription = PlayerStats.PassiveDescription;
         }
     }
 }

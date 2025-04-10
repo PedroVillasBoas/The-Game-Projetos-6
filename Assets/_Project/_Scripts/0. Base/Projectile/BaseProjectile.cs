@@ -1,34 +1,35 @@
 using UnityEngine;
+using TriInspector;
 using GoodVillageGames.Game.Core.Pooling;
 
 namespace GoodVillageGames.Game.Core.Projectiles
 {
     public class BaseProjectile : MonoBehaviour
     {
-        [Header("Projectile Settings")]
-        [SerializeField] private float speed = 10f;
-        [SerializeField] private float lifeTime = 5f;
+        [Title("Projectile Settings")]
+        [SerializeField] protected float speed = 10f;
+        [SerializeField] protected float lifeTime = 5f;
 
         private Rigidbody2D _projectileRb;
 
-        private float _timer;
-        private PooledObject _pooledObject;
+        protected float countdown;
+        protected PooledObject pooledObject;
 
         protected virtual void Awake()
         {
             _projectileRb = GetComponent<Rigidbody2D>();
-            _pooledObject = GetComponent<PooledObject>();
-            if (_pooledObject == null)
+            pooledObject = GetComponent<PooledObject>();
+            if (pooledObject == null)
             {
                 Debug.LogWarning("PooledObject component not found on BaseProjectile. Adding one automatically.");
-                _pooledObject = gameObject.AddComponent<PooledObject>();
+                pooledObject = gameObject.AddComponent<PooledObject>();
             }
         }
 
         protected virtual void OnEnable()
         {
             // Reset the lifetime timer when projectile is (re)enabled
-            _timer = lifeTime;
+            countdown = lifeTime;
         }
 
         protected virtual void Update()
@@ -36,8 +37,8 @@ namespace GoodVillageGames.Game.Core.Projectiles
             LaunchProjectile();
 
             // Countdown the life timer.
-            _timer -= Time.deltaTime;
-            if (_timer <= 0f)
+            countdown -= Time.deltaTime;
+            if (countdown <= 0f)
             {
                 ReturnToPool();
             }
@@ -50,12 +51,12 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         public virtual void ReturnToPool()
         {
-            _pooledObject.ReturnToPool();
+            pooledObject.ReturnToPool();
         }
 
         protected virtual void OnCollisionEnter(Collision collision)
         {
-            // I'll add the collision stuff later
+            // I'll add the collision and damage stuff later
             ReturnToPool();
         }
     }
