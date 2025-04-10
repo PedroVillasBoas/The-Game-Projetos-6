@@ -105,5 +105,19 @@ namespace GoodVillageGames.Game.Enums
             ENEMY_PREFAB,
             ENEMY_MISSILE,
         }
+
+        public enum StatType
+        {
+            MaxHealth,
+            MaxSpeed,
+            MaxDefense,
+            BaseAttackDamage,
+            AttackSpeed,
+            MaxBoostTime,
+            MaxBoostSpeed,
+            BaseMissileDamage,
+            BaseMissileCooldown,
+            MaxMissileAmmo,
+        }
     }
 }
