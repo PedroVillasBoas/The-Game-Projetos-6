@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 
-namespace GoodVillageGames.Game.Core.Stats
+namespace GoodVillageGames.Game.Core.Attributes
 {
     public class StatsMediator
     {

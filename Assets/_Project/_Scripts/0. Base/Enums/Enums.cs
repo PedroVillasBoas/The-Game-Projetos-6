@@ -108,6 +108,7 @@ namespace GoodVillageGames.Game.Enums
 
         public enum StatType
         {
+            None,
             MaxHealth,
             MaxSpeed,
             MaxDefense,
@@ -118,6 +119,14 @@ namespace GoodVillageGames.Game.Enums
             BaseMissileDamage,
             BaseMissileCooldown,
             MaxMissileAmmo,
+            Acceleration,
+        }
+
+        public enum OperatorType
+        {
+            None,
+            Add,
+            Multiply,
         }
     }
 }

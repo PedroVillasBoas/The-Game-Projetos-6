@@ -1,7 +1,7 @@
 using System;
 using static GoodVillageGames.Game.Enums.Enums;
 
-namespace GoodVillageGames.Game.Core.Stats.Modifiers
+namespace GoodVillageGames.Game.Core.Attributes.Modifiers
 {
     public class BasicStatModifier : StatModifier
     {

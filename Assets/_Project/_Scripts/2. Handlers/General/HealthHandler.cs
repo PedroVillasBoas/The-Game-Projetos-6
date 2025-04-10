@@ -2,13 +2,15 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Attributes;
+using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Handlers
 {
     public class HealthHandler : MonoBehaviour, IDamageable
     {
         private float _currentHealth;
-        private IStatsProvider _statsProvider;
+        private Stats _entityStats;
 
         public event Action OnDeath;
         public event Action<float> OnHealthChanged;
@@ -16,8 +18,8 @@ namespace GoodVillageGames.Game.Handlers
 
         private void Awake()
         {
-            _statsProvider = transform.root.GetComponentInChildren<IStatsProvider>();
-            _currentHealth = _statsProvider.Stats.MaxHealth;
+            _entityStats = transform.root.GetComponent<Entity>().Stats;
+            _currentHealth = _entityStats.MaxHealth;
         }
 
         private void Start()

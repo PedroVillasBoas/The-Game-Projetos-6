@@ -1,7 +1,8 @@
 using UnityEngine;
 using System.Collections;
-using GoodVillageGames.Game.General;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Attributes;
+using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -18,8 +19,7 @@ namespace GoodVillageGames.Game.Handlers
 
         void Start()
         {
-            var statsProvider = transform.root.GetComponentInChildren<IStatsProvider>();
-            if (statsProvider != null)
+            if (transform.root.TryGetComponent<Entity>(out var statsProvider))
             {
                 _entityStats = statsProvider.Stats;
                 _currentAttackSpeed = _entityStats.AttackSpeed;

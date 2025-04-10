@@ -1,15 +1,13 @@
 using UnityEngine;
 using TriInspector;
-using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Manager.Player;
-using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Core
 {
-    public class PlayerActions : MonoBehaviour
+    public class PlayerActions : Entity
     {
         // Public
-        [HideInInspector] public PlayerStatsManager PlayerStatsManager;
         [HideInInspector] public PlayerEventsManager PlayerEventsManager;
 
         // Local
@@ -18,7 +16,6 @@ namespace GoodVillageGames.Game.Core
 
         void Awake()
         {            
-            PlayerStatsManager = GetComponentInChildren<PlayerStatsManager>();
             PlayerEventsManager = GetComponentInChildren<PlayerEventsManager>();
             _playerRb = GetComponent<Rigidbody2D>();
         }
@@ -55,16 +52,16 @@ namespace GoodVillageGames.Game.Core
             Vector2 desiredVelocity = Vector2.zero;
 
             if (_movementInput.y > 0)
-                desiredVelocity += (Vector2)transform.up * PlayerStatsManager.MaxSpeed;
+                desiredVelocity += (Vector2)transform.up * Stats.MaxSpeed;
             else if (_movementInput.y < 0)
-                desiredVelocity -= (Vector2)transform.up * PlayerStatsManager.MaxSpeed;
+                desiredVelocity -= (Vector2)transform.up * Stats.MaxSpeed;
 
-            desiredVelocity += _movementInput.x * PlayerStatsManager.MaxSpeed * (Vector2)transform.right;
+            desiredVelocity += _movementInput.x * Stats.MaxSpeed * (Vector2)transform.right;
 
             _playerRb.linearVelocity = Vector2.MoveTowards(
                 _playerRb.linearVelocity,
                 desiredVelocity,
-                PlayerStatsManager.Acceleration * Time.fixedDeltaTime
+                Stats.Acceleration * Time.fixedDeltaTime
             );
 
             PlayerEventsManager.PlayerMovingEvent(_playerRb.linearVelocity);

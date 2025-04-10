@@ -2,7 +2,7 @@ using System;
 using GoodVillageGames.Game.General;
 using static GoodVillageGames.Game.Enums.Enums;
 
-namespace GoodVillageGames.Game.Core.Stats
+namespace GoodVillageGames.Game.Core.Attributes
 {
     public class Stats 
     {
@@ -31,6 +31,14 @@ namespace GoodVillageGames.Game.Core.Stats
         {
             get {
                 var q = new Query(StatType.MaxHealth, baseStats.MaxDefense);
+                mediator.PerformQuery(this, q);
+                return q.Value;
+            }
+        }
+        public float Acceleration 
+        {
+            get {
+                var q = new Query(StatType.MaxHealth, baseStats.Acceleration);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }

@@ -1,6 +1,6 @@
 using static GoodVillageGames.Game.Enums.Enums;
 
-namespace GoodVillageGames.Game.Core.Stats
+namespace GoodVillageGames.Game.Core.Attributes
 {
     public class Query
     {

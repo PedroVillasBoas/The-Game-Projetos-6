@@ -9,16 +9,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b47aba66152711f428176eb244e3e4f9, type: 3}
-  m_Name: PlayerStats - Starter
+  m_Script: {fileID: 11500000, guid: 6031012b18ea61b44980126caad31f46, type: 3}
+  m_Name: PlayerBaseStats - Starter
   m_EditorClassIdentifier: 
-  Name: Name
+  Name: U.S.S. Enterprise
   EntityPrefab: {fileID: 0}
   MaxHealth: 100
-  MaxSpeed: 500
-  AttackDamage: 0
-  AttackSpeed: 1
-  BulletPrefab: {fileID: 5309018301895870835, guid: cfb6bf7876ff98a4f87383fd050b790a, type: 3}
+  MaxSpeed: 20
+  MaxDefense: 20
   Acceleration: 10
-  PassiveName: 
-  PassiveDescription: 
+  BaseAttackDamage: 5
+  AttackSpeed: 1
+  MaxBoostTime: 3
+  MaxBoostSpeed: 30
+  BaseMissileDamage: 10
+  BaseMissileCooldown: 10
+  MaxMissileAmmo: 3

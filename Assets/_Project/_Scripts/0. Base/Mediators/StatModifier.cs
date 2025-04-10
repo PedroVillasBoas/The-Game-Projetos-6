@@ -1,7 +1,7 @@
 using System;
 using GoodVillageGames.Game.Core.Util.Timer;
 
-namespace GoodVillageGames.Game.Core.Stats
+namespace GoodVillageGames.Game.Core.Attributes
 {
     public abstract class StatModifier : IDisposable
     {
