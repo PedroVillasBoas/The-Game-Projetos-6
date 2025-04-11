@@ -16,10 +16,11 @@ namespace GoodVillageGames.Game.Core.Pickup
             }
         }
 
-        public void OnTriggerEnter2D(Collider2D collision)
+        public void OnTriggerEnter2D(Collider2D other)
         {
-            collision.GetComponent<IVisitable>()?.Accept(this);
+            other.GetComponent<IVisitable>()?.Accept(this);
             Destroy(gameObject);
         }
+
     }
 }

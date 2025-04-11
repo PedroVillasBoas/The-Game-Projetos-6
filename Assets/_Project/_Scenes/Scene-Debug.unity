@@ -722,7 +722,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312820810}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Aim
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1852,7 +1852,7 @@ GameObject:
   - component: {fileID: 408295286}
   - component: {fileID: 408295288}
   - component: {fileID: 408295287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireReload - Projectile - Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2056,7 +2056,7 @@ GameObject:
   m_Component:
   - component: {fileID: 516378362}
   - component: {fileID: 516378363}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: PlayerEventsManager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2387,7 +2387,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 558563416}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2494,7 +2494,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 607006723}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Managers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3379,7 +3379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1159807790}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Handlers
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3414,7 +3414,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1174511635}
   - component: {fileID: 1174511636}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Skin
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3577,7 +3577,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1250650318}
   - component: {fileID: 1250650319}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Starter - Thruster - VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3624,7 +3624,7 @@ GameObject:
   - component: {fileID: 1375838373}
   - component: {fileID: 1375838375}
   - component: {fileID: 1375838374}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Right
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -8825,7 +8825,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1496843695}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Visuals
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -9319,7 +9319,7 @@ GameObject:
   - component: {fileID: 1586880371}
   - component: {fileID: 1586880373}
   - component: {fileID: 1586880372}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Left
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14453,7 +14453,8 @@ GameObject:
   - component: {fileID: 1823016964}
   - component: {fileID: 1823016963}
   - component: {fileID: 1823016965}
-  m_Layer: 0
+  - component: {fileID: 1823016966}
+  m_Layer: 6
   m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
@@ -14531,6 +14532,43 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc717764f20fd9459254119bfb4f722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!70 &1823016966
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1823016961}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: 0}
+  m_Size: {x: 0.5, y: 1}
+  m_Direction: 0
 --- !u!1 &1832007816
 GameObject:
   m_ObjectHideFlags: 0
@@ -14722,7 +14760,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1851115390}
   - component: {fileID: 1851115391}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: HealthHandler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -14989,7 +15027,7 @@ GameObject:
   - component: {fileID: 1890559261}
   - component: {fileID: 1890559263}
   - component: {fileID: 1890559262}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FireReload - Missile - Handler
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -15261,7 +15299,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2032888575}
   - component: {fileID: 2032888576}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: FirePoint
   m_TagString: FirePoint
   m_Icon: {fileID: 0}

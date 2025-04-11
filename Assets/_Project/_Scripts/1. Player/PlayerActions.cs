@@ -24,6 +24,7 @@ namespace GoodVillageGames.Game.Core
         void FixedUpdate()
         {
             ProcessAcceleration();
+            Debug.Log($"Current Speed: {Stats.MaxSpeed}");
         }
 
         public void HandleMove(Vector2 input)

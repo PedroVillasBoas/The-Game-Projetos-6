@@ -3,13 +3,22 @@ using System.Collections.Generic;
 
 namespace GoodVillageGames.Game.Core.Attributes
 {
+    /// <summary>
+    /// This is the Broker. It sits between the Stats Class and a StatModifier
+    /// </summary>
+    /// <remarks>
+    /// <see cref="Stats"/>
+    /// <see cref="StatModifier"/>
+    /// </remarks>
     public class StatsMediator
     {
         readonly LinkedList<StatModifier> modifiers = new();
 
+        // Perfom a Query/Consult whenever something wants to know about a specific Stat
         public event EventHandler<Query> Queries;
         public void PerformQuery(object sender, Query query) => Queries?.Invoke(sender,query);
 
+        // Add a modifier/upgrade to the List
         public void AddModifier(StatModifier modifier)
         {
             modifiers.AddLast(modifier);

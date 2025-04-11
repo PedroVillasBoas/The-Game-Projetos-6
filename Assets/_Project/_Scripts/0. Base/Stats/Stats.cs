@@ -4,6 +4,13 @@ using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Attributes
 {
+    /// <summary>
+    /// When a Stat is GET, the mediator will calculate the total value based on modifiers that the Stat can have and return the Result;
+    /// </summary>
+    /// <remarks>
+    /// <param name="BaseStats"> Scriptable Object that contains the starting stats for the entity;
+    /// <param name="StatsMediator"> Mediator / Broker  
+    /// </remarks>
     public class Stats 
     {
         readonly StatsMediator mediator;
@@ -22,7 +29,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float MaxSpeed 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.MaxSpeed);
+                var q = new Query(StatType.MaxSpeed, baseStats.MaxSpeed);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -30,7 +37,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float MaxDefense 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.MaxDefense);
+                var q = new Query(StatType.MaxDefense, baseStats.MaxDefense);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -38,7 +45,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float Acceleration 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.Acceleration);
+                var q = new Query(StatType.Acceleration, baseStats.Acceleration);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -46,7 +53,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float BaseAttackDamage 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.BaseAttackDamage);
+                var q = new Query(StatType.BaseAttackDamage, baseStats.BaseAttackDamage);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -54,7 +61,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float AttackSpeed 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.AttackSpeed);
+                var q = new Query(StatType.AttackSpeed, baseStats.AttackSpeed);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -62,7 +69,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float MaxBoostTime 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.MaxBoostTime);
+                var q = new Query(StatType.MaxBoostTime, baseStats.MaxBoostTime);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -70,7 +77,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float MaxBoostSpeed 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.MaxBoostSpeed);
+                var q = new Query(StatType.MaxBoostSpeed, baseStats.MaxBoostSpeed);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -78,7 +85,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float BaseMissileDamage 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.BaseMissileDamage);
+                var q = new Query(StatType.BaseMissileDamage, baseStats.BaseMissileDamage);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -86,7 +93,7 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float BaseMissileCooldown 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.BaseMissileCooldown);
+                var q = new Query(StatType.BaseMissileCooldown, baseStats.BaseMissileCooldown);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
@@ -94,12 +101,19 @@ namespace GoodVillageGames.Game.Core.Attributes
         public float MaxMissileAmmo 
         {
             get {
-                var q = new Query(StatType.MaxHealth, baseStats.MaxMissileAmmo);
+                var q = new Query(StatType.MaxMissileAmmo, baseStats.MaxMissileAmmo);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }
         }
-
+        public float Experience 
+        {
+            get {
+                var q = new Query(StatType.Experience, baseStats.Experience);
+                mediator.PerformQuery(this, q);
+                return q.Value;
+            }
+        }
         public Stats(StatsMediator mediator, BaseStats baseStats)
         {
             this.mediator = mediator;

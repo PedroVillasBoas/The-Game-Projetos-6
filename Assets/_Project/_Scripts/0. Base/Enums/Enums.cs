@@ -120,6 +120,7 @@ namespace GoodVillageGames.Game.Enums
             BaseMissileCooldown,
             MaxMissileAmmo,
             Acceleration,
+            Experience,
         }
 
         public enum OperatorType
