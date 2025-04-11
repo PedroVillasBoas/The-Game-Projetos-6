@@ -11,27 +11,15 @@ namespace GoodVillageGames.Game.Core.Projectiles
         [SerializeField] protected float explosionRadius = 1f;
         [SerializeField] protected GameObject explosionVFXPrefab;
 
-        protected override void Update()
-        {
-            LaunchProjectile();
-
-            countdown -= Time.deltaTime;
-            if (countdown <= 0f)
-            {
-                MissileExplode();
-            }
-        }
-
-        protected virtual void MissileExplode()
+        protected override void DoAction()
         {
             Instantiate(explosionVFXPrefab, transform.position, quaternion.identity);
-
-            ReturnToPool();
+            base.DoAction();
         }
 
         protected override void OnCollisionEnter(Collision collision)
         {
-            MissileExplode();
+            DoAction();
         }
     }
 }

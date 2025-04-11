@@ -1,6 +1,7 @@
 using UnityEngine;
 using TriInspector;
 using GoodVillageGames.Game.Core.Pooling;
+using GoodVillageGames.Game.Core.Util.Timer;
 
 namespace GoodVillageGames.Game.Core.Projectiles
 {
@@ -10,9 +11,10 @@ namespace GoodVillageGames.Game.Core.Projectiles
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float lifeTime = 5f;
 
+        private CountdownTimer _timer;
         private Rigidbody2D _projectileRb;
 
-        protected float countdown;
+        
         protected PooledObject pooledObject;
 
         protected virtual void Awake()
@@ -28,20 +30,25 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         protected virtual void OnEnable()
         {
-            // Reset the lifetime timer when projectile is (re)enabled
-            countdown = lifeTime;
+            if (_timer != null) 
+                _timer.Reset();
+            else 
+                CreateTimer();
         }
 
         protected virtual void Update()
         {
             LaunchProjectile();
 
-            // Countdown the life timer.
-            countdown -= Time.deltaTime;
-            if (countdown <= 0f)
-            {
-                ReturnToPool();
-            }
+            if (_timer != null)
+                _timer.Tick(Time.deltaTime);
+        }
+
+        protected void CreateTimer()
+        {
+            _timer = new CountdownTimer(lifeTime);
+            _timer.OnTimerStop += () => DoAction();
+            _timer.Start();
         }
 
         protected virtual void LaunchProjectile()
@@ -49,15 +56,16 @@ namespace GoodVillageGames.Game.Core.Projectiles
             _projectileRb.linearVelocity = speed * transform.up;
         }
 
-        public virtual void ReturnToPool()
+        protected virtual void DoAction()
         {
             pooledObject.ReturnToPool();
+
         }
 
         protected virtual void OnCollisionEnter(Collision collision)
         {
             // I'll add the collision and damage stuff later
-            ReturnToPool();
+            DoAction();
         }
     }
 }

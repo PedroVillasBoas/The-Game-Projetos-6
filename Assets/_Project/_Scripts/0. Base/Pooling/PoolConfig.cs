@@ -1,4 +1,5 @@
 using UnityEngine;
+using TriInspector;
 
 
 namespace GoodVillageGames.Game.Core.Pooling
@@ -8,7 +9,7 @@ namespace GoodVillageGames.Game.Core.Pooling
     {
         [SerializeField] private int _initialPoolSize = 20;
         [SerializeField] private bool _autoExpand = true;
-        [SerializeField] private int _expandAmount = 5;
+        [ShowIf("_autoExpand", true), SerializeField] private int _expandAmount = 5;
 
         public int InitialPoolSize => _initialPoolSize;
         public bool AutoExpand => _autoExpand;

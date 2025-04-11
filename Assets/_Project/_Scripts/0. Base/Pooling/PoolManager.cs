@@ -25,8 +25,6 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             Instance = this;
 
-
-
             // Creating an ObjectPool for each PoolEntry
             foreach (var entry in poolEntries)
             {

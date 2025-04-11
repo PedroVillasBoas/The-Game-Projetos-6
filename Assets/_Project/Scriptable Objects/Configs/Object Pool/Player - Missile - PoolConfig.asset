@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be173046fcf5cf94d949dd7a5f7f524c, type: 3}
   m_Name: Player - Missile - PoolConfig
   m_EditorClassIdentifier: 
-  _initialPoolSize: 3
-  _autoExpand: 1
-  _expandAmount: 1
+  _initialPoolSize: 1
+  _autoExpand: 0
+  _expandAmount: 0
