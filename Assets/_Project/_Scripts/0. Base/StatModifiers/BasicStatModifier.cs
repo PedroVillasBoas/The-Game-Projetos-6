@@ -3,6 +3,9 @@ using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Attributes.Modifiers
 {
+    /// <summary>
+    /// A Simple Stat Modifier/Upgrade that will do a operation to the Stat
+    /// </summary>
     public class BasicStatModifier : StatModifier
     {
         readonly StatType type;
