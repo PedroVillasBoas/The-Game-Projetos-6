@@ -37,14 +37,11 @@ namespace GoodVillageGames.Game.Core
         }
         public void HandleBoost(bool value)
         {
-            // Here I'll put the boosting check
             // I'll have to create a new handler to handle the boost and boost amount
             PlayerEventsManager.PlayerBoostingEvent(value);
         }
         public void HandleMissile(bool value)
         {
-            // Here I'll just implement the check logic -> see if has missile avaliable
-            // Later I'll implement the Coroutine to handle the pew BOOM pew BOOM pew BOOM in auto/single mode based on the missile attack speed
             PlayerEventsManager.PlayerMissileEvent(value);
         }
 

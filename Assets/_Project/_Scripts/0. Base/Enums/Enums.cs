@@ -123,11 +123,28 @@ namespace GoodVillageGames.Game.Enums
             Experience,
         }
 
+        public enum UpgradeType
+        {
+            None,
+            OnHit,
+            OnTimer,
+            OnStatModifier,
+        }
+
         public enum OperatorType
         {
             None,
             Add,
             Multiply,
+        }
+        public enum UpgradeRarity
+        {
+            None,
+            Common,
+            Uncommon,
+            Rare,
+            Epic,
+            Legendary,
         }
     }
 }

@@ -19,7 +19,7 @@ namespace GoodVillageGames.Game.Core.Attributes
 
         protected StatModifier(float duration)
         {
-            // Is a permanent modifier
+            // Is a permanent modifier/upgrade
             if (duration <= 0) return;
 
             timer = new CountdownTimer(duration);
