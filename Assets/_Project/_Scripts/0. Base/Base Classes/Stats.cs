@@ -98,10 +98,10 @@ namespace GoodVillageGames.Game.Core.Attributes
                 return q.Value;
             }
         }
-        public float MaxMissileAmmo 
+        public float BoostRechargeRate 
         {
             get {
-                var q = new Query(StatType.MaxMissileAmmo, baseStats.MaxMissileAmmo);
+                var q = new Query(StatType.BoostRechargeRate, baseStats.BoostRechargeRate);
                 mediator.PerformQuery(this, q);
                 return q.Value;
             }

@@ -9,11 +9,10 @@ namespace GoodVillageGames.Game.Handlers
     public class ReloadHandler : MonoBehaviour, IReloadHandler
     {
         private Stats _entityStats;
-        private float _currentAttackSpeed;
         private bool _isReloading;
         private Coroutine _reloadCoroutine;
 
-        public float AttackSpeed { get => _currentAttackSpeed; set => _currentAttackSpeed = value; }
+        public float AttackSpeed { get => _entityStats.AttackSpeed; }
         public bool IsReloading { get => _isReloading; set => _isReloading = value; }
         public Coroutine ReloadCoroutine { get => _reloadCoroutine; set => _reloadCoroutine = value; }
 
@@ -22,7 +21,6 @@ namespace GoodVillageGames.Game.Handlers
             if (transform.root.TryGetComponent<Entity>(out var statsProvider))
             {
                 _entityStats = statsProvider.Stats;
-                _currentAttackSpeed = _entityStats.AttackSpeed;
             }
             else
                 Debug.LogError("IStatsProvider component not found on entity!", this);
@@ -33,7 +31,7 @@ namespace GoodVillageGames.Game.Handlers
             if (_isReloading) yield break;
 
             _isReloading = true;
-            yield return new WaitForSeconds(1f / _currentAttackSpeed);
+            yield return new WaitForSeconds(1f / _entityStats.AttackSpeed);
             _isReloading = false;
         }
 

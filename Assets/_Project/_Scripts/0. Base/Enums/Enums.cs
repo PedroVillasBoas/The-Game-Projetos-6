@@ -118,7 +118,7 @@ namespace GoodVillageGames.Game.Enums
             MaxBoostSpeed,
             BaseMissileDamage,
             BaseMissileCooldown,
-            MaxMissileAmmo,
+            BoostRechargeRate,
             Acceleration,
             Experience,
         }

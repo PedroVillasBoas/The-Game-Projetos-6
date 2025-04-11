@@ -13,15 +13,16 @@ MonoBehaviour:
   m_Name: PlayerBaseStats - Starter
   m_EditorClassIdentifier: 
   Name: U.S.S. Enterprise
-  EntityPrefab: {fileID: 0}
+  EntityVisualPrefab: {fileID: 0}
   MaxHealth: 100
   MaxSpeed: 20
   MaxDefense: 20
   Acceleration: 10
+  Experience: 0
   BaseAttackDamage: 5
   AttackSpeed: 1
-  MaxBoostTime: 3
+  MaxBoostTime: 1
   MaxBoostSpeed: 30
+  BoostRechargeRate: 0.2
   BaseMissileDamage: 10
   BaseMissileCooldown: 10
-  MaxMissileAmmo: 3

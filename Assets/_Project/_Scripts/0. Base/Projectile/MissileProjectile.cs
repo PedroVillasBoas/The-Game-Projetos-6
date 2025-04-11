@@ -17,7 +17,7 @@ namespace GoodVillageGames.Game.Core.Projectiles
             base.DoAction();
         }
 
-        protected override void OnCollisionEnter(Collision collision)
+        protected override void OnCollisionEnter2D(Collision2D collision)
         {
             DoAction();
         }

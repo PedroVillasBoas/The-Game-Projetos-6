@@ -6,6 +6,8 @@ using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Manager;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Manager.Player;
+using GoodVillageGames.Game.Handlers.UI;
+using GoodVillageGames.Game.Core.Manager.UI;
 
 namespace GoodVillageGames.Game.Handlers
 {

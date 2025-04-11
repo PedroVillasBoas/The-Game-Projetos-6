@@ -31,7 +31,10 @@ namespace GoodVillageGames.Game.Core.Projectiles
         protected virtual void OnEnable()
         {
             if (_timer != null) 
-                _timer.Reset();
+            {
+                _timer.Reset(lifeTime);
+                _timer.Start();
+            }
             else 
                 CreateTimer();
         }
@@ -58,11 +61,11 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         protected virtual void DoAction()
         {
+            _timer.Stop();
             pooledObject.ReturnToPool();
-
         }
 
-        protected virtual void OnCollisionEnter(Collision collision)
+        protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
             // I'll add the collision and damage stuff later
             DoAction();
