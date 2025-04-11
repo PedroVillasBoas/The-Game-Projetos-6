@@ -6,6 +6,9 @@ using GoodVillageGames.Game.Core.Attributes;
 
 namespace GoodVillageGames.Game.Core.GameObjectEntity
 {
+    /// <summary>
+    /// Base Class for all GameObjects that will have interaction and movement
+    /// </summary>
     public abstract class Entity : MonoBehaviour, IVisitable
     {
         [SerializeField, InlineEditor, Required] private BaseStats _baseStats;
