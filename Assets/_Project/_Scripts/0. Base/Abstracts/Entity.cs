@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.Core.GameObjectEntity
         [SerializeField, InlineEditor, Required] private BaseStats _baseStats;
         public Stats Stats { get; private set; }
 
-        void Awake()
+        protected virtual void Awake()
         {
             Stats = new(new StatsMediator(), _baseStats);
         }
@@ -20,6 +20,7 @@ namespace GoodVillageGames.Game.Core.GameObjectEntity
         {
             Stats.Mediator.Update(Time.deltaTime);
         }
+
         public void Accept(IVisitor visitor) => visitor.Visit(this);
     }
 }

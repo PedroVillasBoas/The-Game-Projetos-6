@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.General
         public string Name = "Name";
 
         [Title("Visuals Prefab")]
-        public GameObject EntityPrefab;
+        public GameObject EntityVisualPrefab;
 
         [Title("Base Stats")]
         [Group("Base Stats")] public float MaxHealth = 100f;

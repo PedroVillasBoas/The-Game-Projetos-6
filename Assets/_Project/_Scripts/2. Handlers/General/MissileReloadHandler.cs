@@ -20,9 +20,9 @@ namespace GoodVillageGames.Game.Handlers
 
         void Start()
         {
-            if (transform.root.TryGetComponent<Entity>(out var statsProvider))
+            if (transform.root.TryGetComponent<Entity>(out var entity))
             {
-                _entityStats = statsProvider.Stats;
+                _entityStats = entity.Stats;
                 _currentAttackSpeed = _entityStats.AttackSpeed;
             }
             else

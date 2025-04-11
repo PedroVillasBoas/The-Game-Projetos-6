@@ -32,7 +32,7 @@ namespace GoodVillageGames.Game.Core.Attributes
                 node = node.Next;
             }
 
-            // Dispose any that are finished, Mark and Sweep
+            // Dispose any that are finished
             node = modifiers.First;
             while (node != null)
             {

@@ -14,8 +14,9 @@ namespace GoodVillageGames.Game.Core
         private Rigidbody2D _playerRb;
         private Vector2 _movementInput = Vector2.zero;
 
-        void Awake()
-        {            
+        protected override void Awake()
+        {
+            base.Awake();
             PlayerEventsManager = GetComponentInChildren<PlayerEventsManager>();
             _playerRb = GetComponent<Rigidbody2D>();
         }
