@@ -14,16 +14,18 @@ namespace GoodVillageGames.Game.Handlers
         private bool _isBoosting;
         private bool _canBoost = true;
 
+        public bool IsUsingBoost => _canBoost && _isBoosting;
+
         void OnEnable()
         {
             _playerEventsManager = transform.root.GetComponentInChildren<PlayerEventsManager>();
-            _playerEventsManager.OnPlayerBoostingEventTriggered.AddListener(IsBoosting);
+            _playerEventsManager.OnPlayerBoostingEventTriggered.AddListener(OnBoostingChanged);
         }
 
         void OnDestroy()
         {
             if (_playerEventsManager != null)
-                _playerEventsManager.OnPlayerBoostingEventTriggered.RemoveListener(IsBoosting);
+                _playerEventsManager.OnPlayerBoostingEventTriggered.RemoveListener(OnBoostingChanged);
         }
 
         void Start()
@@ -34,7 +36,7 @@ namespace GoodVillageGames.Game.Handlers
 
         void Update()
         {
-            CanBoostToggle();
+            UpdateCanBoostStatus();
             ToggleBoostVFX();
             ConsumeBoost();
             RechargeBoost();
@@ -43,18 +45,12 @@ namespace GoodVillageGames.Game.Handlers
 
         void ToggleBoostVFX()
         {
-            if (_canBoost && _isBoosting)
-                _playerEventsManager.PlayerBoostVFXEvent(true);
-            else
-                _playerEventsManager.PlayerBoostVFXEvent(false);
+            _playerEventsManager.PlayerBoostVFXEvent(_canBoost && _isBoosting);
         }
 
-        void CanBoostToggle()
+        void UpdateCanBoostStatus()
         {
-            if (_boostTimeLeft > 0)
-                _canBoost = true;
-            else
-                _canBoost = false;
+            _canBoost = _boostTimeLeft > 0;
         }
 
         private void ConsumeBoost()
@@ -84,7 +80,7 @@ namespace GoodVillageGames.Game.Handlers
         }
 
         // Callback from PlayerEventsManager, sets whether the player is boosting
-        public void IsBoosting(bool value)
+        public void OnBoostingChanged(bool value)
         {
             _isBoosting = value;
         }
