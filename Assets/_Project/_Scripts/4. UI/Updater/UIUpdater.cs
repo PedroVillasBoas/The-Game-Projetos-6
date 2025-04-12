@@ -13,6 +13,8 @@ namespace GoodVillageGames.Game.General.UI.Updater
         private Coroutine _missileCoroutine;
 
         [SerializeField] private Image _healthFill;
+        [SerializeField] private ParticleSystem _damageParticle;
+        [SerializeField] private ParticleSystem _healParticle;
 
         void Start()
         {
@@ -82,6 +84,13 @@ namespace GoodVillageGames.Game.General.UI.Updater
                 float previousHealth = _healthFill.fillAmount;
                 _healthFill.fillAmount = Mathf.Clamp01(healthAmount);
                 StartCoroutine(PunchHealthUI());
+
+                Debug.Log($"Previous Health: {previousHealth} || Fill: {_healthFill.fillAmount}");
+
+                if (previousHealth > _healthFill.fillAmount)
+                    _damageParticle.Play();
+                else
+                    _healParticle.Play();
             }
             else
             {

@@ -1,11 +1,10 @@
 using System;
 using UnityEngine;
-using UnityEngine.Events;
+using System.Collections;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Core.Manager.UI;
-using System.Collections;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -21,16 +20,7 @@ namespace GoodVillageGames.Game.Handlers
         public float CurrentHealth 
         {
             get => _currentHealth;
-            set {
-                if (_currentHealth + value > _stats.MaxHealth)
-                    _currentHealth = _stats.MaxHealth;
-                else
-                {
-                    _currentHealth = value;
-                    OnHealthChanged?.Invoke(_currentHealth);
-                    UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
-                }
-            }
+            set => _currentHealth = Mathf.Clamp(value, 0, _stats.MaxHealth);
         }
 
         private void Awake()
@@ -42,6 +32,8 @@ namespace GoodVillageGames.Game.Handlers
         private void Start()
         {
             OnHealthChanged?.Invoke(_currentHealth);
+
+            StartCoroutine(WaitAndDoSomething());
         }
 
         public void TakeDamage(float amount)
@@ -65,6 +57,22 @@ namespace GoodVillageGames.Game.Handlers
 
         public Vector2 GetPosition() => transform.position;
 
-        public void Accept(IVisitor visitor) => visitor.Visit(this);
+        public void Accept(IVisitor visitor)
+        {
+            visitor.Visit(this);
+            OnHealthChanged?.Invoke(_currentHealth);
+            UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
+        } 
+
+        IEnumerator WaitAndDoSomething()
+        {
+            // Espera por 3 segundos
+            yield return new WaitForSeconds(4f);
+            
+            // Executa a ação desejada após a espera
+            Debug.Log("4 segundos se passaram! Executando ação.");
+            
+            TakeDamage(20f);
+        }
     }
 }
