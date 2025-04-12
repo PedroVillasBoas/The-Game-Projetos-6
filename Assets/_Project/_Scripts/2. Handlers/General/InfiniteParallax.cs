@@ -16,24 +16,44 @@ namespace GoodVillageGames.Game.Handlers
         {
             base.Start();
 
-            _size = GetComponentInChildren<SpriteRenderer>().bounds.size;
+            SpriteRenderer sr = GetComponentInChildren<SpriteRenderer>();
+            if (sr != null)
+            {
+                _size = sr.bounds.size;
+            }
+            else
+            {
+                Debug.LogWarning("InfiniteParallax: Nenhum SpriteRenderer encontrado nos filhos para determinar o tamanho do background.");
+            }
         }
 
-        protected override void FixedUpdate()
+        protected override void Update()
         {
-            base.FixedUpdate();
-
+            base.Update();
             InfiniteBackground();
         }
 
         public void InfiniteBackground()
         {
-            _movement = MainCamera.transform.position * ( 1 - ParallaxEffect);
+            _movement = MainCamera.transform.position * (1 - ParallaxEffect);
 
-            if (Utillities.Vector2IsGreaterThan(_movement, StartPosition + Size))
-                StartPosition += Size;
-            else if (Utillities.Vector2IsLessThan(_movement, StartPosition - Size))
-                StartPosition -= Size;
+            while (_movement.x > StartPosition.x + Size.x)
+            {
+                StartPosition = new Vector2(StartPosition.x + Size.x, StartPosition.y);
+            }
+            while (_movement.x < StartPosition.x - Size.x)
+            {
+                StartPosition = new Vector2(StartPosition.x - Size.x, StartPosition.y);
+            }
+
+            while (_movement.y > StartPosition.y + Size.y)
+            {
+                StartPosition = new Vector2(StartPosition.x, StartPosition.y + Size.y);
+            }
+            while (_movement.y < StartPosition.y - Size.y)
+            {
+                StartPosition = new Vector2(StartPosition.x, StartPosition.y - Size.y);
+            }
         }
     }
 }

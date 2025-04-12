@@ -7,7 +7,7 @@ namespace GoodVillageGames.Game.Interfaces
     {
         Vector2 StartPosition { get; set; }
         Vector2 Distance { get; set; }
-        CinemachineCamera MainCamera { get; set; }
+        CinemachineVirtualCameraBase MainCamera { get; set; }
         float ParallaxEffect { get; set; }
 
         void ParallaxBackground();

@@ -8,29 +8,28 @@ namespace GoodVillageGames.Game.Handlers
     {
         private Vector2 _startPosition;
         private Vector2 _distance;
-    
-        [SerializeField] private CinemachineCamera _mainCamera;
-        [SerializeField] private float _parallaxeffect;
+
+        [SerializeField] private CinemachineVirtualCameraBase _mainCamera;
+        [SerializeField] private float _parallaxEffect;
 
         public Vector2 StartPosition { get => _startPosition; set => _startPosition = value; }
         public Vector2 Distance { get => _distance; set => _distance = value; }
-        public CinemachineCamera MainCamera { get => _mainCamera; set => _mainCamera = value; }
-        public float ParallaxEffect { get => _parallaxeffect; set => _parallaxeffect = value; }
+        public CinemachineVirtualCameraBase MainCamera { get => _mainCamera; set => _mainCamera = value; }
+        public float ParallaxEffect { get => _parallaxEffect; set => _parallaxEffect = value; }
 
         protected virtual void Start()
         {
-            _startPosition = new Vector2(transform.position.x, transform.position.y);
+            _startPosition = transform.position;
         }
 
-        protected virtual void FixedUpdate()
+        protected virtual void Update()
         {
             ParallaxBackground();
         }
 
         public void ParallaxBackground()
         {
-            _distance = new Vector2(_mainCamera.transform.position.x, _mainCamera.transform.position.y) * _parallaxeffect;
-
+            _distance = new Vector2(_mainCamera.transform.position.x, _mainCamera.transform.position.y) * _parallaxEffect;
             transform.position = new Vector3(_startPosition.x + _distance.x, _startPosition.y + _distance.y, transform.position.z);
         }
     }
