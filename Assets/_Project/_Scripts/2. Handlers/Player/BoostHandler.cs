@@ -34,15 +34,31 @@ namespace GoodVillageGames.Game.Handlers
 
         void Update()
         {
-            if (_boostTimeLeft <= 0)
-            {
-                _canBoost = false;
-            }
-            else if (_boostTimeLeft >= _playerStats.MaxBoostTime)
-            {
-                _canBoost = true;
-            }
+            CanBoostToggle();
+            ToggleBoostVFX();
+            ConsumeBoost();
+            RechargeBoost();
+            UIEventsManager.Instance.UpdateBoostUI(_boostTimeLeft / _playerStats.MaxBoostTime);
+        }
 
+        void ToggleBoostVFX()
+        {
+            if (_canBoost && _isBoosting)
+                _playerEventsManager.PlayerBoostVFXEvent(true);
+            else
+                _playerEventsManager.PlayerBoostVFXEvent(false);
+        }
+
+        void CanBoostToggle()
+        {
+            if (_boostTimeLeft > 0)
+                _canBoost = true;
+            else
+                _canBoost = false;
+        }
+
+        private void ConsumeBoost()
+        {
             if (_canBoost)
             {
                 // If boosting, decrease boost time
@@ -50,11 +66,13 @@ namespace GoodVillageGames.Game.Handlers
                 {
                     _boostTimeLeft -= Time.deltaTime;
                     _boostTimeLeft = Mathf.Max(_boostTimeLeft, 0f);
-                    _playerEventsManager.PlayerBoostVFXEvent(true);
-
                 }
             }
-            else
+        }
+
+        private void RechargeBoost()
+        {
+            if (!_isBoosting)
             {
                 // If not boosting, recharge boost over time with the Stats recharge rate
                 if (_boostTimeLeft < _playerStats.MaxBoostTime)
@@ -62,11 +80,7 @@ namespace GoodVillageGames.Game.Handlers
                     _boostTimeLeft += _playerStats.BoostRechargeRate * Time.deltaTime;
                     _boostTimeLeft = Mathf.Min(_boostTimeLeft, _playerStats.MaxBoostTime);
                 }
-
-                _playerEventsManager.PlayerBoostVFXEvent(false);
             }
-
-            UIEventsManager.Instance.UpdateBoostUI(_boostTimeLeft / _playerStats.MaxBoostTime);
         }
 
         // Callback from PlayerEventsManager, sets whether the player is boosting
