@@ -5,7 +5,7 @@ namespace GoodVillageGames.Game.Core.Manager
     public class BackgroundStarsManager : MonoBehaviour
     {
         [SerializeField] private PlayerActions _playerActions;
-        [SerializeField] private ParticleSystem stars;
+        [SerializeField] private ParticleSystem _stars;
 
         void Update()
         {
@@ -19,11 +19,11 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void UpdateStarsVelocityOverTime()
         {
-            var starVelocity = stars.velocityOverLifetime;
-            Vector2 playerVelocity = GetPlayerLinearVelocity();
+            var starVelocity = _stars.velocityOverLifetime;
+            Vector2 playerVelocity = -GetPlayerLinearVelocity();
 
-            starVelocity.x = new ParticleSystem.MinMaxCurve(-1 * playerVelocity.x);
-            starVelocity.y = new ParticleSystem.MinMaxCurve(-1 * playerVelocity.y);
+            starVelocity.x = new ParticleSystem.MinMaxCurve(playerVelocity.x);
+            starVelocity.y = new ParticleSystem.MinMaxCurve(playerVelocity.y);
         }
     }
 }

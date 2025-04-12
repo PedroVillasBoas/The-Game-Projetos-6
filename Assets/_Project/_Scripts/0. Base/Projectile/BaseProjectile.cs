@@ -35,8 +35,6 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         protected virtual void OnEnable()
         {
-            Debug.Log($"Damage Handler: {ProjectileDamageHandler}");
-
             if (_timer != null) 
             {
                 _timer.Reset(lifeTime);

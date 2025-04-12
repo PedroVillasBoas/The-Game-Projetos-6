@@ -24,6 +24,7 @@ namespace GoodVillageGames.Game.Handlers
         private IReloadHandler _reloadHandler;
         private bool _inputValue = false;
         private Coroutine _fireCoroutine;
+        private PlayerEventsManager _entityEventsProvider;
 
         public float Damage { get => _entityStats.BaseAttackDamage; }
 
@@ -40,18 +41,17 @@ namespace GoodVillageGames.Game.Handlers
 
         void OnEnable()
         {
-            var entityEventsProvider = transform.root.GetComponentInChildren<PlayerEventsManager>();
+            _entityEventsProvider = transform.root.GetComponentInChildren<PlayerEventsManager>();
             
-            entityEventsProvider.OnPlayerMissileEventTriggered.AddListener(UpdateFireMissileInput);
+            _entityEventsProvider.OnPlayerMissileEventTriggered.AddListener(UpdateFireMissileInput);
         }
 
 
         void OnDisable()
         {
-            var entityEventsProvider = transform.root.GetComponentInChildren<PlayerEventsManager>();
-            if (entityEventsProvider != null)
+            if (_entityEventsProvider != null)
             {
-                entityEventsProvider.OnPlayerMissileEventTriggered.RemoveListener(UpdateFireMissileInput);
+                _entityEventsProvider.OnPlayerMissileEventTriggered.RemoveListener(UpdateFireMissileInput);
             }
         }
 
@@ -107,6 +107,7 @@ namespace GoodVillageGames.Game.Handlers
         private void Fire(PoolID poolID)
         {
             GameObject projectile = PoolManager.Instance.GetPooledObject(poolID);
+            _entityEventsProvider.PlayerProjectileEvent();
             if (projectile != null)
             {
                 if (projectile.TryGetComponent<BaseProjectile>(out BaseProjectile component))
