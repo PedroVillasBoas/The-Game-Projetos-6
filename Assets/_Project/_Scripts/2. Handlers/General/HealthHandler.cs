@@ -32,8 +32,6 @@ namespace GoodVillageGames.Game.Handlers
         private void Start()
         {
             OnHealthChanged?.Invoke(_currentHealth);
-
-            StartCoroutine(WaitAndDoSomething());
         }
 
         public void TakeDamage(float amount)
@@ -63,16 +61,5 @@ namespace GoodVillageGames.Game.Handlers
             OnHealthChanged?.Invoke(_currentHealth);
             UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
         } 
-
-        IEnumerator WaitAndDoSomething()
-        {
-            // Espera por 3 segundos
-            yield return new WaitForSeconds(4f);
-            
-            // Executa a ação desejada após a espera
-            Debug.Log("4 segundos se passaram! Executando ação.");
-            
-            TakeDamage(20f);
-        }
     }
 }
