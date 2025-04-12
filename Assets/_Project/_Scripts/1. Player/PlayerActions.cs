@@ -16,6 +16,8 @@ namespace GoodVillageGames.Game.Core
         private Vector2 _movementInput = Vector2.zero;
         private BoostHandler _boostHandler;
 
+        public Vector2 PlayerLinearVelocity { get => _playerRb.linearVelocity; }
+
         protected override void Awake()
         {
             base.Awake();

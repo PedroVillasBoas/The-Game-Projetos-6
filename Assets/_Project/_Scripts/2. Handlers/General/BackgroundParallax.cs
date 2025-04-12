@@ -9,12 +9,12 @@ namespace GoodVillageGames.Game.Handlers
         private Vector2 _startPosition;
         private Vector2 _distance;
 
-        [SerializeField] private CinemachineVirtualCameraBase _mainCamera;
+        [SerializeField] private Camera _mainCamera;
         [SerializeField] private float _parallaxEffect;
 
         public Vector2 StartPosition { get => _startPosition; set => _startPosition = value; }
         public Vector2 Distance { get => _distance; set => _distance = value; }
-        public CinemachineVirtualCameraBase MainCamera { get => _mainCamera; set => _mainCamera = value; }
+        public Camera MainCamera { get => _mainCamera; set => _mainCamera = value; }
         public float ParallaxEffect { get => _parallaxEffect; set => _parallaxEffect = value; }
 
         protected virtual void Start()

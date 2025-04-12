@@ -1,4 +1,3 @@
-using Unity.Cinemachine;
 using UnityEngine;
 
 namespace GoodVillageGames.Game.Interfaces
@@ -7,7 +6,7 @@ namespace GoodVillageGames.Game.Interfaces
     {
         Vector2 StartPosition { get; set; }
         Vector2 Distance { get; set; }
-        CinemachineVirtualCameraBase MainCamera { get; set; }
+        Camera MainCamera { get; set; }
         float ParallaxEffect { get; set; }
 
         void ParallaxBackground();
