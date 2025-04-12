@@ -27,7 +27,7 @@ namespace GoodVillageGames.Game.Core.Manager
             }
 
             _playerEventsManager.OnPlayerMovingEventTriggered.AddListener(OnPlayerMovingEvent);
-            _playerEventsManager.OnPlayerBoostingEventTriggered.AddListener(OnPlayerBoostingEvent);
+            _playerEventsManager.OnPlayerBoostVFXEventTriggered.AddListener(OnPlayerBoostingEvent);
         }
 
         void OnPlayerMovingEvent(Vector2 vector)

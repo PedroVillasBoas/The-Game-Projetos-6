@@ -9,11 +9,13 @@ namespace GoodVillageGames.Game.Core.Manager.Player
         // Events
             // Movement
         public UnityEvent<Vector2> OnPlayerMovingEventTriggered;
-            // VFX
+            // Boost
         public UnityEvent<bool> OnPlayerBoostingEventTriggered;
             // Projectiles
         public UnityEvent<bool> OnPlayerBulletEventTriggered;
         public UnityEvent<bool> OnPlayerMissileEventTriggered;
+            // VFX
+        public UnityEvent<bool> OnPlayerBoostVFXEventTriggered;
 
         public void PlayerMovingEvent(Vector2 value)
         {
@@ -33,6 +35,10 @@ namespace GoodVillageGames.Game.Core.Manager.Player
         public void PlayerMissileEvent(bool value)
         {
             OnPlayerMissileEventTriggered?.Invoke(value);
+        }
+        public void PlayerBoostVFXEvent(bool value)
+        {
+            OnPlayerBoostVFXEventTriggered?.Invoke(value);
         }
     }
 }

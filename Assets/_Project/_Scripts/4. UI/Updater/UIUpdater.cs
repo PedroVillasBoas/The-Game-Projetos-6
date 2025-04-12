@@ -1,5 +1,4 @@
 using UnityEngine;
-using DG.Tweening;
 using UnityEngine.UI;
 using GoodVillageGames.Game.Core.Manager.UI;
 using System.Collections;
