@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.Core.Projectiles
         [SerializeField] protected float explosionRadius = 1f;
         [SerializeField] protected GameObject explosionVFXPrefab;
 
-        protected override void DoAction()
+        public override void DoAction()
         {
             Instantiate(explosionVFXPrefab, transform.position, quaternion.identity);
             base.DoAction();

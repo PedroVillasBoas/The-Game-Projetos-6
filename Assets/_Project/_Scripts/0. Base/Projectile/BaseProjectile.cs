@@ -1,5 +1,6 @@
 using UnityEngine;
 using TriInspector;
+using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Pooling;
 using GoodVillageGames.Game.Core.Util.Timer;
 
@@ -13,7 +14,9 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         private CountdownTimer _timer;
         private Rigidbody2D _projectileRb;
+        private DamageHandler _damageHandler;
 
+        public DamageHandler ProjectileDamageHandler { get => _damageHandler; }
         
         protected PooledObject pooledObject;
 
@@ -21,6 +24,8 @@ namespace GoodVillageGames.Game.Core.Projectiles
         {
             _projectileRb = GetComponent<Rigidbody2D>();
             pooledObject = GetComponent<PooledObject>();
+            _damageHandler = GetComponent<DamageHandler>();
+
             if (pooledObject == null)
             {
                 Debug.LogWarning("PooledObject component not found on BaseProjectile. Adding one automatically.");
@@ -30,6 +35,8 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         protected virtual void OnEnable()
         {
+            Debug.Log($"Damage Handler: {ProjectileDamageHandler}");
+
             if (_timer != null) 
             {
                 _timer.Reset(lifeTime);
@@ -59,7 +66,7 @@ namespace GoodVillageGames.Game.Core.Projectiles
             _projectileRb.linearVelocity = speed * transform.up;
         }
 
-        protected virtual void DoAction()
+        public virtual void DoAction()
         {
             _timer.Stop();
             pooledObject.ReturnToPool();

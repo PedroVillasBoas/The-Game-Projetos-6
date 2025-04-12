@@ -1,6 +1,5 @@
 using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
-using GoodVillageGames.Game.Core.GameObjectEntity;
 using GoodVillageGames.Game.Handlers;
 
 namespace GoodVillageGames.Game.Core.Pickup

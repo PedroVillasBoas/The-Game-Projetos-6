@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6827157219974950210}
   - component: {fileID: 6077085703849861582}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3188815664902138788}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -132,7 +132,8 @@ GameObject:
   - component: {fileID: 7071361764316056724}
   - component: {fileID: 4161899992108148331}
   - component: {fileID: 732491430143220462}
-  m_Layer: 0
+  - component: {fileID: -3011365388256145118}
+  m_Layer: 8
   m_Name: Player - Missile - Starter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +214,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -248,6 +249,18 @@ MonoBehaviour:
   lifeTime: 2
   explosionRadius: 1
   explosionVFXPrefab: {fileID: 5433148584055260179, guid: 93992a02c65ed0545990ce7d076c75d8, type: 3}
+--- !u!114 &-3011365388256145118
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7512409584341719186}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762af7d3e60d68d468130678b80d3055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &1696933073161220126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -259,6 +272,10 @@ PrefabInstance:
     - target: {fileID: 3475187491276801451, guid: 8747d361dadf70541885e8a4b5722150, type: 3}
       propertyPath: m_Name
       value: Thruster - Flames - VFX
+      objectReference: {fileID: 0}
+    - target: {fileID: 3475187491276801451, guid: 8747d361dadf70541885e8a4b5722150, type: 3}
+      propertyPath: m_Layer
+      value: 8
       objectReference: {fileID: 0}
     - target: {fileID: 6920055927516864005, guid: 8747d361dadf70541885e8a4b5722150, type: 3}
       propertyPath: m_LocalPosition.x

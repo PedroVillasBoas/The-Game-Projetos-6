@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7365866440346074597}
   - component: {fileID: 4831751378352845116}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Visual
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -100,7 +100,8 @@ GameObject:
   - component: {fileID: 804490395889719413}
   - component: {fileID: 1148485961977367646}
   - component: {fileID: -3467805264405004226}
-  m_Layer: 0
+  - component: {fileID: 1575527971659466658}
+  m_Layer: 8
   m_Name: Player - Projectile - Starter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +182,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -214,6 +215,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2b262bf9891b31e48bbb2f1ce64bbfab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1575527971659466658
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2253066425081621800}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 762af7d3e60d68d468130678b80d3055, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4982619303317254095
 GameObject:
   m_ObjectHideFlags: 0
@@ -223,7 +236,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6068850376874956969}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: VFX
   m_TagString: Untagged
   m_Icon: {fileID: 0}

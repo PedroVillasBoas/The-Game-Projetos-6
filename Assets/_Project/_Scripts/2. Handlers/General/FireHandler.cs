@@ -1,11 +1,13 @@
-using System;
 using UnityEngine;
 using TriInspector;
 using System.Collections;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Manager;
-using GoodVillageGames.Game.Core.Manager.Player;
+using GoodVillageGames.Game.Core.Attributes;
+using GoodVillageGames.Game.Core.Projectiles;
 using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Core.Manager.Player;
+using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -18,9 +20,12 @@ namespace GoodVillageGames.Game.Handlers
         [SerializeField] private PoolID _poolID;
 
         private IAimHandler _aimHandler;
+        private Stats _entityStats;
         private IReloadHandler _reloadHandler;
         private bool _inputValue = false;
         private Coroutine _fireCoroutine;
+
+        public float Damage { get => _entityStats.BaseAttackDamage; }
 
         public IAimHandler AimHandler { get => _aimHandler; set => _aimHandler = value; }
         public IReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
@@ -36,7 +41,6 @@ namespace GoodVillageGames.Game.Handlers
         void OnEnable()
         {
             var entityEventsProvider = transform.root.GetComponentInChildren<PlayerEventsManager>();
-            
             entityEventsProvider.OnPlayerBulletEventTriggered.AddListener(UpdateFireInput);
         }
 
@@ -47,6 +51,16 @@ namespace GoodVillageGames.Game.Handlers
             {
                 entityEventsProvider.OnPlayerBulletEventTriggered.RemoveListener(UpdateFireInput);
             }
+        }
+
+        void Start()
+        {
+            if (transform.root.TryGetComponent<Entity>(out var statsProvider))
+            {
+                _entityStats = statsProvider.Stats;
+            }
+            else
+                Debug.LogError("IStatsProvider component not found on entity!", this);
         }
 
         void UpdateFireInput(bool value)
@@ -94,6 +108,11 @@ namespace GoodVillageGames.Game.Handlers
             GameObject projectile = PoolManager.Instance.GetPooledObject(poolId);
             if (projectile != null)
             {
+                if (projectile.TryGetComponent(out BaseProjectile component))
+                {
+                    component.ProjectileDamageHandler.SetDamage(Damage);
+                }
+
                 projectile.transform.SetPositionAndRotation(_firepoint.position, _firepoint.rotation);
                 projectile.SetActive(true);
             }
