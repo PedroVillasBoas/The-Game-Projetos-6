@@ -2102,6 +2102,9 @@ MonoBehaviour:
   OnPlayerMissileEventTriggered:
     m_PersistentCalls:
       m_Calls: []
+  OnPlayerBoostVFXEventTriggered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
