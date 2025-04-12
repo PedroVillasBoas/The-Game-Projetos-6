@@ -21,6 +21,7 @@ namespace GoodVillageGames.Game.General
 
         [Title("Base Stats")]
         [Group("Base Stats")] public float MaxHealth = 100f;
+        [Group("Base Stats")] public float CurrentHealth = 100f;
         [Group("Base Stats")] public float MaxSpeed = 20f;
         [Group("Base Stats")] public float MaxDefense = 20f;
         [Group("Base Stats")] public float Acceleration = 10f;

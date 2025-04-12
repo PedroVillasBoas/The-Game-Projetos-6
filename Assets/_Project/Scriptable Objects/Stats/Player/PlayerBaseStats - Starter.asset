@@ -22,7 +22,7 @@ MonoBehaviour:
   BaseAttackDamage: 5
   AttackSpeed: 1
   MaxBoostTime: 1
-  MaxBoostSpeed: 30
+  MaxBoostSpeed: 100
   BoostRechargeRate: 0.2
   BaseMissileDamage: 10
   BaseMissileCooldown: 10

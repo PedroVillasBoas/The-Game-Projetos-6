@@ -26,6 +26,14 @@ namespace GoodVillageGames.Game.Core.Attributes
                 return q.Value;
             }
         }
+        public float CurrentHealth
+        {
+            get {
+                var q = new Query(StatType.CurrentHealth, baseStats.CurrentHealth);
+                mediator.PerformQuery(this, q);
+                return q.Value;
+            }
+        }
         public float MaxSpeed 
         {
             get {

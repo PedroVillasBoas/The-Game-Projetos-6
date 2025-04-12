@@ -4,22 +4,39 @@ using UnityEngine.Events;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core.Manager.UI;
+using System.Collections;
 
 namespace GoodVillageGames.Game.Handlers
 {
-    public class HealthHandler : MonoBehaviour, IDamageable
+    public class HealthHandler : MonoBehaviour, IDamageable, IVisitable
     {
         private float _currentHealth;
-        private Stats _entityStats;
+        private Stats _stats;
 
         public event Action OnDeath;
         public event Action<float> OnHealthChanged;
         public event Action<float> OnMaxHealthChanged;
 
+        public float CurrentHealth 
+        {
+            get => _currentHealth;
+            set {
+                if (_currentHealth + value > _stats.MaxHealth)
+                    _currentHealth = _stats.MaxHealth;
+                else
+                {
+                    _currentHealth = value;
+                    OnHealthChanged?.Invoke(_currentHealth);
+                    UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
+                }
+            }
+        }
+
         private void Awake()
         {
-            _entityStats = transform.root.GetComponent<Entity>().Stats;
-            _currentHealth = _entityStats.MaxHealth;
+            _stats = transform.root.GetComponent<Entity>().Stats;
+            _currentHealth = _stats.MaxHealth;
         }
 
         private void Start()
@@ -31,6 +48,7 @@ namespace GoodVillageGames.Game.Handlers
         {
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
             OnHealthChanged?.Invoke(_currentHealth);
+            UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
 
             if (_currentHealth <= 0)
             {
@@ -46,5 +64,7 @@ namespace GoodVillageGames.Game.Handlers
         }
 
         public Vector2 GetPosition() => transform.position;
+
+        public void Accept(IVisitor visitor) => visitor.Visit(this);
     }
 }

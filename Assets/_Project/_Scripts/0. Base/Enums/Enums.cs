@@ -110,6 +110,7 @@ namespace GoodVillageGames.Game.Enums
         {
             None,
             MaxHealth,
+            CurrentHealth,
             MaxSpeed,
             MaxDefense,
             BaseAttackDamage,
