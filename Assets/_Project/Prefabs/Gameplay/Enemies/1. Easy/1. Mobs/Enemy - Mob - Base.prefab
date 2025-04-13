@@ -158,8 +158,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1152805483598740164}
-  - component: {fileID: 9214571239828267510}
   - component: {fileID: 8397302006603785219}
+  - component: {fileID: 5767475654712842262}
+  - component: {fileID: 6142738614547953793}
   m_Layer: 7
   m_Name: Enemy - Mob - Base
   m_TagString: Untagged
@@ -185,28 +186,6 @@ Transform:
   - {fileID: 5541238825039292066}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!195 &9214571239828267510
-NavMeshAgent:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3677439981667057745}
-  m_Enabled: 1
-  m_AgentTypeID: 0
-  m_Radius: 0.5
-  m_Speed: 3.5
-  m_Acceleration: 8
-  avoidancePriority: 50
-  m_AngularSpeed: 120
-  m_StoppingDistance: 0
-  m_AutoTraverseOffMeshLink: 1
-  m_AutoBraking: 1
-  m_AutoRepath: 1
-  m_Height: 0.1
-  m_BaseOffset: 0
-  m_WalkableMask: 1
-  m_ObstacleAvoidanceType: 1
 --- !u!58 &8397302006603785219
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -243,6 +222,34 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &5767475654712842262
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677439981667057745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b262bf9891b31e48bbb2f1ce64bbfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &6142738614547953793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3677439981667057745}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7e6b20a74757fb34f90bb992fdb6a7d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _baseStats: {fileID: 11400000, guid: 6cb49814c22d1bd4e996994867261b9b, type: 2}
+  enemyBaseStats: {fileID: 11400000, guid: 6cb49814c22d1bd4e996994867261b9b, type: 2}
+  enemyCollider: {fileID: 8397302006603785219}
+  currentState: 0
 --- !u!1 &3844885810202463927
 GameObject:
   m_ObjectHideFlags: 0

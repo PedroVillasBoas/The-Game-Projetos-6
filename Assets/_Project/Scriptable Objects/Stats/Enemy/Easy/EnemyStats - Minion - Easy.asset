@@ -1,0 +1,31 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 77884ed3d36ff1f458f3d1515d280eb0, type: 3}
+  m_Name: EnemyStats - Minion - Easy
+  m_EditorClassIdentifier: 
+  Name: Name
+  EntityVisualPrefab: {fileID: 0}
+  MaxHealth: 100
+  CurrentHealth: 100
+  MaxSpeed: 20
+  MaxDefense: 20
+  Acceleration: 10
+  Experience: 0
+  BaseAttackDamage: 5
+  AttackSpeed: 1
+  MaxBoostTime: 3
+  MaxBoostSpeed: 30
+  BoostRechargeRate: 0.2
+  BaseMissileDamage: 10
+  BaseMissileCooldown: 10
+  DoActionRadius: 100
+  EnemyType: 0

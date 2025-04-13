@@ -147,5 +147,11 @@ namespace GoodVillageGames.Game.Enums
             Epic,
             Legendary,
         }
+
+        public enum EnemyType
+        {
+            Minion,
+            Boss,
+        }
     }
 }

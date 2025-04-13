@@ -19,7 +19,7 @@ namespace GoodVillageGames.Game.Core.GameObjectEntity
             Stats = new(new StatsMediator(), _baseStats);
         }
 
-        public void Update()
+        public virtual void Update()
         {
             Stats.Mediator.Update(Time.deltaTime);
         }
