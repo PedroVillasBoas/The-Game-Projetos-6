@@ -1,8 +1,5 @@
 using UnityEngine;
-using UnityEngine.AI;
-using GoodVillageGames.Game.General;
-using GoodVillageGames.Game.Core.Pooling;
-using KBCore.Refs;
+using GoodVillageGames.Game.Handlers;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -17,13 +14,33 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
     {
         public EnemyState currentState = EnemyState.Chase;
 
-        //[Child] private FireHandler fireHandler;
-        //[Child] private ReloadHandler reloadHandler;
         private float actionDistance;
+        private float moveSpeed;
+        private HealthHandler healthHandler;
+
+        protected override void Awake()
+        {
+            base.Awake();
+
+            healthHandler = GetComponent<HealthHandler>();
+            if (healthHandler != null)
+            {
+                healthHandler.OnDeath += ExecuteDie;
+            }
+        }
+
+        private void OnDestroy()
+        {
+            if (healthHandler != null)
+            {
+                healthHandler.OnDeath -= ExecuteDie;
+            }
+        }
 
         void Start()
         {
             actionDistance = enemyBaseStats.DoActionRadius;
+            moveSpeed = enemyBaseStats.MaxSpeed;
         }
 
         public override void Update()
@@ -33,47 +50,47 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             if (currentState == EnemyState.Die)
                 return;
 
-            float distanceToPlayer = Vector3.Distance(transform.position, Player.position);
-
-            switch (currentState)
+            if (currentState == EnemyState.Chase)
             {
-                case EnemyState.Chase:
-                    // Move to the position of the player
-                    if (distanceToPlayer <= actionDistance)
-                        currentState = EnemyState.DoAction;
-                        
-                    break;
-
-                case EnemyState.DoAction:
-                    Debug.Log("Enemy Shoot!");
-                    // if (!reloadHandler.IsReloading)
-                    //     fireHandler.FireProjectile();
-
-                    // if (distanceToPlayer > actionDistance || reloadHandler.IsReloading)
-                    //     currentState = EnemyState.Chase;
-
-                    break;
+                transform.position = Vector2.MoveTowards(
+                    transform.position,
+                    Player.position,
+                    moveSpeed * Time.deltaTime
+                );
             }
 
-            // Verificação simples de morte (por exemplo, se a saúde chegar a zero)
-            // Suponha que você tenha um atributo ou método para verificar a vida atual
-            // if(Health <= 0){
-            //     currentState = EnemyState.Die;
-            //     ExecuteDie();
-            // }
+            float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
+            if (currentState == EnemyState.DoAction && distanceToPlayer > actionDistance)
+            {
+                currentState = EnemyState.Chase;
+            }
+
+            if (currentState == EnemyState.DoAction)
+            {
+                Debug.Log("Enemy Shoot!");
+
+            }
+        }
+
+        private void OnTriggerEnter2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                currentState = EnemyState.DoAction;
+            }
+        }
+
+        private void OnTriggerExit2D(Collider2D collision)
+        {
+            if (collision.CompareTag("Player"))
+            {
+                currentState = EnemyState.Chase;
+            }
         }
 
         private void ExecuteDie()
         {
-            // Instancie o Particle System de morte
-            // Exemplo: Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
-
-            // Instancie o GameObject de EXP para o player
-            // Exemplo: Instantiate(expPrefab, transform.position, Quaternion.identity);
-
-            // Retorna o inimigo para a pool de objetos
             enemyPooledObject.ReturnToPool();
         }
     }
 }
-

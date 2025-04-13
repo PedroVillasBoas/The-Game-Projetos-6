@@ -3,7 +3,6 @@ using UnityEngine;
 using GoodVillageGames.Game.General;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Pooling;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
@@ -24,13 +23,12 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         protected override void Awake()
         {
             base.Awake();
-
             player = GameObject.FindGameObjectWithTag("Player").transform;
         }
 
         void OnEnable()
         {
-
+            
         }
 
         void Start()
