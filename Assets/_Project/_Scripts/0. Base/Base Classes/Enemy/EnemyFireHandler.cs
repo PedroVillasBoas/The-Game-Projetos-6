@@ -6,8 +6,6 @@ using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Projectiles;
 using static GoodVillageGames.Game.Enums.Enums;
-using GoodVillageGames.Game.Core.Manager.Player;
-using GoodVillageGames.Game.Core.GameObjectEntity;
 using GoodVillageGames.Game.Core.Enemy.AI;
 
 namespace GoodVillageGames.Game.Handlers
@@ -22,44 +20,42 @@ namespace GoodVillageGames.Game.Handlers
 
         private IAimHandler _aimHandler;
         private Stats _entityStats;
-        private IReloadHandler _reloadHandler;
+        private EnemyReloadHandler _reloadHandler;
         private bool _inputValue = false;
         private Coroutine _fireCoroutine;
-        private EnemyAI _entityEventsProvider;
+        private EnemyAI _entityBase;
 
         public float Damage { get => _entityStats.BaseAttackDamage; }
 
         public IAimHandler AimHandler { get => _aimHandler; set => _aimHandler = value; }
-        public IReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
+        public IReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = (EnemyReloadHandler)value; }
         public Transform Firepoint { get => _firepoint; set => _firepoint = value; }
         public PoolID ProjectilePoolID { get => _poolID; set => _poolID = value; }
         public Coroutine FireCoroutine { get => _fireCoroutine; set => _fireCoroutine = value; }
 
         void Awake()
         {
-            _reloadHandler = GetComponent<ReloadHandler>();
+            _reloadHandler = GetComponent<EnemyReloadHandler>();
         }
 
         void OnEnable()
         {
-            _entityEventsProvider = transform.root.GetComponentInChildren<EnemyAI>();
-            _entityEventsProvider.DoActionEventTriggered += UpdateEnemyFire;
+            _entityBase = transform.parent.parent.GetComponentInChildren<EnemyAI>();
+            _entityBase.DoActionEventTriggered += UpdateEnemyFire;
         }
 
         void OnDisable()
         {
-            if (_entityEventsProvider != null)
+            if (_entityBase != null)
             {
-                _entityEventsProvider.DoActionEventTriggered -= UpdateEnemyFire;
+                _entityBase.DoActionEventTriggered -= UpdateEnemyFire;
             }
         }
 
         void Start()
         {
-            if (transform.root.TryGetComponent<Entity>(out var statsProvider))
-            {
-                _entityStats = statsProvider.Stats;
-            }
+            if (_entityBase != null)
+                _entityStats = _entityBase.Stats;
             else
                 Debug.LogError("IStatsProvider component not found on entity!", this);
         }

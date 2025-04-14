@@ -1,11 +1,5 @@
 using System;
 using UnityEngine;
-using TriInspector;
-using GoodVillageGames.Game.General;
-using GoodVillageGames.Game.Handlers;
-using GoodVillageGames.Game.Core.Pooling;
-using static GoodVillageGames.Game.Enums.Enums;
-using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {

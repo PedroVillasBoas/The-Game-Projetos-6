@@ -10,6 +10,7 @@ namespace GoodVillageGames.Game.Core.Enemy.UI
 
         void OnEnable()
         {
+            enemyHealthHandler.OnHealthChanged += UpdateEnemyHPFill; 
             UpdateEnemyHPFill(enemyHealthHandler.CurrentHealth);
         }
 

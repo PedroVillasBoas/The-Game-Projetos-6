@@ -7,7 +7,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
     {
         public Action<bool> PlayerInRangeActionTriggered;
 
-        [HideInInspector] public CircleCollider2D Collider;
+        public CircleCollider2D Collider;
 
         void Awake()
         {

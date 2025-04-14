@@ -3,6 +3,7 @@ using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core.Util.Timer;
 
 namespace GoodVillageGames.Game.Core.Enemy
 {
@@ -21,9 +22,15 @@ namespace GoodVillageGames.Game.Core.Enemy
             set => _currentHealth = Mathf.Clamp(value, 0, _stats.MaxHealth);
         }
 
+        void OnEnable()
+        {
+            OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+        }
+
         private void Start()
         {
-            _stats = transform.root.GetComponent<Entity>().Stats;
+
+            _stats = transform.parent.parent.GetComponent<Entity>().Stats;
             _currentHealth = _stats.MaxHealth;
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
         }
@@ -45,6 +52,6 @@ namespace GoodVillageGames.Game.Core.Enemy
         public void Accept(IVisitor visitor)
         {
             visitor.Visit(this);
-        } 
+        }
     }
 }

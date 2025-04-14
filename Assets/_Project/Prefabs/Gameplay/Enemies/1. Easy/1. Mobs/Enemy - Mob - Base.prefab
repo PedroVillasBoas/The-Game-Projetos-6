@@ -115,7 +115,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a3685275c788fe146be8a369c5f08940, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Collider: {fileID: 0}
+  Collider: {fileID: 66840620616950447}
 --- !u!1 &2096918322051534456
 GameObject:
   m_ObjectHideFlags: 0
@@ -808,7 +808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8099410877398008382}
   - component: {fileID: 1112742299737398711}
-  - component: {fileID: 1863823834961755984}
+  - component: {fileID: 2890604556641070781}
   m_Layer: 7
   m_Name: Enemy FireReloadHandler
   m_TagString: Untagged
@@ -845,7 +845,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _firepoint: {fileID: 6599250306331955322}
   _poolID: 5
---- !u!114 &1863823834961755984
+--- !u!114 &2890604556641070781
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -854,7 +854,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7202433617809196027}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 05651d685c4a3ee40a1b6cb0476b60fa, type: 3}
+  m_Script: {fileID: 11500000, guid: e8f03805f05a6f6489f9b27d9d496290, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &7584608949627614543

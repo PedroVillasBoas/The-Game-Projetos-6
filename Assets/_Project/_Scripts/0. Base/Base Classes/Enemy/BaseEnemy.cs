@@ -6,6 +6,7 @@ using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Pooling;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -27,7 +28,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         [SerializeField, Group("Prefabs")] protected GameObject enemyDeathVFX;
 
         protected EnemyFireHandler enemyFireHandler;
-        protected ReloadHandler enemyReloadHandler;
+        protected EnemyReloadHandler enemyReloadHandler;
 
         private Transform player;
 
@@ -38,7 +39,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             base.Awake();
             player = GameObject.FindGameObjectWithTag("Player").transform;
             enemyFireHandler = GetComponentInChildren<EnemyFireHandler>();
-            enemyReloadHandler = GetComponentInChildren<ReloadHandler>();
+            enemyReloadHandler = GetComponentInChildren<EnemyReloadHandler>();
         }
 
         void OnEnable()
