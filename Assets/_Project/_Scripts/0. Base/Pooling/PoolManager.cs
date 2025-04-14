@@ -28,7 +28,7 @@ namespace GoodVillageGames.Game.Core.Manager
             // Creating an ObjectPool for each PoolEntry
             foreach (var entry in poolEntries)
             {
-                if (entry.prefab == null || entry.poolId == PoolID.NONE)
+                if (entry.prefab == null || entry.poolId == PoolID.None)
                 {
                     Debug.LogWarning("PoolEntry is missing a prefab or poolId. Skipping entry.");
                     continue;

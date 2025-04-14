@@ -4,11 +4,11 @@ namespace GoodVillageGames.Game.Enums
     {
         public enum AnimationID
         {
-            FADE,
-            MOVE_TO,
-            SCTRETCH,
-            PULSE,
-            HOLOGRAM,
+            Fade,
+            MoveTo,
+            Scretch,
+            Pulse,
+            Hologram,
         }
 
         public enum AnimationTransitionID
@@ -54,56 +54,59 @@ namespace GoodVillageGames.Game.Enums
 
         public enum GameState
         {
-            MAIN_MENU,
-            IN_GAME,
-            UPGRADE_SCREEN,
-            PAUSED,
-            PLAYER_DIED,
-            GAME_OVER,
+            MainMenu,
+            InGame,
+            UpgradeScreen,
+            Paused,
+            PlayerDied,
+            GameOver,
         }
 
         public enum UIButtonActionType
         {
-            UI_CHANGE,
-            SCENE_CHANGE,
+            UIChange,
+            SceneChange,
         }
 
         public enum UIAnimationType
         {
-            SEQUENTIAL,
-            PARALLEL,
+            Sequential,
+            Paarallel,
         }
 
         public enum UIScreenID
         {
-            NONE,
-            MAIN_MENU,
-            MM_DIFICULTY_SELECT,
-            MM_OPTIONS,
-            PLAYER_HUD,
-            PAUSED,
-            MODS,
-            SETTINGS,
-            GAME_OVER,
+            None,
+            MainMenu,
+            MMtoDifficultySelect,
+            MMtoOptions,
+            PlayerHUD,
+            Paused,
+            Mods,
+            Settings,
+            GameOver,
         }
 
         public enum ProjectileStatsEnum
         {
-            PROJECTILE_DAMAGE,
-            PROJECTILE_AMOUNT,
-            PROJECTILE_TRAVEL_SPEED,
-            PROJECTILE_LIFETIME,
-            PROJECTILE_EXPLOSION_RADIUS,
+            ProjectileDamage,
+            ProjectileAmount,
+            ProjectileTravelSpeed,
+            ProjectileLifetime,
+            ProjectileExplosionRadius,
         }
 
         public enum PoolID
         {
-            NONE,
-            PLAYER_PROJECTILE,
-            PLAYER_MISSILE,
-            ENEMY_PROJECTILE,
-            ENEMY_PREFAB,
-            ENEMY_MISSILE,
+            None,
+            PlayerProjectile,
+            PlayerMissile,
+            EnemyMinionPrefab,
+            EnemyBossPrefab,
+            EnemyMinionProjectile,
+            EnemyBossProjectile,
+            PickupEXP,
+            PickupItem,
         }
 
         public enum StatType

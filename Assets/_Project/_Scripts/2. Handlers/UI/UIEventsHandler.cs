@@ -33,17 +33,17 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         public void StartGame()
         {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.IN_GAME);
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.InGame);
         }
 
         public void PauseGame()
         {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.PAUSED);
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.Paused);
         }
 
         public void UpgradeTime()
         {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.UPGRADE_SCREEN);
+            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.UpgradeScreen);
         }
 
         public void OpenQuitGamePopUp()

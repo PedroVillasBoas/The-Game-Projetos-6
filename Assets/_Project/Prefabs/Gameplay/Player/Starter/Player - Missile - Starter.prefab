@@ -247,8 +247,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   lifeTime: 2
+  hitVFXPrefab: {fileID: 5433148584055260179, guid: 93992a02c65ed0545990ce7d076c75d8, type: 3}
   explosionRadius: 1
-  explosionVFXPrefab: {fileID: 5433148584055260179, guid: 93992a02c65ed0545990ce7d076c75d8, type: 3}
 --- !u!114 &-3011365388256145118
 MonoBehaviour:
   m_ObjectHideFlags: 0

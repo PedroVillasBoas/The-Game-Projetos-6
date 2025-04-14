@@ -85,8 +85,6 @@ namespace GoodVillageGames.Game.General.UI.Updater
                 _healthFill.fillAmount = Mathf.Clamp01(healthAmount);
                 StartCoroutine(PunchHealthUI());
 
-                Debug.Log($"Previous Health: {previousHealth} || Fill: {_healthFill.fillAmount}");
-
                 if (previousHealth > _healthFill.fillAmount)
                     _damageParticle.Play();
                 else

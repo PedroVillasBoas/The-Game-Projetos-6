@@ -20,7 +20,7 @@ TagManager:
   - HealPickup
   - PlayerHealthHandler
   - EnemyHealthHandler
-  - 
+  - EnemyDetection
   - 
   - 
   - 
@@ -71,6 +71,9 @@ TagManager:
     locked: 0
   - name: VFX
     uniqueID: 1664819705
+    locked: 0
+  - name: EnemyUI
+    uniqueID: 2781007785
     locked: 0
   m_RenderingLayers:
   - Default

@@ -90,7 +90,7 @@ namespace GoodVillageGames.Game.General.UI.Animations
             }
 
             Debug.LogError($"TransitionID {transitionID} not found in {gameObject.name}!");
-            return UIAnimationType.SEQUENTIAL;
+            return UIAnimationType.Sequential;
         }
 
         public AnimationTransitionID GetTransitionID(UIAnimationType animationType)

@@ -1,5 +1,5 @@
+using System;
 using UnityEngine;
-using GoodVillageGames.Game.Handlers;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -14,38 +14,31 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
     {
         public EnemyState currentState = EnemyState.Chase;
 
-        private float actionDistance;
-        private float moveSpeed;
-        private HealthHandler healthHandler;
+        public event Action<EnemyAI> DoActionEventTriggered;
 
         protected override void Awake()
         {
             base.Awake();
 
-            healthHandler = GetComponent<HealthHandler>();
-            if (healthHandler != null)
+            if (enemyHealthHandler != null)
             {
-                healthHandler.OnDeath += ExecuteDie;
+                enemyHealthHandler.OnDeath += ExecuteDie;
             }
         }
 
-        private void OnDestroy()
+        void OnDestroy()
         {
-            if (healthHandler != null)
+            if (enemyHealthHandler != null)
             {
-                healthHandler.OnDeath -= ExecuteDie;
+                enemyHealthHandler.OnDeath -= ExecuteDie;
             }
-        }
-
-        void Start()
-        {
-            actionDistance = enemyBaseStats.DoActionRadius;
-            moveSpeed = enemyBaseStats.MaxSpeed;
         }
 
         public override void Update()
         {
             base.Update();
+
+            enemyAimHandler.HandleLook(Player.transform.position);
 
             if (currentState == EnemyState.Die)
                 return;
@@ -55,24 +48,26 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
                 transform.position = Vector2.MoveTowards(
                     transform.position,
                     Player.position,
-                    moveSpeed * Time.deltaTime
+                    enemyBaseStats.MaxSpeed * Time.deltaTime
                 );
             }
 
+            // Back to Chase
             float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
-            if (currentState == EnemyState.DoAction && distanceToPlayer > actionDistance)
-            {
+            if (currentState == EnemyState.DoAction && distanceToPlayer > enemyBaseStats.DoActionRadius)
                 currentState = EnemyState.Chase;
-            }
 
+            // Fire!
             if (currentState == EnemyState.DoAction)
             {
                 Debug.Log("Enemy Shoot!");
-
+                if (!enemyReloadHandler.IsReloading)
+                    DoActionEventTriggered?.Invoke(this);
             }
         }
 
-        private void OnTriggerEnter2D(Collider2D collision)
+        // Player Area Detection to Fire
+        void OnTriggerEnter2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
             {
@@ -80,7 +75,8 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             }
         }
 
-        private void OnTriggerExit2D(Collider2D collision)
+        // Player Left Fire Area
+        void OnTriggerExit2D(Collider2D collision)
         {
             if (collision.CompareTag("Player"))
             {
@@ -88,8 +84,9 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             }
         }
 
-        private void ExecuteDie()
+        void ExecuteDie()
         {
+            // Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
             enemyPooledObject.ReturnToPool();
         }
     }

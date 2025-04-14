@@ -174,7 +174,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             foreach (Tween tween in tweens)
             {
-                if (animType == UIAnimationType.SEQUENTIAL)
+                if (animType == UIAnimationType.Sequential)
                 {
                     sequence.Append(tween);
                 }

@@ -20,7 +20,7 @@ namespace GoodVillageGames.Game.General.UI.Animations.Config
         [field: SerializeField, 
             LabelText("Insert at Position"),
             Min(0),
-            ShowIf(nameof(UIAnimationType), UIAnimationType.PARALLEL)]
+            ShowIf(nameof(UIAnimationType), UIAnimationType.Paarallel)]
         public int InsertPosition { get; private set; } = 0;
 
         [field: SerializeField, 

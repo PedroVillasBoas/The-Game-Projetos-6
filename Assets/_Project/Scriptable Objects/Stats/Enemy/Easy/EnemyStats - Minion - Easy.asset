@@ -16,9 +16,9 @@ MonoBehaviour:
   EntityVisualPrefab: {fileID: 0}
   MaxHealth: 100
   CurrentHealth: 100
-  MaxSpeed: 20
+  MaxSpeed: 2
   MaxDefense: 20
-  Acceleration: 10
+  Acceleration: 1
   Experience: 0
   BaseAttackDamage: 5
   AttackSpeed: 1
@@ -27,5 +27,5 @@ MonoBehaviour:
   BoostRechargeRate: 0.2
   BaseMissileDamage: 10
   BaseMissileCooldown: 10
-  DoActionRadius: 100
+  DoActionRadius: 10
   EnemyType: 0

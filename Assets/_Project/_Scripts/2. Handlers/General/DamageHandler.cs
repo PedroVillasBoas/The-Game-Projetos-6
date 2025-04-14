@@ -1,5 +1,6 @@
 using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Enemy;
 using GoodVillageGames.Game.Core.Projectiles;
 
 namespace GoodVillageGames.Game.Handlers
@@ -13,6 +14,10 @@ namespace GoodVillageGames.Game.Handlers
             if (visitable is HealthHandler entity)
             {
                 entity.TakeDamage(_damageAmount);
+            }
+            else if (visitable is EnemyHealthHandler entityEnemy)
+            {
+                entityEnemy.TakeDamage(_damageAmount);
             }
         }
 

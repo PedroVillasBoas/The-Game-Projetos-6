@@ -1,14 +1,12 @@
 using System;
 using UnityEngine;
-using System.Collections;
 using GoodVillageGames.Game.Interfaces;
-using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
 
-namespace GoodVillageGames.Game.Handlers
+namespace GoodVillageGames.Game.Core.Enemy
 {
-    public class HealthHandler : MonoBehaviour, IDamageable, IVisitable
+    public class EnemyHealthHandler : MonoBehaviour, IDamageable, IVisitable
     {
         private float _currentHealth;
         private Stats _stats;
@@ -23,35 +21,27 @@ namespace GoodVillageGames.Game.Handlers
             set => _currentHealth = Mathf.Clamp(value, 0, _stats.MaxHealth);
         }
 
-        private void Awake()
+        private void Start()
         {
             _stats = transform.root.GetComponent<Entity>().Stats;
             _currentHealth = _stats.MaxHealth;
-        }
-
-        private void Start()
-        {
-            OnHealthChanged?.Invoke(_currentHealth);
+            OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+            Debug.Log($"Enemy Max Health: {_stats.MaxHealth}");
+            Debug.Log($"Enemy Current Health: {_currentHealth}");
         }
 
         public void TakeDamage(float amount)
         {
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
-            OnHealthChanged?.Invoke(_currentHealth);
-            UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
+            OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+
+            Debug.Log($"Enemy Current Health: {_currentHealth}");
 
             if (_currentHealth <= 0)
             {
                 OnDeath?.Invoke();
-                HandleDeath();
             }
-        }
-
-        private void HandleDeath()
-        {
-            // Handle death logic here
-            gameObject.SetActive(false);
         }
 
         public Vector2 GetPosition() => transform.position;
