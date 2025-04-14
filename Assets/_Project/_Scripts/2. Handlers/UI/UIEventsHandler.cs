@@ -1,3 +1,4 @@
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
 using UnityEngine;
 
@@ -59,6 +60,11 @@ namespace GoodVillageGames.Game.Handlers.UI
         public void CloseGamePopUp()
         {
             EventsManager.Instance.TriggerEvent("CloseGamePopUp");
+        }
+
+        public void StartGameNow()
+        {
+            GlobalEventsManager.Instance.StartGame();
         }
     }
 }

@@ -416,10 +416,7 @@ MonoBehaviour:
   _baseStats: {fileID: 11400000, guid: 6cb49814c22d1bd4e996994867261b9b, type: 2}
   enemyBaseStats: {fileID: 11400000, guid: 6cb49814c22d1bd4e996994867261b9b, type: 2}
   enemyHealthHandler: {fileID: 6797061250186162146}
-  enemyFirePoint: {fileID: 6599250306331955322}
   enemyAimHandler: {fileID: 6024289888244869311}
-  enemyFireHandler: {fileID: 1112742299737398711}
-  enemyReloadHandler: {fileID: 1863823834961755984}
   enemyDetectionCollider: {fileID: 2674631449899849598}
   enemyDeathVFX: {fileID: 0}
   currentState: 0
@@ -847,7 +844,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _firepoint: {fileID: 6599250306331955322}
-  _poolID: 3
+  _poolID: 5
 --- !u!114 &1863823834961755984
 MonoBehaviour:
   m_ObjectHideFlags: 0
