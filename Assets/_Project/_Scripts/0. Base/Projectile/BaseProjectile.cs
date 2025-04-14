@@ -69,12 +69,12 @@ namespace GoodVillageGames.Game.Core.Projectiles
         public virtual void DoAction()
         {
             Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
-            _timer.Stop();
             pooledObject.ReturnToPool();
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
+            _timer.Stop();
             DoAction();
         }
     }

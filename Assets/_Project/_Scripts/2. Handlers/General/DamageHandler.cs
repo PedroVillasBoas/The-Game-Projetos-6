@@ -15,7 +15,8 @@ namespace GoodVillageGames.Game.Handlers
             {
                 entity.TakeDamage(_damageAmount);
             }
-            else if (visitable is EnemyHealthHandler entityEnemy)
+            
+            if (visitable is EnemyHealthHandler entityEnemy)
             {
                 entityEnemy.TakeDamage(_damageAmount);
             }

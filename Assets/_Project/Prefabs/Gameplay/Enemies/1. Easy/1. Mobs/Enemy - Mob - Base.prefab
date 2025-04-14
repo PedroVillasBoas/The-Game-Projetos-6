@@ -44,6 +44,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8193557711090683271}
   - component: {fileID: 66840620616950447}
+  - component: {fileID: 2674631449899849598}
   m_Layer: 14
   m_Name: Enemy DetectionRadius
   m_TagString: Untagged
@@ -102,6 +103,19 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.5
+--- !u!114 &2674631449899849598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1920020222222430434}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a3685275c788fe146be8a369c5f08940, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Collider: {fileID: 0}
 --- !u!1 &2096918322051534456
 GameObject:
   m_ObjectHideFlags: 0
@@ -406,7 +420,7 @@ MonoBehaviour:
   enemyAimHandler: {fileID: 6024289888244869311}
   enemyFireHandler: {fileID: 1112742299737398711}
   enemyReloadHandler: {fileID: 1863823834961755984}
-  enemyDetectionCollider: {fileID: 66840620616950447}
+  enemyDetectionCollider: {fileID: 2674631449899849598}
   enemyDeathVFX: {fileID: 0}
   currentState: 0
 --- !u!1 &3844885810202463927

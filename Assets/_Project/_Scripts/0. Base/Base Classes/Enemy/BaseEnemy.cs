@@ -20,14 +20,14 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         [Title("Enemy Components")]
         [SerializeField, Group("Components")] protected EnemyBaseStats enemyBaseStats;
         [SerializeField, Group("Components")] protected EnemyHealthHandler enemyHealthHandler;
-        [SerializeField, Group("Components")] protected Transform enemyFirePoint;
         [SerializeField, Group("Components")] protected EnemyAimHandler enemyAimHandler;
-        [SerializeField, Group("Components")] protected EnemyFireHandler enemyFireHandler;
-        [SerializeField, Group("Components")] protected ReloadHandler enemyReloadHandler;
-        [SerializeField, Group("Components")] private CircleCollider2D enemyDetectionCollider;
+        [SerializeField, Group("Components")] protected EnemyDetectionTrigger enemyDetectionCollider;
 
         [Title("Enemy Prefabs")]
-        [SerializeField, Group("Prefabs")] private GameObject enemyDeathVFX;
+        [SerializeField, Group("Prefabs")] protected GameObject enemyDeathVFX;
+
+        protected EnemyFireHandler enemyFireHandler;
+        protected ReloadHandler enemyReloadHandler;
 
         private Transform player;
 
@@ -37,11 +37,13 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         {
             base.Awake();
             player = GameObject.FindGameObjectWithTag("Player").transform;
+            enemyFireHandler = GetComponentInChildren<EnemyFireHandler>();
+            enemyReloadHandler = GetComponentInChildren<ReloadHandler>();
         }
 
         void OnEnable()
         {
-            enemyDetectionCollider.radius = enemyBaseStats.DoActionRadius;
+            enemyDetectionCollider.Collider.radius = enemyBaseStats.DoActionRadius;
         }
 
         void Start()

@@ -1,5 +1,11 @@
 using System;
 using UnityEngine;
+using TriInspector;
+using GoodVillageGames.Game.General;
+using GoodVillageGames.Game.Handlers;
+using GoodVillageGames.Game.Core.Pooling;
+using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -29,22 +35,29 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         void OnDestroy()
         {
             if (enemyHealthHandler != null)
-            {
                 enemyHealthHandler.OnDeath -= ExecuteDie;
-            }
+
+            enemyDetectionCollider.PlayerInRangeActionTriggered -= SetFireFlag;
+        }
+
+        void Start()
+        {
+            enemyDetectionCollider.PlayerInRangeActionTriggered += SetFireFlag;
         }
 
         public override void Update()
         {
             base.Update();
 
-            enemyAimHandler.HandleLook(Player.transform.position);
+            // Continuously aim toward the player.
+            enemyAimHandler.HandleLook(Player.position);
 
             if (currentState == EnemyState.Die)
                 return;
 
             if (currentState == EnemyState.Chase)
             {
+                // Move toward the player only in Chase state.
                 transform.position = Vector2.MoveTowards(
                     transform.position,
                     Player.position,
@@ -52,41 +65,37 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
                 );
             }
 
-            // Back to Chase
-            float distanceToPlayer = Vector2.Distance(transform.position, Player.position);
-            if (currentState == EnemyState.DoAction && distanceToPlayer > enemyBaseStats.DoActionRadius)
-                currentState = EnemyState.Chase;
-
-            // Fire!
+            // When in DoAction state, fire if off cooldown.
             if (currentState == EnemyState.DoAction)
             {
-                Debug.Log("Enemy Shoot!");
-                if (!enemyReloadHandler.IsReloading)
-                    DoActionEventTriggered?.Invoke(this);
+                EnemyFire();
             }
         }
 
-        // Player Area Detection to Fire
-        void OnTriggerEnter2D(Collider2D collision)
+        void EnemyFire()
         {
-            if (collision.CompareTag("Player"))
+            // Only fire when not reloading.
+            if (!enemyReloadHandler.IsReloading)
             {
-                currentState = EnemyState.DoAction;
+                DoActionEventTriggered?.Invoke(this);
             }
+            // If reload is active, stay in DoAction 
+                // for now this will stay like this
+                // Later I'll do a rotation state
         }
 
-        // Player Left Fire Area
-        void OnTriggerExit2D(Collider2D collision)
+        // This method is called by the EnemyDetectionTrigger
+        void SetFireFlag(bool value)
         {
-            if (collision.CompareTag("Player"))
-            {
-                currentState = EnemyState.Chase;
-            }
+            currentState = value ? EnemyState.DoAction : EnemyState.Chase;
+            
+            if (!value)
+                enemyFireHandler.StopFiring();
         }
 
         void ExecuteDie()
         {
-            // Instantiate(deathParticlePrefab, transform.position, Quaternion.identity);
+            Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
             enemyPooledObject.ReturnToPool();
         }
     }

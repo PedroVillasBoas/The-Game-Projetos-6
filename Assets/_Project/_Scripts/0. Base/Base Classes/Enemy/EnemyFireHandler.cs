@@ -66,31 +66,27 @@ namespace GoodVillageGames.Game.Handlers
 
         void UpdateEnemyFire(EnemyAI enemy)
         {
-            if (enemy != transform.root.TryGetComponent<EnemyAI>(out _)) return;
+            _inputValue = true;
 
             if (_fireCoroutine == null)
             {
                 _fireCoroutine = StartCoroutine(FiringProcess());
             }
-            else if (_fireCoroutine != null)
-            {
-                StopCoroutine(_fireCoroutine);
-                _fireCoroutine = null;
-            }
+
         }
 
         private IEnumerator FiringProcess()
         {
-            while (true)
+            while (_inputValue)
             {
                 if (!_reloadHandler.IsReloading)
                 {
                     FireProjectile();
                     yield return StartCoroutine(_reloadHandler.Reload());
                 }
-
-                if (!_inputValue) break;
-                yield return null;
+                // Wating a frame if reloading
+                else
+                    yield return null;
             }
             _fireCoroutine = null;
         }
@@ -100,6 +96,16 @@ namespace GoodVillageGames.Game.Handlers
             if (!_reloadHandler.IsReloading)
             {
                 Fire(_poolID);
+            }
+        }
+
+        public void StopFiring()
+        {
+            _inputValue = false;
+            if (_fireCoroutine != null)
+            {
+                StopCoroutine(_fireCoroutine);
+                _fireCoroutine = null;
             }
         }
 

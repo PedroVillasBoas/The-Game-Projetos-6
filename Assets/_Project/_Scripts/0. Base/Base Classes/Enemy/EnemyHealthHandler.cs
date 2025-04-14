@@ -26,8 +26,6 @@ namespace GoodVillageGames.Game.Core.Enemy
             _stats = transform.root.GetComponent<Entity>().Stats;
             _currentHealth = _stats.MaxHealth;
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
-            Debug.Log($"Enemy Max Health: {_stats.MaxHealth}");
-            Debug.Log($"Enemy Current Health: {_currentHealth}");
         }
 
         public void TakeDamage(float amount)
@@ -35,8 +33,6 @@ namespace GoodVillageGames.Game.Core.Enemy
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
-
-            Debug.Log($"Enemy Current Health: {_currentHealth}");
 
             if (_currentHealth <= 0)
             {
