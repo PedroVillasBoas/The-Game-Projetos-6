@@ -10,6 +10,7 @@ namespace GoodVillageGames.Game.Core.Manager.UI
         public event Action<float> PlayerUIBoostEventTriggered;
         public event Action<float> PlayerUIHealthEventTriggered;
         public event Action<float> PlayerUIMissileEventTriggered;
+        public event Action<float> PlayerUIExpEventTriggered;
 
         private void Awake()
         {
@@ -33,5 +34,10 @@ namespace GoodVillageGames.Game.Core.Manager.UI
         {
             PlayerUIMissileEventTriggered?.Invoke(value);
         }
+
+        public void UpdateExpUI(float value)
+        {
+            PlayerUIExpEventTriggered?.Invoke(value);
+        } 
     }
 }

@@ -1,8 +1,7 @@
 using UnityEngine;
-using TriInspector;
+using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Manager.Player;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Handlers;
 
 namespace GoodVillageGames.Game.Core
 {

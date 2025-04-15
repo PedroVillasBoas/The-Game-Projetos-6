@@ -7,14 +7,20 @@ namespace GoodVillageGames.Game.General.UI.Updater
 {
     public class UIUpdater : MonoBehaviour
     {
+        // Boost
         [SerializeField] private Image _fuelFill;
 
+        // Missile
         [SerializeField] private Image _missileFill;
         private Coroutine _missileCoroutine;
 
+        // Health
         [SerializeField] private Image _healthFill;
         [SerializeField] private ParticleSystem _damageParticle;
         [SerializeField] private ParticleSystem _healParticle;
+
+        // EXP
+        [SerializeField] private Image _expFill;
 
         void Start()
         {
@@ -23,6 +29,7 @@ namespace GoodVillageGames.Game.General.UI.Updater
                 UIEventsManager.Instance.PlayerUIBoostEventTriggered += UpdateFuelUI;
                 UIEventsManager.Instance.PlayerUIMissileEventTriggered += UpdateMissileUI;
                 UIEventsManager.Instance.PlayerUIHealthEventTriggered += UpdateHealthUI;
+                UIEventsManager.Instance.PlayerUIExpEventTriggered += UpdateExpUI;
             }
             else
                 Debug.LogError("UIEventsManager instance not found!");
@@ -35,6 +42,7 @@ namespace GoodVillageGames.Game.General.UI.Updater
                 UIEventsManager.Instance.PlayerUIBoostEventTriggered -= UpdateFuelUI;
                 UIEventsManager.Instance.PlayerUIMissileEventTriggered -= UpdateMissileUI;
                 UIEventsManager.Instance.PlayerUIHealthEventTriggered -= UpdateHealthUI;
+                UIEventsManager.Instance.PlayerUIExpEventTriggered += UpdateExpUI;
             }
         }
 
@@ -125,6 +133,12 @@ namespace GoodVillageGames.Game.General.UI.Updater
 
             // Just making sure...
             _healthFill.transform.localScale = originalScale;
+        }
+    
+        void UpdateExpUI(float expAmount)
+        {
+            if (_expFill != null)
+                _expFill.fillAmount = Mathf.Clamp01(expAmount);
         }
     }
 }

@@ -380,8 +380,8 @@ MonoBehaviour:
   switchSettingsMigration: 1
   HasSourceProject: 1
   HasPlatforms: 1
-  sourceProjectPath: ../../FMOD/TheGame/TheGameProject/TheGameProject.fspro
-  sourceBankPath: ../../FMOD/TheGame/TheGameProject/Build
+  sourceProjectPath: ../../../FMOD/TheGame/TheGameProject/TheGameProject.fspro
+  sourceBankPath: ../../../FMOD/TheGame/TheGameProject/Build
   sourceBankPathUnformatted: 
   BankRefreshCooldown: 5
   ShowBankRefreshWindow: 1

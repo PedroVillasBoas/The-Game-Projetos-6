@@ -2,7 +2,7 @@ using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.GameObjectEntity;
 
-namespace GoodVillageGames.Game.Core.Pickup
+namespace GoodVillageGames.Game.Core.Pickups
 {
     public abstract class Pickup : MonoBehaviour, IVisitor
     {

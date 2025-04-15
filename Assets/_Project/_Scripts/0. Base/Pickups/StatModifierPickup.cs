@@ -2,10 +2,11 @@ using System;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core.Pooling;
 using UnityEngine;
 using static GoodVillageGames.Game.Enums.Enums;
 
-namespace GoodVillageGames.Game.Core.Pickup
+namespace GoodVillageGames.Game.Core.Pickups
 {
     public class StatModifierPickup : Pickup
     {

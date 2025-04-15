@@ -21,9 +21,9 @@ TagManager:
   - PlayerHealthHandler
   - EnemyHealthHandler
   - EnemyDetection
-  - 
-  - 
-  - 
+  - ExpPickup
+  - PlayerExpDetector
+  - PlayerExpHandler
   - 
   - 
   - 

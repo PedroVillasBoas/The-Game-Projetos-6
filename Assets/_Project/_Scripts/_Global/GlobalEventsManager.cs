@@ -18,6 +18,8 @@ namespace GoodVillageGames.Game.Core.Global
         public event Action StartRunEventTriggered;
         public event Action EndRunEventTriggered;
 
+        public event Action PlayerLevelUpEventTriggered;
+
         void Awake()
         {
             // Singleton
@@ -33,6 +35,11 @@ namespace GoodVillageGames.Game.Core.Global
         public void StartGame()
         {
             StartRunEventTriggered?.Invoke();
+        }
+
+        public void PlayerLevelUp()
+        {
+            PlayerLevelUpEventTriggered?.Invoke();
         }
     }
 }
