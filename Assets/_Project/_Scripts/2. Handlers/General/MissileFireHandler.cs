@@ -26,7 +26,7 @@ namespace GoodVillageGames.Game.Handlers
         private Coroutine _fireCoroutine;
         private PlayerEventsManager _entityEventsProvider;
 
-        public float Damage { get => _entityStats.BaseAttackDamage; }
+        public float Damage { get => _entityStats.BaseMissileDamage; }
 
         public IAimHandler AimHandler { get => _aimHandler; set => _aimHandler = value; }
         public IReloadHandler ReloadHandler { get => _reloadHandler; set => _reloadHandler = value; }
@@ -110,7 +110,7 @@ namespace GoodVillageGames.Game.Handlers
             _entityEventsProvider.PlayerProjectileEvent();
             if (projectile != null)
             {
-                if (projectile.TryGetComponent<BaseProjectile>(out BaseProjectile component))
+                if (projectile.TryGetComponent(out BaseProjectile component))
                 {
                     component.ProjectileDamageHandler.SetDamage(Damage);
                 }

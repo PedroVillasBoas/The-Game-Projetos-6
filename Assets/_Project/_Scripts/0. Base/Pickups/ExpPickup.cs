@@ -1,7 +1,7 @@
-using GoodVillageGames.Game.Core.Pooling;
+using UnityEngine;
 using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Interfaces;
-using UnityEngine;
+using GoodVillageGames.Game.Core.Pooling;
 
 namespace GoodVillageGames.Game.Core.Pickups
 {
@@ -26,8 +26,7 @@ namespace GoodVillageGames.Game.Core.Pickups
             if (visitable is PlayerExpHandler handler)
             {
                 handler.ExpCollected(_expAmount);
-                //_poolObject.ReturnToPool();
-                Destroy(gameObject);
+                _poolObject.ReturnToPool();
             }
         }
 

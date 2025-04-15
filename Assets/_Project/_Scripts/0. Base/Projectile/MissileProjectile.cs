@@ -1,6 +1,5 @@
 using UnityEngine;
 using TriInspector;
-using Unity.Mathematics;
 
 namespace GoodVillageGames.Game.Core.Projectiles
 {

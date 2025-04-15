@@ -156,6 +156,5 @@ namespace GoodVillageGames.Game.Core.Manager
             spawnPoint.z = 0;
             return spawnPoint;
         }
-
     }
 }

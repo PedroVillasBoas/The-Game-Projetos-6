@@ -105,8 +105,13 @@ namespace GoodVillageGames.Game.Enums
             EnemyBossPrefab,
             EnemyMinionProjectile,
             EnemyBossProjectile,
-            PickupEXP,
-            PickupItem,
+            PickupEXPTiny,
+            PickupEXPSmall,
+            PickupEXPLarge,
+            PickupEXPGigantic,
+            PickupItemDamage,
+            PickupItemSpeed,
+            PickupItemAttackSpeed,
         }
 
         public enum StatType
@@ -125,14 +130,6 @@ namespace GoodVillageGames.Game.Enums
             BoostRechargeRate,
             Acceleration,
             Experience,
-        }
-
-        public enum UpgradeType
-        {
-            None,
-            OnHit,
-            OnTimer,
-            OnStatModifier,
         }
 
         public enum OperatorType

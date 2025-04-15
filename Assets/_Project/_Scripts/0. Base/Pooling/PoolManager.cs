@@ -1,9 +1,8 @@
 using UnityEngine;
+using TriInspector;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Pooling;
-using System;
 using static GoodVillageGames.Game.Enums.Enums;
-using TriInspector;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -51,7 +50,7 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             else
             {
-                Debug.LogWarning("Pool with ID '" + poolId + "' not found.");
+                Debug.LogWarning($"Pool with ID '{poolId}' not found.");
                 return null;
             }
         }
@@ -64,7 +63,7 @@ namespace GoodVillageGames.Game.Core.Manager
             }
             else
             {
-                Debug.LogWarning("Pool with ID '" + poolId + "' not found. Destroying object.");
+                Debug.LogWarning($"Pool with ID '{poolId}' not found. Destroying object.");
                 Destroy(obj);
             }
         }
