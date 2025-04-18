@@ -52,7 +52,7 @@ TextureImporter:
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
   spritePixelsToUnits: 100
-  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteBorder: {x: 27, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
   alphaIsTransparency: 1
@@ -116,13 +116,13 @@ TextureImporter:
       name: s2_frame_empty_0
       rect:
         serializedVersion: 2
-        x: 0
+        x: 26
         y: 0
-        width: 170
+        width: 144
         height: 28
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 70, y: 0, z: 71, w: 0}
       customData: 
       outline: []
       physicsShape: []
@@ -138,8 +138,8 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
-    internalID: 0
+    spriteID: c0b04d7203a3d9448aaf35219b98f4be
+    internalID: 728047549
     vertices: []
     indices: 
     edges: []
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      s2_frame_empty_0: 7809007686176264883
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

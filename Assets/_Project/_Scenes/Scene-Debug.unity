@@ -533,6 +533,68 @@ MonoBehaviour:
     RotationDamping: {x: 1, y: 1, z: 1}
     QuaternionDamping: 1
   FollowOffset: {x: 0, y: 0, z: -10}
+--- !u!1 &228918465
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 228918466}
+  m_Layer: 0
+  m_Name: Enemies - Boss - First - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &228918466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 228918465}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &279953869
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 279953870}
+  m_Layer: 0
+  m_Name: Enemies - Minion - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &279953870
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279953869}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &310318771
 GameObject:
   m_ObjectHideFlags: 0
@@ -7878,13 +7940,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   initialSpawnInterval: 2
-  minSpawnInterval: 1
+  minSpawnInterval: 10
   spawnRateIncrease: 0.05
   baseMobsPerWave: 2
-  mobsIncreasePerMinute: 5
+  mobsIncreasePerMinute: 2
   circleSpawnCooldown: 10
   circleMobCount: 20
   circleRadius: 50
+  initialBossSpawnInterval: 180
+  minBossSpawnInterval: 120
+  spawnBossRateIncrease: 0.2
+  baseBossPerWave: 1
+  bossIncreasePerCycle: 1
+  bossPools:
+  - poolID: 4
+    weight: 1
 --- !u!4 &1036490735
 Transform:
   m_ObjectHideFlags: 0
@@ -7970,9 +8040,17 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: 2972790f22a94794aa96732392148ff2, type: 2}
     poolContainer: {fileID: 1991466476}
   - poolId: 3
-    prefab: {fileID: 3677439981667057745, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+    prefab: {fileID: 4087359875539187419, guid: 40444c944e7916448a5c8d9fb18cb120, type: 3}
     config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
     poolContainer: {fileID: 1186484685}
+  - poolId: 14
+    prefab: {fileID: 6009267874362592246, guid: a7414dbf413e095448fb397ed0a88e9a, type: 3}
+    config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
+    poolContainer: {fileID: 279953869}
+  - poolId: 4
+    prefab: {fileID: 5471991794941029436, guid: 49f1f54d21cbccb45a15073718c487e2, type: 3}
+    config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
+    poolContainer: {fileID: 877300189}
   - poolId: 5
     prefab: {fileID: 1375842065728042414, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
     config: {fileID: 11400000, guid: 00f73a3b1fc08ba468673ad45294ffc5, type: 2}
@@ -8028,9 +8106,12 @@ Transform:
   - {fileID: 2005168873}
   - {fileID: 634055778}
   - {fileID: 1186484686}
-  - {fileID: 1790393741}
+  - {fileID: 279953870}
+  - {fileID: 228918466}
+  - {fileID: 1724972970}
   - {fileID: 491517884}
   - {fileID: 877300190}
+  - {fileID: 1292955259}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1159807789
@@ -8166,7 +8247,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1186484686}
   m_Layer: 0
-  m_Name: Enemies - Entity - PoolContainer
+  m_Name: Enemies - Minion - First - PoolContainer
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -8317,6 +8398,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c544a4c9fb42044b9ed2c25bef9775b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1292955258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292955259}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Special - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1292955259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292955258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1371759594
 GameObject:
   m_ObjectHideFlags: 0
@@ -24088,6 +24200,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724333882}
   m_CullTransparentMesh: 1
+--- !u!1 &1724972969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724972970}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1724972970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724972969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1780143748
 GameObject:
   m_ObjectHideFlags: 0
@@ -24172,37 +24315,6 @@ MonoBehaviour:
   _expColliderDetector: {fileID: 1780143750}
   _expHandler: {fileID: 1618449951}
   _expMultiplier: 1.5
---- !u!1 &1790393740
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1790393741}
-  m_Layer: 0
-  m_Name: Enemies - Boss - PoolContainer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!4 &1790393741
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1790393740}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1055098067}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1823016961
 GameObject:
   m_ObjectHideFlags: 0

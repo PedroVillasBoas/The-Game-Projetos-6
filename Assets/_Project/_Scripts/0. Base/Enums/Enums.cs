@@ -112,6 +112,9 @@ namespace GoodVillageGames.Game.Enums
             PickupItemDamage,
             PickupItemSpeed,
             PickupItemAttackSpeed,
+            EnemyMinionSecondPrefab,
+            EnemyBossSecondPrefab,
+            EnemyBossSpecialProjectile,
         }
 
         public enum StatType

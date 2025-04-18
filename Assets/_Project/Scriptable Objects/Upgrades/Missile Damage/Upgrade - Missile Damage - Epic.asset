@@ -17,9 +17,13 @@ MonoBehaviour:
   Rarity: 0
   Image: {fileID: 0}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828178111463424
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828178111463424
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 0
+        _operatorType: 0
+        _value: 0

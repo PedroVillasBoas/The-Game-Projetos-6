@@ -26,7 +26,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             }
         }
 
-        void OnDestroy()
+        protected virtual void OnDestroy()
         {
             if (enemyHealthHandler != null)
                 enemyHealthHandler.OnDeath -= ExecuteDie;
@@ -49,6 +49,13 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             if (currentState == EnemyState.Die)
                 return;
 
+            ChaseState();
+            DoActionState();
+        }
+
+        // When in Chase State, go towards the player
+        private void ChaseState()
+        {
             if (currentState == EnemyState.Chase)
             {
                 // Move toward the player only in Chase state.
@@ -58,15 +65,18 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
                     enemyBaseStats.MaxSpeed * Time.deltaTime
                 );
             }
+        }
 
-            // When in DoAction state, fire if off cooldown.
+        // When in DoAction state, fire if off cooldown.
+        private void DoActionState()
+        {
             if (currentState == EnemyState.DoAction)
             {
                 EnemyFire();
             }
         }
 
-        void EnemyFire()
+        protected virtual void EnemyFire()
         {
             // Only fire when not reloading.
             if (!enemyReloadHandler.IsReloading)

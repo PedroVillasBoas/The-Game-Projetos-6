@@ -419,6 +419,7 @@ MonoBehaviour:
   enemyAimHandler: {fileID: 6024289888244869311}
   enemyDetectionCollider: {fileID: 2674631449899849598}
   enemyDeathVFX: {fileID: 0}
+  hasSpecialAction: 0
   currentState: 0
 --- !u!1 &3844885810202463927
 GameObject:
@@ -651,7 +652,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: -0.3523, y: -0.2168}
+  m_SizeDelta: {x: -0.1245, y: -0.2168}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &5136021906418499903
 CanvasRenderer:
