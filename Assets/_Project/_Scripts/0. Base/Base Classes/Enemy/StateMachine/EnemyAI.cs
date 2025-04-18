@@ -1,5 +1,6 @@
 using System;
 using GoodVillageGames.Game.Core.Global;
+using GoodVillageGames.Game.Core.Manager;
 using UnityEngine;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
@@ -102,6 +103,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         {
             Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
             GlobalEventsManager.Instance.AddDefeatedEnemy(enemyBaseStats.EnemyType);
+            ExpSpawnManager.Instance.SpawnEXP(enemyBaseStats.EnemyType, transform.position);
             enemyPooledObject.ReturnToPool();
         }
     }
