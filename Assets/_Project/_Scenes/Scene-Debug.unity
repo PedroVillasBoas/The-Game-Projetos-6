@@ -8048,7 +8048,7 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
     poolContainer: {fileID: 279953869}
   - poolId: 4
-    prefab: {fileID: 5471991794941029436, guid: 0e031ae8f5431b4489cf64a8bd4de900, type: 3}
+    prefab: {fileID: 6818246206260164804, guid: 1069d8dea53ac644ab7312c58ef5e512, type: 3}
     config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
     poolContainer: {fileID: 228918465}
   - poolId: 5
@@ -8153,6 +8153,50 @@ Transform:
   - {fileID: 1032873000}
   - {fileID: 1618449949}
   m_Father: {fileID: 1823016962}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1168284016
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168284018}
+  - component: {fileID: 1168284017}
+  m_Layer: 0
+  m_Name: File Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1168284017
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168284016}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e75df598a7e4a764093f380107fb201f, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1168284018
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1168284016}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1174511634
 GameObject:
@@ -25433,6 +25477,7 @@ SceneRoots:
   - {fileID: 1903117269}
   - {fileID: 1036490735}
   - {fileID: 1534193258}
+  - {fileID: 1168284018}
   - {fileID: 1055098067}
   - {fileID: 744354849}
   - {fileID: 1823016962}

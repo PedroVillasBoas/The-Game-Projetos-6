@@ -101,7 +101,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         void ExecuteDie()
         {
             Instantiate(enemyDeathVFX, transform.position, Quaternion.identity);
-            GlobalEventsManager.Instance.AddDefeatedEnemy(enemyType);
+            GlobalEventsManager.Instance.AddDefeatedEnemy(enemyBaseStats.EnemyType);
             enemyPooledObject.ReturnToPool();
         }
     }

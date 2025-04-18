@@ -28,4 +28,4 @@ MonoBehaviour:
   BaseMissileDamage: 0
   BaseMissileCooldown: 0
   DoActionRadius: 15
-  EnemyType: 1
+  EnemyType: 6

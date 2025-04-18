@@ -14,7 +14,6 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
     public class BaseEnemy : Entity
     {
         protected PooledObject enemyPooledObject;
-        protected EnemyType enemyType;
 
         [Title("Enemy Components")]
         [SerializeField, Group("Components")] protected EnemyBaseStats enemyBaseStats;
@@ -44,11 +43,6 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         void OnEnable()
         {
             enemyDetectionCollider.Collider.radius = enemyBaseStats.DoActionRadius;
-        }
-
-        void Start()
-        {
-            enemyType = enemyBaseStats.EnemyType;
         }
     }
 }
