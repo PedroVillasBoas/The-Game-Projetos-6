@@ -57,9 +57,17 @@ PrefabInstance:
       value: Enemy - Mob - Easy - Second
       objectReference: {fileID: 0}
     - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: poolID
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: _baseStats
       value: 
       objectReference: {fileID: 11400000, guid: 585c8570d35e09a48ac4412979dfd0e8, type: 2}
+    - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: enemyDeathVFX
+      value: 
+      objectReference: {fileID: 7047838003272070809, guid: 14f5113a705a52542a7da9fa01ebc688, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

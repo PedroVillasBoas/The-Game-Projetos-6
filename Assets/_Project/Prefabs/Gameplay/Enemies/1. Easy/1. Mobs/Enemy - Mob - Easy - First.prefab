@@ -50,8 +50,16 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3677439981667057745, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_Name
-      value: Enemy - Mob - Base
+      value: Enemy - Mob - Easy - First
       objectReference: {fileID: 0}
+    - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: poolID
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: enemyDeathVFX
+      value: 
+      objectReference: {fileID: 7047838003272070809, guid: 14f5113a705a52542a7da9fa01ebc688, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []

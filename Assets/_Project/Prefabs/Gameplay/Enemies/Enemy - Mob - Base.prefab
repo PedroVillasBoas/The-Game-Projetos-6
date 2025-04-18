@@ -248,6 +248,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: caad456d3333bf240acdbf65e7280825, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  damagePrefab: {fileID: 4917958863209454135, guid: f64dc61020146ed4aa13414d0adec047, type: 3}
 --- !u!58 &8627553373277007063
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -418,8 +419,7 @@ MonoBehaviour:
   enemyHealthHandler: {fileID: 6797061250186162146}
   enemyAimHandler: {fileID: 6024289888244869311}
   enemyDetectionCollider: {fileID: 2674631449899849598}
-  enemyDeathVFX: {fileID: 0}
-  hasSpecialAction: 0
+  enemyDeathVFX: {fileID: 8017774946817078678, guid: 0279830bad48a184490af9ca50be8aaa, type: 3}
   currentState: 0
 --- !u!1 &3844885810202463927
 GameObject:

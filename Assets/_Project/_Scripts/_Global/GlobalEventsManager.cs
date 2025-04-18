@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Global
 {
@@ -14,11 +15,16 @@ namespace GoodVillageGames.Game.Core.Global
         // Events
         public event Action ChangeGameStateEventTriggered;
 
+        // General Game State
         public event Action StartTutorialEventTriggered;
         public event Action StartRunEventTriggered;
         public event Action EndRunEventTriggered;
 
+        // Level Up
         public event Action PlayerLevelUpEventTriggered;
+
+        // Data Collection
+        public event Action<EnemyType> EnemyDefeatedEventTriggered;
 
         void Awake()
         {
@@ -40,6 +46,11 @@ namespace GoodVillageGames.Game.Core.Global
         public void PlayerLevelUp()
         {
             PlayerLevelUpEventTriggered?.Invoke();
+        }
+
+        public void AddDefeatedEnemy(EnemyType enemyType)
+        {
+            EnemyDefeatedEventTriggered?.Invoke(enemyType);
         }
     }
 }

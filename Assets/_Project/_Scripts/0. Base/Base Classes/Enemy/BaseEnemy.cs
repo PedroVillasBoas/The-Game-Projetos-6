@@ -1,4 +1,3 @@
-using KBCore.Refs;
 using UnityEngine;
 using TriInspector;
 using GoodVillageGames.Game.General;
@@ -6,7 +5,6 @@ using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Pooling;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -15,8 +13,8 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
     [DeclareFoldoutGroup("Prefabs")]
     public class BaseEnemy : Entity
     {
+        protected PooledObject enemyPooledObject;
         protected EnemyType enemyType;
-        [Self] protected PooledObject enemyPooledObject;
 
         [Title("Enemy Components")]
         [SerializeField, Group("Components")] protected EnemyBaseStats enemyBaseStats;
@@ -40,6 +38,7 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
             player = GameObject.FindGameObjectWithTag("Player").transform;
             enemyFireHandler = GetComponentInChildren<EnemyFireHandler>();
             enemyReloadHandler = GetComponentInChildren<EnemyReloadHandler>();
+            enemyPooledObject = GetComponent<PooledObject>();
         }
 
         void OnEnable()

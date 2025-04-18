@@ -67,6 +67,18 @@ PrefabInstance:
       value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 1152805483598740164, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152805483598740164, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152805483598740164, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 2.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 1152805483598740164, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
       objectReference: {fileID: 0}
@@ -158,6 +170,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.x
       value: -0.014999986
       objectReference: {fileID: 0}
+    - target: {fileID: 8627553373277007063, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: m_Radius
+      value: 0.6267319
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
     m_RemovedGameObjects: []
@@ -214,7 +230,7 @@ MonoBehaviour:
   enemyHealthHandler: {fileID: 2786756852098089871}
   enemyAimHandler: {fileID: 3126091991449486546}
   enemyDetectionCollider: {fileID: 6766302766450359059}
-  enemyDeathVFX: {fileID: 0}
+  enemyDeathVFX: {fileID: 9216348411068663119, guid: 71f7566f5f5811344a0ce9ef9d91e2f5, type: 3}
   currentState: 0
   specialActionCooldownAmount: 20
   ringFireHandler: {fileID: 8596485663099434645}

@@ -3,12 +3,13 @@ using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Core.Util.Timer;
 
 namespace GoodVillageGames.Game.Core.Enemy
 {
     public class EnemyHealthHandler : MonoBehaviour, IDamageable, IVisitable
     {
+        [SerializeField] private GameObject damagePrefab;
+
         private float _currentHealth;
         private Stats _stats;
     
@@ -40,6 +41,7 @@ namespace GoodVillageGames.Game.Core.Enemy
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+            Instantiate(damagePrefab, transform.position, Quaternion.identity);
 
             if (_currentHealth <= 0)
             {

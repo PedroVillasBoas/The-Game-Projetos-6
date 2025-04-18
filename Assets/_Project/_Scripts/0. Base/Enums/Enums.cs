@@ -153,8 +153,18 @@ namespace GoodVillageGames.Game.Enums
 
         public enum EnemyType
         {
-            Minion,
-            Boss,
+            MinionEasyFirst,
+            MinionEasySecond,
+            MinionMediumFirst,
+            MinionMediumSecond,
+            MinionHardFirst,
+            MinionHardSecond,
+            BossEasyFirst,
+            BossEasySecond,
+            BossMediumFirst,
+            BossMediumSecond,
+            BossHardFirst,
+            BossHardSecond,
         }
     }
 }

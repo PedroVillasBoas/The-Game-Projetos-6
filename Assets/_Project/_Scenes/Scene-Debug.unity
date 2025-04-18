@@ -7947,7 +7947,7 @@ MonoBehaviour:
   circleSpawnCooldown: 10
   circleMobCount: 20
   circleRadius: 50
-  initialBossSpawnInterval: 180
+  initialBossSpawnInterval: 1
   minBossSpawnInterval: 120
   spawnBossRateIncrease: 0.2
   baseBossPerWave: 1
@@ -8048,9 +8048,9 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
     poolContainer: {fileID: 279953869}
   - poolId: 4
-    prefab: {fileID: 5471991794941029436, guid: 49f1f54d21cbccb45a15073718c487e2, type: 3}
+    prefab: {fileID: 5471991794941029436, guid: 0e031ae8f5431b4489cf64a8bd4de900, type: 3}
     config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
-    poolContainer: {fileID: 877300189}
+    poolContainer: {fileID: 228918465}
   - poolId: 5
     prefab: {fileID: 1375842065728042414, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
     config: {fileID: 11400000, guid: 00f73a3b1fc08ba468673ad45294ffc5, type: 2}
