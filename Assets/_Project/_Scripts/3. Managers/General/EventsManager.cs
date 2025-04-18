@@ -23,9 +23,6 @@ namespace GoodVillageGames.Game.Core.Manager
         // Scene Change
         public event Action<SceneScriptableObject> OnChangeSceneEventTriggered;
 
-        // Game State
-        public event Action<GameState> OnGameStateEventTriggered;
-
         // Scene Loading
         public event Action OnSceneLoadedEventTriggered;
 
@@ -58,12 +55,6 @@ namespace GoodVillageGames.Game.Core.Manager
         public void ChangeSceneTriggerEvent(SceneScriptableObject _sceneSO)
         {
             OnChangeSceneEventTriggered?.Invoke(_sceneSO);
-        }
-
-        // Change Game State
-        public void GameStateTriggerEvent(GameState _gameState)
-        {
-            OnGameStateEventTriggered?.Invoke(_gameState);
         }
 
         public void SceneLoadedTriggerEvent()

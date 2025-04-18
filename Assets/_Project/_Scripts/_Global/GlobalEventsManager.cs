@@ -12,13 +12,8 @@ namespace GoodVillageGames.Game.Core.Global
         // Singleton
         public static GlobalEventsManager Instance { get; private set; }
 
-        // Events
-        public event Action ChangeGameStateEventTriggered;
-
-        // General Game State
-        public event Action StartTutorialEventTriggered;
-        public event Action StartRunEventTriggered;
-        public event Action EndRunEventTriggered;
+        // Game State
+        public event Action<GameState> ChangeGameStateEventTriggered;
 
         // Level Up
         public event Action PlayerLevelUpEventTriggered;
@@ -37,10 +32,10 @@ namespace GoodVillageGames.Game.Core.Global
             DontDestroyOnLoad(gameObject);
         }
 
-        // Temp
-        public void StartGame()
+        // Game States
+        public void ChangeGameState(GameState gameState)
         {
-            StartRunEventTriggered?.Invoke();
+            ChangeGameStateEventTriggered?.Invoke(gameState);
         }
 
         public void PlayerLevelUp()

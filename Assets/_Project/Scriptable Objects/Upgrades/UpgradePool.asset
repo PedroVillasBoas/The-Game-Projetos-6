@@ -1,0 +1,59 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b8d5a87fc05634291142394467cb63, type: 3}
+  m_Name: UpgradePool
+  m_EditorClassIdentifier: 
+  CommonUpgrades:
+  - {fileID: 11400000, guid: 0bdb3c30052a77744acafcf8f7861292, type: 2}
+  - {fileID: 11400000, guid: 5f2ff54c3e993d54db8ca42a82262b23, type: 2}
+  - {fileID: 11400000, guid: cdb100a5ab37d124e919ecc74173f8d4, type: 2}
+  - {fileID: 11400000, guid: 5c0980ed764d68940b43480612c7491e, type: 2}
+  - {fileID: 11400000, guid: c3f54986bd20b1e4a91a4bcdf9aef7fb, type: 2}
+  - {fileID: 11400000, guid: 431c41c27d99767408c5d35445742c9f, type: 2}
+  - {fileID: 11400000, guid: e1a1089a8cb194840904ab5009fb012a, type: 2}
+  - {fileID: 11400000, guid: 45b948f417526664682b168fa4f4ba9c, type: 2}
+  UncommonUpgrades:
+  - {fileID: 11400000, guid: c7767d23dee494049b37c857a5c51970, type: 2}
+  - {fileID: 11400000, guid: 08ebbd2328b3d764488482fe16770ede, type: 2}
+  - {fileID: 11400000, guid: d2391ce0ab2f4a54b9b523af06cff612, type: 2}
+  - {fileID: 11400000, guid: b104d162ea2c5e348ac4a95cda9177fe, type: 2}
+  - {fileID: 11400000, guid: d86a698eb6480b343a71f3fb5aeac4d3, type: 2}
+  - {fileID: 11400000, guid: 04040c96c0ba5f34eaa38b9718a9629a, type: 2}
+  - {fileID: 11400000, guid: 7fc3b15760a067748b9c00e3e93739a4, type: 2}
+  - {fileID: 11400000, guid: 7cf2aea54d70d6b4089f0be91f1f5e82, type: 2}
+  RareUpgrades:
+  - {fileID: 11400000, guid: 15e52a65850b01148a02e2ca162b395d, type: 2}
+  - {fileID: 11400000, guid: 2783154cd4f71784ca4148faf0fcd69e, type: 2}
+  - {fileID: 11400000, guid: f7f4dddd8483192469bfeaad7f6f9d7a, type: 2}
+  - {fileID: 11400000, guid: 58aaf5044d1fb384385f3483007befe6, type: 2}
+  - {fileID: 11400000, guid: f11560e2cfae3c24b9e01ebba9643f15, type: 2}
+  - {fileID: 11400000, guid: d8cb34d938e10a643b26de18a5361bdf, type: 2}
+  - {fileID: 11400000, guid: d7e0f035590f33e4b824403c34dff358, type: 2}
+  - {fileID: 11400000, guid: e3a4f31c807580c47975e97e5f1090a5, type: 2}
+  EpicUpgrades:
+  - {fileID: 11400000, guid: 0c1e0718657c4544e805f10a1c0a2b25, type: 2}
+  - {fileID: 11400000, guid: f3184398535545a4992e37fabce5c930, type: 2}
+  - {fileID: 11400000, guid: 7462c0e7bc542384f902ae224a5362fa, type: 2}
+  - {fileID: 11400000, guid: 60f419e2f46e79442b63e046d32d71d8, type: 2}
+  - {fileID: 11400000, guid: 6fc6c316a642fa54e9e49b7568fea147, type: 2}
+  - {fileID: 11400000, guid: 88a4c4593bb8ece4ca284ec744dd0ff0, type: 2}
+  - {fileID: 11400000, guid: 780178260863bfd4bad226187c66e79b, type: 2}
+  - {fileID: 11400000, guid: 3dca926d60142b242a31c515adb08b0b, type: 2}
+  LegendaryUpgrades:
+  - {fileID: 11400000, guid: 0e4be4f054208d0429414b67885dd5b8, type: 2}
+  - {fileID: 11400000, guid: 8ec0bf46141ba4e4bae0a6dce8d81ff6, type: 2}
+  - {fileID: 11400000, guid: ad4ae9f2229f32741862d28864638990, type: 2}
+  - {fileID: 11400000, guid: dee35790cdec9b4479d40b1d95ab7b76, type: 2}
+  - {fileID: 11400000, guid: 7767db2b1be7e5e4d908ebd73e416ce1, type: 2}
+  - {fileID: 11400000, guid: 2566166017116bc4cab185d1dfc9b21a, type: 2}
+  - {fileID: 11400000, guid: 55d5066a9c280b648a73ffac0a6d23d4, type: 2}
+  - {fileID: 11400000, guid: 63b6f559a5c637d4e8005c3c1b52ec63, type: 2}

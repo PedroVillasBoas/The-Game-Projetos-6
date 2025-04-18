@@ -1,20 +1,21 @@
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
 using UnityEngine;
+using static GoodVillageGames.Game.Enums.Enums;
 
 
 namespace GoodVillageGames.Game.Handlers.UI
 {
-    public class UIEventsHandler : MonoBehaviour
+    public partial class UIEventsHandler : MonoBehaviour
     {
         public void TurnOffUIInput()
         {
-            EventsManager.Instance.AnimationTriggerEvent(Enums.Enums.UIState.PLAYING_UI_ANIM);
+            EventsManager.Instance.AnimationTriggerEvent(UIState.PLAYING_UI_ANIM);
         }
 
         public void TurnOnUIInput()
         {
-            EventsManager.Instance.AnimationTriggerEvent(Enums.Enums.UIState.NORMAL_UI);
+            EventsManager.Instance.AnimationTriggerEvent(UIState.NORMAL_UI);
         }
 
         public void TurnOnMoveStars()
@@ -32,19 +33,14 @@ namespace GoodVillageGames.Game.Handlers.UI
             EventsManager.Instance.TriggerEvent("Stop");
         }
 
+        public void StartTutorial()
+        {
+            GlobalEventsManager.Instance.ChangeGameState(GameState.Tutorial);
+        }
+
         public void StartGame()
         {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.InGame);
-        }
-
-        public void PauseGame()
-        {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.Paused);
-        }
-
-        public void UpgradeTime()
-        {
-            EventsManager.Instance.GameStateTriggerEvent(Enums.Enums.GameState.UpgradeScreen);
+            GlobalEventsManager.Instance.ChangeGameState(GameState.GameBegin);
         }
 
         public void OpenQuitGamePopUp()
@@ -60,11 +56,6 @@ namespace GoodVillageGames.Game.Handlers.UI
         public void CloseGamePopUp()
         {
             EventsManager.Instance.TriggerEvent("CloseGamePopUp");
-        }
-
-        public void StartGameNow()
-        {
-            GlobalEventsManager.Instance.StartGame();
         }
     }
 }

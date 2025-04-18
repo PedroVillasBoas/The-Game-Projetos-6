@@ -1,4 +1,5 @@
 using UnityEngine;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Global
 {
@@ -9,6 +10,10 @@ namespace GoodVillageGames.Game.Core.Global
     {
         public static GlobalGameManager Instance { get; private set; }
 
+        private GameState gameState = GameState.MainMenu;
+
+        public GameState GameState { get => gameState; set => gameState = value; }
+
         void Awake()
         {
             // Singleton
@@ -18,6 +23,16 @@ namespace GoodVillageGames.Game.Core.Global
                 Destroy(gameObject);
 
             DontDestroyOnLoad(gameObject);
+        }
+
+        void Start()
+        {
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnChangeState;
+        }
+
+        void OnChangeState(GameState state)
+        {
+            gameState = state;
         }
     }
 }

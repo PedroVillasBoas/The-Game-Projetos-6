@@ -1,20 +1,30 @@
 using UnityEngine;
 using TriInspector;
+using GoodVillageGames.Game.Core.Global;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
     public class CursorManager : MonoBehaviour
     {
-        [Title("Game Cursor (Prefab Animado)")]
+        [Title("Game Cursor")]
         public GameObject gameCursorPrefab;
         private GameObject instanceGameCursor;
 
-        // Change this later!!!
         public bool isInGame = true;
+
+        void OnDisable()
+        {
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleCursor;
+        }
+
+        void Start()
+        {
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleCursor;
+        }
 
         void Update()
         {
-            // Change this later!!
             if (isInGame)
             {
                 EnableAimCursor();
@@ -50,6 +60,14 @@ namespace GoodVillageGames.Game.Core.Manager
             {
                 Destroy(instanceGameCursor);
             }
+        }
+
+        void ToggleCursor(GameState state)
+        {
+            if (state == GameState.GameBegin || state == GameState.GameContinue)
+                isInGame = true;
+            else
+                isInGame = false;
         }
     }
 }

@@ -55,9 +55,11 @@ namespace GoodVillageGames.Game.Enums
         public enum GameState
         {
             MainMenu,
-            InGame,
+            Tutorial,
+            GameBegin,
+            GameContinue,
+            GamePaused,
             UpgradeScreen,
-            Paused,
             PlayerDied,
             GameOver,
         }

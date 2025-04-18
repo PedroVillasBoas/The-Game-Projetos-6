@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b7a2ae034ad37bd4b93f5b8fc1050987, type: 3}
   m_Name: Upgrade - Missile Cooldown - Common
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Cooling Conduits
   Description: 
   Rarity: 0
   Image: {fileID: 0}

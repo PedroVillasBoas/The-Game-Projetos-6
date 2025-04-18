@@ -35,12 +35,12 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void OnDisable()
         {
-            GlobalEventsManager.Instance.StartRunEventTriggered -= OnStartRun;
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnStartRun;
         }
 
         void Start()
         {
-            GlobalEventsManager.Instance.StartRunEventTriggered += OnStartRun;
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnStartRun;
             _countdownTimer.OnTimerStop = () => SpawnItem();
         }
 
@@ -98,9 +98,10 @@ namespace GoodVillageGames.Game.Core.Manager
             }
         }
 
-        private void OnStartRun()
+        private void OnStartRun(GameState gameState)
         {
-            _countdownTimer.Start();
+            if (gameState == GameState.GameBegin)
+                _countdownTimer.Start();
         }
     }
 }

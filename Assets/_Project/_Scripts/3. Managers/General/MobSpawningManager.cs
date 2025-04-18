@@ -58,18 +58,24 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void OnEnable()
         {
-            GlobalEventsManager.Instance.StartRunEventTriggered += BeginSpawnCoroutines;
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
         }
 
         void OnDestroy()
         {
-            GlobalEventsManager.Instance.StartRunEventTriggered -= BeginSpawnCoroutines;
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
         }
 
         void Start()
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             mainCamera = Camera.main;
+        }
+
+        void OnGameStateChanged(GameState gameState)
+        {
+            if (gameState == GameState.GameBegin)
+                BeginSpawnCoroutines();
         }
 
         void BeginSpawnCoroutines()
