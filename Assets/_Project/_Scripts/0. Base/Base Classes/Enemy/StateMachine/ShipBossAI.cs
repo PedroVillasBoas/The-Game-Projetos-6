@@ -3,7 +3,7 @@ using GoodVillageGames.Game.Handlers;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
-    public class InsectoidBossAI : BossAI
+    public class ShipBossAI : BossAI
     {
         [SerializeField] private RingFireHandler ringFireHandler;
 

@@ -12,15 +12,19 @@ namespace GoodVillageGames.Game.General.UI.Updater
 
         // Missile
         [SerializeField] private Image _missileFill;
-        private Coroutine _missileCoroutine;
 
         // Health
         [SerializeField] private Image _healthFill;
         [SerializeField] private ParticleSystem _damageParticle;
         [SerializeField] private ParticleSystem _healParticle;
+        private Vector3 _healthOriginalScale;
 
         // EXP
         [SerializeField] private Image _expFill;
+
+        // Coroutines
+        private Coroutine _healthCoroutine;
+        private Coroutine _missileCoroutine;
 
         void Start()
         {
@@ -33,6 +37,8 @@ namespace GoodVillageGames.Game.General.UI.Updater
             }
             else
                 Debug.LogError("UIEventsManager instance not found!");
+
+            _healthOriginalScale = _healthFill.transform.localScale;
         }
 
         void OnDestroy()
@@ -91,12 +97,24 @@ namespace GoodVillageGames.Game.General.UI.Updater
             {
                 float previousHealth = _healthFill.fillAmount;
                 _healthFill.fillAmount = Mathf.Clamp01(healthAmount);
-                StartCoroutine(PunchHealthUI());
 
                 if (previousHealth > _healthFill.fillAmount)
+                {
                     _damageParticle.Play();
-                else
+
+                    // Stop existing corouitine animation and reset scale
+                    if (_healthCoroutine != null)
+                    {
+                        StopCoroutine(_healthCoroutine);
+                        _healthFill.transform.localScale = _healthOriginalScale;
+                    }
+
+                    _healthCoroutine = StartCoroutine(PunchHealthUI());
+                }
+                else if (previousHealth < _healthFill.fillAmount)
+                {
                     _healParticle.Play();
+                }
             }
             else
             {
@@ -134,7 +152,7 @@ namespace GoodVillageGames.Game.General.UI.Updater
             // Just making sure...
             _healthFill.transform.localScale = originalScale;
         }
-    
+
         void UpdateExpUI(float expAmount)
         {
             if (_expFill != null)

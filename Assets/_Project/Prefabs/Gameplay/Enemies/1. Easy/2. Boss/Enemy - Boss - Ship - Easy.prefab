@@ -120,7 +120,7 @@ PrefabInstance:
       objectReference: {fileID: -5162315860158141513, guid: 2088042f4d017ad498ee9d2252b18e50, type: 3}
     - target: {fileID: 3677439981667057745, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_Name
-      value: Enemy - Boss - Insectoid - Easy
+      value: Enemy - Boss - Ship - Easy 1
       objectReference: {fileID: 0}
     - target: {fileID: 3999596912798740080, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_Sprite

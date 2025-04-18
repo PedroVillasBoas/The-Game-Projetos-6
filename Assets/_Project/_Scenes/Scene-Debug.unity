@@ -8055,6 +8055,10 @@ MonoBehaviour:
     prefab: {fileID: 1375842065728042414, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
     config: {fileID: 11400000, guid: 00f73a3b1fc08ba468673ad45294ffc5, type: 2}
     poolContainer: {fileID: 491517883}
+  - poolId: 6
+    prefab: {fileID: 3796983072366540952, guid: 7df1ed61c5ae1b24b8c117032b9bbfac, type: 3}
+    config: {fileID: 11400000, guid: 3bc373bff1704e4488da8adb990e749d, type: 2}
+    poolContainer: {fileID: 877300189}
   - poolId: 7
     prefab: {fileID: 3526490630064665744, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
     config: {fileID: 11400000, guid: 17e6a8522ee296441a964011f224095d, type: 2}
