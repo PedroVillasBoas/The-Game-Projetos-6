@@ -25,13 +25,14 @@ namespace GoodVillageGames.Game.Core.Enemy
 
         void OnEnable()
         {
+            _stats = transform.parent.parent.GetComponent<Entity>().Stats;
+            _currentHealth = _stats.MaxHealth;
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
         }
 
         private void Start()
         {
 
-            _stats = transform.parent.parent.GetComponent<Entity>().Stats;
             _currentHealth = _stats.MaxHealth;
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
         }
