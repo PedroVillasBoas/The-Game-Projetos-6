@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
 using GoodVillageGames.Game.Handlers;
-using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Global;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -24,26 +24,31 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void OnEnable()
         {
-            EventsManager.Instance.OnAnimationEventTriggered += OnUIPlayingAnimation;
             _playerInputComponent.onActionTriggered += OnActionTriggered;
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleControls;
         }
 
         void OnDisable()
         {
             _playerInputComponent.onActionTriggered -= OnActionTriggered;
-            EventsManager.Instance.OnAnimationEventTriggered -= OnUIPlayingAnimation;
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleControls;
+        }
+
+        void Start()
+        {
+            Debug.Log($"Input Actions: {_inputActions}");
+            Debug.Log($"Player Input Component: {_playerInputComponent}");
+            Debug.Log($"Player Actions: {_playerActions}");
         }
 
         void Update()
         {
             if (GlobalGameManager.Instance.GameState == GameState.GameBegin ||
-            GlobalGameManager.Instance.GameState == GameState.GameContinue)
+            GlobalGameManager.Instance.GameState == GameState.GameContinue && GlobalGameManager.Instance.UIState == UIState.NoAnimationPlaying)
             {
                 Vector2 currentMousePos = Mouse.current.position.ReadValue();
                 _playerAimHandler.HandleLook(currentMousePos);
             }
+
+            OnUIPlayingAnimation();
         }
 
         void OnActionTriggered(InputAction.CallbackContext context)
@@ -98,36 +103,25 @@ namespace GoodVillageGames.Game.Core.Manager
                 _playerActions.HandleMissile(false);
         }
 
-        public void ToggleControls(GameState gameState)
-        {
-            if(gameState == GameState.MainMenu || gameState == GameState.GamePaused || gameState == GameState.PlayerDied || gameState == GameState.GameOver)
-            {
-                //_inputActions.Player.Disable();
-                _playerInputComponent.onActionTriggered -= OnActionTriggered;
-                _inputActions.UI.Enable();
-            }
-            else
-            {
-                //_inputActions.Player.Enable();
-                _inputActions.UI.Disable();
-                _playerInputComponent.onActionTriggered += OnActionTriggered;
-            }
-        }
+        
 
-        void OnUIPlayingAnimation(UIState _UIState)
+        void OnUIPlayingAnimation()
         {
-            switch (_UIState)
+            switch (GlobalGameManager.Instance.UIState)
             {
                 case UIState.NORMAL_UI:
-                    _inputActions.UI.Enable();
+                    if (_inputActions.Player.enabled)
+                        _inputActions.Player.Disable();
                     break;
                 
                 case UIState.PLAYING_UI_ANIM:
-                    _inputActions.UI.Disable();
+                    if (_inputActions.Player.enabled)
+                        _inputActions.Player.Disable();
                     break;
                 
-                default:
-                    Debug.Log($"No UIState Case for: '{_UIState}'!");
+                case UIState.NoAnimationPlaying:
+                    if (!_inputActions.Player.enabled)
+                        _inputActions.Player.Enable();
                     break;
             }
         }

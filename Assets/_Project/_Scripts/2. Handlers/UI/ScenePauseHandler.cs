@@ -28,36 +28,49 @@ namespace GoodVillageGames.Game.Handlers.UI
         {
             if (!context.performed)
                 return;
-
-            switch (GlobalGameManager.Instance.GameState)
+            if (GlobalGameManager.Instance.UIState != UIState.PLAYING_UI_ANIM)
             {
-                case GameState.GamePaused:
-                    TogglePause();
-                    break;
+                switch (GlobalGameManager.Instance.GameState)
+                {
+                    case GameState.GamePaused:
+                        TogglePause();
+                        break;
 
-                case GameState.GameBegin:
-                    TogglePause();
-                    break;
+                    case GameState.GameBegin:
+                        TogglePause();
+                        break;
 
-                case GameState.GameContinue:
-                    TogglePause();
-                    break;
+                    case GameState.GameContinue:
+                        TogglePause();
+                        break;
 
-                default:
-                    Debug.LogError($"Cannot pause the game when in state {GlobalGameManager.Instance.GameState}.");
-                    break;
+                    default:
+                        Debug.LogError($"Cannot pause the game when in state {GlobalGameManager.Instance.GameState}.");
+                        break;
+                }
+
             }
         }
 
-        private void TogglePause()
+        void TogglePause()
         {
             bool shouldPause = GlobalGameManager.Instance.GameState != GameState.GamePaused;
-            Time.timeScale = shouldPause ? 0f : 1f;
 
             if (shouldPause)
+            {
                 GlobalEventsManager.Instance.ChangeGameState(GameState.GamePaused);
+                Time.timeScale = 0f;
+            }
             else
+            {
                 GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);
+                Time.timeScale = 1f;
+            }
+        }
+
+        public void ReturnToOriginalTimeScale()
+        {
+            Time.timeScale = 1f;
         }
     }
 }

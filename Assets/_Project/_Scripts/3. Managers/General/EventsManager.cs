@@ -15,10 +15,6 @@ namespace GoodVillageGames.Game.Core.Manager
 
         // Generic event
         public event Action<string> OnEventTriggered;
-
-        // Animations 
-            // State
-        public event Action<UIState> OnAnimationEventTriggered;
         
         // Scene Change
         public event Action<SceneScriptableObject> OnChangeSceneEventTriggered;
@@ -43,12 +39,6 @@ namespace GoodVillageGames.Game.Core.Manager
         public void TriggerEvent(string _event)
         {
             OnEventTriggered?.Invoke(_event);
-        }
-
-        // Broadcast that is playing an UI animation
-        public void AnimationTriggerEvent(UIState _uiState)
-        {
-            OnAnimationEventTriggered?.Invoke(_uiState);
         }
 
         // Change the Scene

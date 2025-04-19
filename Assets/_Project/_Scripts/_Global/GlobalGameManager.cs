@@ -11,8 +11,10 @@ namespace GoodVillageGames.Game.Core.Global
         public static GlobalGameManager Instance { get; private set; }
 
         private GameState gameState = GameState.MainMenu;
+        private UIState uIState = UIState.NoAnimationPlaying;
 
         public GameState GameState { get => gameState; set => gameState = value; }
+        public UIState UIState { get => uIState; set => uIState = value; }
 
         void Awake()
         {
@@ -28,11 +30,17 @@ namespace GoodVillageGames.Game.Core.Global
         void Start()
         {
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnChangeState;
+            GlobalEventsManager.Instance.OnAnimationEventTriggered += OnUIAnimationStateChange;
         }
 
         void OnChangeState(GameState state)
         {
             gameState = state;
+        }
+
+        void OnUIAnimationStateChange(UIState state)
+        {
+            uIState = state;
         }
     }
 }

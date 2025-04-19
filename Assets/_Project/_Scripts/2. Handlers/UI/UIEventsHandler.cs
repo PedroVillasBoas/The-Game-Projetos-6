@@ -1,6 +1,6 @@
+using UnityEngine;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
-using UnityEngine;
 using static GoodVillageGames.Game.Enums.Enums;
 
 
@@ -8,14 +8,22 @@ namespace GoodVillageGames.Game.Handlers.UI
 {
     public partial class UIEventsHandler : MonoBehaviour
     {
-        public void TurnOffUIInput()
+        [SerializeField] private ScenePauseHandler scenePauseHandler;
+
+        public void PlayingUIAnimation()
         {
-            EventsManager.Instance.AnimationTriggerEvent(UIState.PLAYING_UI_ANIM);
+            GlobalEventsManager.Instance.AnimationTriggerEvent(UIState.PLAYING_UI_ANIM);
         }
 
-        public void TurnOnUIInput()
+        public void LoopingUIAnimation()
         {
-            EventsManager.Instance.AnimationTriggerEvent(UIState.NORMAL_UI);
+            GlobalEventsManager.Instance.AnimationTriggerEvent(UIState.NORMAL_UI);
+        }
+
+        public void TurnOnPlayerInput()
+        {
+            GlobalEventsManager.Instance.AnimationTriggerEvent(UIState.NoAnimationPlaying);
+            scenePauseHandler.ReturnToOriginalTimeScale();
         }
 
         public void TurnOnMoveStars()

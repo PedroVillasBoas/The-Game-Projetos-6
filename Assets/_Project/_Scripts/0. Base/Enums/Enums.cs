@@ -50,6 +50,7 @@ namespace GoodVillageGames.Game.Enums
         {
             PLAYING_UI_ANIM,
             NORMAL_UI,
+            NoAnimationPlaying,
         }
 
         public enum GameState

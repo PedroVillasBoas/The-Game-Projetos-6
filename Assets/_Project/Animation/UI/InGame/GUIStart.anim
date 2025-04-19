@@ -190,7 +190,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.033333335
-    functionName: TurnOffUIInput
+    functionName: PlayingUIAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -198,6 +198,13 @@ AnimationClip:
     messageOptions: 0
   - time: 1.9666667
     functionName: StartGame
+    data: 
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 1.9833333
+    functionName: TurnOnPlayerInput
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

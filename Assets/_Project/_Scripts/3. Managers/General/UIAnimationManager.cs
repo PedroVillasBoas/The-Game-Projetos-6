@@ -3,6 +3,7 @@ using DG.Tweening;
 using System.Collections;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.ScriptableObjects;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -22,7 +23,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             _uiState = UIState.PLAYING_UI_ANIM;
             
-            EventsManager.Instance.AnimationTriggerEvent(_uiState);
+            GlobalEventsManager.Instance.AnimationTriggerEvent(_uiState);
             sequence.Play();
             yield return new WaitForSeconds(sequence.Duration());
 
@@ -31,7 +32,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
             EventsManager.Instance.TriggerEvent("Stop"); // UI Particles to Stop Emmiting
             _uiState = UIState.NORMAL_UI;
-            EventsManager.Instance.AnimationTriggerEvent(_uiState);
+            GlobalEventsManager.Instance.AnimationTriggerEvent(_uiState);
         }
 
     }

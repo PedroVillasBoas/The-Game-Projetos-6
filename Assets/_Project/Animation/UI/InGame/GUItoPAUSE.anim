@@ -1382,14 +1382,14 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.016666668
-    functionName: TurnOffUIInput
+    functionName: PlayingUIAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
   - time: 2.4666667
-    functionName: TurnOnUIInput
+    functionName: LoopingUIAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

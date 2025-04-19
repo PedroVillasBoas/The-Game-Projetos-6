@@ -15,6 +15,9 @@ namespace GoodVillageGames.Game.Core.Global
         // Game State
         public event Action<GameState> ChangeGameStateEventTriggered;
 
+        // UI Animations State
+        public event Action<UIState> OnAnimationEventTriggered;
+
         // Level Up
         public event Action PlayerLevelUpEventTriggered;
 
@@ -38,6 +41,11 @@ namespace GoodVillageGames.Game.Core.Global
             ChangeGameStateEventTriggered?.Invoke(gameState);
         }
 
+        public void AnimationTriggerEvent(UIState uiState)
+        {
+            OnAnimationEventTriggered?.Invoke(uiState);
+        }
+
         public void PlayerLevelUp()
         {
             PlayerLevelUpEventTriggered?.Invoke();
@@ -47,5 +55,7 @@ namespace GoodVillageGames.Game.Core.Global
         {
             EnemyDefeatedEventTriggered?.Invoke(enemyType);
         }
+
+        
     }
 }
