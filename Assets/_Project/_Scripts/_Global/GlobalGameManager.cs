@@ -35,7 +35,7 @@ namespace GoodVillageGames.Game.Core.Global
 
         void OnChangeState(GameState state)
         {
-            gameState = state;
+            gameState = state;        
         }
 
         void OnUIAnimationStateChange(UIState state)

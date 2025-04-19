@@ -1,8 +1,5 @@
 using System;
 using UnityEngine;
-using DG.Tweening;
-using UnityEngine.SceneManagement;
-using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 
 

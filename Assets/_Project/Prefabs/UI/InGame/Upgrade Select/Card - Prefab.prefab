@@ -581,6 +581,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visualHolderRectTrans: {fileID: 8839703101379078945}
   _shadow: {fileID: 6857617899934562272}
+  _shadowRectTrans: {fileID: 7494083137422936232}
 --- !u!114 &4001871187967815132
 MonoBehaviour:
   m_ObjectHideFlags: 0

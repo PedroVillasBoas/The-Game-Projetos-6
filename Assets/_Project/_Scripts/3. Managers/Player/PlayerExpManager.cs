@@ -54,7 +54,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             _currentLevel++;
             IncreaseMaxExp();
-            GlobalEventsManager.Instance.PlayerLevelUp();
+            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.UpgradeScreen);
         }
 
         void OnTriggerEnter2D(Collider2D collision)

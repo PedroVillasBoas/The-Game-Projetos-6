@@ -8,8 +8,6 @@ namespace GoodVillageGames.Game.Handlers.UI
 {
     public partial class UIEventsHandler : MonoBehaviour
     {
-        [SerializeField] private ScenePauseHandler scenePauseHandler;
-
         public void PlayingUIAnimation()
         {
             GlobalEventsManager.Instance.AnimationTriggerEvent(UIState.PLAYING_UI_ANIM);
@@ -23,7 +21,7 @@ namespace GoodVillageGames.Game.Handlers.UI
         public void TurnOnPlayerInput()
         {
             GlobalEventsManager.Instance.AnimationTriggerEvent(UIState.NoAnimationPlaying);
-            scenePauseHandler.ReturnToOriginalTimeScale();
+            ScenePauseHandler.Instance.ReturnToOriginalTimeScale();
         }
 
         public void TurnOnMoveStars()

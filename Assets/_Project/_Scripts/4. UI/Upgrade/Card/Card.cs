@@ -1,40 +1,42 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
-using DG.Tweening;
+using System.Collections;
+using GoodVillageGames.Game.Core.Util;
 
 namespace GoodVillageGames.Game.General.UI
 {
-    public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
+    public class Card : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler, IPointerMoveHandler, IPointerClickHandler
     {
         [SerializeField] private RectTransform _visualHolderRectTrans;
         [SerializeField] private Image _shadow;
         private UIOutline _outline;
 
         private Vector2 _mousePosition;
-        private float _tiltX;
-        private float _tiltY;
         private bool _mouseHover = false;
-        private Tween _rotationTween;
 
+        // Tilt parameters
         private readonly float _pointerTiltMultiplier = 0.1f;
         private readonly float _maxRotationAngle = 15f;
-        private readonly float _tweenDuration = 0.1f;
+        private float _tiltVelocityX;
+        private float _tiltVelocityY;
+        private const float TILT_SMOOTH_TIME = 0.1f;
+
+        // Shadow parameters
+        private readonly float _shadowTiltMultiplier = 0.5f;
+        private readonly float _maxShadowAngle = 7.5f;
+
+        // Size animation parameters
         private readonly Vector2 _visualDefaultSize = new(340f, 502f);
         private readonly Vector2 _visualSizeOnHover = new(374f, 552.2f);
+        private Coroutine _sizeAnimationCoroutine;
+        private Coroutine _rotationResetCoroutine;
 
         void Start()
         {
             _outline = GetComponentInChildren<UIOutline>();
-        }
-
-        void Update()
-        {
-            if (_mouseHover)
-            {
-                RectTransformUtility.ScreenPointToLocalPointInRectangle(_visualHolderRectTrans, Input.mousePosition, null, out _mousePosition);
-                TiltCard();
-            }
+            _visualHolderRectTrans.sizeDelta = _visualDefaultSize;
+            _shadow.rectTransform.localRotation = Quaternion.identity;
         }
 
         public void OnPointerEnter(PointerEventData eventData)
@@ -42,7 +44,7 @@ namespace GoodVillageGames.Game.General.UI
             _mouseHover = true;
             _outline.enabled = true;
             _shadow.enabled = true;
-            IncreaseCardSize();
+            StartSizeAnimation(_visualSizeOnHover, 0.2f);
         }
 
         public void OnPointerExit(PointerEventData eventData)
@@ -50,36 +52,113 @@ namespace GoodVillageGames.Game.General.UI
             _mouseHover = false;
             _outline.enabled = false;
             _shadow.enabled = false;
-            DefaultCard();
+            StartSizeAnimation(_visualDefaultSize, 0.3f);
+            StartRotationReset();
         }
 
-        void TiltCard()
+        public void OnPointerMove(PointerEventData eventData)
+        {
+            if (_mouseHover)
+            {
+                RectTransformUtility.ScreenPointToLocalPointInRectangle(
+                    _visualHolderRectTrans,
+                    eventData.position,
+                    null,
+                    out _mousePosition
+                );
+                UpdateTilt();
+            }
+        }
+
+        void UpdateTilt()
         {
             Vector2 rectCenter = _visualHolderRectTrans.rect.center;
             Vector2 offset = _mousePosition - rectCenter;
 
-            _tiltX = -offset.y * _pointerTiltMultiplier;
-            _tiltY = offset.x * _pointerTiltMultiplier;
+            float targetTiltX = Mathf.Clamp(-offset.y * _pointerTiltMultiplier, -_maxRotationAngle, _maxRotationAngle);
+            float targetTiltY = Mathf.Clamp(offset.x * _pointerTiltMultiplier, -_maxRotationAngle, _maxRotationAngle);
 
-            _tiltX = Mathf.Clamp(_tiltX, -_maxRotationAngle, _maxRotationAngle);
-            _tiltY = Mathf.Clamp(_tiltY, -_maxRotationAngle, _maxRotationAngle);
+            // Smooth damp (rotation)
+            float newX = Mathf.SmoothDampAngle(_visualHolderRectTrans.localEulerAngles.x, targetTiltX, ref _tiltVelocityX, TILT_SMOOTH_TIME, Mathf.Infinity, Time.unscaledDeltaTime);
+            float newY = Mathf.SmoothDampAngle(_visualHolderRectTrans.localEulerAngles.y, targetTiltY, ref _tiltVelocityY, TILT_SMOOTH_TIME, Mathf.Infinity, Time.unscaledDeltaTime);
 
-            Vector3 targetRotation = new(_tiltX, _tiltY, 0);
+            // Card rotation
+            _visualHolderRectTrans.localRotation = Quaternion.Euler(newX, newY, 0);
 
-            _rotationTween?.Kill();
-            _rotationTween = _visualHolderRectTrans.DOLocalRotate(targetRotation, _tweenDuration).SetEase(Ease.OutQuad);
+            // Inverse shadow rotation
+            float shadowX = Mathf.Clamp(-newX * _shadowTiltMultiplier, -_maxShadowAngle, _maxShadowAngle);
+            float shadowY = Mathf.Clamp(-newY * _shadowTiltMultiplier, -_maxShadowAngle, _maxShadowAngle);
+            _shadow.rectTransform.localRotation = Quaternion.Euler(shadowX, shadowY, 0);
         }
 
-        void IncreaseCardSize()
+        void StartSizeAnimation(Vector2 targetSize, float duration)
         {
-            _visualHolderRectTrans.DOSizeDelta(_visualSizeOnHover, 0.2f).SetEase(Ease.OutElastic);
+            if (_sizeAnimationCoroutine != null)
+                StopCoroutine(_sizeAnimationCoroutine);
+
+            _sizeAnimationCoroutine = StartCoroutine(AnimateSize(targetSize, duration));
         }
 
-        void DefaultCard()
+        IEnumerator AnimateSize(Vector2 targetSize, float duration)
         {
-            _rotationTween?.Kill();
-            _visualHolderRectTrans.DOLocalRotate(Vector3.zero, 0.3f).SetEase(Ease.OutQuad);
-            _visualHolderRectTrans.DOSizeDelta(_visualDefaultSize, 0.3f).SetEase(Ease.OutElastic);
+            Vector2 startSize = _visualHolderRectTrans.sizeDelta;
+            float elapsed = 0f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                // Elastic easing
+                t = Mathf.Sin(t * Mathf.PI * 0.5f);
+                _visualHolderRectTrans.sizeDelta = Vector2.Lerp(startSize, targetSize, t);
+                yield return null;
+            }
+
+            _visualHolderRectTrans.sizeDelta = targetSize;
+        }
+
+        void StartRotationReset()
+        {
+            if (_rotationResetCoroutine != null)
+                StopCoroutine(_rotationResetCoroutine);
+
+            _rotationResetCoroutine = StartCoroutine(ResetRotation());
+        }
+
+        IEnumerator ResetRotation()
+        {
+            Quaternion startCardRotation = _visualHolderRectTrans.localRotation;
+            Quaternion startShadowRotation = _shadow.rectTransform.localRotation;
+            float elapsed = 0f;
+            const float duration = 0.3f;
+
+            while (elapsed < duration)
+            {
+                elapsed += Time.unscaledDeltaTime;
+                float t = Mathf.Clamp01(elapsed / duration);
+
+                // Quadratic easing out
+                t = 1 - (1 - t) * (1 - t);
+                
+                // Interpolating both card and shadow rotations
+                _visualHolderRectTrans.localRotation = Quaternion.Slerp(startCardRotation, Quaternion.identity, t);
+                _shadow.rectTransform.localRotation = Quaternion.Slerp(startShadowRotation, Quaternion.identity, t);
+                yield return null;
+            }
+
+            // Just to make sure...
+            _visualHolderRectTrans.localRotation = Quaternion.identity;
+            _shadow.rectTransform.localRotation = Quaternion.identity;
+        }
+
+        public void OnPointerClick(PointerEventData eventData)
+        {
+            // Lock Card Selection
+            // Lock Card Outline to enabled
+            // Lock Card Size as if it was the hover size
+            // Disable the OnHoverExit if card is the one selected
+            // Enable the Button to Confirm Selection
         }
     }
 }

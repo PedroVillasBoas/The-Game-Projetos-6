@@ -32,13 +32,6 @@ namespace GoodVillageGames.Game.Core.Manager
             _playerInputComponent.onActionTriggered -= OnActionTriggered;
         }
 
-        void Start()
-        {
-            Debug.Log($"Input Actions: {_inputActions}");
-            Debug.Log($"Player Input Component: {_playerInputComponent}");
-            Debug.Log($"Player Actions: {_playerActions}");
-        }
-
         void Update()
         {
             if (GlobalGameManager.Instance.GameState == GameState.GameBegin ||

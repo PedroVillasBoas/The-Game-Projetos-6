@@ -7,7 +7,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 {
     public class SceneUpgradeHandler : MonoBehaviour 
     { 
-
+        
 
         public void OnChoiceSelected(UpgradeStatModifier upgrade)
         {

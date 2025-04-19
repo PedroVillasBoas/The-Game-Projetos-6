@@ -22,6 +22,7 @@ namespace GoodVillageGames.Game.Handlers.UI
         void OnDestroy()
         {
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= TriggerAnimation;
+
         }
 
         void TriggerAnimation(GameState state)
@@ -34,6 +35,7 @@ namespace GoodVillageGames.Game.Handlers.UI
                 
                 case GameState.UpgradeScreen:
                     animator.SetTrigger("GUItoUPG");
+                    ScenePauseHandler.Instance.PauseTimeScale();
                     break;
 
                 case GameState.GameContinue:

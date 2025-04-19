@@ -14,6 +14,17 @@ namespace GoodVillageGames.Game.Handlers.UI
     {
         [SerializeField] private InputActionReference pauseAction;
 
+        public static ScenePauseHandler Instance { get; private set; }
+
+        void Awake()
+        {
+            // Scene Singleton
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+        }
+
         private void OnEnable()
         {
             pauseAction.action.performed += OnPauseAsked;
@@ -33,13 +44,7 @@ namespace GoodVillageGames.Game.Handlers.UI
                 switch (GlobalGameManager.Instance.GameState)
                 {
                     case GameState.GamePaused:
-                        TogglePause();
-                        break;
-
                     case GameState.GameBegin:
-                        TogglePause();
-                        break;
-
                     case GameState.GameContinue:
                         TogglePause();
                         break;
@@ -66,6 +71,11 @@ namespace GoodVillageGames.Game.Handlers.UI
                 GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);
                 Time.timeScale = 1f;
             }
+        }
+
+        public void PauseTimeScale()
+        {
+            Time.timeScale = 0f;
         }
 
         public void ReturnToOriginalTimeScale()
