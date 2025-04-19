@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Aegis of the Cosmos
   Description: 
-  Rarity: 5
+  Rarity: 4
   Image: {fileID: 21300000, guid: 7257dac8fe25e4b4ebc1ce25dd1d7484, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149057
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149057
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 1
+        _operatorType: 2
+        _value: 1.5

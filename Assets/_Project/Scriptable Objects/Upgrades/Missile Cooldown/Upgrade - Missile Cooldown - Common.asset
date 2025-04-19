@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Cooling Conduits
   Description: 
-  Rarity: 1
+  Rarity: 0
   Image: {fileID: 21300000, guid: 3a901c6b33ef21d4c9eae8421138ac91, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149058
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149058
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 10
+        _operatorType: 3
+        _value: 0.5

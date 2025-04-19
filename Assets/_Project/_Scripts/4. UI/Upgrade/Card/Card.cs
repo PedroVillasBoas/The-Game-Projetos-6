@@ -41,12 +41,20 @@ namespace GoodVillageGames.Game.General.UI
         public Action<Card, UpgradeStatModifier> OnCardClicked;
 
 
-        void Start()
+        void Awake()
         {
             _outline = GetComponentInChildren<UIOutline>();
             cardUIUpdater = gameObject.GetComponent<CardUIUpdater>();
+
+        }
+
+        void OnEnable()
+        {
             _visualHolderRectTrans.sizeDelta = _visualDefaultSize;
             _shadow.rectTransform.localRotation = Quaternion.identity;
+            _isSelected = false;
+            _outline.enabled = false;
+            _shadow.enabled = false;
         }
 
         public void SetSelectedCard()

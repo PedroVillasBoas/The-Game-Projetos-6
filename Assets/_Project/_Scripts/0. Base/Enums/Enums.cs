@@ -143,10 +143,10 @@ namespace GoodVillageGames.Game.Enums
             None,
             Add,
             Multiply,
+            Sub,
         }
         public enum UpgradeRarity
         {
-            None,
             Common,
             Uncommon,
             Rare,

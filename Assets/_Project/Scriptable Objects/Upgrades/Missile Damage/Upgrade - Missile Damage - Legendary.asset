@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Annihilator Warheads
   Description: 
-  Rarity: 5
+  Rarity: 4
   Image: {fileID: 21300000, guid: ced7e00e06ca2a84b80aa7d74e8cd74b, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149072
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149072
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 9
+        _operatorType: 2
+        _value: 1.5

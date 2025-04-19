@@ -18,6 +18,7 @@ namespace GoodVillageGames.Game.Core.Attributes.Modifiers
             {
                 OperatorType.Add => new BasicStatModifier(_statType, _duration, v => v + _value),
                 OperatorType.Multiply => new BasicStatModifier(_statType, _duration, v => v * _value),
+                OperatorType.Sub => new BasicStatModifier(_statType, _duration, v => v - _value),
                 _ => throw new ArgumentOutOfRangeException()
             };
 

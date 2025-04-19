@@ -10,11 +10,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 326920863839125238, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
       propertyPath: m_Name
-      value: Epic - PS 1
+      value: Epic - PS
+      objectReference: {fileID: 0}
+    - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
+      propertyPath: InitialModule.startSize.scalar
+      value: 2.2
       objectReference: {fileID: 0}
     - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
       propertyPath: InitialModule.startSpeed.scalar
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
+      propertyPath: InitialModule.startSize.minScalar
+      value: 1.9
       objectReference: {fileID: 0}
     - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -27,6 +35,18 @@ PrefabInstance:
     - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
       propertyPath: InitialModule.startColor.maxColor.r
       value: 0.7765498
+      objectReference: {fileID: 0}
+    - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
+      propertyPath: InitialModule.startSize.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
+      propertyPath: InitialModule.startSizeY.minMaxState
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
+      propertyPath: InitialModule.startSizeZ.minMaxState
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 650132983264862104, guid: 8914e69b261dbbf45a806b71680c687b, type: 3}
       propertyPath: ColorModule.gradient.maxGradient.atime0

@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Quantum Fire Accelerator
   Description: 
-  Rarity: 3
+  Rarity: 2
   Image: {fileID: 21300000, guid: f88c30c99647ee348b9416906586b98e, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149035
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149035
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 6
+        _operatorType: 1
+        _value: 1

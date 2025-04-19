@@ -26,15 +26,16 @@ namespace GoodVillageGames.Game.General.UI
 
         GameObject GetRarityVFX(UpgradeRarity rarity)
         {
-            int rarityIndex = (int)rarity;
-            
-            if (raritiesPrefabs == null || rarityIndex < 0 || rarityIndex >= raritiesPrefabs.Count)
+            // Search by name containing the rarity string
+            string targetName = $"Rarity - Frame - Image - {rarity}";
+            foreach (var prefab in raritiesPrefabs)
             {
-                Debug.LogError($"Missing VFX prefab for rarity: {rarity}");
-                return null;
+                if (prefab != null && prefab.name.StartsWith(targetName))
+                    return prefab;
             }
 
-            return raritiesPrefabs[rarityIndex];
+            Debug.LogError($"Missing VFX prefab for rarity: {rarity}");
+            return null;
         }
 
         void AddRarityVFX(GameObject prefab)
@@ -48,7 +49,8 @@ namespace GoodVillageGames.Game.General.UI
             }
 
             try {
-                Instantiate(prefab, tiltHandler.transform);
+                // Reference to the new prefab just instantiated
+                currentVFXInstance = Instantiate(prefab, tiltHandler.transform);
             }
             catch (System.Exception e)
             {
@@ -56,7 +58,7 @@ namespace GoodVillageGames.Game.General.UI
             }
         }
 
-        void ClearExistingVFX()
+        public void ClearExistingVFX()
         {
             if (currentVFXInstance)
             {

@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using GoodVillageGames.Game.General.UI;
 using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
+using UnityEngine.UI;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Handlers.UI
 {
@@ -10,22 +12,30 @@ namespace GoodVillageGames.Game.Handlers.UI
     { 
         [SerializeField] private List<CardUIUpdater> cardsList;
         [SerializeField] private UpgradeStatPool upgradePool;
+        [SerializeField] private GameObject selectButton;
         private UpgradeStatModifier currentUpgradeSelected;
 
-        void Start()
+        void OnEnable()
         {
-            UpdateCardsListVisuals();
-
             foreach (CardUIUpdater updater in cardsList)
             {
-                updater.gameObject.GetComponent<Card>().OnCardClicked += SetSelectedCard;
+                updater.ClearExistingVFX();
+                Card card = updater.gameObject.GetComponent<Card>();
+                card.OnCardClicked += SetSelectedCard;
+                card.UnsetSelectedCard();
+                updater.Upgrade = null;
             }
+
+            UpdateCardsListVisuals();
+            selectButton.SetActive(false);
+
         }
 
         void SetSelectedCard(Card card, UpgradeStatModifier upgrade)
         {
             currentUpgradeSelected = upgrade;
             GameObject cardGameObject = card.gameObject;
+            selectButton.SetActive(true);
 
             foreach (CardUIUpdater updater in cardsList)
             {
@@ -126,6 +136,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 
             PlayerUpgraderManager.Instance.AddUpgradeToPlayer(currentUpgradeSelected);
             currentUpgradeSelected = null;
+            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.GameContinue);
         }
 
         public void SetCurrentUpgrade(UpgradeStatModifier upgrade)

@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Rapid Launch Modulator
   Description: 
-  Rarity: 2
+  Rarity: 1
   Image: {fileID: 21300000, guid: b0d5e606b48269646b45b97a3211cd9d, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149065
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149065
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 10
+        _operatorType: 3
+        _value: 0.7

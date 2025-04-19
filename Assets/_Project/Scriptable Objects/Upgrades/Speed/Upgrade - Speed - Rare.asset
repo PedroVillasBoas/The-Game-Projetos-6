@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Quantum Impulse
   Description: 
-  Rarity: 3
+  Rarity: 2
   Image: {fileID: 21300000, guid: 847a59840853ca44c89132850f08ce67, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149075
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149075
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 3
+        _operatorType: 1
+        _value: 13

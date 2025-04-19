@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Celestial Warp Boost
   Description: 
-  Rarity: 5
+  Rarity: 4
   Image: {fileID: 21300000, guid: ae52e3f8600e83748b15414108aff16c, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149047
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149047
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 8
+        _operatorType: 1
+        _value: 20

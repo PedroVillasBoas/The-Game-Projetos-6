@@ -21,6 +21,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         public void AddUpgradeToPlayer(UpgradeStatModifier upgrade)
         {
+            Debug.Log($"Upgrade: {upgrade}");
             upgrade.UpgradeLogic.ApplyUpgrade(player);
         }
     }

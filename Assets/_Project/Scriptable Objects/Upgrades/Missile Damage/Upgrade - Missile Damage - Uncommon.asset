@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Precision Warheads
   Description: 
-  Rarity: 2
+  Rarity: 1
   Image: {fileID: 21300000, guid: 8a4cce9880fe0824ebb18a4968a9db0b, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149070
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149070
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 9
+        _operatorType: 1
+        _value: 5

@@ -14,12 +14,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Pulse Emitter
   Description: 
-  Rarity: 1
+  Rarity: 0
   Image: {fileID: 21300000, guid: b7eb91644c9e51d47a15d1c5efec0b49, type: 3}
   UpgradeLogic:
-    rid: -2
+    rid: 8278828222092149048
   references:
     version: 2
     RefIds:
-    - rid: -2
-      type: {class: , ns: , asm: }
+    - rid: 8278828222092149048
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 5
+        _operatorType: 1
+        _value: 2
