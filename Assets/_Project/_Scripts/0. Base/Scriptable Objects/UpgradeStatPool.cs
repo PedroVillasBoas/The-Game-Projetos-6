@@ -13,9 +13,14 @@ namespace GoodVillageGames.Game.Core.Attributes.Modifiers
     public class UpgradeStatPool : ScriptableObject 
     { 
         [Group("Common")] public List<UpgradeStatModifier> CommonUpgrades;
+        [Group("Common")] public float CommonWeight;
         [Group("Uncommon")] public List<UpgradeStatModifier> UncommonUpgrades;
+        [Group("Uncommon")] public float UncommonWeight;
         [Group("Rare")] public List<UpgradeStatModifier> RareUpgrades;
+        [Group("Rare")] public float RareWeight;
         [Group("Epic")] public List<UpgradeStatModifier> EpicUpgrades;
+        [Group("Epic")] public float EpicWeight;
         [Group("Legendary")] public List<UpgradeStatModifier> LegendaryUpgrades;
+        [Group("Legendary")] public float LegendaryWeight;
     }
 }

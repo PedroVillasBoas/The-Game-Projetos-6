@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Turbocharge Kit
   Description: 
-  Rarity: 0
+  Rarity: 1
   Image: {fileID: 0}
   UpgradeLogic:
     rid: -2

@@ -11,7 +11,7 @@ PrefabInstance:
     - target: {fileID: 905855765077367111, guid: 31fe0639b1d45804f98537999aff58ed, type: 3}
       propertyPath: 'm_Particles.Array.data[0]'
       value: 
-      objectReference: {fileID: 0}
+      objectReference: {fileID: 3782924769089918823}
     - target: {fileID: 2953316252610703842, guid: 31fe0639b1d45804f98537999aff58ed, type: 3}
       propertyPath: m_Name
       value: Rarity - Frame - Image - Rare
@@ -187,6 +187,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a65327de288fc1b4abb3e5fcf28a28b3, type: 3}
+--- !u!198 &3782924769089918823 stripped
+ParticleSystem:
+  m_CorrespondingSourceObject: {fileID: 1622989650846098495, guid: a65327de288fc1b4abb3e5fcf28a28b3, type: 3}
+  m_PrefabInstance: {fileID: 2520224093868962648}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5549398588808789828 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 8068989181410462748, guid: a65327de288fc1b4abb3e5fcf28a28b3, type: 3}

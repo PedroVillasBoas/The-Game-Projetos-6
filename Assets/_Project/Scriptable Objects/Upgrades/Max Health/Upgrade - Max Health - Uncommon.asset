@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Fortified Armor
   Description: 
-  Rarity: 0
+  Rarity: 2
   Image: {fileID: 0}
   UpgradeLogic:
     rid: -2

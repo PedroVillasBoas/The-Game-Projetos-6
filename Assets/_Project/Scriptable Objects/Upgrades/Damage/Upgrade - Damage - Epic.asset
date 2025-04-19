@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Starfire Incinerator
   Description: 
-  Rarity: 0
+  Rarity: 4
   Image: {fileID: 0}
   UpgradeLogic:
     rid: -2

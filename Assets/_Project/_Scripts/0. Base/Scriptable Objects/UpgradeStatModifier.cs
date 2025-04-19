@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.Core.Attributes.Modifiers
         public string Name;
         public string Description;
         public UpgradeRarity Rarity;
-        public Texture2D Image;
+        public Sprite Image;
         [SerializeReference] public Upgrade UpgradeLogic;
     }
 }

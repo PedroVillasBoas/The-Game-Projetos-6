@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Event Horizon Accelerator
   Description: 
-  Rarity: 0
+  Rarity: 5
   Image: {fileID: 0}
   UpgradeLogic:
     rid: -2
