@@ -1,8 +1,9 @@
+using System;
 using UnityEngine;
-using UnityEngine.EventSystems;
 using UnityEngine.UI;
 using System.Collections;
-using GoodVillageGames.Game.Core.Util;
+using UnityEngine.EventSystems;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.General.UI
 {
@@ -11,16 +12,17 @@ namespace GoodVillageGames.Game.General.UI
         [SerializeField] private RectTransform _visualHolderRectTrans;
         [SerializeField] private Image _shadow;
         private UIOutline _outline;
+        private CardUIUpdater cardUIUpdater;
 
         private Vector2 _mousePosition;
         private bool _mouseHover = false;
 
         // Tilt parameters
+        private const float TILT_SMOOTH_TIME = 0.1f;
         private readonly float _pointerTiltMultiplier = 0.1f;
         private readonly float _maxRotationAngle = 15f;
         private float _tiltVelocityX;
         private float _tiltVelocityY;
-        private const float TILT_SMOOTH_TIME = 0.1f;
 
         // Shadow parameters
         private readonly float _shadowTiltMultiplier = 0.5f;
@@ -32,15 +34,56 @@ namespace GoodVillageGames.Game.General.UI
         private Coroutine _sizeAnimationCoroutine;
         private Coroutine _rotationResetCoroutine;
 
+        // Flag
+        private bool _isSelected;
+
+        // Event
+        public Action<Card, UpgradeStatModifier> OnCardClicked;
+
+
         void Start()
         {
             _outline = GetComponentInChildren<UIOutline>();
+            cardUIUpdater = gameObject.GetComponent<CardUIUpdater>();
             _visualHolderRectTrans.sizeDelta = _visualDefaultSize;
             _shadow.rectTransform.localRotation = Quaternion.identity;
         }
 
+        public void SetSelectedCard()
+        {
+            _isSelected = true;
+
+            // Locking Card state
+            _outline.enabled = true;
+            _shadow.enabled = true;
+
+            StartSizeAnimation(_visualSizeOnHover, 0.2f);
+
+            if (_rotationResetCoroutine != null)
+            {
+                StopCoroutine(_rotationResetCoroutine);
+                _rotationResetCoroutine = null;
+            }
+
+            _visualHolderRectTrans.localRotation = Quaternion.identity;
+            _shadow.rectTransform.localRotation = Quaternion.identity;
+        }
+
+        public void UnsetSelectedCard()
+        {
+            _isSelected = false;
+
+            _outline.enabled = false;
+            _shadow.enabled = false;
+
+            StartSizeAnimation(_visualDefaultSize, 0.3f);
+            StartRotationReset();
+        }
+
         public void OnPointerEnter(PointerEventData eventData)
         {
+            if (_isSelected) return;
+
             _mouseHover = true;
             _outline.enabled = true;
             _shadow.enabled = true;
@@ -49,6 +92,8 @@ namespace GoodVillageGames.Game.General.UI
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            if (_isSelected) return;
+
             _mouseHover = false;
             _outline.enabled = false;
             _shadow.enabled = false;
@@ -58,6 +103,8 @@ namespace GoodVillageGames.Game.General.UI
 
         public void OnPointerMove(PointerEventData eventData)
         {
+            if (_isSelected) return;
+
             if (_mouseHover)
             {
                 RectTransformUtility.ScreenPointToLocalPointInRectangle(
@@ -140,7 +187,7 @@ namespace GoodVillageGames.Game.General.UI
 
                 // Quadratic easing out
                 t = 1 - (1 - t) * (1 - t);
-                
+
                 // Interpolating both card and shadow rotations
                 _visualHolderRectTrans.localRotation = Quaternion.Slerp(startCardRotation, Quaternion.identity, t);
                 _shadow.rectTransform.localRotation = Quaternion.Slerp(startShadowRotation, Quaternion.identity, t);
@@ -154,11 +201,7 @@ namespace GoodVillageGames.Game.General.UI
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            // Lock Card Selection
-            // Lock Card Outline to enabled
-            // Lock Card Size as if it was the hover size
-            // Disable the OnHoverExit if card is the one selected
-            // Enable the Button to Confirm Selection
+            OnCardClicked?.Invoke(this, cardUIUpdater.Upgrade);
         }
     }
 }

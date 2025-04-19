@@ -78,7 +78,7 @@ namespace GoodVillageGames.Game.Core.Manager
             foreach (ParticleSystem child in _thrusters)
             {
                 var psRenderer = child.GetComponent<ParticleSystemRenderer>();
-                psRenderer.lengthScale = 7;
+                psRenderer.lengthScale = 3;
             }
         }
 

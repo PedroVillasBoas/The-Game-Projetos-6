@@ -10,10 +10,34 @@ namespace GoodVillageGames.Game.Handlers.UI
     { 
         [SerializeField] private List<CardUIUpdater> cardsList;
         [SerializeField] private UpgradeStatPool upgradePool;
+        private UpgradeStatModifier currentUpgradeSelected;
 
         void Start()
         {
             UpdateCardsListVisuals();
+
+            foreach (CardUIUpdater updater in cardsList)
+            {
+                updater.gameObject.GetComponent<Card>().OnCardClicked += SetSelectedCard;
+            }
+        }
+
+        void SetSelectedCard(Card card, UpgradeStatModifier upgrade)
+        {
+            currentUpgradeSelected = upgrade;
+            GameObject cardGameObject = card.gameObject;
+
+            foreach (CardUIUpdater updater in cardsList)
+            {
+                if (updater.gameObject.GetInstanceID() != cardGameObject.GetInstanceID())
+                {
+                    updater.gameObject.GetComponent<Card>().UnsetSelectedCard();
+                }
+                else
+                {
+                    updater.gameObject.GetComponent<Card>().SetSelectedCard();
+                }
+            }
         }
 
         private void UpdateCardsListVisuals()
@@ -92,15 +116,21 @@ namespace GoodVillageGames.Game.Handlers.UI
             return total;
         }
 
-        public void OnChoiceSelected(UpgradeStatModifier upgrade)
+        public void OnChoiceSelected()
         {
-            if (upgrade == null)
+            if (currentUpgradeSelected == null)
             {
                 Debug.LogError("No upgrade selected.");
                 return;
             }
 
-            PlayerUpgraderManager.Instance.AddUpgradeToPlayer(upgrade);
+            PlayerUpgraderManager.Instance.AddUpgradeToPlayer(currentUpgradeSelected);
+            currentUpgradeSelected = null;
+        }
+
+        public void SetCurrentUpgrade(UpgradeStatModifier upgrade)
+        {
+            currentUpgradeSelected = upgrade;
         }
     }
 }
