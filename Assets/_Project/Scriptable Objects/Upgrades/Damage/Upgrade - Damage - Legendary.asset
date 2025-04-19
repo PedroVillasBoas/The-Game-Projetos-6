@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Galactic Obliterator
   Description: 
   Rarity: 5
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 2b30cb03661fa9a4b8e1cdff1088f69e, type: 3}
   UpgradeLogic:
     rid: -2
   references:

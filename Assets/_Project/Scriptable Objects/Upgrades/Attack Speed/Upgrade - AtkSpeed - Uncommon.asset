@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Ion Trigger System
   Description: 
   Rarity: 2
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: ba11374cb5a7e23408a7d34719f38210, type: 3}
   UpgradeLogic:
     rid: -2
   references:

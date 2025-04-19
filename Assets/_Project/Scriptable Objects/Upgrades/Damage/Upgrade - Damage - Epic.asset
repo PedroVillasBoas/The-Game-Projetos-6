@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Starfire Incinerator
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a764d467e9c86a343b5e20a7a94f427f, type: 3}
   UpgradeLogic:
     rid: -2
   references:

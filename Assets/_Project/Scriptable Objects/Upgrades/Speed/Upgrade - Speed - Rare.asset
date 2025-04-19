@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Quantum Impulse
   Description: 
   Rarity: 3
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 847a59840853ca44c89132850f08ce67, type: 3}
   UpgradeLogic:
     rid: -2
   references:

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Phase Shift Overclock
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 6f0bfc60286f1de46a504498df241eca, type: 3}
   UpgradeLogic:
     rid: -2
   references:

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Reinforced Hull Plating
   Description: 
   Rarity: 1
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a1c80cb713492b14399e417295daa67e, type: 3}
   UpgradeLogic:
     rid: -2
   references:

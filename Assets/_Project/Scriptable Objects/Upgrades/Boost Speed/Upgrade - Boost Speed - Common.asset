@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Turbocharge Kit
   Description: 
   Rarity: 1
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: a1039b703e8237744a7cc5a081f7a735, type: 3}
   UpgradeLogic:
     rid: -2
   references:

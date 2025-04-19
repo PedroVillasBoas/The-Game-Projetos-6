@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Quantum Fire Accelerator
   Description: 
   Rarity: 3
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: f88c30c99647ee348b9416906586b98e, type: 3}
   UpgradeLogic:
     rid: -2
   references:

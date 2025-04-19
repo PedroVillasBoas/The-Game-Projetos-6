@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Supernova Overdrive
   Description: 
   Rarity: 3
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: be81393deabf33244a1fc7bf7746ca80, type: 3}
   UpgradeLogic:
     rid: -2
   references:

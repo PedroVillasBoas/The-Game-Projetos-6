@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Eviscerator Warheads
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 904c0c0ee252b0c4fa99d597a430cd9f, type: 3}
   UpgradeLogic:
     rid: 8278828178111463424
   references:

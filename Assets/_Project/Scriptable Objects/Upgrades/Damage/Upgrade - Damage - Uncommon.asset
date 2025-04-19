@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Fusion Emitter
   Description: 
   Rarity: 2
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: e068be6e3852a6442ba167bece7a4b0f, type: 3}
   UpgradeLogic:
     rid: -2
   references:

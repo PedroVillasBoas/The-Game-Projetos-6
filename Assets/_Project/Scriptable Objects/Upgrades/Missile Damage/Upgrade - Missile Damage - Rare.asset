@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Concussive Warheads
   Description: 
   Rarity: 3
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: 61f02735d3847254aa68243ee3a6b45f, type: 3}
   UpgradeLogic:
     rid: -2
   references:

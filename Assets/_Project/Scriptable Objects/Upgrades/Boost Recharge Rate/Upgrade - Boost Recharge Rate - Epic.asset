@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Energy Flux Stabilizer
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: d675fc1aecbd84c4980acf886f0fca45, type: 3}
   UpgradeLogic:
     rid: -2
   references:

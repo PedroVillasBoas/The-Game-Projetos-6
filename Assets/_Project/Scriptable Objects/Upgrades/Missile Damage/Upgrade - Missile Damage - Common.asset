@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Kinetic Warheads
   Description: 
   Rarity: 1
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: fa304d7dc4ce019429721f483750ce3f, type: 3}
   UpgradeLogic:
     rid: -2
   references:

@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Temporal Flux Regulator
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: b74392b83ab480141a368189adc9ab5e, type: 3}
   UpgradeLogic:
     rid: -2
   references:

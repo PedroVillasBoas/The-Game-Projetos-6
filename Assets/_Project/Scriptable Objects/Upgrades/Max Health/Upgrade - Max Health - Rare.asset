@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Titanium Bulkhead
   Description: 
   Rarity: 3
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: ee0db93e2fa7a514f96c1c8d0f0ad0ec, type: 3}
   UpgradeLogic:
     rid: -2
   references:

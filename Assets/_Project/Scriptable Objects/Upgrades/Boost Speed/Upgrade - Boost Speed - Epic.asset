@@ -15,7 +15,7 @@ MonoBehaviour:
   Name: Hypervelocity Catalyst
   Description: 
   Rarity: 4
-  Image: {fileID: 0}
+  Image: {fileID: 21300000, guid: df48c96f37479d84b8af3d5d2619f7a5, type: 3}
   UpgradeLogic:
     rid: -2
   references:
