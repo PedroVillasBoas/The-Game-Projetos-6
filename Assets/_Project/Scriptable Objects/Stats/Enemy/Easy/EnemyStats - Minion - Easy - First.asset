@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Name
   EntityVisualPrefab: {fileID: 0}
-  MaxHealth: 5
-  CurrentHealth: 5
-  MaxSpeed: 1
+  MaxHealth: 7
+  CurrentHealth: 7
+  MaxSpeed: 3
   MaxDefense: 0
   Acceleration: 1
   Experience: 0
@@ -27,5 +27,5 @@ MonoBehaviour:
   BoostRechargeRate: 0
   BaseMissileDamage: 0
   BaseMissileCooldown: 0
-  DoActionRadius: 10
+  DoActionRadius: 5
   EnemyType: 0
