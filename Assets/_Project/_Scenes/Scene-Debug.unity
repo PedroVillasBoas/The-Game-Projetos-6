@@ -303,6 +303,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &124985872
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 124985873}
+  m_Layer: 0
+  m_Name: Damage Numbers - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &124985873
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 124985872}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &158416534
 GameObject:
   m_ObjectHideFlags: 0
@@ -8684,6 +8715,10 @@ MonoBehaviour:
     prefab: {fileID: 4357369815184168246, guid: 7d0cf6492c591bc4499250238a8f74da, type: 3}
     config: {fileID: 11400000, guid: 036383e26807f2d4ba8eeb73356ceec2, type: 2}
     poolContainer: {fileID: 634055777}
+  - poolId: 17
+    prefab: {fileID: 3118112529909685808, guid: 044921a9e140c22428b81630c8e231a2, type: 3}
+    config: {fileID: 11400000, guid: 83233ac8cf34e0b4c8e16bbe8328dd9b, type: 2}
+    poolContainer: {fileID: 124985872}
 --- !u!4 &1055098067
 Transform:
   m_ObjectHideFlags: 0
@@ -8713,6 +8748,7 @@ Transform:
   - {fileID: 491517884}
   - {fileID: 877300190}
   - {fileID: 1292955259}
+  - {fileID: 124985873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1149946981 stripped
