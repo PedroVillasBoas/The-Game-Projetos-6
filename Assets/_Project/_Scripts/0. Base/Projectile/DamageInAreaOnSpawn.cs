@@ -39,6 +39,11 @@ namespace GoodVillageGames.Game.Core.Projectiles
             this.damage = damage;
         }
 
+        public void DisableCollider()
+        {
+            GetComponent<CircleCollider2D>().enabled = false;
+        }
+
         public void Visit<T>(T visitable) where T : Component, IVisitable
         {
 
