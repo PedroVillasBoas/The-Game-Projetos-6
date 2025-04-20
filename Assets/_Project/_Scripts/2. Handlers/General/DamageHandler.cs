@@ -2,6 +2,8 @@ using UnityEngine;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Enemy;
 using GoodVillageGames.Game.Core.Projectiles;
+using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Core.Util;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -17,11 +19,24 @@ namespace GoodVillageGames.Game.Handlers
             {
                 entity.TakeDamage(_damageAmount);
             }
-            
+
             if (visitable is EnemyHealthHandler entityEnemy)
             {
                 entityEnemy.TakeDamage(_damageAmount);
             }
+
+            PoolDamageNumber();
+        }
+
+        private void PoolDamageNumber()
+        {
+            GameObject dmInstance = PoolManager.Instance.GetPooledObject(Enums.Enums.PoolID.DamageNumbers);
+            if (dmInstance.TryGetComponent(out DamageNumbers component))
+            {
+                component.SetInfo(_damageAmount.ToString());
+            }
+            dmInstance.transform.SetPositionAndRotation(gameObject.transform.position, Quaternion.identity);
+            dmInstance.SetActive(true);
         }
 
         public void SetDamage(float amount)

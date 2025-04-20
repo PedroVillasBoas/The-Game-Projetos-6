@@ -118,6 +118,7 @@ namespace GoodVillageGames.Game.Enums
             EnemyMinionSecondPrefab,
             EnemyBossSecondPrefab,
             EnemyBossSpecialProjectile,
+            DamageNumbers,
         }
 
         public enum StatType
