@@ -26,7 +26,7 @@ namespace GoodVillageGames.Game.General.UI
 
         GameObject GetRarityVFX(UpgradeRarity rarity)
         {
-            // Search by name containing the rarity string
+            // Name of the prefab containing the rarity
             string targetName = $"Rarity - Frame - Image - {rarity}";
             foreach (var prefab in raritiesPrefabs)
             {

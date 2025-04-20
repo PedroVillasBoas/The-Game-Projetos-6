@@ -21,6 +21,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 431c41c27d99767408c5d35445742c9f, type: 2}
   - {fileID: 11400000, guid: e1a1089a8cb194840904ab5009fb012a, type: 2}
   - {fileID: 11400000, guid: 45b948f417526664682b168fa4f4ba9c, type: 2}
+  - {fileID: 11400000, guid: 3156dce2fe0d58b4fa2525b813552259, type: 2}
   CommonWeight: 50
   UncommonUpgrades:
   - {fileID: 11400000, guid: c7767d23dee494049b37c857a5c51970, type: 2}
@@ -31,6 +32,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 04040c96c0ba5f34eaa38b9718a9629a, type: 2}
   - {fileID: 11400000, guid: 7fc3b15760a067748b9c00e3e93739a4, type: 2}
   - {fileID: 11400000, guid: 7cf2aea54d70d6b4089f0be91f1f5e82, type: 2}
+  - {fileID: 11400000, guid: 8c43672532ff4cb408d1a26d78e54a8d, type: 2}
   UncommonWeight: 30
   RareUpgrades:
   - {fileID: 11400000, guid: 15e52a65850b01148a02e2ca162b395d, type: 2}
@@ -41,6 +43,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: d8cb34d938e10a643b26de18a5361bdf, type: 2}
   - {fileID: 11400000, guid: d7e0f035590f33e4b824403c34dff358, type: 2}
   - {fileID: 11400000, guid: e3a4f31c807580c47975e97e5f1090a5, type: 2}
+  - {fileID: 11400000, guid: 28f86d5415e86e44ab72cdcc16240cdd, type: 2}
   RareWeight: 15
   EpicUpgrades:
   - {fileID: 11400000, guid: 0c1e0718657c4544e805f10a1c0a2b25, type: 2}
@@ -51,6 +54,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 88a4c4593bb8ece4ca284ec744dd0ff0, type: 2}
   - {fileID: 11400000, guid: 780178260863bfd4bad226187c66e79b, type: 2}
   - {fileID: 11400000, guid: 3dca926d60142b242a31c515adb08b0b, type: 2}
+  - {fileID: 11400000, guid: f24dd21a9a7733b42a2cd98adbf40069, type: 2}
   EpicWeight: 4
   LegendaryUpgrades:
   - {fileID: 11400000, guid: 0e4be4f054208d0429414b67885dd5b8, type: 2}
@@ -61,4 +65,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 2566166017116bc4cab185d1dfc9b21a, type: 2}
   - {fileID: 11400000, guid: 55d5066a9c280b648a73ffac0a6d23d4, type: 2}
   - {fileID: 11400000, guid: 63b6f559a5c637d4e8005c3c1b52ec63, type: 2}
+  - {fileID: 11400000, guid: 2e3a8720db7afb242bf1c02ba98d37db, type: 2}
   LegendaryWeight: 1

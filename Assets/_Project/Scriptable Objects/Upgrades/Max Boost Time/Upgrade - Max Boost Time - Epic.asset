@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a2ae034ad37bd4b93f5b8fc1050987, type: 3}
+  m_Name: Upgrade - Max Boost Time - Epic
+  m_EditorClassIdentifier: 
+  Name: Quantum Fuel Array
+  Description: 
+  Rarity: 3
+  Image: {fileID: 21300000, guid: 5be14abc87888794aa7acc67c8916800, type: 3}
+  UpgradeLogic:
+    rid: 8278828222092149160
+  references:
+    version: 2
+    RefIds:
+    - rid: 8278828222092149160
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 7
+        _operatorType: 1
+        _value: 0.5

@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 95c9a106a3c59b54690823e95374149d
+guid: 5be14abc87888794aa7acc67c8916800
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2332681806708925149
-    second: inner_holo_0
+      213: 4661545750527084384
+    second: Max Boost Time - Epic_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -46,7 +46,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 2
+  spriteMode: 1
   spriteExtrude: 1
   spriteMeshType: 1
   alignment: 0
@@ -113,23 +113,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: inner_holo_0
+      name: Max Boost Time - Epic_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 500
-        height: 561
+        width: 840
+        height: 1264
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 205, y: 230, z: 205, w: 230}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: dd2e6ee7eb95f5020800000000000000
-      internalID: 2332681806708925149
+      spriteID: 0670664892321b040800000000000000
+      internalID: 4661545750527084384
       vertices: []
       indices: 
       edges: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 297e3433448f20d4c9f1339ec7bb352c
+    spriteID: 5e97eb03825dee720800000000000000
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +148,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      inner_holo_0: 2332681806708925149
+      Max Boost Time - Epic_0: 4661545750527084384
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

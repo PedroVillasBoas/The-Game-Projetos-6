@@ -1,10 +1,9 @@
 using UnityEngine;
 using System.Collections.Generic;
 using GoodVillageGames.Game.General.UI;
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
-using UnityEngine.UI;
-using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Handlers.UI
 {

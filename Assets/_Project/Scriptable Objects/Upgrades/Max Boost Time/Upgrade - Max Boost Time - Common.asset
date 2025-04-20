@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b7a2ae034ad37bd4b93f5b8fc1050987, type: 3}
+  m_Name: Upgrade - Max Boost Time - Common
+  m_EditorClassIdentifier: 
+  Name: Auxiliary Fuel Reservoir
+  Description: 
+  Rarity: 0
+  Image: {fileID: 21300000, guid: 348398b538fcdbc43b1de7802ef2c07f, type: 3}
+  UpgradeLogic:
+    rid: 8278828222092149157
+  references:
+    version: 2
+    RefIds:
+    - rid: 8278828222092149157
+      type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
+      data:
+        _statType: 7
+        _operatorType: 1
+        _value: 0.1
