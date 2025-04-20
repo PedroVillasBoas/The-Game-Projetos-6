@@ -8,6 +8,8 @@ namespace GoodVillageGames.Game.Core.Manager
 {
     public class PlayerExpManager : MonoBehaviour
     {
+        public static PlayerExpManager Instance { get; private set; }
+
         [SerializeField] private CircleCollider2D _expColliderDetector;
         [SerializeField] private PlayerExpHandler _expHandler;
 
@@ -17,6 +19,18 @@ namespace GoodVillageGames.Game.Core.Manager
         private int _currentLevel = 1;
 
         public int CurrentLevel { get => _currentLevel; }
+        public int CurrentExp { get => _currentExp; }
+        public int ExpToNextLevel { get => _maxExp; }
+
+        void Awake()
+        {
+            // Singleton
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
+
+        }
 
         void Start()
         {

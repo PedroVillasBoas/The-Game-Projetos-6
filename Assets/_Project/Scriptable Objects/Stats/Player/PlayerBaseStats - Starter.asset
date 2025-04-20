@@ -15,14 +15,15 @@ MonoBehaviour:
   Name: U.S.S. Enterprise
   EntityVisualPrefab: {fileID: 0}
   MaxHealth: 100
+  CurrentHealth: 100
   MaxSpeed: 20
   MaxDefense: 20
-  Acceleration: 10
+  Acceleration: 5
   Experience: 0
   BaseAttackDamage: 5
   AttackSpeed: 1
   MaxBoostTime: 1
-  MaxBoostSpeed: 100
+  MaxBoostSpeed: 40
   BoostRechargeRate: 0.2
   BaseMissileDamage: 10
   BaseMissileCooldown: 10

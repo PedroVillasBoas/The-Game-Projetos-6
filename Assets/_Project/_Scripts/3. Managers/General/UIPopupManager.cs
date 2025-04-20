@@ -1,5 +1,6 @@
 using UnityEngine;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
+using GoodVillageGames.Game.Core.Attributes;
 
 namespace GoodVillageGames.Game.General.UI
 {
@@ -25,6 +26,28 @@ namespace GoodVillageGames.Game.General.UI
         }
 
         public void CreatePopup(UpgradeStatModifier upgrade, Vector2 screenPosition, Vector2 objectSize)
+        {
+            CreatePopupInternal(
+                upgrade.Name,
+                upgrade.Rarity.ToString(),
+                upgrade.Description,
+                screenPosition,
+                objectSize
+            );
+        }
+
+        public void CreatePopup(StatUIElementInfo statInfo, Vector2 screenPosition, Vector2 objectSize)
+        {
+            CreatePopupInternal(
+                statInfo.Name,
+                "Stat",
+                statInfo.Description,
+                screenPosition,
+                objectSize
+            );
+        }
+
+        private void CreatePopupInternal(string name, string type, string description, Vector2 screenPosition, Vector2 objectSize)
         {
             if (popupPrefab == null)
             {
@@ -81,9 +104,9 @@ namespace GoodVillageGames.Game.General.UI
             if (activePopupInstance.TryGetComponent<PopupUpdater>(out var popupUpdater))
             {
                 popupUpdater.SetPopupInfo(
-                    upgrade.Name,
-                    upgrade.Rarity.ToString(),
-                    upgrade.Description
+                    name,
+                    type,
+                    description
                 );
             }
             else

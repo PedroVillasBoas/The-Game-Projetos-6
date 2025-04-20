@@ -196,15 +196,15 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.9666667
-    functionName: StartGame
+  - time: 1.9166666
+    functionName: TurnOnPlayerInput
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 1.9833333
-    functionName: TurnOnPlayerInput
+  - time: 1.95
+    functionName: StartGame
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

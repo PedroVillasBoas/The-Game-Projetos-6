@@ -34,35 +34,38 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void Update()
         {
-            if (GlobalGameManager.Instance.GameState == GameState.GameBegin ||
-            GlobalGameManager.Instance.GameState == GameState.GameContinue && GlobalGameManager.Instance.UIState == UIState.NoAnimationPlaying)
+            OnUIPlayingAnimation();
+
+            if (CheckGameStates())
             {
                 Vector2 currentMousePos = Mouse.current.position.ReadValue();
                 _playerAimHandler.HandleLook(currentMousePos);
             }
 
-            OnUIPlayingAnimation();
         }
 
         void OnActionTriggered(InputAction.CallbackContext context)
         {
-            switch (context.action.name)
+            if (CheckGameStates())
             {
-                case "Move":
-                    OnMove(context);
-                    break;
+                switch (context.action.name)
+                {
+                    case "Move":
+                        OnMove(context);
+                        break;
 
-                case "Attack":
-                    OnAttack(context);
-                    break;
+                    case "Attack":
+                        OnAttack(context);
+                        break;
 
-                case "Boost":
-                    OnBoost(context);
-                    break;
+                    case "Boost":
+                        OnBoost(context);
+                        break;
 
-                case "Missile":
-                    OnMissile(context);
-                    break;
+                    case "Missile":
+                        OnMissile(context);
+                        break;
+                }
             }
         }
 
@@ -96,7 +99,10 @@ namespace GoodVillageGames.Game.Core.Manager
                 _playerActions.HandleMissile(false);
         }
 
-        
+        bool CheckGameStates()
+        {
+            return (GlobalGameManager.Instance.GameState == GameState.GameBegin || GlobalGameManager.Instance.GameState == GameState.GameContinue) && GlobalGameManager.Instance.UIState == UIState.NoAnimationPlaying;
+        }
 
         void OnUIPlayingAnimation()
         {
@@ -106,12 +112,12 @@ namespace GoodVillageGames.Game.Core.Manager
                     if (_inputActions.Player.enabled)
                         _inputActions.Player.Disable();
                     break;
-                
+
                 case UIState.PLAYING_UI_ANIM:
                     if (_inputActions.Player.enabled)
                         _inputActions.Player.Disable();
                     break;
-                
+
                 case UIState.NoAnimationPlaying:
                     if (!_inputActions.Player.enabled)
                         _inputActions.Player.Enable();

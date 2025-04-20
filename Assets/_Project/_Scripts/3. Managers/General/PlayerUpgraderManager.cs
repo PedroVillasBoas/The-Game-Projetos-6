@@ -1,4 +1,7 @@
 using UnityEngine;
+using System.Reflection;
+using System.Collections.Generic;
+using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.Core.Manager
@@ -8,6 +11,7 @@ namespace GoodVillageGames.Game.Core.Manager
         public static PlayerUpgraderManager Instance { get; private set; }
 
         [SerializeField] private PlayerActions player;
+        private List<UpgradeStatModifier> playerUpgrades = new();
 
         void Awake()
         {
@@ -16,13 +20,39 @@ namespace GoodVillageGames.Game.Core.Manager
                 Instance = this;
             else
                 Destroy(gameObject);
-
         }
 
         public void AddUpgradeToPlayer(UpgradeStatModifier upgrade)
         {
-            Debug.Log($"Upgrade: {upgrade}");
             upgrade.UpgradeLogic.ApplyUpgrade(player);
+            playerUpgrades.Add(upgrade);
+        }
+
+        public int GetPlayerCurrentLevel()
+        {
+            return PlayerExpManager.Instance.CurrentLevel;
+        }
+
+        public List<UpgradeStatModifier> GetPlayerUpgrades()
+        {
+            return playerUpgrades;
+        }
+
+        public Dictionary<string, float> GetPlayerStats()
+        {
+            Dictionary<string, float> statsDict = new();
+            PropertyInfo[] properties = typeof(Stats).GetProperties(BindingFlags.Public | BindingFlags.Instance);
+
+            foreach (PropertyInfo property in properties)
+            {
+                if (property.PropertyType == typeof(float))
+                {
+                    float value = (float)property.GetValue(player.Stats);
+                    statsDict.Add(property.Name, value);
+                }
+            }
+
+            return statsDict;
         }
     }
 }

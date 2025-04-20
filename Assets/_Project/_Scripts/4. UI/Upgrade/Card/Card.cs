@@ -57,6 +57,11 @@ namespace GoodVillageGames.Game.General.UI
             _shadow.enabled = false;
         }
 
+        void OnDisable()
+        {
+            UIPopupManager.Instance.DestroyPopup();
+        }
+        
         public void SetSelectedCard()
         {
             _isSelected = true;

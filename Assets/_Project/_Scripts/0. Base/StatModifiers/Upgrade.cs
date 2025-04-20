@@ -12,6 +12,8 @@ namespace GoodVillageGames.Game.Core.Attributes.Modifiers
         [SerializeField] private float _value;
         private float _duration = -1f;
 
+        public StatType StatType => _statType;
+
         public void ApplyUpgrade(Entity entity)
         {
             StatModifier modifier = _operatorType switch

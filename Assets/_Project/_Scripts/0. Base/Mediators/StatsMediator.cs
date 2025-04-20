@@ -12,13 +12,13 @@ namespace GoodVillageGames.Game.Core.Attributes
     /// </remarks>
     public class StatsMediator
     {
-        readonly LinkedList<StatModifier> modifiers = new();
+        public readonly LinkedList<StatModifier> modifiers = new();
 
-        // Perfom a Query/Consult whenever something wants to know about a specific Stat
+        // Perfoming a Query/Consult whenever something wants to know about a specific Stat
         public event EventHandler<Query> Queries;
         public void PerformQuery(object sender, Query query) => Queries?.Invoke(sender,query);
 
-        // Add a modifier/upgrade to the List
+        // Adding a modifier/upgrade to the List
         public void AddModifier(StatModifier modifier)
         {
             modifiers.AddLast(modifier);
@@ -41,7 +41,7 @@ namespace GoodVillageGames.Game.Core.Attributes
                 node = node.Next;
             }
 
-            // Dispose any that are finished
+            // Disposing any that are finished
             node = modifiers.First;
             while (node != null)
             {

@@ -49,6 +49,11 @@ namespace GoodVillageGames.Game.Handlers.UI
             GlobalEventsManager.Instance.ChangeGameState(GameState.GameBegin);
         }
 
+        public void ResumeGame()
+        {
+            GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);
+        }
+
         public void OpenQuitGamePopUp()
         {
             EventsManager.Instance.TriggerEvent("OpenGamePopUp");

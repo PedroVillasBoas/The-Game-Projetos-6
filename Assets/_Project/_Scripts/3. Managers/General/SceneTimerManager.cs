@@ -39,7 +39,7 @@ namespace GoodVillageGames.Game.Core.Manager
             switch (gameState)
             {
                 case GameState.GameBegin:
-                    StartRunTimer();
+                    _runTimer.Start();
                     break;
 
                 case GameState.GamePaused:
@@ -47,7 +47,7 @@ namespace GoodVillageGames.Game.Core.Manager
                     break;
 
                 case GameState.GameContinue:
-                    StartRunTimer();
+                    ResumeRunTimer();
                     break;
                 
                 case GameState.UpgradeScreen:
@@ -60,9 +60,9 @@ namespace GoodVillageGames.Game.Core.Manager
             }
         }
 
-        void StartRunTimer()
+        void ResumeRunTimer()
         {
-            _runTimer.Start();
+            _runTimer.Resume();
         }
 
         void StopRunTimer()

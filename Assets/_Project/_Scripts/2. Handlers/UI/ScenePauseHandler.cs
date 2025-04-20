@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using System.Collections;
 using UnityEngine.InputSystem;
 using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
@@ -10,11 +11,13 @@ namespace GoodVillageGames.Game.Handlers.UI
     /// Handles toggling the game pause state and notifies listeners.
     /// Objects that should ignore pause can subscribe to OnPauseToggle and use unscaled time.
     /// </summary>
-    public class ScenePauseHandler : MonoBehaviour 
+    public class ScenePauseHandler : MonoBehaviour
     {
         [SerializeField] private InputActionReference pauseAction;
 
         public static ScenePauseHandler Instance { get; private set; }
+
+        private bool isProcessingPause;
 
         void Awake()
         {
@@ -37,24 +40,37 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         private void OnPauseAsked(InputAction.CallbackContext context)
         {
-            if (!context.performed)
-                return;
-            if (GlobalGameManager.Instance.UIState != UIState.PLAYING_UI_ANIM)
-            {
+            if (!context.performed || isProcessingPause) return;
+            if (GlobalGameManager.Instance.UIState == UIState.PLAYING_UI_ANIM) return;
+
+            isProcessingPause = true;
+
+            try{
                 switch (GlobalGameManager.Instance.GameState)
                 {
                     case GameState.GamePaused:
-                    case GameState.GameBegin:
                     case GameState.GameContinue:
                         TogglePause();
                         break;
 
+                    case GameState.GameBegin: // temp
+                        TogglePause();
+                        break;
+
                     default:
-                        Debug.LogError($"Cannot pause the game when in state {GlobalGameManager.Instance.GameState}.");
+                        Debug.LogError($"Cannot pause in {GlobalGameManager.Instance.GameState}");
                         break;
                 }
-
             }
+            finally{
+                StartCoroutine(ResetPauseProcessing());
+            }
+        }
+
+        IEnumerator ResetPauseProcessing()
+        {
+            yield return new WaitForSecondsRealtime(0.1f);
+            isProcessingPause = false;
         }
 
         void TogglePause()

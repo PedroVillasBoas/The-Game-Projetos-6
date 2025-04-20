@@ -25,6 +25,6 @@ MonoBehaviour:
     - rid: 8278828222092149073
       type: {class: Upgrade, ns: GoodVillageGames.Game.Core.Attributes.Modifiers, asm: Assembly-CSharp}
       data:
-        _statType: 3
+        _statType: 12
         _operatorType: 1
         _value: 2
