@@ -44,7 +44,6 @@ namespace GoodVillageGames.Game.Core
         }
         public void HandleBoost(bool value)
         {
-            // I'll have to create a new handler to handle the boost and boost amount
             PlayerEventsManager.PlayerBoostingEvent(value);
         }
         public void HandleMissile(bool value)
@@ -61,7 +60,7 @@ namespace GoodVillageGames.Game.Core
         void ProcessBoostingAcceleration()
         {
             Vector2 desiredVelocity = CalculateDesiredVelocity(Stats.MaxBoostSpeed);
-            ProcessAcceleration(desiredVelocity, Stats.MaxSpeed);
+            ProcessAcceleration(desiredVelocity, Stats.Acceleration * 3);
         }
 
         Vector2 CalculateDesiredVelocity(float speed)
