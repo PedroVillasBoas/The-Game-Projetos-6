@@ -9,6 +9,8 @@ namespace GoodVillageGames.Game.Handlers
     {
         private float _damageAmount;
 
+        public float Damage => _damageAmount;
+
         public void Visit<T>(T visitable) where T : Component, IVisitable
         {
             if (visitable is HealthHandler entity)

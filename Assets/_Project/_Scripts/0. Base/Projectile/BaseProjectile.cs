@@ -68,8 +68,19 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         public virtual void DoAction()
         {
-            Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
-            pooledObject.ReturnToPool();
+            if (gameObject.name.StartsWith("Player - Missile"))
+            {
+                var instance = Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
+                if (instance.TryGetComponent(out DamageInAreaOnSpawn damageArea))
+                {
+                    damageArea.SetInfo(ProjectileDamageHandler.Damage);
+                }
+            }
+            else
+            {
+                Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
+            }
+                pooledObject.ReturnToPool();
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)

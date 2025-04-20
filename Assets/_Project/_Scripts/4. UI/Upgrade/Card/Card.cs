@@ -90,39 +90,20 @@ namespace GoodVillageGames.Game.General.UI
 
         public void OnPointerEnter(PointerEventData eventData)
         {
+            AskPopup();
+            
             if (_isSelected) return;
 
             _mouseHover = true;
             _outline.enabled = true;
             _shadow.enabled = true;
             StartSizeAnimation(_visualSizeOnHover, 0.2f);
-
-            // Getting the card's world corners
-            Vector3[] corners = new Vector3[4];
-            _visualHolderRectTrans.GetWorldCorners(corners);
-
-            // Calculating center position in world space
-            Vector3 worldCenter = (corners[0] + corners[2]) * 0.5f;
-
-            // Converting to screen space
-            Canvas canvas = GetComponentInParent<Canvas>();
-            Vector2 screenPosition = RectTransformUtility.WorldToScreenPoint(
-                canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
-                worldCenter
-            );
-
-            // Getting current actual size
-            Vector2 currentSize = _visualHolderRectTrans.rect.size;
-
-            UIPopupManager.Instance.CreatePopup(
-                GetComponent<CardUIUpdater>().Upgrade,
-                screenPosition,
-                currentSize
-            );
         }
 
         public void OnPointerExit(PointerEventData eventData)
         {
+            UIPopupManager.Instance.DestroyPopup();
+
             if (_isSelected) return;
 
             _mouseHover = false;
@@ -130,7 +111,6 @@ namespace GoodVillageGames.Game.General.UI
             _shadow.enabled = false;
             StartSizeAnimation(_visualDefaultSize, 0.3f);
             StartRotationReset();
-            UIPopupManager.Instance.DestroyPopup();
         }
 
         public void OnPointerMove(PointerEventData eventData)
@@ -234,6 +214,34 @@ namespace GoodVillageGames.Game.General.UI
         public void OnPointerClick(PointerEventData eventData)
         {
             OnCardClicked?.Invoke(this, cardUIUpdater.Upgrade);
+            UIPopupManager.Instance.DestroyPopup();
+            
+        }
+
+        void AskPopup()
+        {
+            // Getting the card's world corners
+            Vector3[] corners = new Vector3[4];
+            _visualHolderRectTrans.GetWorldCorners(corners);
+
+            // Calculating center position in world space
+            Vector3 worldCenter = (corners[0] + corners[2]) * 0.5f;
+
+            // Converting to screen space
+            Canvas canvas = GetComponentInParent<Canvas>();
+            Vector2 screenPosition = RectTransformUtility.WorldToScreenPoint(
+                canvas.renderMode == RenderMode.ScreenSpaceOverlay ? null : canvas.worldCamera,
+                worldCenter
+            );
+
+            // Getting current actual size
+            Vector2 currentSize = _visualHolderRectTrans.rect.size;
+
+            UIPopupManager.Instance.CreatePopup(
+                GetComponent<CardUIUpdater>().Upgrade,
+                screenPosition,
+                currentSize
+            );
         }
     }
 }
