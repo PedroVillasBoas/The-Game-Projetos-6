@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Max Boost Time - Legendary
   m_EditorClassIdentifier: 
   Name: Singularity Fuel Nexus
-  Description: 
+  Description: <style="Add">Multiply</style> your <style="Stat">Max Boost Time</style>
+    by <style="Value">120%</style>.
   Rarity: 4
   Image: {fileID: 21300000, guid: b012a2f72df28f94f8339523d16bf6b8, type: 3}
   UpgradeLogic:

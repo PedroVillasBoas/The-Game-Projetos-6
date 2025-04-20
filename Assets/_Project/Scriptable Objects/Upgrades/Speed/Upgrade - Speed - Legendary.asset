@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Speed - Legendary
   m_EditorClassIdentifier: 
   Name: Event Horizon Accelerator
-  Description: 
+  Description: <style="Add">Increase</style> your <style="Stat">Move Speed</style>
+    by <style="Value">12</style>.
   Rarity: 4
   Image: {fileID: 21300000, guid: def88cdf15c194a489d62c005f3b9759, type: 3}
   UpgradeLogic:
@@ -26,4 +27,4 @@ MonoBehaviour:
       data:
         _statType: 3
         _operatorType: 1
-        _value: 20
+        _value: 12

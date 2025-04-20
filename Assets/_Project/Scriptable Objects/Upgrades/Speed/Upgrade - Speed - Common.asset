@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Speed - Common
   m_EditorClassIdentifier: 
   Name: Ion Thrusters
-  Description: 
+  Description: <style="Add">Increase</style> your <style="Stat">Move Speed</style>
+    by <style="Value">2</style>.
   Rarity: 0
   Image: {fileID: 21300000, guid: 8427e73217840614d9d46c8bd5f8a203, type: 3}
   UpgradeLogic:
@@ -26,4 +27,4 @@ MonoBehaviour:
       data:
         _statType: 3
         _operatorType: 1
-        _value: 5
+        _value: 2

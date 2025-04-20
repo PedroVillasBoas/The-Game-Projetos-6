@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Damage - Legendary
   m_EditorClassIdentifier: 
   Name: Galactic Obliterator
-  Description: 
+  Description: <style="Mult">Multiply</style> your  <style="Stat">Basic Attack</style>by
+    <style="Value">150%</style>.
   Rarity: 4
   Image: {fileID: 21300000, guid: 2b30cb03661fa9a4b8e1cdff1088f69e, type: 3}
   UpgradeLogic:

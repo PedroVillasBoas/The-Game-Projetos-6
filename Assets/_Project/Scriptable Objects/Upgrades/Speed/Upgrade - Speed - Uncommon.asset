@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Speed - Uncommon
   m_EditorClassIdentifier: 
   Name: Photon Drive
-  Description: 
+  Description: <style="Add">Increase</style> your <style="Stat">Move Speed</style>
+    by <style="Value">5</style>.
   Rarity: 1
   Image: {fileID: 21300000, guid: 41502c65758bde14482d9dc32b2d9d36, type: 3}
   UpgradeLogic:
@@ -26,4 +27,4 @@ MonoBehaviour:
       data:
         _statType: 3
         _operatorType: 1
-        _value: 7
+        _value: 5

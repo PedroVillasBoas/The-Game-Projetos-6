@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Missile Cooldown - Epic
   m_EditorClassIdentifier: 
   Name: Temporal Flux Regulator
-  Description: 
+  Description: The <style="Stat">Cooldown</style> of your Missile is <style="Sub">decreased</style>
+    by <style="Value">0.8</style>.
   Rarity: 3
   Image: {fileID: 21300000, guid: b74392b83ab480141a368189adc9ab5e, type: 3}
   UpgradeLogic:

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Max Boost Time - Common
   m_EditorClassIdentifier: 
   Name: Auxiliary Fuel Reservoir
-  Description: 
+  Description: <style="Add">Add</style> <style="Value">0.1</style> to your <style="Stat">Max
+    Boost Time</style>.
   Rarity: 0
   Image: {fileID: 21300000, guid: 348398b538fcdbc43b1de7802ef2c07f, type: 3}
   UpgradeLogic:

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Max Health - Common
   m_EditorClassIdentifier: 
   Name: Reinforced Hull Plating
-  Description: 
+  Description: <style="Add">Gain</style> <style="Value">+5</style> <style="Stat">Max
+    Health</style>.
   Rarity: 0
   Image: {fileID: 21300000, guid: a1c80cb713492b14399e417295daa67e, type: 3}
   UpgradeLogic:

@@ -7,14 +7,33 @@ using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.Handlers.UI
 {
-    public class SceneUpgradeHandler : MonoBehaviour 
-    { 
-        [SerializeField] private List<CardUIUpdater> cardsList;
+    public class SceneUpgradeHandler : MonoBehaviour
+    {
         [SerializeField] private UpgradeStatPool upgradePool;
         [SerializeField] private GameObject selectButton;
+        [SerializeField] private GameObject cardPrefab;
+        [SerializeField] private GameObject cardHolder;
+
+        private List<CardUIUpdater> cardsList = new();
         private UpgradeStatModifier currentUpgradeSelected;
+        private bool isInitialized = false;
 
         void OnEnable()
+        {
+
+            if (!isInitialized)
+            {
+                InstantiateCards();
+                UpdateCardsListVisuals();
+                isInitialized = true;
+            }
+            else
+                ResetExistingCards();
+            
+            selectButton.SetActive(false);
+        }
+
+        private void ResetExistingCards()
         {
             foreach (CardUIUpdater updater in cardsList)
             {
@@ -23,11 +42,28 @@ namespace GoodVillageGames.Game.Handlers.UI
                 card.OnCardClicked += SetSelectedCard;
                 card.UnsetSelectedCard();
                 updater.Upgrade = null;
+                UpdateCardsListVisuals();
             }
+        }
 
-            UpdateCardsListVisuals();
-            selectButton.SetActive(false);
-
+        void InstantiateCards()
+        {
+            for (int i = 0; i <= 2; i++)
+            {
+                var card = Instantiate(cardPrefab, cardHolder.transform);
+                card.SetActive(true);
+                
+                if (card.TryGetComponent(out CardUIUpdater updater))
+                {
+                    cardsList.Add(updater);
+                    Card cardComponent = card.GetComponent<Card>();
+                    cardComponent.OnCardClicked += SetSelectedCard;
+                }
+                else
+                {
+                    Debug.LogError("Card prefab missing CardUIUpdater component", card);
+                }
+            }
         }
 
         void SetSelectedCard(Card card, UpgradeStatModifier upgrade)

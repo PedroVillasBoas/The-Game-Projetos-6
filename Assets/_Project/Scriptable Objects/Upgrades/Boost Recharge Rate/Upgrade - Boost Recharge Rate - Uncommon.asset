@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Boost Recharge Rate - Uncommon
   m_EditorClassIdentifier: 
   Name: Enhanced Capacitor
-  Description: 
+  Description: <style="Add">Add</style> <style="Value">0.2</style> to your <style="Stat">Boost
+    Recharge Rate</style>.
   Rarity: 1
   Image: {fileID: 21300000, guid: 4eeb48b6ca050b24b907b15921dc437a, type: 3}
   UpgradeLogic:

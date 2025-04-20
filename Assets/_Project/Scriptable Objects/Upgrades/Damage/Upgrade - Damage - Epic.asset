@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Damage - Epic
   m_EditorClassIdentifier: 
   Name: Starfire Incinerator
-  Description: 
+  Description: <style="Add">Add</style> <style="Value">8</style> to your <style="Stat">Basic
+    Attack</style>.
   Rarity: 3
   Image: {fileID: 21300000, guid: a764d467e9c86a343b5e20a7a94f427f, type: 3}
   UpgradeLogic:

@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Missile Cooldown - Rare
   m_EditorClassIdentifier: 
   Name: Accelerated Launch Matrix
-  Description: 
+  Description: The <style="Stat">Cooldown</style> of your Missile is <style="Sub">decreased</style>
+    by <style="Value">1</style>.
   Rarity: 2
   Image: {fileID: 21300000, guid: e5f5285acc08b1c40946c0819d6f6d0c, type: 3}
   UpgradeLogic:

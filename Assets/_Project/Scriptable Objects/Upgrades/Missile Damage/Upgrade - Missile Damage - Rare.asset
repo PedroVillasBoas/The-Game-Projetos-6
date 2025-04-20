@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Missile Damage - Rare
   m_EditorClassIdentifier: 
   Name: Concussive Warheads
-  Description: 
+  Description: The <style="Stat">Damage</style> of your Missile is <style="Add">increased</style>
+    by <style="Value">7</style>.
   Rarity: 2
   Image: {fileID: 21300000, guid: 61f02735d3847254aa68243ee3a6b45f, type: 3}
   UpgradeLogic:

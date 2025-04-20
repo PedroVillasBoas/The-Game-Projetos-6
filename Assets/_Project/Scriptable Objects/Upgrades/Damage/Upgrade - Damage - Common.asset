@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: Upgrade - Damage - Common
   m_EditorClassIdentifier: 
   Name: Pulse Emitter
-  Description: 
+  Description: <style="Add">Add</style> <style="Value">2</style> to your <style="Stat">Basic
+    Attack</style>.
   Rarity: 0
   Image: {fileID: 21300000, guid: b7eb91644c9e51d47a15d1c5efec0b49, type: 3}
   UpgradeLogic:
