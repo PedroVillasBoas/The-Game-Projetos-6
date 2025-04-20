@@ -5922,7 +5922,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0
-    functionName: TurnOffUIInput
+    functionName: PlayingUIAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
@@ -5943,7 +5943,7 @@ AnimationClip:
     intParameter: 0
     messageOptions: 0
   - time: 1.4833333
-    functionName: TurnOnUIInput
+    functionName: LoopingUIAnimation
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
