@@ -1,7 +1,7 @@
-using System.Collections.Generic;
-using GoodVillageGames.Game.Core.Manager;
 using TMPro;
 using UnityEngine;
+using System.Collections.Generic;
+using GoodVillageGames.Game.Core.Manager;
 
 namespace GoodVillageGames.Game.General.UI
 {
@@ -26,10 +26,7 @@ namespace GoodVillageGames.Game.General.UI
             AssembleElementsDictionary();
         }
 
-        void OnEnable()
-        {
-            UpdateElementsValues();
-        }
+        void OnEnable() => UpdateElementsValues();
 
         void UpdatePlayerStatsValues()
         {

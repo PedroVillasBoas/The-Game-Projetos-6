@@ -30,6 +30,7 @@ namespace GoodVillageGames.Game.Core.Manager
             GlobalEventsManager.Instance.CollectUpgradeData(upgrade);
         }
 
+        // not using yet
         public int GetPlayerCurrentLevel()
         {
             return PlayerExpManager.Instance.CurrentLevel;

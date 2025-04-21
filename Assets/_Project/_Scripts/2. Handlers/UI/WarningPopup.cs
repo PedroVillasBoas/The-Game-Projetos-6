@@ -8,6 +8,7 @@ namespace GoodVillageGames.Game.Handlers.UI
     public class WarningPopup : MonoBehaviour
     {
         [SerializeField] private TextMeshProUGUI timerText;
+        [SerializeField] private HealthHandler playerHealthHandler;
 
         private readonly float totalTime = 10f;
         private CountdownTimer timer;
@@ -47,6 +48,8 @@ namespace GoodVillageGames.Game.Handlers.UI
                 GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.PlayerDied);
                 timer.Stop();
                 timerText.text = "00:000";
+
+                playerHealthHandler.CurrentHealth = 0;
             }
         }
     }

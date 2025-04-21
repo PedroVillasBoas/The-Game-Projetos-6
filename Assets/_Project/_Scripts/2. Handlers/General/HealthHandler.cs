@@ -50,8 +50,8 @@ namespace GoodVillageGames.Game.Handlers
 
         private void HandleDeath()
         {
-            gameObject.SetActive(false);
             GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.PlayerDied);
+            gameObject.SetActive(false);
         }
 
         public Vector2 GetPosition() => transform.position;

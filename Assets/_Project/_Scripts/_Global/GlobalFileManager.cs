@@ -3,6 +3,7 @@ using System.IO;
 using UnityEngine;
 using System.Globalization;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Core.Manager;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
@@ -42,6 +43,7 @@ namespace GoodVillageGames.Game.Core.Global
             public int missileShotsHit;
             public float missileAccuracy;
             public bool quitViaPause;
+            public Dictionary<string, float> playerStats = new();
         }
 
         void Awake()
@@ -136,9 +138,23 @@ namespace GoodVillageGames.Game.Core.Global
 
         private void OnGameStateChanged(GameState newState)
         {
+            // Capturing Player Stats WHENEVER gameplay is suspended
+            if (newState == GameState.PlayerDied || newState == GameState.GamePaused)
+            {
+                if (PlayerUpgraderManager.Instance != null && PlayerExpManager.Instance != null)
+                {
+                    currentSession.playerStats = PlayerUpgraderManager.Instance.GetPlayerStats();
+                    currentSession.playerStats["Level"] = PlayerUpgraderManager.Instance.GetPlayerCurrentLevel();
+                    currentSession.playerStats["CurrentExp"] = PlayerExpManager.Instance.CurrentExp;
+                    currentSession.playerStats["ExpToNextLevel"] = PlayerExpManager.Instance.ExpToNextLevel;
+                }
+            }
+
+            // Finalizing current session when reaching terminal states
             if (newState == GameState.GameOver || newState == GameState.MainMenu)
             {
-                EndCurrentSession(newState == GameState.MainMenu);
+                bool quitViaPause = newState == GameState.MainMenu;
+                EndCurrentSession(quitViaPause);
             }
         }
 
@@ -151,7 +167,7 @@ namespace GoodVillageGames.Game.Core.Global
             CalculateFinalScore();
             sessions.Add(currentSession);
             SaveToFile();
-            
+
             // Clearing current session AFTER saving
             currentSession = null;
         }
@@ -218,10 +234,10 @@ namespace GoodVillageGames.Game.Core.Global
                 currentSession.missileAccuracy = currentSession.missileShotsFired > 0 ?
                     (float)currentSession.missileShotsHit / currentSession.missileShotsFired : 0f;
 
-                // Write header if new file
+                // Write header IF it's a new file
                 if (new FileInfo(path).Length == 0)
                 {
-                    writer.WriteLine("SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause");
+                    writer.WriteLine("SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats");
                 }
 
                 // Session data
@@ -235,7 +251,8 @@ namespace GoodVillageGames.Game.Core.Global
                     $"{SerializeDictionary(currentSession.upgradesCollected)}," +
                     $"{currentSession.normalAccuracy:P0}," + // Use stored value
                     $"{currentSession.missileAccuracy:P0}," + // Use stored value
-                    $"{currentSession.quitViaPause}"
+                    $"{currentSession.quitViaPause}," +
+                    $"{SerializeDictionary(currentSession.playerStats)}" // Use stored value
                 );
             }
             catch (Exception e)
@@ -376,6 +393,9 @@ namespace GoodVillageGames.Game.Core.Global
                 // Parse boolean
                 session.quitViaPause = bool.Parse(values[9]);
 
+                if (values.Length > 10)
+                    session.playerStats = ParsePlayerStats(values[10]);
+    
                 return session;
             }
             catch (Exception e)
@@ -418,6 +438,22 @@ namespace GoodVillageGames.Game.Core.Global
             if (string.IsNullOrEmpty(input)) return 0;
             string clean = input.Trim().Replace("%", "");
             return float.TryParse(clean, NumberStyles.Any, CultureInfo.InvariantCulture, out float result) ? result / 100f : 0f;
+        }
+
+        private Dictionary<string, float> ParsePlayerStats(string input)
+        {
+            var dict = new Dictionary<string, float>();
+            string[] entries = input.Split('|');
+
+            foreach (string entry in entries)
+            {
+                string[] parts = entry.Split(':');
+                if (parts.Length == 2 && float.TryParse(parts[1], NumberStyles.Any, CultureInfo.InvariantCulture, out float value))
+                {
+                    dict[parts[0]] = value;
+                }
+            }
+            return dict;
         }
     }
 }
