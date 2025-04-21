@@ -8,6 +8,7 @@ using GoodVillageGames.Game.Core.Projectiles;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Manager.Player;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -112,6 +113,7 @@ namespace GoodVillageGames.Game.Handlers
                 if (projectile.TryGetComponent(out BaseProjectile component))
                 {
                     component.ProjectileDamageHandler.SetDamage(Damage);
+                    GlobalFileManager.Instance.RegisterShot(component.Type);
                 }
 
                 projectile.transform.SetPositionAndRotation(_firepoint.position, _firepoint.rotation);

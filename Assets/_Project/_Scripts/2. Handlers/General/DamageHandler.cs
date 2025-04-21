@@ -1,17 +1,21 @@
 using UnityEngine;
+using GoodVillageGames.Game.Core.Util;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Enemy;
-using GoodVillageGames.Game.Core.Projectiles;
 using GoodVillageGames.Game.Core.Manager;
-using GoodVillageGames.Game.Core.Util;
+using GoodVillageGames.Game.Core.Projectiles;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Handlers
 {
     public class DamageHandler : MonoBehaviour, IVisitor
     {
         private float _damageAmount;
+        private IOwnedProjectile ownedProjectile;
 
         public float Damage => _damageAmount;
+
+        void Awake() => ownedProjectile = GetComponent<IOwnedProjectile>();
 
         public void Visit<T>(T visitable) where T : Component, IVisitable
         {
@@ -48,7 +52,10 @@ namespace GoodVillageGames.Game.Handlers
         {
             other.GetComponent<IVisitable>()?.Accept(this);
             if(TryGetComponent(out BaseProjectile component))
+            {
                 component.DoAction();
+                GlobalFileManager.Instance.RegisterHit(ownedProjectile.Type);
+            }
         }
     }
 }

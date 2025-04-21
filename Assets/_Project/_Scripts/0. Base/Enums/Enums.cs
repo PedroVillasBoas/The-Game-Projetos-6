@@ -180,6 +180,7 @@ namespace GoodVillageGames.Game.Enums
 
         public enum ProjectileType
         {
+            Enemy,
             Basic,
             Missile,
         }

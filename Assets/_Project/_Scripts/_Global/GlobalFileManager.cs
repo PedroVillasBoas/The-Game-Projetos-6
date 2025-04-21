@@ -303,18 +303,32 @@ namespace GoodVillageGames.Game.Core.Global
                 currentSession.upgradesCollected.Add(rarity, 1);
         }
 
-        public void RegisterShot(ProjectileType type, bool hit)
+        public void RegisterShot(ProjectileType type)
         {
+            if (currentSession == null) return;
+
             switch (type)
             {
                 case ProjectileType.Basic:
                     currentSession.normalShotsFired++;
-                    if (hit) currentSession.normalShotsHit++;
                     break;
-
                 case ProjectileType.Missile:
                     currentSession.missileShotsFired++;
-                    if (hit) currentSession.missileShotsHit++;
+                    break;
+            }
+        }
+
+        public void RegisterHit(ProjectileType type)
+        {
+            if (currentSession == null) return;
+
+            switch (type)
+            {
+                case ProjectileType.Basic:
+                    currentSession.normalShotsHit++;
+                    break;
+                case ProjectileType.Missile:
+                    currentSession.missileShotsHit++;
                     break;
             }
         }

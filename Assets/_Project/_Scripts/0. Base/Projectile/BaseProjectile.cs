@@ -2,25 +2,30 @@ using UnityEngine;
 using TriInspector;
 using Unity.Mathematics;
 using GoodVillageGames.Game.Handlers;
+using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Pooling;
 using GoodVillageGames.Game.Core.Util.Timer;
+using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Projectiles
 {
-    public class BaseProjectile : MonoBehaviour
+    public class BaseProjectile : MonoBehaviour, IOwnedProjectile
     {
         [Title("Projectile Settings")]
         [SerializeField] protected float speed = 10f;
         [SerializeField] protected float lifeTime = 5f;
         [SerializeField] protected GameObject hitVFXPrefab;
+        [SerializeField] private ProjectileType projectileType;
 
         private CountdownTimer _timer;
         private Rigidbody2D _projectileRb;
         private DamageHandler _damageHandler;
 
-        public DamageHandler ProjectileDamageHandler { get => _damageHandler; }
-        
         protected PooledObject pooledObject;
+
+        public DamageHandler ProjectileDamageHandler { get => _damageHandler; }
+        public ProjectileType Type { get => projectileType; protected set => projectileType = value; }
+        public bool IsPlayerProjectile => Type == ProjectileType.Basic || Type == ProjectileType.Missile;
 
         protected virtual void Awake()
         {
