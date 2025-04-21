@@ -12,9 +12,13 @@ namespace GoodVillageGames.Game.Core.Global
 
         private GameState gameState = GameState.MainMenu;
         private UIState uIState = UIState.NoAnimationPlaying;
+        private GameDifficulty currentDifficulty;
+        private bool firstLogin = true;
 
         public GameState GameState { get => gameState; set => gameState = value; }
         public UIState UIState { get => uIState; set => uIState = value; }
+        public GameDifficulty CurrentDifficulty { get => currentDifficulty; set => currentDifficulty = value; }
+        public bool FirstLogin { get => firstLogin; set => firstLogin = value; }
 
         void Awake()
         {

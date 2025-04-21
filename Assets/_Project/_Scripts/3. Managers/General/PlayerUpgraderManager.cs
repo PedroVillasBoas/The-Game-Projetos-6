@@ -3,6 +3,7 @@ using System.Reflection;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -26,6 +27,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             upgrade.UpgradeLogic.ApplyUpgrade(player);
             playerUpgrades.Add(upgrade);
+            GlobalEventsManager.Instance.CollectUpgradeData(upgrade);
         }
 
         public int GetPlayerCurrentLevel()

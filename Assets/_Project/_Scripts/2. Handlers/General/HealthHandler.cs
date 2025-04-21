@@ -1,8 +1,7 @@
 using System;
 using UnityEngine;
-using GoodVillageGames.Game.Core.Util;
 using GoodVillageGames.Game.Interfaces;
-using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.GameObjectEntity;
@@ -51,8 +50,8 @@ namespace GoodVillageGames.Game.Handlers
 
         private void HandleDeath()
         {
-            // Handle death logic here
             gameObject.SetActive(false);
+            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.PlayerDied);
         }
 
         public Vector2 GetPosition() => transform.position;

@@ -1,0 +1,19 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b8291fef038f0fb438fe2ffcd5ae3f89, type: 3}
+  m_Name: Easy - DfficultyInfo
+  m_EditorClassIdentifier: 
+  Name: Calm Seas
+  Description: Enemies hit softly and have lower health, giving you plenty of breathing
+    room. You start with boosted stats, foes spawn rarely, and bosses take extra
+    time to appear. Perfect for learning the ropes at your own pace.
+  gameDifficulty: 0

@@ -1,4 +1,5 @@
 using System;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
 using UnityEngine;
 using static GoodVillageGames.Game.Enums.Enums;
 
@@ -20,6 +21,7 @@ namespace GoodVillageGames.Game.Core.Global
 
         // Data Collection
         public event Action<EnemyType> EnemyDefeatedEventTriggered;
+        public event Action<UpgradeStatModifier> UpgradeCollectedEventTriggered;
 
         void Awake()
         {
@@ -46,6 +48,11 @@ namespace GoodVillageGames.Game.Core.Global
         public void AddDefeatedEnemy(EnemyType enemyType)
         {
             EnemyDefeatedEventTriggered?.Invoke(enemyType);
+        }
+
+        public void CollectUpgradeData(UpgradeStatModifier upgradeStatModifier)
+        {
+            UpgradeCollectedEventTriggered?.Invoke(upgradeStatModifier);
         }
     }
 }

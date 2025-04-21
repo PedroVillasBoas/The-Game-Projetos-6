@@ -170,5 +170,18 @@ namespace GoodVillageGames.Game.Enums
             BossHardFirst,
             BossHardSecond,
         }
+
+        public enum GameDifficulty
+        {
+            Easy,
+            Medium,
+            Hard,
+        }
+
+        public enum ProjectileType
+        {
+            Basic,
+            Missile,
+        }
     }
 }

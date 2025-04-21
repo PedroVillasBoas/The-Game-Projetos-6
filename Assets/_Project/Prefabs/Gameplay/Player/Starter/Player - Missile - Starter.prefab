@@ -248,6 +248,7 @@ MonoBehaviour:
   speed: 5
   lifeTime: 2
   hitVFXPrefab: {fileID: 5433148584055260179, guid: 93992a02c65ed0545990ce7d076c75d8, type: 3}
+  type: 1
   explosionRadius: 1
 --- !u!114 &-3011365388256145118
 MonoBehaviour:

@@ -32,6 +32,11 @@ namespace GoodVillageGames.Game.Core.Manager
             _playerInputComponent.onActionTriggered -= OnActionTriggered;
         }
 
+        void OnDestroy()
+        {
+            _inputActions.Player.Disable();
+        }
+
         void Update()
         {
             OnUIPlayingAnimation();

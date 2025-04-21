@@ -121,8 +121,8 @@ TextureImporter:
         width: 537
         height: 683
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 260, y: 300, z: 260, w: 300}
       customData: 
       outline: []
       physicsShape: []
@@ -138,7 +138,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 7288cae021e774e4c996697950ec6049
     internalID: 0
     vertices: []
     indices: 
@@ -147,7 +147,8 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      merchant_texture_box_0: -1035784165565788368
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

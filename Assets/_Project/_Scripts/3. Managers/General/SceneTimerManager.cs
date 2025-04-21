@@ -1,7 +1,6 @@
+using UnityEngine;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Util.Timer;
-using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
 using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
@@ -43,19 +42,13 @@ namespace GoodVillageGames.Game.Core.Manager
                     break;
 
                 case GameState.GamePaused:
+                case GameState.UpgradeScreen:
+                case GameState.PlayerDied:
                     StopRunTimer();
                     break;
 
                 case GameState.GameContinue:
                     ResumeRunTimer();
-                    break;
-                
-                case GameState.UpgradeScreen:
-                    StopRunTimer();
-                    break;
-                
-                case GameState.PlayerDied:
-                    StopRunTimer();
                     break;
             }
         }

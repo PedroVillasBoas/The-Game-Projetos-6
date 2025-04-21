@@ -1,8 +1,6 @@
 using UnityEngine;
-using TriInspector;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Manager;
-using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 
 namespace GoodVillageGames.Game.General.UI.Buttons

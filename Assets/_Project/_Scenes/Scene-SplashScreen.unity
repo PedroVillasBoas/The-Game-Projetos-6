@@ -174,7 +174,7 @@ GameObject:
   - component: {fileID: 329876522}
   - component: {fileID: 329876521}
   m_Layer: 0
-  m_Name: Change Scene Manager
+  m_Name: Global Change Scene Manager
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1031,9 +1031,9 @@ SceneRoots:
   - {fileID: 780589098}
   - {fileID: 1544313946}
   - {fileID: 3221807598289916735}
-  - {fileID: 329876522}
   - {fileID: 2056706268}
   - {fileID: 1625906772}
   - {fileID: 1148975395}
   - {fileID: 579183107}
   - {fileID: 115820498}
+  - {fileID: 329876522}

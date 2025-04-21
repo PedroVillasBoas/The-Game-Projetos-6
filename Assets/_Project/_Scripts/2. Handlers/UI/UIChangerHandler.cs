@@ -1,6 +1,6 @@
-using GoodVillageGames.Game.Core.Global;
 using UnityEngine;
 using UnityEngine.EventSystems;
+using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
 
 
@@ -8,6 +8,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 {
     public class UIChangerHandler : MonoBehaviour 
     { 
+        [SerializeField] GameObject gameOver;
         private Animator animator;
         private GameState? currentState;
 
@@ -29,7 +30,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 
         void TriggerAnimation(GameState state)
         {
-            // Prevent duplicate triggers
+            // Prevent duplicate triggers (:
             if (currentState == state) return;
 
             currentState = state;
@@ -48,12 +49,15 @@ namespace GoodVillageGames.Game.Handlers.UI
 
                 case GameState.GameContinue:
                     animator.SetTrigger("PAUSEtoGUI");
-                    EventSystem.current.SetSelectedGameObject(null); // Critical fix
+                    EventSystem.current.SetSelectedGameObject(null); // Critical fix!!!
+                    break;
+
+                case GameState.PlayerDied:
+                    gameOver.SetActive(true);
                     break;
             }
         }
 
-        // Add this to handle animation completion
         public void OnAnimationComplete()
         {
             currentState = null;
