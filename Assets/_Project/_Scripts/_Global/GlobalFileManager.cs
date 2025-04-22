@@ -25,10 +25,15 @@ namespace GoodVillageGames.Game.Core.Global
         // Session Status
         public bool HasActiveSession => currentSession != null;
 
+        // Properties
+        public GameSessionData CurrentSession => currentSession;
+
         // Data Structure for each gaming session
         [Serializable]
-        private class GameSessionData
+        public class GameSessionData
         {
+            public string sessionID;
+            public string playerName;
             public DateTime startTime;
             public DateTime endTime;
             public float durationSeconds;
@@ -48,13 +53,13 @@ namespace GoodVillageGames.Game.Core.Global
 
         void Awake()
         {
-            if (Instance == null)
+            if (Instance != null && Instance != this)
             {
-                Instance = this;
-                DontDestroyOnLoad(gameObject);
-            }
-            else
                 Destroy(gameObject);
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
 
         void Start()
@@ -73,9 +78,11 @@ namespace GoodVillageGames.Game.Core.Global
 
         void Update()
         {
+            if (currentSession == null) return;
+
             if (Time.time - lastSaveTime > saveInterval)
             {
-                SaveToFile();
+                SaveToFile(); // Partial save
                 lastSaveTime = Time.time;
             }
         }
@@ -129,6 +136,8 @@ namespace GoodVillageGames.Game.Core.Global
         {
             currentSession = new GameSessionData
             {
+                sessionID = $"{DateTime.Now:yyyyMMddHHmmss}-{Guid.NewGuid().ToString().Substring(0, 4)}",
+                playerName = playerName,
                 startTime = DateTime.Now,
                 difficulty = (int)GlobalGameManager.Instance.CurrentDifficulty,
                 upgradesCollected = new Dictionary<UpgradeRarity, int>(),
@@ -141,10 +150,14 @@ namespace GoodVillageGames.Game.Core.Global
             // Capturing Player Stats WHENEVER gameplay is suspended
             if (newState == GameState.PlayerDied || newState == GameState.GamePaused)
             {
-                if (PlayerUpgraderManager.Instance != null && PlayerExpManager.Instance != null)
+                if (PlayerUpgraderManager.Instance != null)
                 {
                     currentSession.playerStats = PlayerUpgraderManager.Instance.GetPlayerStats();
                     currentSession.playerStats["Level"] = PlayerUpgraderManager.Instance.GetPlayerCurrentLevel();
+                }
+
+                if (PlayerExpManager.Instance != null)
+                {
                     currentSession.playerStats["CurrentExp"] = PlayerExpManager.Instance.CurrentExp;
                     currentSession.playerStats["ExpToNextLevel"] = PlayerExpManager.Instance.ExpToNextLevel;
                 }
@@ -165,10 +178,11 @@ namespace GoodVillageGames.Game.Core.Global
             currentSession.endTime = DateTime.Now;
             currentSession.quitViaPause = quitViaPause;
             CalculateFinalScore();
-            sessions.Add(currentSession);
-            SaveToFile();
 
-            // Clearing current session AFTER saving
+            // Final save
+            SaveToFile(isFinalSave: true);
+            sessions.Add(currentSession);
+
             currentSession = null;
         }
 
@@ -207,12 +221,13 @@ namespace GoodVillageGames.Game.Core.Global
                     _ => 0
                 };
             }
-
-            currentSession.totalScore = (int)((upgradeScore + enemyScore) * currentSession.difficulty);
+            currentSession.totalScore = (int)((upgradeScore + enemyScore) * (currentSession.difficulty+1));
         }
 
-        private void SaveToFile()
+        private void SaveToFile(bool isFinalSave = false)
         {
+            if (currentSession == null) return;
+
             string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
             string path = Path.Combine(Application.persistentDataPath, fileName);
 
@@ -222,37 +237,43 @@ namespace GoodVillageGames.Game.Core.Global
 
             try
             {
+                bool isNewFile = !File.Exists(path);
+
                 using StreamWriter writer = new(path, true);
 
-                // Calculating and storing session metrics
-                TimeSpan duration = currentSession.endTime - currentSession.startTime;
-                currentSession.durationSeconds = (float)duration.TotalSeconds;
+                // Write header for new files
+                if (isNewFile)
+                {
+                    writer.WriteLine("SessionID,Player,SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats,IsFinal");
+                }
 
                 currentSession.normalAccuracy = currentSession.normalShotsFired > 0 ?
                     (float)currentSession.normalShotsHit / currentSession.normalShotsFired : 0f;
-
                 currentSession.missileAccuracy = currentSession.missileShotsFired > 0 ?
                     (float)currentSession.missileShotsHit / currentSession.missileShotsFired : 0f;
 
-                // Write header IF it's a new file
-                if (new FileInfo(path).Length == 0)
-                {
-                    writer.WriteLine("SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats");
-                }
+                // Generate session fingerprint
+                string sessionID = $"{currentSession.startTime:yyyyMMddHHmmss}-{Guid.NewGuid().ToString()[..4]}";
 
-                // Session data
+                // Calculate current duration
+                float currentDuration = (float)(DateTime.Now - currentSession.startTime).TotalSeconds;
+
+                // Write partial/final record
                 writer.WriteLine(
+                    $"{sessionID}," +
+                    $"{playerName}," +
                     $"{currentSession.startTime:HH:mm:ss dd-MM-yyyy}," +
-                    $"{currentSession.endTime:HH:mm:ss dd-MM-yyyy}," +
-                    $"{currentSession.durationSeconds}," + // Use stored value
+                    $"{(isFinalSave ? currentSession.endTime.ToString("HH:mm:ss dd-MM-yyyy") : "IN_PROGRESS")}," +
+                    $"{currentDuration}," +
                     $"{currentSession.totalScore}," +
                     $"{currentSession.difficulty}," +
                     $"{SerializeDictionary(currentSession.enemiesDefeated)}," +
                     $"{SerializeDictionary(currentSession.upgradesCollected)}," +
-                    $"{currentSession.normalAccuracy:P0}," + // Use stored value
-                    $"{currentSession.missileAccuracy:P0}," + // Use stored value
+                    $"{currentSession.normalAccuracy:P2}," +
+                    $"{currentSession.missileAccuracy:P2}," +
                     $"{currentSession.quitViaPause}," +
-                    $"{SerializeDictionary(currentSession.playerStats)}" // Use stored value
+                    $"{SerializeDictionary(currentSession.playerStats)}," +
+                    $"{isFinalSave}"
                 );
             }
             catch (Exception e)
@@ -365,37 +386,49 @@ namespace GoodVillageGames.Game.Core.Global
 
         private GameSessionData ParseSession(string csvLine)
         {
-            GameSessionData session = new();
-            string[] values = csvLine.Split(',');
+            var values = csvLine.Split(',');
 
+            var session = new GameSessionData();
             try
             {
-                // Parse dates
-                session.startTime = DateTime.ParseExact(values[0].Trim(),
+                // 2 → SessionStart
+                session.startTime = DateTime.ParseExact(values[2].Trim(),
                     "HH:mm:ss dd-MM-yyyy", CultureInfo.InvariantCulture);
 
-                session.endTime = DateTime.ParseExact(values[1].Trim(),
-                    "HH:mm:ss dd-MM-yyyy", CultureInfo.InvariantCulture);
+                // 3 → SessionEnd or IN_PROGRESS
+                string endStr = values[3].Trim();
+                session.endTime = endStr == "IN_PROGRESS"
+                    ? DateTime.MinValue
+                    : DateTime.ParseExact(endStr, "HH:mm:ss dd-MM-yyyy", CultureInfo.InvariantCulture);
 
-                // Parse numerical values
-                session.durationSeconds = (int)float.Parse(values[2]);
-                session.totalScore = int.Parse(values[3]);
-                session.difficulty = int.Parse(values[4]);
+                // 4 → DurationSeconds
+                session.durationSeconds = float.Parse(values[4], CultureInfo.InvariantCulture);
 
-                // Parse dictionaries
-                session.enemiesDefeated = ParseEnemyDictionary(values[5]);
-                session.upgradesCollected = ParseUpgradeDictionary(values[6]);
+                // 5 → TotalScore
+                session.totalScore = int.Parse(values[5], CultureInfo.InvariantCulture);
 
-                // Parse accuracies
-                session.normalAccuracy = ParsePercentage(values[7]);
-                session.missileAccuracy = ParsePercentage(values[8]);
+                // 6 → Difficulty
+                session.difficulty = int.Parse(values[6], CultureInfo.InvariantCulture);
 
-                // Parse boolean
-                session.quitViaPause = bool.Parse(values[9]);
+                // 7 → EnemiesDefeated
+                session.enemiesDefeated = ParseEnemyDictionary(values[7]);
 
-                if (values.Length > 10)
-                    session.playerStats = ParsePlayerStats(values[10]);
-    
+                // 8 → UpgradesCollected
+                session.upgradesCollected = ParseUpgradeDictionary(values[8]);
+
+                // 9 → NormalAccuracy (e.g. “50.00%”)
+                session.normalAccuracy = ParsePercentage(values[9]);
+
+                // 10 → MissileAccuracy
+                session.missileAccuracy = ParsePercentage(values[10]);
+
+                // 11 → QuitViaPause (“True”/“False”)
+                session.quitViaPause = bool.Parse(values[11]);
+
+                // 12 → PlayerStats (optional)
+                if (values.Length > 12)
+                    session.playerStats = ParsePlayerStats(values[12]);
+
                 return session;
             }
             catch (Exception e)
@@ -404,6 +437,7 @@ namespace GoodVillageGames.Game.Core.Global
                 return null;
             }
         }
+
 
         private Dictionary<EnemyType, int> ParseEnemyDictionary(string input)
         {

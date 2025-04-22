@@ -1,6 +1,7 @@
 using UnityEngine;
-using GoodVillageGames.Game.Core.Attributes.Modifiers;
 using GoodVillageGames.Game.Core.Attributes;
+using GoodVillageGames.Game.Core.ScriptableObjects;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.General.UI
 {
@@ -31,6 +32,17 @@ namespace GoodVillageGames.Game.General.UI
                 upgrade.Name,
                 upgrade.Rarity.ToString(),
                 upgrade.Description,
+                screenPosition,
+                objectSize
+            );
+        }
+
+        public void CreatePopup(RarityInfo rarityInfo, Vector2 screenPosition, Vector2 objectSize)
+        {
+            CreatePopupInternal(
+                rarityInfo.Name,
+                "Rarity",
+                rarityInfo.Description,
                 screenPosition,
                 objectSize
             );
