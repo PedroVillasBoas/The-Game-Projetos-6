@@ -63,6 +63,7 @@ namespace GoodVillageGames.Game.Enums
             UpgradeScreen,
             PlayerDied,
             GameOver,
+            SplashScreen,
         }
 
         public enum UIButtonActionType
@@ -183,6 +184,14 @@ namespace GoodVillageGames.Game.Enums
             Enemy,
             Basic,
             Missile,
+        }
+        
+        public enum GameMusics
+        {
+            SplashScreen = 0,
+            MainMenu = 1,
+            InGame = 2,
+            GameOver = 3,
         }
     }
 }

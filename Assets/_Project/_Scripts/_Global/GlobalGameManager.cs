@@ -10,7 +10,7 @@ namespace GoodVillageGames.Game.Core.Global
     {
         public static GlobalGameManager Instance { get; private set; }
 
-        private GameState gameState = GameState.MainMenu;
+        private GameState gameState = GameState.SplashScreen;
         private UIState uIState = UIState.NoAnimationPlaying;
         private GameDifficulty currentDifficulty;
         private bool firstLogin = true;

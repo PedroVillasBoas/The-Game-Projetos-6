@@ -15,11 +15,85 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809321916098230
+  lastModified: 638809460364273824
   FileSizes:
   - Name: Desktop
-    Value: 906
+    Value: 1338
   Exists: 1
+--- !u!114 &-4545158364550449810
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Music.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD/VoidProtocol/Build/Desktop/Music.bank
+  Name: Music
+  StudioPath: bank:/Music
+  lastModified: 638809460364742998
+  FileSizes:
+  - Name: Desktop
+    Value: 4862496
+  Exists: 1
+--- !u!114 &-3775883924632264065
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/InGame - Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/InGame - Music
+  Guid:
+    Data1: 1802860732
+    Data2: 1246996282
+    Data3: 347997877
+    Data4: -371444838
+  Banks:
+  - {fileID: -4545158364550449810}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 48000
+--- !u!114 &-88788310501510768
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/General/Button/OnEnter
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/General/Button/OnEnter
+  Guid:
+    Data1: 1207942405
+    Data2: 1341651352
+    Data3: 1160113034
+    Data4: 2110713712
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -36,16 +110,21 @@ MonoBehaviour:
   - {fileID: -6774862291060348435}
   - {fileID: 2595951719732274}
   - {fileID: 7911824750875194011}
+  - {fileID: 8912729605360483637}
+  - {fileID: -4545158364550449810}
   EditorEvents:
-  - {fileID: 4833941304914918113}
-  - {fileID: 5159677127452274861}
-  - {fileID: 8277050424835333164}
+  - {fileID: 9046871814767878559}
+  - {fileID: -3775883924632264065}
+  - {fileID: 9211202209699728509}
+  - {fileID: -88788310501510768}
+  - {fileID: 3907489199998961744}
+  - {fileID: 5005127104388921146}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638809321917013547
+  cacheTime: 638809460364742998
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -62,12 +141,40 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638809321916088225
+  lastModified: 638809460364263802
   FileSizes:
   - Name: Desktop
-    Value: 1036
+    Value: 1486
   Exists: 1
---- !u!114 &4833941304914918113
+--- !u!114 &786811580087370795
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Music/MusicParameter
+  m_EditorClassIdentifier: 
+  Name: MusicParameter
+  StudioPath: 
+  Min: 0
+  Max: 3
+  Default: 0
+  ID:
+    data1: 261850403
+    data2: 3337844983
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - SplashScreen
+  - MainMenu
+  - InGame
+  - GameOver
+  Exists: 1
+--- !u!114 &3907489199998961744
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -77,36 +184,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Button/OnEnter
+  m_Name: event:/SFX/UI/General/Button/OnClick
   m_EditorClassIdentifier: 
-  Path: event:/UI/Button/OnEnter
-  Guid:
-    Data1: 1207942405
-    Data2: 1341651352
-    Data3: 1160113034
-    Data4: 2110713712
-  Banks:
-  - {fileID: 7911824750875194011}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
---- !u!114 &5159677127452274861
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Button/OnClick
-  m_EditorClassIdentifier: 
-  Path: event:/UI/Button/OnClick
+  Path: event:/SFX/UI/General/Button/OnClick
   Guid:
     Data1: 1989225764
     Data2: 1225335958
@@ -118,6 +198,34 @@ MonoBehaviour:
   Is3D: 0
   IsOneShot: 1
   Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
+--- !u!114 &5005127104388921146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/Music
+  Guid:
+    Data1: -1586933332
+    Data2: 1084829286
+    Data3: 1207632553
+    Data4: 888247342
+  Banks:
+  - {fileID: -4545158364550449810}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters:
+  - {fileID: 786811580087370795}
   MinDistance: 1
   MaxDistance: 20
   Length: 0
@@ -136,12 +244,32 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809321917013547
+  lastModified: 638809441042251126
   FileSizes:
   - Name: Desktop
-    Value: 22208
+    Value: 12864
   Exists: 1
---- !u!114 &8277050424835333164
+--- !u!114 &8912729605360483637
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c18180ecb35941f4682ae60107b85b7c, type: 3}
+  m_Name: bank:/Ambient.bank
+  m_EditorClassIdentifier: 
+  Path: ../../../FMOD/VoidProtocol/Build/Desktop/Ambient.bank
+  Name: Ambient
+  StudioPath: bank:/Ambient
+  lastModified: 638809441072174353
+  FileSizes:
+  - Name: Desktop
+    Value: 494
+  Exists: 1
+--- !u!114 &9046871814767878559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -151,20 +279,47 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/UI/Button/OnExit
+  m_Name: event:/Music/GameOver - Music
   m_EditorClassIdentifier: 
-  Path: event:/UI/Button/OnExit
+  Path: event:/Music/GameOver - Music
   Guid:
-    Data1: 1649665965
-    Data2: 1323595203
-    Data3: -591718480
-    Data4: 1623783943
+    Data1: 1938955170
+    Data2: 1092109244
+    Data3: -1072764513
+    Data4: -995768965
   Banks:
-  - {fileID: 7911824750875194011}
-  IsStream: 0
+  - {fileID: -4545158364550449810}
+  IsStream: 1
   Is3D: 0
-  IsOneShot: 1
+  IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 0
+  Length: 188071
+--- !u!114 &9211202209699728509
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/Music/MainMenu - Music
+  m_EditorClassIdentifier: 
+  Path: event:/Music/MainMenu - Music
+  Guid:
+    Data1: 348308438
+    Data2: 1169858091
+    Data3: -742131320
+    Data4: -1212661928
+  Banks:
+  - {fileID: -4545158364550449810}
+  IsStream: 1
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 88500
