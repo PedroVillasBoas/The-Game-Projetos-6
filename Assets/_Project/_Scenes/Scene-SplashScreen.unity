@@ -363,6 +363,71 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 473499298}
   m_CullTransparentMesh: 1
+--- !u!1 &517176573
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 517176575}
+  - component: {fileID: 517176574}
+  m_Layer: 0
+  m_Name: FMOD Events Handler
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &517176574
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517176573}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f59a09537dc8e4a9abb62bfcc18714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonEnter>k__BackingField:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/UI/Button/OnEnter
+  <ButtonClick>k__BackingField:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/UI/Button/OnClick
+  <ButtonExit>k__BackingField:
+    Guid:
+      Data1: 1649665965
+      Data2: 1323595203
+      Data3: -591718480
+      Data4: 1623783943
+    Path: event:/UI/Button/OnExit
+--- !u!4 &517176575
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 517176573}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &544611179
 GameObject:
   m_ObjectHideFlags: 0
@@ -554,6 +619,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 629921969}
+  - component: {fileID: 629921970}
   m_Layer: 0
   m_Name: Global Audio Manager
   m_TagString: Untagged
@@ -576,6 +642,18 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &629921970
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 629921968}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86569ace2d867d54bb9e82d9536684a0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &685297055
 GameObject:
   m_ObjectHideFlags: 0
@@ -738,9 +816,9 @@ GameObject:
   m_Component:
   - component: {fileID: 988329452}
   - component: {fileID: 988329451}
-  - component: {fileID: 988329450}
   - component: {fileID: 988329454}
   - component: {fileID: 988329453}
+  - component: {fileID: 988329455}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -748,14 +826,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &988329450
-AudioListener:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 988329449}
-  m_Enabled: 1
 --- !u!20 &988329451
 Camera:
   m_ObjectHideFlags: 0
@@ -898,6 +968,20 @@ MonoBehaviour:
     m_MipBias: 0
     m_VarianceClampScale: 0.9
     m_ContrastAdaptiveSharpening: 0
+--- !u!114 &988329455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 988329449}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nonRigidbodyVelocity: 1
+  attenuationObject: {fileID: 988329449}
 --- !u!1 &1148975393
 GameObject:
   m_ObjectHideFlags: 0
@@ -1429,6 +1513,7 @@ SceneRoots:
   - {fileID: 3221807598289916735}
   - {fileID: 544611184}
   - {fileID: 2056706268}
+  - {fileID: 517176575}
   - {fileID: 1625906772}
   - {fileID: 1148975395}
   - {fileID: 579183107}
