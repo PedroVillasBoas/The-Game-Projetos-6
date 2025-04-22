@@ -1,0 +1,624 @@
+fileFormatVersion: 2
+guid: 7652d487bcba1e04a958d69f93e13906
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 347136387830140088
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_0
+  - first:
+      213: -2155774068911513368
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_1
+  - first:
+      213: -5836181427681996135
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_2
+  - first:
+      213: 90956639905869347
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_3
+  - first:
+      213: -8806053693603685727
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_4
+  - first:
+      213: 4270593929493553664
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_5
+  - first:
+      213: 9037368389834933433
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_6
+  - first:
+      213: 2134407998041590586
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_7
+  - first:
+      213: -5503257364866103
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_8
+  - first:
+      213: 3142629246331601182
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_9
+  - first:
+      213: 2929032434061573009
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_10
+  - first:
+      213: -4979438225653188278
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_11
+  - first:
+      213: -3568141997085422538
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_12
+  - first:
+      213: 8459509004229153601
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_13
+  - first:
+      213: 5392425745287838011
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_14
+  - first:
+      213: 5004057685866564503
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_15
+  - first:
+      213: 2366217638765474411
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_16
+  - first:
+      213: 7819320004980387522
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_17
+  - first:
+      213: -7997879706677693763
+    second: SplashArt - GVG - SemFundo - ParaCinzaEscuro_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 1
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Android
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_0
+      rect:
+        serializedVersion: 2
+        x: 508
+        y: 272
+        width: 902
+        height: 546
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8bc4a3d94b641d400800000000000000
+      internalID: 347136387830140088
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_1
+      rect:
+        serializedVersion: 2
+        x: 567
+        y: 377
+        width: 790
+        height: 626
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8e0e786f7e62512e0800000000000000
+      internalID: -2155774068911513368
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_2
+      rect:
+        serializedVersion: 2
+        x: 545
+        y: 142
+        width: 104
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9925846b9e7b10fa0800000000000000
+      internalID: -5836181427681996135
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_3
+      rect:
+        serializedVersion: 2
+        x: 822
+        y: 142
+        width: 82
+        height: 115
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32e6d830594234100800000000000000
+      internalID: 90956639905869347
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_4
+      rect:
+        serializedVersion: 2
+        x: 935
+        y: 142
+        width: 103
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1aa5cb772dc9ac580800000000000000
+      internalID: -8806053693603685727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_5
+      rect:
+        serializedVersion: 2
+        x: 1035
+        y: 224
+        width: 24
+        height: 23
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 00227636d82344b30800000000000000
+      internalID: 4270593929493553664
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_6
+      rect:
+        serializedVersion: 2
+        x: 1071
+        y: 142
+        width: 33
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9b484742bae2b6d70800000000000000
+      internalID: 9037368389834933433
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_7
+      rect:
+        serializedVersion: 2
+        x: 1110
+        y: 142
+        width: 33
+        height: 114
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a3b850104c0fe9d10800000000000000
+      internalID: 2134407998041590586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_8
+      rect:
+        serializedVersion: 2
+        x: 1219
+        y: 105
+        width: 88
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9cbd8ab01d27ceff0800000000000000
+      internalID: -5503257364866103
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_9
+      rect:
+        serializedVersion: 2
+        x: 655
+        y: 142
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e11495036acdc9b20800000000000000
+      internalID: 3142629246331601182
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_10
+      rect:
+        serializedVersion: 2
+        x: 739
+        y: 142
+        width: 79
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 19b76d7ea7306a820800000000000000
+      internalID: 2929032434061573009
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_11
+      rect:
+        serializedVersion: 2
+        x: 1031
+        y: 142
+        width: 33
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a49b0f2e05b75eab0800000000000000
+      internalID: -4979438225653188278
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_12
+      rect:
+        serializedVersion: 2
+        x: 1146
+        y: 142
+        width: 72
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63c029b22c96b7ec0800000000000000
+      internalID: -3568141997085422538
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_13
+      rect:
+        serializedVersion: 2
+        x: 1304
+        y: 142
+        width: 74
+        height: 75
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1431c437e96366570800000000000000
+      internalID: 8459509004229153601
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_14
+      rect:
+        serializedVersion: 2
+        x: 871
+        y: 77
+        width: 43
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b397d8125aeb5da40800000000000000
+      internalID: 5392425745287838011
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_15
+      rect:
+        serializedVersion: 2
+        x: 914
+        y: 77
+        width: 41
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 79bc3a1e3fbf17540800000000000000
+      internalID: 5004057685866564503
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_16
+      rect:
+        serializedVersion: 2
+        x: 955
+        y: 77
+        width: 52
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6231ebd76e76d020800000000000000
+      internalID: 2366217638765474411
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_17
+      rect:
+        serializedVersion: 2
+        x: 1008
+        y: 77
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2ce26f1bd1ec38c60800000000000000
+      internalID: 7819320004980387522
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: SplashArt - GVG - SemFundo - ParaCinzaEscuro_18
+      rect:
+        serializedVersion: 2
+        x: 1041
+        y: 77
+        width: 33
+        height: 45
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: db2bb2708c2d10190800000000000000
+      internalID: -7997879706677693763
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_0: 347136387830140088
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_1: -2155774068911513368
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_10: 2929032434061573009
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_11: -4979438225653188278
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_12: -3568141997085422538
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_13: 8459509004229153601
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_14: 5392425745287838011
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_15: 5004057685866564503
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_16: 2366217638765474411
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_17: 7819320004980387522
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_18: -7997879706677693763
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_2: -5836181427681996135
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_3: 90956639905869347
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_4: -8806053693603685727
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_5: 4270593929493553664
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_6: 9037368389834933433
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_7: 2134407998041590586
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_8: -5503257364866103
+      SplashArt - GVG - SemFundo - ParaCinzaEscuro_9: 3142629246331601182
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
