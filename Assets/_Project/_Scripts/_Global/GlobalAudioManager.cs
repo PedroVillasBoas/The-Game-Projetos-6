@@ -71,7 +71,7 @@ namespace GoodVillageGames.Game.Core.Global
         public void SetMasterBusVolume(Bus bus, float value) => bus.setVolume(value);
 
         // For single sound event
-        public void PlayerOneShotSound(EventReference sound, Vector3 position)
+        public void PlayOneShotSound(EventReference sound, Vector3 position)
         {
             RuntimeManager.PlayOneShot(sound, position);
         }
@@ -84,6 +84,7 @@ namespace GoodVillageGames.Game.Core.Global
             return eventInstance;
         }
 
+        // For Spacial Audio
         public StudioEventEmitter InitializeEventEmitter(EventReference eventReference, GameObject emitterGameObject)
         {
             StudioEventEmitter emitter = emitterGameObject.GetComponent<StudioEventEmitter>();
@@ -92,6 +93,7 @@ namespace GoodVillageGames.Game.Core.Global
             return emitter;
         }
 
+        // When chaging Scenes
         void CleanUp()
         {
             foreach (EventInstance instance in eventInstances)

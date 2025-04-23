@@ -8,12 +8,12 @@ namespace GoodVillageGames.Game.Handlers.UI.Audio
     {
         public void OnPointerEnter(PointerEventData eventData)
         {
-            GlobalAudioManager.Instance.PlayerOneShotSound(FMODEventsHandler.Instance.ButtonEnter, transform.position);
+            GlobalAudioManager.Instance.PlayOneShotSound(FMODEventsHandler.Instance.ButtonEnter, transform.position);
         }
 
         public void OnPointerClick(PointerEventData eventData)
         {
-            GlobalAudioManager.Instance.PlayerOneShotSound(FMODEventsHandler.Instance.ButtonClick, transform.position);
+            GlobalAudioManager.Instance.PlayOneShotSound(FMODEventsHandler.Instance.ButtonClick, transform.position);
 
         }
     }

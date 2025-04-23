@@ -406,6 +406,20 @@ MonoBehaviour:
       Data3: -543114317
       Data4: 520799874
     Path: event:/SFX/UI/General/Button/OnClick
+  <BootSplashEnd>k__BackingField:
+    Guid:
+      Data1: -1917283647
+      Data2: 1120024906
+      Data3: 1916308382
+      Data4: -1396601419
+    Path: event:/Ambient/Splash Screen - GVG - Ambient
+  <SplashScreenTransition>k__BackingField:
+    Guid:
+      Data1: -230665902
+      Data2: 1081684627
+      Data3: -661701966
+      Data4: -1562539709
+    Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
   <GameMusic>k__BackingField:
     Guid:
       Data1: -1586933332
@@ -442,8 +456,10 @@ GameObject:
   - component: {fileID: 544611181}
   - component: {fileID: 544611180}
   - component: {fileID: 544611185}
+  - component: {fileID: 544611187}
+  - component: {fileID: 544611188}
   m_Layer: 5
-  m_Name: Splash Screen - UI
+  m_Name: Boot Splash Screen - UI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -566,6 +582,44 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55a2604c1e411b84fb368bee8c4bd81b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &544611187
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544611179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a46846d37385664cac8e0916563ac12, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &544611188
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 544611179}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3e53b96b871773e42aa862dec3aefa08, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: -1917283647
+      Data2: 1120024906
+      Data3: 1916308382
+      Data4: -1396601419
+    Path: event:/Ambient/Splash Screen - GVG - Ambient
+  playOnStart: 1
+  playOnEnable: 0
+  playOnDisable: 0
+  playOnDestroy: 0
+  disableOnDisable: 0
+  disableOnDestroy: 0
+  allowFading: 1
 --- !u!1 &579183105
 GameObject:
   m_ObjectHideFlags: 0
@@ -1511,34 +1565,16 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 1939440311}
     m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 2473329559555180668, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3221807598289916737}
     - targetCorrespondingSourceObject: {fileID: 5834277600254159840, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3221807598289916743}
     - targetCorrespondingSourceObject: {fileID: 5834277600254159840, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 3221807598289916742}
+    - targetCorrespondingSourceObject: {fileID: 5834277600254159840, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 3221807598289916747}
   m_SourcePrefab: {fileID: 100100000, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
---- !u!1 &3221807598289916736 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2473329559555180668, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
-  m_PrefabInstance: {fileID: 3221807598289916735}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3221807598289916737
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3221807598289916736}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0a314649bb99cbd4195b76ea5cf1c9a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  gameState: 8
 --- !u!95 &3221807598289916742
 Animator:
   serializedVersion: 7
@@ -1573,6 +1609,29 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 765fab370986b284884ef0884e40f566, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &3221807598289916747
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1752388274}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d497383416c25c4d9c81f43b434cfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: -230665902
+      Data2: 1081684627
+      Data3: -661701966
+      Data4: -1562539709
+    Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  playOnStart: 0
+  playOnEnable: 0
+  playOnDisable: 0
+  playOnDestroy: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0

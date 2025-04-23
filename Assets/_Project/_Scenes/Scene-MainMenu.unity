@@ -1039,8 +1039,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 86c6556701af9e04380698b89f691b6e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nonRigidbodyVelocity: 1
-  attenuationObject: {fileID: 988329449}
+  nonRigidbodyVelocity: 0
+  attenuationObject: {fileID: 0}
 --- !u!114 &988329456
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1054,6 +1054,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameState: 0
+  triggerOnAnimation: 0
 --- !u!1 &1014824617
 GameObject:
   m_ObjectHideFlags: 0

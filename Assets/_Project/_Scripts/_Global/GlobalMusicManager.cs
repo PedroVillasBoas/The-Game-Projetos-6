@@ -27,7 +27,6 @@ namespace GoodVillageGames.Game.Core.Global
 
         void OnEnable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
         void OnDestroy() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
-        void Start() => InitializeMusic();
 
         void OnGameStateChanged(GameState gameState)
         {
@@ -51,7 +50,7 @@ namespace GoodVillageGames.Game.Core.Global
             }
         }
 
-        void InitializeMusic()
+        public void InitializeMusic()
         {
             // Music shouldn't be Cleaned by Global Audio Manager
             globalAudioManager.MusicEventInstance = RuntimeManager.CreateInstance(FMODEventsHandler.Instance.GameMusic);

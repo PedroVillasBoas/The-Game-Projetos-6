@@ -193,5 +193,13 @@ namespace GoodVillageGames.Game.Enums
             InGame = 2,
             GameOver = 3,
         }
+
+        public enum GameAudioBus
+        {
+            Master,
+            Music,
+            SFX,
+            Ambient,
+        }
     }
 }

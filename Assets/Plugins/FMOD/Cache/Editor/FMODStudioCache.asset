@@ -15,7 +15,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809460364273824
+  lastModified: 638809547734105921
   FileSizes:
   - Name: Desktop
     Value: 1338
@@ -35,12 +35,12 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638809460364742998
+  lastModified: 638809546866517929
   FileSizes:
   - Name: Desktop
-    Value: 4862496
+    Value: 4859488
   Exists: 1
---- !u!114 &-3775883924632264065
+--- !u!114 &-736884656495350784
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -50,23 +50,23 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/InGame - Music
+  m_Name: event:/Ambient/Splash Screen - GVG - Ambient
   m_EditorClassIdentifier: 
-  Path: event:/Music/InGame - Music
+  Path: event:/Ambient/Splash Screen - GVG - Ambient
   Guid:
-    Data1: 1802860732
-    Data2: 1246996282
-    Data3: 347997877
-    Data4: -371444838
+    Data1: -1917283647
+    Data2: 1120024906
+    Data3: 1916308382
+    Data4: -1396601419
   Banks:
-  - {fileID: -4545158364550449810}
-  IsStream: 1
+  - {fileID: 8912729605360483637}
+  IsStream: 0
   Is3D: 0
   IsOneShot: 0
   Parameters: []
   MinDistance: 1
   MaxDistance: 20
-  Length: 48000
+  Length: 2533
 --- !u!114 &-88788310501510768
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -113,18 +113,17 @@ MonoBehaviour:
   - {fileID: 8912729605360483637}
   - {fileID: -4545158364550449810}
   EditorEvents:
-  - {fileID: 9046871814767878559}
-  - {fileID: -3775883924632264065}
-  - {fileID: 9211202209699728509}
   - {fileID: -88788310501510768}
   - {fileID: 3907489199998961744}
   - {fileID: 5005127104388921146}
+  - {fileID: 3998852574702651026}
+  - {fileID: -736884656495350784}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638809460364742998
+  cacheTime: 638809547734356866
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -141,7 +140,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638809460364263802
+  lastModified: 638809547734075733
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -201,6 +200,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &3998852574702651026
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  Guid:
+    Data1: -230665902
+    Data2: 1081684627
+    Data3: -661701966
+    Data4: -1562539709
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 0
 --- !u!114 &5005127104388921146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -244,10 +270,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809441042251126
+  lastModified: 638809546866072955
   FileSizes:
   - Name: Desktop
-    Value: 12864
+    Value: 51264
   Exists: 1
 --- !u!114 &8912729605360483637
 MonoBehaviour:
@@ -264,62 +290,8 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Ambient.bank
   Name: Ambient
   StudioPath: bank:/Ambient
-  lastModified: 638809441072174353
+  lastModified: 638809547734356866
   FileSizes:
   - Name: Desktop
-    Value: 494
+    Value: 13088
   Exists: 1
---- !u!114 &9046871814767878559
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/GameOver - Music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/GameOver - Music
-  Guid:
-    Data1: 1938955170
-    Data2: 1092109244
-    Data3: -1072764513
-    Data4: -995768965
-  Banks:
-  - {fileID: -4545158364550449810}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 188071
---- !u!114 &9211202209699728509
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/Music/MainMenu - Music
-  m_EditorClassIdentifier: 
-  Path: event:/Music/MainMenu - Music
-  Guid:
-    Data1: 348308438
-    Data2: 1169858091
-    Data3: -742131320
-    Data4: -1212661928
-  Banks:
-  - {fileID: -4545158364550449810}
-  IsStream: 1
-  Is3D: 0
-  IsOneShot: 0
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 88500
