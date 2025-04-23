@@ -1131,15 +1131,22 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2
-    functionName: ResumeGame
+  - time: 2.0833333
+    functionName: NotifySubscribers
+    data: hud-transition
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.3333333
+    functionName: TurnOnPlayerInput
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
-  - time: 2
-    functionName: TurnOnPlayerInput
+  - time: 2.3333333
+    functionName: ResumeGame
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0

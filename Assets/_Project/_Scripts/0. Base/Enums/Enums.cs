@@ -186,12 +186,18 @@ namespace GoodVillageGames.Game.Enums
             Missile,
         }
         
-        public enum GameMusics
+        public enum GameSceneAudio
         {
             SplashScreen = 0,
             MainMenu = 1,
             InGame = 2,
             GameOver = 3,
+        }
+
+        public enum GameAudioFilter
+        {
+            InGame = 0,
+            Paused = 1,
         }
 
         public enum GameAudioBus

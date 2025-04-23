@@ -52,6 +52,10 @@ PrefabInstance:
       propertyPath: ColorModule.gradient.maxGradient.key1.g
       value: 0.61960787
       objectReference: {fileID: 0}
+    - target: {fileID: 8374569326723862939, guid: e71de23dd5e75b14d8a62c0b2a6ee522, type: 3}
+      propertyPath: EventPlayTrigger
+      value: 12
+      objectReference: {fileID: 0}
     - target: {fileID: 8831484735268071246, guid: e71de23dd5e75b14d8a62c0b2a6ee522, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0

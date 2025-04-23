@@ -33,17 +33,33 @@ namespace GoodVillageGames.Game.Core.Global
             switch (gameState)
             {
                 case GameState.SplashScreen:
-                    SetMusic(GameMusics.SplashScreen);
+                    SetMusic(GameSceneAudio.SplashScreen);
                     break;
+
                 case GameState.MainMenu:
-                    SetMusic(GameMusics.MainMenu);
+                    SetMusic(GameSceneAudio.MainMenu);
+                    InitializeAmbientAudio();
                     break;
+
                 case GameState.Tutorial:
-                    SetMusic(GameMusics.InGame);
+                    SetMusic(GameSceneAudio.InGame);
+                    SetAmbient(GameSceneAudio.InGame);
+                    SetAudioLowPassFilter(GameAudioFilter.Paused);
                     break;
+
+                case GameState.GameContinue:
+                    SetAudioLowPassFilter(GameAudioFilter.InGame);
+                    break;
+
+                case GameState.GamePaused:
+                    SetAudioLowPassFilter(GameAudioFilter.Paused);
+                    break;
+
                 case GameState.GameOver:
-                    SetMusic(GameMusics.GameOver);
+                    SetMusic(GameSceneAudio.GameOver);
+                    SetAmbient(GameSceneAudio.GameOver);
                     break;
+
                 default:
                     Debug.LogWarning($"Shouldn't change music in {gameState} State.\n Continuing...");
                     break;
@@ -57,9 +73,26 @@ namespace GoodVillageGames.Game.Core.Global
             globalAudioManager.MusicEventInstance.start();
         }
 
-        public void SetMusic(GameMusics gameMusic)
+        public void InitializeAmbientAudio()
         {
-            globalAudioManager.MusicEventInstance.setParameterByName("MusicParameter", (float)gameMusic);
+            globalAudioManager.AmbientEventInstance = RuntimeManager.CreateInstance(FMODEventsHandler.Instance.AmbientAudio);
+            globalAudioManager.AmbientEventInstance.start();
+        }
+
+        void SetMusic(GameSceneAudio gameAudio)
+        {
+            globalAudioManager.MusicEventInstance.setParameterByName("MusicParameter", (float)gameAudio);
+        }
+
+        void SetAmbient(GameSceneAudio gameAudio)
+        {
+            globalAudioManager.AmbientEventInstance.setParameterByName("AmbientParameter", (float)gameAudio);
+        }
+
+        void SetAudioLowPassFilter(GameAudioFilter gameState)
+        {
+            globalAudioManager.MusicEventInstance.setParameterByName("MusicParameter", (float)gameState);
+            globalAudioManager.AmbientEventInstance.setParameterByName("AmbientParameter", (float)gameState);
         }
     }
 }

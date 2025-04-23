@@ -71,9 +71,12 @@ namespace GoodVillageGames.Game.Handlers
         {
             _inputValue = value;
 
-            if (value && _fireCoroutine == null)
+            if (value)
             {
-                _fireCoroutine = StartCoroutine(MissileFiringProcess());
+                if (_reloadHandler.IsReloading)
+                    PlayerAudioHandler.Instance.PlayPlayerMissileOnCooldownShootSFX();
+                    
+                else _fireCoroutine ??= StartCoroutine(MissileFiringProcess());
             }
             else if (!value && _fireCoroutine != null)
             {
@@ -102,8 +105,6 @@ namespace GoodVillageGames.Game.Handlers
         {
             if (!_reloadHandler.IsReloading)
                 Fire(_poolID);
-            else
-                PlayerAudioHandler.Instance.PlayPlayerMissileOnCooldownShootSFX();
         }
 
         private void Fire(PoolID poolID)

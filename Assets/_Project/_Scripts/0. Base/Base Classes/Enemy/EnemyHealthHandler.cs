@@ -14,6 +14,7 @@ namespace GoodVillageGames.Game.Core.Enemy
 
         private float _currentHealth;
         private Stats _stats;
+        private IDTriggerOwner owner;
     
         public event Action OnDeath;
         public event Action<float> OnHealthChanged;
@@ -25,16 +26,11 @@ namespace GoodVillageGames.Game.Core.Enemy
             set => _currentHealth = Mathf.Clamp(value, 0, _stats.MaxHealth);
         }
 
+        void Awake() => owner = GetComponentInParent<IDTriggerOwner>();
+
         void OnEnable()
         {
             _stats = transform.parent.parent.GetComponent<Entity>().Stats;
-            _currentHealth = _stats.MaxHealth;
-            OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
-        }
-
-        private void Start()
-        {
-
             _currentHealth = _stats.MaxHealth;
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
         }
@@ -44,10 +40,12 @@ namespace GoodVillageGames.Game.Core.Enemy
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+            owner.NotifySubscribers("enemy-hit");
             Instantiate(damagePrefab, transform.position, Quaternion.identity);
 
             if (_currentHealth <= 0)
             {
+                owner.NotifySubscribers("enemy-death");
                 OnDeath?.Invoke();
             }
         }

@@ -420,6 +420,13 @@ MonoBehaviour:
       Data3: -661701966
       Data4: -1562539709
     Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  <PlayerOnMove>k__BackingField:
+    Guid:
+      Data1: 746136297
+      Data2: 1308617253
+      Data3: -1467611768
+      Data4: 117455259
+    Path: event:/SFX/Player/Player - On Move
   <GameMusic>k__BackingField:
     Guid:
       Data1: -1586933332
@@ -427,6 +434,13 @@ MonoBehaviour:
       Data3: 1207632553
       Data4: 888247342
     Path: event:/Music/Music
+  <AmbientAudio>k__BackingField:
+    Guid:
+      Data1: 1853774371
+      Data2: 1197167812
+      Data3: 1892745108
+      Data4: -857335205
+    Path: event:/Ambient/AmbientAudio
 --- !u!4 &517176575
 Transform:
   m_ObjectHideFlags: 0

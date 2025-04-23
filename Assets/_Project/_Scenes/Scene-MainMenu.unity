@@ -501,7 +501,7 @@ MonoBehaviour:
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 1
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -1048,8 +1048,8 @@ MonoBehaviour:
   EventPlayTrigger: 11
   EventStopTrigger: 0
   AllowFadeout: 1
-  TriggerOnce: 1
-  Preload: 0
+  TriggerOnce: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -1420,8 +1420,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c9f59a09537dc8e4a9abb62bfcc18714, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerKeys: []
-  audioValues: []
   <ButtonEnter>k__BackingField:
     Guid:
       Data1: 1207942405
@@ -1450,48 +1448,6 @@ MonoBehaviour:
       Data3: -661701966
       Data4: -1562539709
     Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
-  <PlayerOnHit>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <PlayerOnProjectileOnShoot>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <PlayerOnMissileShoot>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <PlayerOnMissileShootInCooldown>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <PlayerOnLevelUp>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
-  <PlayerOnDeath>k__BackingField:
-    Guid:
-      Data1: 0
-      Data2: 0
-      Data3: 0
-      Data4: 0
-    Path: 
   <PlayerOnMove>k__BackingField:
     Guid:
       Data1: 0
@@ -1506,6 +1462,13 @@ MonoBehaviour:
       Data3: 1207632553
       Data4: 888247342
     Path: event:/Music/Music
+  <AmbientAudio>k__BackingField:
+    Guid:
+      Data1: 0
+      Data2: 0
+      Data3: 0
+      Data4: 0
+    Path: 
 --- !u!4 &1001222822
 Transform:
   m_ObjectHideFlags: 0

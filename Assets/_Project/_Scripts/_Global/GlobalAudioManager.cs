@@ -22,6 +22,7 @@ namespace GoodVillageGames.Game.Core.Global
         [Range(0, 1)] public float ambientVolume = 1;
 
         public EventInstance MusicEventInstance { get; set; }
+        public EventInstance AmbientEventInstance { get; set; }
 
         // Audio Bus
         private Bus masterBus;

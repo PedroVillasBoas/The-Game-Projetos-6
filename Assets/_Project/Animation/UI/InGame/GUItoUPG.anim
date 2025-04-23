@@ -1613,6 +1613,13 @@ AnimationClip:
     floatParameter: 0
     intParameter: 0
     messageOptions: 0
+  - time: 0.11666667
+    functionName: NotifySubscribers
+    data: hud-transition
+    objectReferenceParameter: {fileID: 0}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
   - time: 1.4833333
     functionName: LoopingUIAnimation
     data: 

@@ -4,7 +4,7 @@ using TriInspector;
 
 namespace GoodVillageGames.Game.Handlers.UI.Audio
 {
-    [DeclareFoldoutGroup("UI"), DeclareFoldoutGroup("Music"), DeclareFoldoutGroup("Player")]
+    [DeclareFoldoutGroup("UI"), DeclareFoldoutGroup("Music"), DeclareFoldoutGroup("Ambient"), DeclareFoldoutGroup("Player")]
     public class FMODEventsHandler : MonoBehaviour 
     { 
         public static FMODEventsHandler Instance { get; private set; }
@@ -22,6 +22,8 @@ namespace GoodVillageGames.Game.Handlers.UI.Audio
 
         // Music
         [field: SerializeField, Group("Music")] public EventReference GameMusic { get; private set; }
+        // Ambient
+        [field: SerializeField, Group("Ambient")] public EventReference AmbientAudio { get; private set; }
 
         void Awake()
         {
