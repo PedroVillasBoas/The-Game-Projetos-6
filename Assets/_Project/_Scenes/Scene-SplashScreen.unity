@@ -374,7 +374,7 @@ GameObject:
   - component: {fileID: 517176575}
   - component: {fileID: 517176574}
   m_Layer: 0
-  m_Name: FMOD Events Handler
+  m_Name: Global FMOD Events
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1642,7 +1642,6 @@ SceneRoots:
   - {fileID: 3221807598289916735}
   - {fileID: 544611184}
   - {fileID: 2056706268}
-  - {fileID: 517176575}
   - {fileID: 1625906772}
   - {fileID: 1148975395}
   - {fileID: 579183107}
@@ -1650,3 +1649,4 @@ SceneRoots:
   - {fileID: 329876522}
   - {fileID: 629921969}
   - {fileID: 885688536}
+  - {fileID: 517176575}

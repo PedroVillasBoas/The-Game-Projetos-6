@@ -1796,6 +1796,7 @@ GameObject:
   - component: {fileID: 519420030}
   - component: {fileID: 519420033}
   - component: {fileID: 519420034}
+  - component: {fileID: 519420035}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -1959,6 +1960,20 @@ MonoBehaviour:
       m_PostInfinity: 2
       m_RotationOrder: 4
   CustomBlends: {fileID: 0}
+--- !u!114 &519420035
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 519420028}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0a314649bb99cbd4195b76ea5cf1c9a9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  gameState: 1
+  triggerOnAnimation: 0
 --- !u!1 &522587603
 GameObject:
   m_ObjectHideFlags: 0
@@ -2796,6 +2811,134 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 786122062}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &843658400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 843658402}
+  - component: {fileID: 843658401}
+  m_Layer: 0
+  m_Name: Global FMOD Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &843658401
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843658400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f59a09537dc8e4a9abb62bfcc18714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonEnter>k__BackingField:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  <ButtonClick>k__BackingField:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  <BootSplashEnd>k__BackingField:
+    Guid:
+      Data1: -1917283647
+      Data2: 1120024906
+      Data3: 1916308382
+      Data4: -1396601419
+    Path: event:/Ambient/Splash Screen - GVG - Ambient
+  <SplashScreenTransition>k__BackingField:
+    Guid:
+      Data1: -230665902
+      Data2: 1081684627
+      Data3: -661701966
+      Data4: -1562539709
+    Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  <PlayerOnHit>k__BackingField:
+    Guid:
+      Data1: 1312868882
+      Data2: 1229356441
+      Data3: 902255009
+      Data4: 1154722123
+    Path: event:/SFX/Player/Player - Hit
+  <PlayerOnProjectileOnShoot>k__BackingField:
+    Guid:
+      Data1: 1639451376
+      Data2: 1092414037
+      Data3: 740873139
+      Data4: 1557175918
+    Path: event:/SFX/Player/Player - Projectile - Base - Shoot
+  <PlayerOnMissileShoot>k__BackingField:
+    Guid:
+      Data1: -229507067
+      Data2: 1271466225
+      Data3: 687557017
+      Data4: -816265371
+    Path: event:/SFX/Player/Player - Projectile - Missile - Shoot
+  <PlayerOnMissileShootInCooldown>k__BackingField:
+    Guid:
+      Data1: -1743099413
+      Data2: 1325384573
+      Data3: 1395499957
+      Data4: -1985586594
+    Path: event:/SFX/Player/Player - Projectile - Missile - OnShootCooldown
+  <PlayerOnLevelUp>k__BackingField:
+    Guid:
+      Data1: 1374364710
+      Data2: 1246438630
+      Data3: 1344703635
+      Data4: -1752096081
+    Path: event:/SFX/Player/Player - LevelUp
+  <PlayerOnDeath>k__BackingField:
+    Guid:
+      Data1: 1944505520
+      Data2: 1128308864
+      Data3: 1283896712
+      Data4: 1538731791
+    Path: event:/SFX/Player/Player - OnDeath
+  <PlayerOnMove>k__BackingField:
+    Guid:
+      Data1: 746136297
+      Data2: 1308617253
+      Data3: -1467611768
+      Data4: 117455259
+    Path: event:/SFX/Player/Player - On Move
+  <GameMusic>k__BackingField:
+    Guid:
+      Data1: -1586933332
+      Data2: 1084829286
+      Data3: 1207632553
+      Data4: 888247342
+    Path: event:/Music/Music
+--- !u!4 &843658402
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 843658400}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -26537,6 +26680,7 @@ SceneRoots:
   - {fileID: 1379509224}
   - {fileID: 1011924129}
   - {fileID: 786122064}
+  - {fileID: 843658402}
   - {fileID: 738146248}
   - {fileID: 1823016962}
   - {fileID: 123515500}

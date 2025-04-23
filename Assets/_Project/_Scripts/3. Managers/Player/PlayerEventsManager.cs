@@ -1,6 +1,5 @@
 using UnityEngine;
 using UnityEngine.Events;
-using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core.Manager.Player
 {

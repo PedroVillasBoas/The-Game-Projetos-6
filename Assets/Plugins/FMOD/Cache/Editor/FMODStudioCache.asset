@@ -150,10 +150,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809630385836615
+  lastModified: 638809658628117877
   FileSizes:
   - Name: Desktop
-    Value: 3140
+    Value: 3158
   Exists: 1
 --- !u!114 &-5846774782066055049
 MonoBehaviour:
@@ -391,6 +391,32 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 1380
+--- !u!114 &-771404803923791427
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fecb8ef7f94ca804a8ab72049b86782e, type: 3}
+  m_Name: parameter:/Player - On Move/PlayerMove
+  m_EditorClassIdentifier: 
+  Name: PlayerMove
+  StudioPath: 
+  Min: 0
+  Max: 1
+  Default: 0
+  ID:
+    data1: 1458673454
+    data2: 3495931014
+  Type: 2
+  IsGlobal: 0
+  Labels:
+  - OnMove
+  - OnBoost
+  Exists: 1
 --- !u!114 &-736884656495350784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -526,7 +552,6 @@ MonoBehaviour:
   - {fileID: -3054945671698325643}
   - {fileID: 5979320257167986873}
   - {fileID: 4822389827519633124}
-  - {fileID: 7690303704500547090}
   - {fileID: -4217318426020464960}
   - {fileID: -7304089050686806701}
   - {fileID: 4524765078806811092}
@@ -560,7 +585,7 @@ MonoBehaviour:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638809630390412662
+  cacheTime: 638809658628607562
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -577,7 +602,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638809630385816623
+  lastModified: 638809658628092789
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -1119,38 +1144,12 @@ MonoBehaviour:
   - {fileID: 7911824750875194011}
   IsStream: 0
   Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 7706
---- !u!114 &7690303704500547090
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/Player/Player - OnBoost
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/Player/Player - OnBoost
-  Guid:
-    Data1: -3125229
-    Data2: 1110812415
-    Data3: 2116729225
-    Data4: 1534080289
-  Banks:
-  - {fileID: 7911824750875194011}
-  IsStream: 0
-  Is3D: 0
   IsOneShot: 0
-  Parameters: []
+  Parameters:
+  - {fileID: -771404803923791427}
   MinDistance: 1
   MaxDistance: 20
-  Length: 4048
+  Length: 0
 --- !u!114 &7911824750875194011
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1166,10 +1165,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809630390412662
+  lastModified: 638809658628607562
   FileSizes:
   - Name: Desktop
-    Value: 1463104
+    Value: 1465152
   Exists: 1
 --- !u!114 &8912729605360483637
 MonoBehaviour:

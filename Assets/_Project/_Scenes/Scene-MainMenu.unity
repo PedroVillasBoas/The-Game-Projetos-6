@@ -345,11 +345,67 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8582181355348251915, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
   m_PrefabInstance: {fileID: 7035158847425050198}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &211444896 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 817875194189810482, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &211444897
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 211444896}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d497383416c25c4d9c81f43b434cfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: -1166598626
+      Data2: 1138449274
+      Data3: 212524963
+      Data4: -1895446257
+    Path: event:/SFX/UI/Main Menu/Buttons - Container - OnShow
+  playOnStart: 0
+  playOnEnable: 1
+  playOnDisable: 0
+  playOnDestroy: 0
 --- !u!224 &539032179 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 4319557790152579422, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
   m_PrefabInstance: {fileID: 7035158847425050198}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &595255840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1294133901378674978, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &595255841
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 595255840}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d497383416c25c4d9c81f43b434cfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: 1807760912
+      Data2: 1154803714
+      Data3: -1451861865
+      Data4: -1033201864
+    Path: event:/SFX/UI/Options/Options - OnHologramShow
+  playOnStart: 1
+  playOnEnable: 0
+  playOnDisable: 0
+  playOnDestroy: 0
 --- !u!224 &624347490 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 9189303721094600349, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
@@ -1055,6 +1111,85 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameState: 0
   triggerOnAnimation: 0
+--- !u!1 &1001222820
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1001222822}
+  - component: {fileID: 1001222821}
+  m_Layer: 0
+  m_Name: Global FMOD Events
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1001222821
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001222820}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c9f59a09537dc8e4a9abb62bfcc18714, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <ButtonEnter>k__BackingField:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  <ButtonClick>k__BackingField:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  <BootSplashEnd>k__BackingField:
+    Guid:
+      Data1: -1917283647
+      Data2: 1120024906
+      Data3: 1916308382
+      Data4: -1396601419
+    Path: event:/Ambient/Splash Screen - GVG - Ambient
+  <SplashScreenTransition>k__BackingField:
+    Guid:
+      Data1: -230665902
+      Data2: 1081684627
+      Data3: -661701966
+      Data4: -1562539709
+    Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
+  <GameMusic>k__BackingField:
+    Guid:
+      Data1: -1586933332
+      Data2: 1084829286
+      Data3: 1207632553
+      Data4: 888247342
+    Path: event:/Music/Music
+--- !u!4 &1001222822
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1001222820}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1014824617
 GameObject:
   m_ObjectHideFlags: 0
@@ -1822,6 +1957,34 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 94c79ac1b6ec1684d8e7da9cebe2d1d0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1530979865 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3358842906190749422, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1530979866
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1530979865}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0d497383416c25c4d9c81f43b434cfeb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  eventReference:
+    Guid:
+      Data1: 344788252
+      Data2: 1163635799
+      Data3: 1204212413
+      Data4: -1106495588
+    Path: event:/SFX/UI/Options/Options - OnShow
+  playOnStart: 1
+  playOnEnable: 0
+  playOnDisable: 0
+  playOnDestroy: 0
 --- !u!1 &1539071112 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5008323807292366750, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
@@ -4130,6 +4293,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 4619342429600086958, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539071120}
+    - targetCorrespondingSourceObject: {fileID: 817875194189810482, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 211444897}
     - targetCorrespondingSourceObject: {fileID: 7846450133071491272, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 681895060}
@@ -4139,6 +4305,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6924324474609844120, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539071118}
+    - targetCorrespondingSourceObject: {fileID: 1294133901378674978, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 595255841}
+    - targetCorrespondingSourceObject: {fileID: 3358842906190749422, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1530979866}
     - targetCorrespondingSourceObject: {fileID: 5008323807292366750, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1539071117}
@@ -4212,3 +4384,4 @@ SceneRoots:
   - {fileID: 988329452}
   - {fileID: 780589098}
   - {fileID: 7035158847425050198}
+  - {fileID: 1001222822}

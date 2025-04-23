@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace GoodVillageGames.Game.Handlers.UI.Audio
 {
-    [DeclareFoldoutGroup("UI"), DeclareFoldoutGroup("Music")]
+    [DeclareFoldoutGroup("UI"), DeclareFoldoutGroup("Music"), DeclareFoldoutGroup("Player")]
     public class FMODEventsHandler : MonoBehaviour 
     { 
         public static FMODEventsHandler Instance { get; private set; }
@@ -20,6 +20,14 @@ namespace GoodVillageGames.Game.Handlers.UI.Audio
         [field: SerializeField, Group("UI"), Indent] public EventReference BootSplashEnd { get; private set; }
             // Splash Screen
         [field: SerializeField, Group("UI"), Indent] public EventReference SplashScreenTransition { get; private set; }
+            // Player
+        [field: SerializeField, Group("Player"), Indent] public EventReference PlayerOnHit { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnProjectileOnShoot { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnMissileShoot { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnMissileShootInCooldown { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnLevelUp { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnDeath { get; private set; }
+        [field: SerializeField, Group("Player"), Indent(2)] public EventReference PlayerOnMove { get; private set; }
 
         // Music
         [field: SerializeField, Group("Music")] public EventReference GameMusic { get; private set; }
