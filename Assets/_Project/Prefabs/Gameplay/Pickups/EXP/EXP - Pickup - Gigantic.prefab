@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3526490630064665744, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
       propertyPath: m_Name
-      value: EXP - Pickup - 6
+      value: EXP - Pickup - Gigantic
       objectReference: {fileID: 0}
     - target: {fileID: 4409030426021915917, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
       propertyPath: m_Sprite
@@ -67,6 +67,26 @@ PrefabInstance:
     - target: {fileID: 8173210094563021986, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876323355175169977, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
+      propertyPath: EventReference.Path
+      value: event:/SFX/Pickups/EXP - OnPickup - Boss
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876323355175169977, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
+      propertyPath: EventReference.Guid.Data1
+      value: 285678442
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876323355175169977, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
+      propertyPath: EventReference.Guid.Data2
+      value: 1090539133
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876323355175169977, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
+      propertyPath: EventReference.Guid.Data3
+      value: 1633746564
+      objectReference: {fileID: 0}
+    - target: {fileID: 8876323355175169977, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
+      propertyPath: EventReference.Guid.Data4
+      value: 1890067524
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -27,33 +27,6 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
---- !u!114 &-8359121709222562754
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
-  m_Name: event:/SFX/UI/In Game/Warning/Warning - LeavingGame
-  m_EditorClassIdentifier: 
-  Path: event:/SFX/UI/In Game/Warning/Warning - LeavingGame
-  Guid:
-    Data1: -82450986
-    Data2: 1320234042
-    Data3: 1923832193
-    Data4: -1661273616
-  Banks:
-  - {fileID: 7911824750875194011}
-  IsStream: 0
-  Is3D: 0
-  IsOneShot: 1
-  Parameters: []
-  MinDistance: 1
-  MaxDistance: 20
-  Length: 0
 --- !u!114 &-7705621421051459621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -150,10 +123,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638809658628117877
+  lastModified: 638810051816766657
   FileSizes:
   - Name: Desktop
-    Value: 3158
+    Value: 3116
   Exists: 1
 --- !u!114 &-5846774782066055049
 MonoBehaviour:
@@ -572,7 +545,6 @@ MonoBehaviour:
   - {fileID: -682269194028376931}
   - {fileID: -1655893409947692122}
   - {fileID: -6862294425165871326}
-  - {fileID: -8359121709222562754}
   - {fileID: 7154738354858563869}
   - {fileID: 1993528611227114269}
   - {fileID: -540490532125210138}
@@ -585,7 +557,7 @@ MonoBehaviour:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638809658628607562
+  cacheTime: 638810051818621273
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -602,7 +574,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638809658628092789
+  lastModified: 638810051816751599
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -1165,10 +1137,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638809658628607562
+  lastModified: 638810051818621273
   FileSizes:
   - Name: Desktop
-    Value: 1465152
+    Value: 1433568
   Exists: 1
 --- !u!114 &8912729605360483637
 MonoBehaviour:

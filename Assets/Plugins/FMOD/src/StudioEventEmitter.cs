@@ -244,6 +244,14 @@ namespace FMODUnity
             }
         }
 
+        public void ChangeEvent(EventReference newEvent)
+        {
+            EventReference = newEvent;
+            instance.stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+            Lookup();
+
+        }
+        
         private void PlayInstance()
         {
             if (!instance.isValid())

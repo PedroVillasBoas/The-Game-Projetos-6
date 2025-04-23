@@ -697,6 +697,38 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &246908383
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 246908384}
+  m_Layer: 0
+  m_Name: Audio Triggers
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &246908384
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 246908383}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 736055449}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &274436288
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,6 +829,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneSO: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
+--- !u!114 &293539875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293539873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &293539876
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 293539873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &308796061
 GameObject:
   m_ObjectHideFlags: 0
@@ -3142,6 +3236,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2223421392773558676, guid: d8fc5cc1b69608944bee033ab711099f, type: 3}
       insertIndex: -1
       addedObject: {fileID: 293539874}
+    - targetCorrespondingSourceObject: {fileID: 2223421392773558676, guid: d8fc5cc1b69608944bee033ab711099f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 293539876}
+    - targetCorrespondingSourceObject: {fileID: 2223421392773558676, guid: d8fc5cc1b69608944bee033ab711099f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 293539875}
   m_SourcePrefab: {fileID: 100100000, guid: d8fc5cc1b69608944bee033ab711099f, type: 3}
 --- !u!224 &617572671 stripped
 RectTransform:
@@ -3344,6 +3444,69 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 8061982641016909512, guid: 03f4ad31c8145794ea81b603d6855617, type: 3}
   m_PrefabInstance: {fileID: 625616280}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &736055448
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 736055449}
+  - component: {fileID: 736055451}
+  m_Layer: 0
+  m_Name: On Scene Enter - SFX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &736055449
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736055448}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 246908384}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &736055451
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 736055448}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: -1802355309
+      Data2: 1224408708
+      Data3: -858463300
+      Data4: -122655370
+    Path: event:/SFX/UI/Game Over/GameOver - OnAnimationFinish
+  Event: 
+  EventPlayTrigger: 1
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 1
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &799069805
 GameObject:
   m_ObjectHideFlags: 0
@@ -4886,85 +5049,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1099253414}
   m_CullTransparentMesh: 1
---- !u!1 &1148338863
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1148338865}
-  - component: {fileID: 1148338864}
-  m_Layer: 0
-  m_Name: Global FMOD Events
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1148338864
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148338863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c9f59a09537dc8e4a9abb62bfcc18714, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  <ButtonEnter>k__BackingField:
-    Guid:
-      Data1: 1207942405
-      Data2: 1341651352
-      Data3: 1160113034
-      Data4: 2110713712
-    Path: event:/SFX/UI/General/Button/OnEnter
-  <ButtonClick>k__BackingField:
-    Guid:
-      Data1: 1989225764
-      Data2: 1225335958
-      Data3: -543114317
-      Data4: 520799874
-    Path: event:/SFX/UI/General/Button/OnClick
-  <BootSplashEnd>k__BackingField:
-    Guid:
-      Data1: -1917283647
-      Data2: 1120024906
-      Data3: 1916308382
-      Data4: -1396601419
-    Path: event:/Ambient/Splash Screen - GVG - Ambient
-  <SplashScreenTransition>k__BackingField:
-    Guid:
-      Data1: -230665902
-      Data2: 1081684627
-      Data3: -661701966
-      Data4: -1562539709
-    Path: event:/SFX/UI/Splash Screen/Splash Screen - BlackHole - Transition
-  <GameMusic>k__BackingField:
-    Guid:
-      Data1: -1586933332
-      Data2: 1084829286
-      Data3: 1207632553
-      Data4: 888247342
-    Path: event:/Music/Music
---- !u!4 &1148338865
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1148338863}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1160628795
 GameObject:
   m_ObjectHideFlags: 0
@@ -8789,4 +8873,4 @@ SceneRoots:
   - {fileID: 220416024}
   - {fileID: 902029773}
   - {fileID: 1189215669}
-  - {fileID: 1148338865}
+  - {fileID: 246908384}

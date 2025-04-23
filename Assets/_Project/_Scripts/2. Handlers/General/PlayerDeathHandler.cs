@@ -1,6 +1,7 @@
 using UnityEngine;
 using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Core;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -16,6 +17,7 @@ namespace GoodVillageGames.Game.Handlers
         {
             if (gameState == GameState.PlayerDied)
             {
+                PlayerAudioHandler.Instance.PlayPlayerDeathSFX();
                 playerVisuals.SetActive(false);
                 deathVFX.SetActive(true);
             }

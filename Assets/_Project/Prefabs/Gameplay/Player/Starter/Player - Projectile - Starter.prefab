@@ -202,7 +202,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 10
   lifeTime: 5
-  hitVFXPrefab: {fileID: 7047838003272070809, guid: 5e7bbb72b0289aa4698713121743bc3a, type: 3}
+  hitVFXPrefab: {fileID: 3616387776961207411, guid: 20a688d72fd582c4098ac715ede55bb8, type: 3}
   projectileType: 1
 --- !u!114 &-3467805264405004226
 MonoBehaviour:

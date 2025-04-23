@@ -1,8 +1,8 @@
 using FMODUnity;
 using FMOD.Studio;
 using UnityEngine;
-using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Handlers.UI.Audio;
+using GoodVillageGames.Game.Core.Util;
 
 namespace GoodVillageGames.Game.Core
 {
@@ -10,12 +10,21 @@ namespace GoodVillageGames.Game.Core
     { 
         public static PlayerAudioHandler Instance { get; private set; }
 
-        private FMODEventsHandler fMODEventsHandler;
+        private IDTriggerOwner triggerOwner;
         private EventInstance moveEventInstance;
 
-        void Awake() => fMODEventsHandler = FMODEventsHandler.Instance;
+        void Awake()
+        {
+            // Singleton
+            if (Instance == null)
+                Instance = this;
+            else
+                Destroy(gameObject);
 
-        void OnEnable() => InitializeMovementSFX();
+            triggerOwner = GetComponentInParent<IDTriggerOwner>();
+        }
+
+        void OnEnable() => InitializeMovementSFX();            
 
         void InitializeMovementSFX()
         {
@@ -36,31 +45,32 @@ namespace GoodVillageGames.Game.Core
 
         public void PlayPlayerHitSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnHit, transform.position);
+            triggerOwner.NotifySubscribers("player-hit");
         }
 
         public void PlayPlayerDeathSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnDeath, transform.position);
+            triggerOwner.NotifySubscribers("player-death");
         }
 
         public void PlayPlayerProjectileShootSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnProjectileOnShoot, transform.position);
+            triggerOwner.NotifySubscribers("player-base-shoot");
         }
 
         public void PlayPlayerMissileShootSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnMissileShoot, transform.position);
+            triggerOwner.NotifySubscribers("player-missile-shoot");
         }
 
         public void PlayPlayerMissileOnCooldownShootSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnMissileShootInCooldown, transform.position);
+            triggerOwner.NotifySubscribers("player-missile-shoot-oncooldown");
         }
+
         public void PlayPlayerLevelUpSFX()
         {
-            GlobalAudioManager.Instance.PlayOneShotSound(fMODEventsHandler.PlayerOnLevelUp, transform.position);
+            triggerOwner.NotifySubscribers("player-levelup");
         }
     }
 }

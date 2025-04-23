@@ -2,6 +2,7 @@ using UnityEngine;
 using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Pooling;
+using GoodVillageGames.Game.Core.Util;
 
 namespace GoodVillageGames.Game.Core.Pickups
 {
@@ -12,8 +13,13 @@ namespace GoodVillageGames.Game.Core.Pickups
 
         private GameObject _target;
         private PooledObject _poolObject;
+        private IDTriggerOwner owner;
 
-        void Awake() => _poolObject = GetComponent<PooledObject>();
+        void Awake()
+        {
+            _poolObject = GetComponent<PooledObject>();
+            owner = GetComponent<IDTriggerOwner>();
+        } 
 
         void Update()
         {
@@ -26,6 +32,7 @@ namespace GoodVillageGames.Game.Core.Pickups
             if (visitable is PlayerExpHandler handler)
             {
                 handler.ExpCollected(_expAmount);
+                owner.NotifySubscribers("exp-pickup");
                 _poolObject.ReturnToPool();
             }
         }

@@ -497,6 +497,8 @@ GameObject:
   - component: {fileID: 7113212686126952813}
   - component: {fileID: 6013711748735135260}
   - component: {fileID: 4001871187967815132}
+  - component: {fileID: 443955769278951243}
+  - component: {fileID: 8913187097001863333}
   m_Layer: 5
   m_Name: Card - Prefab
   m_TagString: Untagged
@@ -581,7 +583,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _visualHolderRectTrans: {fileID: 8839703101379078945}
   _shadow: {fileID: 6857617899934562272}
-  _shadowRectTrans: {fileID: 7494083137422936232}
 --- !u!114 &4001871187967815132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -602,3 +603,65 @@ MonoBehaviour:
   - {fileID: 7329824812740376947, guid: 2c2ba2de4aae53c4e9f1a7a6f0a1fb4c, type: 3}
   - {fileID: 2795731344071987454, guid: f5b67976de6b4ef41aa06c543dfe670e, type: 3}
   - {fileID: 6709309995163855851, guid: 969544bd1e62ead4ca17efd575521d1a, type: 3}
+--- !u!114 &443955769278951243
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305189824353448012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &8913187097001863333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7305189824353448012}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 824212838
+      Data2: 1266546552
+      Data3: -31458921
+      Data4: 2133394113
+    Path: event:/SFX/UI/In Game/Upgrade Screen/Upgrade - OnSelected
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 0
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20

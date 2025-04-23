@@ -5,6 +5,7 @@ using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -29,16 +30,14 @@ namespace GoodVillageGames.Game.Handlers
             _currentHealth = _stats.MaxHealth;
         }
 
-        private void Start()
-        {
-            OnHealthChanged?.Invoke(_currentHealth);
-        }
+        private void Start() => OnHealthChanged?.Invoke(_currentHealth);
 
         public void TakeDamage(float amount)
         {
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth);
+            PlayerAudioHandler.Instance.PlayPlayerHitSFX();
             UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
 
             if (_currentHealth <= 0)

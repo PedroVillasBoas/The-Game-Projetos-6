@@ -68,6 +68,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             _currentLevel++;
             IncreaseMaxExp();
+            PlayerAudioHandler.Instance.PlayPlayerLevelUpSFX();
             GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.UpgradeScreen);
         }
 

@@ -9,6 +9,7 @@ using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Manager.Player;
 using GoodVillageGames.Game.Core.GameObjectEntity;
 using GoodVillageGames.Game.Core.Global;
+using GoodVillageGames.Game.Core;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -100,9 +101,9 @@ namespace GoodVillageGames.Game.Handlers
         public void FireProjectile()
         {
             if (!_reloadHandler.IsReloading)
-            {
                 Fire(_poolID);
-            }
+            else
+                PlayerAudioHandler.Instance.PlayPlayerMissileOnCooldownShootSFX();
         }
 
         private void Fire(PoolID poolID)
@@ -115,6 +116,7 @@ namespace GoodVillageGames.Game.Handlers
                 {
                     component.ProjectileDamageHandler.SetDamage(Damage);
                     GlobalFileManager.Instance.RegisterShot(component.Type);
+                    PlayerAudioHandler.Instance.PlayPlayerMissileShootSFX();
                 }
                 
                 projectile.transform.SetPositionAndRotation(_firepoint.position, _firepoint.rotation);
