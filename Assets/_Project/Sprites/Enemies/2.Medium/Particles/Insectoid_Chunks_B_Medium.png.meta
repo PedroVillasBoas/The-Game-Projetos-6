@@ -154,6 +154,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -522,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Insectoid_Chunks_B_Medium_0: 6591815006006148753
+      Insectoid_Chunks_B_Medium_1: -9020147063165229465
+      Insectoid_Chunks_B_Medium_10: -4580271557806572545
+      Insectoid_Chunks_B_Medium_11: -3790106561391275718
+      Insectoid_Chunks_B_Medium_12: 6733397234120845902
+      Insectoid_Chunks_B_Medium_13: -1955611631418966489
+      Insectoid_Chunks_B_Medium_14: 6227543511251969585
+      Insectoid_Chunks_B_Medium_15: 6755031516953174999
+      Insectoid_Chunks_B_Medium_2: -295454340550131053
+      Insectoid_Chunks_B_Medium_3: 711405755930600446
+      Insectoid_Chunks_B_Medium_4: -4911223917647369648
+      Insectoid_Chunks_B_Medium_5: 5782799808591488272
+      Insectoid_Chunks_B_Medium_6: 1696464906873201026
+      Insectoid_Chunks_B_Medium_7: 5006195276729286708
+      Insectoid_Chunks_B_Medium_8: -7370477467596538858
+      Insectoid_Chunks_B_Medium_9: -638656648597650396
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

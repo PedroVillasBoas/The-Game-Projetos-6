@@ -50,14 +50,12 @@ namespace GoodVillageGames.Game.Handlers.UI
             try{
                 switch (GlobalGameManager.Instance.GameState)
                 {
+                    case GameState.GameBegin:
                     case GameState.GamePaused:
                     case GameState.GameContinue:
                         TogglePause();
                         break;
 
-                    case GameState.GameBegin:
-                        ReturnToOriginalTimeScale();
-                        break;
 
                     default:
                         Debug.LogError($"Cannot pause in {GlobalGameManager.Instance.GameState}");

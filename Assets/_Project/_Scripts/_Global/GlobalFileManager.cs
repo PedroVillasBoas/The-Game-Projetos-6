@@ -201,6 +201,7 @@ namespace GoodVillageGames.Game.Core.Global
                     _ => 0
                 };
             }
+            Debug.Log($"Enemy Score: {upgradeScore}");
 
             int enemyScore = 0;
             foreach (var enemy in currentSession.enemiesDefeated)
@@ -221,7 +222,10 @@ namespace GoodVillageGames.Game.Core.Global
                     _ => 0
                 };
             }
+            Debug.Log($"Enemy Score: {enemyScore}");
+
             currentSession.totalScore = (int)((upgradeScore + enemyScore) * (currentSession.difficulty+1));
+            Debug.Log($"Final Score: {currentSession.totalScore}");
         }
 
         private void SaveToFile(bool isFinalSave = false)
@@ -320,7 +324,15 @@ namespace GoodVillageGames.Game.Core.Global
         private string GetCurrentFilePath()
         {
             string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
+
+        // PersistentDataPath in the Unity Editor for Testing/Debug
+        #if UNITY_EDITOR
             return Path.Combine(Application.persistentDataPath, fileName);
+        #else
+            // In builds, save to the game's root folder (next to the executable)
+            string rootPath = Directory.GetParent(Application.dataPath).FullName;
+            return Path.Combine(rootPath, fileName);
+        #endif
         }
 
         // Event Handlers

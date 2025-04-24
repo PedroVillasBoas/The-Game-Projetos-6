@@ -3,7 +3,7 @@ using UnityEngine.UI;
 using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
 
-namespace GoodVillageGames.Game.Handlers.UI.Audio
+namespace GoodVillageGames.Game.Handlers.UI.Options
 {
     public class VolumeHandler : MonoBehaviour 
     { 
@@ -11,29 +11,12 @@ namespace GoodVillageGames.Game.Handlers.UI.Audio
         private Slider slider;
 
         void Awake() => slider = GetComponentInChildren<Slider>();
-        void Update() => GetVolume();
+        void OnEnable() => GetVolume();
 
 
         public void OnValueChanged()
         {
-            switch (bus)
-            {
-                case GameAudioBus.Master:
-                    GlobalAudioManager.Instance.masterVolume = slider.value;
-                    break;
-                case GameAudioBus.Music:
-                    GlobalAudioManager.Instance.musicVolume = slider.value;
-                    break;
-                case GameAudioBus.SFX:
-                    GlobalAudioManager.Instance.sfxVolume = slider.value;
-                    break;
-                case GameAudioBus.Ambient:
-                    GlobalAudioManager.Instance.ambientVolume = slider.value;
-                    break;
-                default:
-                    Debug.LogWarning($"Volume type on bus: {bus} not supported.");
-                    break;
-            }
+            GlobalAudioManager.Instance.SetVolume(bus, slider.value);
         }
 
         void GetVolume()

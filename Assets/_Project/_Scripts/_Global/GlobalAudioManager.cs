@@ -94,6 +94,32 @@ namespace GoodVillageGames.Game.Core.Global
             return emitter;
         }
 
+        public void SetVolume(GameAudioBus busType, float volume)
+        {
+            switch (busType)
+            {
+                case GameAudioBus.Master:
+                    masterVolume = volume;
+                    masterBus.setVolume(volume);
+                    break;
+                case GameAudioBus.Music:
+                    musicVolume = volume;
+                    musicBus.setVolume(volume);
+                    break;
+                case GameAudioBus.SFX:
+                    sfxVolume = volume;
+                    sfxBus.setVolume(volume);
+                    break;
+                case GameAudioBus.Ambient:
+                    ambientVolume = volume;
+                    ambientBus.setVolume(volume);
+                    break;
+                default:
+                    Debug.LogWarning($"Bus type {busType} not supported.");
+                    break;
+            }
+        }
+
         // When chaging Scenes
         void CleanUp()
         {

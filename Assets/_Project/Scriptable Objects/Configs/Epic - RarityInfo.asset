@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 740bd5e349c24d044901927477e04c18, type: 3}
   m_Name: Epic - RarityInfo
   m_EditorClassIdentifier: 
-  Name: 
+  Name: Epic
   Description: How many Epic Upgrades you got this run.
   Rarity: 3

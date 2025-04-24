@@ -9,6 +9,7 @@ namespace GoodVillageGames.Game.General.UI.Buttons
         {
             UIEventsHandler temp = FindFirstObjectByType<UIEventsHandler>();
             temp.TurnOnPlayerInput();
+            ScenePauseHandler.Instance.ReturnToOriginalTimeScale();
         }
     }
 }

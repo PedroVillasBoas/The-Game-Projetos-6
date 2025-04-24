@@ -154,6 +154,19 @@ TextureImporter:
     ignorePlatformSupport: 0
     androidETC2FallbackOverride: 0
     forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: WebGL
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
     sprites:
@@ -522,7 +535,23 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable: {}
+    nameFileIdTable:
+      Abyssal_Chunks_D_Medium_0: 8265805917306566605
+      Abyssal_Chunks_D_Medium_1: -1083131472934720158
+      Abyssal_Chunks_D_Medium_10: -4973694151281082098
+      Abyssal_Chunks_D_Medium_11: -8736222744258926733
+      Abyssal_Chunks_D_Medium_12: -6355206850508873614
+      Abyssal_Chunks_D_Medium_13: 5698341976926257931
+      Abyssal_Chunks_D_Medium_14: 6673517013073539026
+      Abyssal_Chunks_D_Medium_15: 5980639585004679632
+      Abyssal_Chunks_D_Medium_2: -7513263095276393416
+      Abyssal_Chunks_D_Medium_3: 1018518162260685004
+      Abyssal_Chunks_D_Medium_4: -4527585950468605880
+      Abyssal_Chunks_D_Medium_5: -2370464511812511208
+      Abyssal_Chunks_D_Medium_6: 6737312774213926360
+      Abyssal_Chunks_D_Medium_7: -1627110546321880590
+      Abyssal_Chunks_D_Medium_8: 8353374784727502974
+      Abyssal_Chunks_D_Medium_9: 1557631381507900973
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
