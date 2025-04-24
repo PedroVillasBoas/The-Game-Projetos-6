@@ -27,6 +27,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-8038150058889110597
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/UI/In Game/Tutorial/BlangBlong
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/UI/In Game/Tutorial/BlangBlong
+  Guid:
+    Data1: -2139175165
+    Data2: 1222438768
+    Data3: 106487225
+    Data4: -426436416
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 0
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 5100
 --- !u!114 &-7705621421051459621
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -123,10 +150,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638810207564417663
+  lastModified: 638810359379357779
   FileSizes:
   - Name: Desktop
-    Value: 3168
+    Value: 3218
   Exists: 1
 --- !u!114 &-5846774782066055049
 MonoBehaviour:
@@ -197,10 +224,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Music.bank
   Name: Music
   StudioPath: bank:/Music
-  lastModified: 638809546866517929
+  lastModified: 638810419954532636
   FileSizes:
   - Name: Desktop
-    Value: 4859488
+    Value: 6339040
   Exists: 1
 --- !u!114 &-4217318426020464960
 MonoBehaviour:
@@ -552,12 +579,13 @@ MonoBehaviour:
   - {fileID: 4288735086798777575}
   - {fileID: -9053101757906346205}
   - {fileID: 3820091497287447900}
+  - {fileID: -8038150058889110597}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638810210970362480
+  cacheTime: 638810419954532636
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -574,7 +602,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810207564397670
+  lastModified: 638810359379347799
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -675,7 +703,7 @@ MonoBehaviour:
   Name: MusicParameter
   StudioPath: 
   Min: 0
-  Max: 3
+  Max: 4
   Default: 0
   ID:
     data1: 261850403
@@ -687,6 +715,7 @@ MonoBehaviour:
   - MainMenu
   - InGame
   - GameOver
+  - Tutorial
   Exists: 1
 --- !u!114 &945914790468137544
 MonoBehaviour:
@@ -1138,10 +1167,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638810206334105706
+  lastModified: 638810364717014650
   FileSizes:
   - Name: Desktop
-    Value: 1357248
+    Value: 1420640
   Exists: 1
 --- !u!114 &8309405486053141748
 MonoBehaviour:

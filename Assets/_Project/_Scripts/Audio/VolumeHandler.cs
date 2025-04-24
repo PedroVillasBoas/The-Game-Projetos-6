@@ -1,6 +1,6 @@
-using GoodVillageGames.Game.Core.Global;
 using UnityEngine;
 using UnityEngine.UI;
+using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Handlers.UI.Audio
@@ -10,8 +10,8 @@ namespace GoodVillageGames.Game.Handlers.UI.Audio
         [SerializeField] private GameAudioBus bus;
         private Slider slider;
 
-        void Awake() => slider = GetComponent<Slider>();
-        void OnEnable() => GetVolume();
+        void Awake() => slider = GetComponentInChildren<Slider>();
+        void Update() => GetVolume();
 
 
         public void OnValueChanged()

@@ -192,6 +192,7 @@ namespace GoodVillageGames.Game.Enums
             MainMenu = 1,
             InGame = 2,
             GameOver = 3,
+            Tutorial = 4,
         }
 
         public enum GameAudioFilter

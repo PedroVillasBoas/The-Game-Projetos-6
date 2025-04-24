@@ -39,16 +39,6 @@ namespace GoodVillageGames.Game.Handlers.UI
             EventsManager.Instance.TriggerEvent("Stop");
         }
 
-        public void StartTutorial()
-        {
-            GlobalEventsManager.Instance.ChangeGameState(GameState.Tutorial);
-        }
-
-        public void StartGame()
-        {
-            GlobalEventsManager.Instance.ChangeGameState(GameState.GameBegin);
-        }
-
         public void ResumeGame()
         {
             GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);

@@ -26,6 +26,8 @@ namespace GoodVillageGames.Game.Handlers.UI
                 Instance = this;
             else
                 Destroy(gameObject);
+            
+            PauseTimeScale();
         }
 
         private void OnEnable()
@@ -53,8 +55,8 @@ namespace GoodVillageGames.Game.Handlers.UI
                         TogglePause();
                         break;
 
-                    case GameState.GameBegin: // temp
-                        TogglePause();
+                    case GameState.GameBegin:
+                        ReturnToOriginalTimeScale();
                         break;
 
                     default:

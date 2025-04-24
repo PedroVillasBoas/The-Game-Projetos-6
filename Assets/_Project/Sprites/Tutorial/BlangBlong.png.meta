@@ -1,10 +1,16 @@
 fileFormatVersion: 2
-guid: 73eae08e310ddad4eadab2063ac17367
+guid: 93960ba0a41ca504994bafdddbccc0af
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7147727303484257330
-    second: label_holder_0
+      213: 1088798402228250345
+    second: BlangBlong_0
+  - first:
+      213: -6143963650395186791
+    second: BlangBlong_1
+  - first:
+      213: 3926093380501702112
+    second: BlangBlong_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +43,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -75,7 +81,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -113,23 +119,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: label_holder_0
+      name: BlangBlong_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 273
-        height: 67
+        width: 32
+        height: 32
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 120, y: 0, z: 120, w: 0}
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: ecbc57443eb2ecc90800000000000000
-      internalID: -7147727303484257330
+      spriteID: 2b03cf699e9f5bd4283902d857f98f34
+      internalID: 1088798402228250345
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlangBlong_1
+      rect:
+        serializedVersion: 2
+        x: 32
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c7d633502c7e3434681ba3e3b1751820
+      internalID: -6143963650395186791
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: BlangBlong_2
+      rect:
+        serializedVersion: 2
+        x: 64
+        y: 0
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8fa7026247c2f5d4a9f77169c079cff5
+      internalID: 3926093380501702112
       vertices: []
       indices: 
       edges: []
@@ -138,7 +188,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b4d470eecea783a43a5a35311874d7e9
+    spriteID: 0c1b7a55ca1e7bd4f962201756817661
     internalID: 0
     vertices: []
     indices: 
@@ -148,7 +198,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      label_holder_0: -7147727303484257330
+      BlangBlong_0: 1088798402228250345
+      BlangBlong_1: -6143963650395186791
+      BlangBlong_2: 3926093380501702112
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

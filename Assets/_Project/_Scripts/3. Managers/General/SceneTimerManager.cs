@@ -23,15 +23,8 @@ namespace GoodVillageGames.Game.Core.Manager
                 Destroy(gameObject);
         }
 
-        void OnEnable()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
-        }
-
-        void Update()
-        {
-            _runTimer.Tick(Time.deltaTime);
-        }
+        void OnEnable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
+        void Update() => _runTimer.Tick(Time.deltaTime);
 
         void OnGameStateChanged(GameState gameState)
         {
