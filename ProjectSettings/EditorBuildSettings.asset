@@ -12,7 +12,7 @@ EditorBuildSettings:
     path: Assets/_Project/_Scenes/Scene-MainMenu.unity
     guid: d316d72a00467ac40b6e0339bd921cfe
   - enabled: 1
-    path: Assets/_Project/_Scenes/Scene-Debug.unity
+    path: Assets/_Project/_Scenes/Scene-Easy.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
     path: Assets/_Project/_Scenes/Scene-Loading.unity
