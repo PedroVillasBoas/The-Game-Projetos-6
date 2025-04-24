@@ -49,6 +49,9 @@ namespace GoodVillageGames.Game.Core.Global
             public float missileAccuracy;
             public bool quitViaPause;
             public Dictionary<string, float> playerStats = new();
+            public DateTime runStartTime;
+            public DateTime runEndTime;
+            public float totalRunTime;
         }
 
         void Awake()
@@ -147,28 +150,55 @@ namespace GoodVillageGames.Game.Core.Global
 
         private void OnGameStateChanged(GameState newState)
         {
-            // Capturing Player Stats WHENEVER gameplay is suspended
-            if (newState == GameState.PlayerDied || newState == GameState.GamePaused)
-            {
-                if (PlayerUpgraderManager.Instance != null)
-                {
-                    currentSession.playerStats = PlayerUpgraderManager.Instance.GetPlayerStats();
-                    currentSession.playerStats["Level"] = PlayerUpgraderManager.Instance.GetPlayerCurrentLevel();
-                }
+            if (currentSession == null) return;
 
-                if (PlayerExpManager.Instance != null)
-                {
-                    currentSession.playerStats["CurrentExp"] = PlayerExpManager.Instance.CurrentExp;
-                    currentSession.playerStats["ExpToNextLevel"] = PlayerExpManager.Instance.ExpToNextLevel;
-                }
+            switch (newState)
+            {
+                case GameState.GameBegin:
+                    HandleGameStart();
+                    break;
+
+                case GameState.PlayerDied:
+                case GameState.GamePaused:
+                    CapturePlayerStats();
+                    break;
+
+                case GameState.GameOver:
+                case GameState.MainMenu:
+                    HandleSessionEnd(newState);
+                    break;
+            }
+        }
+
+        private void HandleGameStart() => currentSession.runStartTime = DateTime.Now;
+
+        private void CapturePlayerStats()
+        {
+            if (PlayerUpgraderManager.Instance != null)
+            {
+                currentSession.playerStats = PlayerUpgraderManager.Instance.GetPlayerStats();
+                currentSession.playerStats["Level"] = PlayerUpgraderManager.Instance.GetPlayerCurrentLevel();
             }
 
-            // Finalizing current session when reaching terminal states
-            if (newState == GameState.GameOver || newState == GameState.MainMenu)
+            if (PlayerExpManager.Instance != null)
             {
-                bool quitViaPause = newState == GameState.MainMenu;
-                EndCurrentSession(quitViaPause);
+                currentSession.playerStats["CurrentExp"] = PlayerExpManager.Instance.CurrentExp;
+                currentSession.playerStats["ExpToNextLevel"] = PlayerExpManager.Instance.ExpToNextLevel;
             }
+        }
+
+        private void HandleSessionEnd(GameState endState)
+        {
+            currentSession.runEndTime = DateTime.Now;
+
+            if (currentSession.runStartTime != DateTime.MinValue)
+            {
+                currentSession.totalRunTime =
+                    (float)(currentSession.runEndTime - currentSession.runStartTime).TotalSeconds;
+            }
+
+            bool quitViaPause = endState == GameState.MainMenu;
+            EndCurrentSession(quitViaPause);
         }
 
         private void EndCurrentSession(bool quitViaPause)
@@ -177,12 +207,17 @@ namespace GoodVillageGames.Game.Core.Global
 
             currentSession.endTime = DateTime.Now;
             currentSession.quitViaPause = quitViaPause;
-            CalculateFinalScore();
 
-            // Final save
+            // Run total time
+            if (currentSession.runStartTime != DateTime.MinValue && currentSession.runEndTime == DateTime.MinValue)
+            {
+                currentSession.runEndTime = DateTime.Now;
+                currentSession.totalRunTime = (float)(currentSession.runEndTime - currentSession.runStartTime).TotalSeconds;
+            }
+
+            CalculateFinalScore();
             SaveToFile(isFinalSave: true);
             sessions.Add(currentSession);
-
             currentSession = null;
         }
 
@@ -256,7 +291,7 @@ namespace GoodVillageGames.Game.Core.Global
                 // Write header for new files
                 if (isNewFile)
                 {
-                    writer.WriteLine("SessionID,Player,SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats,IsFinal");
+                    writer.WriteLine("SessionID,Player,SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats,IsFinal,TotalRunTime");
                 }
 
                 currentSession.normalAccuracy = currentSession.normalShotsFired > 0 ?
@@ -285,7 +320,8 @@ namespace GoodVillageGames.Game.Core.Global
                     $"{currentSession.missileAccuracy:P2}," +
                     $"{currentSession.quitViaPause}," +
                     $"{SerializeDictionary(currentSession.playerStats)}," +
-                    $"{isFinalSave}"
+                    $"{isFinalSave}," +
+                    $"{currentSession.totalRunTime}"
                 );
             }
             catch (Exception e)
@@ -445,9 +481,12 @@ namespace GoodVillageGames.Game.Core.Global
                 // 11 → QuitViaPause (“True”/“False”)
                 session.quitViaPause = bool.Parse(values[11]);
 
-                // 12 → PlayerStats (optional)
+                // 12 → PlayerStats
                 if (values.Length > 12)
                     session.playerStats = ParsePlayerStats(values[12]);
+
+                if (values.Length > 14)
+                    session.totalRunTime = float.Parse(values[14], CultureInfo.InvariantCulture);
 
                 return session;
             }

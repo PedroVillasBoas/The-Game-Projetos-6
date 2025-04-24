@@ -9689,11 +9689,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 110630a92b97bb14498ee4dd1be6b5fd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  initialSpawnInterval: 60
-  minSpawnInterval: 10
+  initialSpawnInterval: 20
+  minSpawnInterval: 2
   spawnRateIncrease: 0.05
-  baseMobsPerWave: 2
-  mobsIncreasePerMinute: 5
+  baseMobsPerWave: 1
+  mobsIncreasePerWave: 1.5
+  minSpawnDistance: 5
   minionPools:
   - poolID: 3
     weight: 60
@@ -9702,14 +9703,17 @@ MonoBehaviour:
   circleSpawnCooldown: 30
   circleMobCount: 20
   circleRadius: 50
-  initialBossSpawnInterval: 120
+  baseCircleChance: 0.1
+  chanceIncreasePerCheck: 0.05
+  initialBossSpawnInterval: 180
   minBossSpawnInterval: 120
-  spawnBossRateIncrease: 0.2
   baseBossPerWave: 1
-  bossIncreasePerCycle: 1
+  bossIntervalDecreasePerWave: 5
+  minBossIncrease: 1
+  maxBossIncrease: 3
   bossPools:
   - poolID: 4
-    weight: 1
+    weight: 100
 --- !u!4 &1036490735
 Transform:
   m_ObjectHideFlags: 0

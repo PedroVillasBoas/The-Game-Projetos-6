@@ -57,7 +57,7 @@ MonoBehaviour:
   EventStopTrigger: 12
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -152,7 +152,8 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 4285841098950697164, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 4311008439640115464, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
       insertIndex: -1

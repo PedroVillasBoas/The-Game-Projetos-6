@@ -1,8 +1,9 @@
+using UnityEngine;
+using System.Linq;
+using TriInspector;
 using System.Collections;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Global;
-using TriInspector;
-using UnityEngine;
 using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
@@ -20,20 +21,24 @@ namespace GoodVillageGames.Game.Core.Manager
         [SerializeField, Group("Mobs")] private float minSpawnInterval = 0.2f;
         [SerializeField, Group("Mobs")] private float spawnRateIncrease = 0.05f;
         [SerializeField, Group("Mobs")] private int baseMobsPerWave = 2;
-        [SerializeField, Group("Mobs")] private float mobsIncreasePerMinute = 0.5f;
-        [SerializeField, Group("Mobs")] private List<BossPoolEntry> minionPools = new();
+        [SerializeField, Group("Mobs")] private float mobsIncreasePerWave = 0.5f;
+        [SerializeField, Group("Mobs")] private float minSpawnDistance = 2f;
+        [SerializeField, Group("Mobs")] private List<MinionPoolEntry> minionPools = new();
 
         [Title("Circle Spawn")]
         [SerializeField, Group("Special Spawn")] private float circleSpawnCooldown = 10f;
         [SerializeField, Group("Special Spawn")] private int circleMobCount = 20;
         [SerializeField, Group("Special Spawn")] private float circleRadius = 50f;
+        [SerializeField, Group("Special Spawn")] private float baseCircleChance = 0.1f;
+        [SerializeField, Group("Special Spawn")] private float chanceIncreasePerCheck = 0.05f;
 
         [Title("Boss Spawning")]
         [SerializeField, Group("Boss")] private float initialBossSpawnInterval = 180f;
         [SerializeField, Group("Boss")] private float minBossSpawnInterval = 120f;
-        [SerializeField, Group("Boss")] private float spawnBossRateIncrease = 0.2f;
         [SerializeField, Group("Boss")] private int baseBossPerWave = 1;
-        [SerializeField, Group("Boss")] private float bossIncreasePerCycle = 1f;
+        [SerializeField, Group("Boss")] private float bossIntervalDecreasePerWave = 5f;
+        [SerializeField, Group("Boss")] private int minBossIncrease = 1;
+        [SerializeField, Group("Boss")] private int maxBossIncrease = 2;
         [SerializeField, Group("Boss")] private List<BossPoolEntry> bossPools = new();
 
         [System.Serializable]
@@ -43,34 +48,47 @@ namespace GoodVillageGames.Game.Core.Manager
             [Min(1)] public int weight;
         }
 
-        // Local
+        [System.Serializable]
+        public struct MinionPoolEntry
+        {
+            public PoolID poolID;
+            [Min(1)] public int weight;
+        }
+
+        // Local variables
         private Transform playerTransform;
         private Camera mainCamera;
         private float lastCircleSpawnTime;
+        private float currentCircleChance;
+        private int waveCounter;
+        private int bossWaveCounter;
+        private int currentBossWaveTier;
+        private List<Vector3> currentWaveSpawnPositions = new();
+
+        // Coroutines
+        private Coroutine regularSpawnRoutine;
+        private Coroutine specialSpawnRoutine;
+        private Coroutine bossSpawnRoutine;
+
+        // Flag
+        private bool isSpawning;
 
         void Awake()
         {
-            // Singleton
             if (Instance == null)
                 Instance = this;
             else
                 Destroy(gameObject);
         }
 
-        void OnEnable()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
-        }
-
-        void OnDestroy()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
-        }
+        void OnEnable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
+        void OnDestroy() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
 
         void Start()
         {
             playerTransform = GameObject.FindGameObjectWithTag("Player").transform;
             mainCamera = Camera.main;
+            currentCircleChance = baseCircleChance;
         }
 
         void OnGameStateChanged(GameState gameState)
@@ -81,16 +99,28 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void BeginSpawnCoroutines()
         {
-            StartCoroutine(RegularSpawnRoutine());
-            StartCoroutine(SpecialSpawnCheckRoutine());
-            StartCoroutine(BossSpawnRoutine());
+            if(isSpawning) return;
+            
+            // Stopping any existing coroutines
+            if(regularSpawnRoutine != null) StopCoroutine(regularSpawnRoutine);
+            if(specialSpawnRoutine != null) StopCoroutine(specialSpawnRoutine);
+            if(bossSpawnRoutine != null) StopCoroutine(bossSpawnRoutine);
+            
+            // Starting new coroutines
+            regularSpawnRoutine = StartCoroutine(RegularSpawnRoutine());
+            specialSpawnRoutine = StartCoroutine(SpecialSpawnCheckRoutine());
+            bossSpawnRoutine = StartCoroutine(BossSpawnRoutine());
+            
+            isSpawning = true;
         }
 
         IEnumerator RegularSpawnRoutine()
         {
             while (true)
             {
+                Debug.Log($"Starting wave {waveCounter + 1} at {Time.time}");
                 SpawnMobWave(CalculateMobsPerWave());
+                waveCounter++;
                 yield return new WaitForSeconds(CalculateSpawnInterval());
             }
         }
@@ -99,19 +129,29 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             while (true)
             {
-                if (Time.time - lastCircleSpawnTime > circleSpawnCooldown && Random.value < 0.1f) // 10% chance check
+                bool cooldownPassed = Time.time - lastCircleSpawnTime > circleSpawnCooldown;
+
+                if (cooldownPassed)
                 {
-                    SpawnCirclePattern();
-                    lastCircleSpawnTime = Time.time;
+                    if (Random.value < currentCircleChance)
+                    {
+                        SpawnCirclePattern();
+                        lastCircleSpawnTime = Time.time;
+                        currentCircleChance = baseCircleChance;
+                    }
+                    else
+                    {
+                        currentCircleChance += chanceIncreasePerCheck;
+                    }
                 }
-                yield return new WaitForSeconds(2f);
+
+                yield return new WaitForSeconds(circleSpawnCooldown);
             }
         }
 
         int CalculateMobsPerWave()
         {
-            float minutes = SceneTimerManager.Instance.GetRunTime() / 60f;
-            return baseMobsPerWave + Mathf.FloorToInt(mobsIncreasePerMinute * minutes);
+            return baseMobsPerWave + Mathf.FloorToInt(mobsIncreasePerWave * waveCounter);
         }
 
         float CalculateSpawnInterval()
@@ -122,6 +162,9 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void SpawnMobWave(int mobCount)
         {
+            Debug.Log($"Mobs Spawnned this wave: {mobCount}");
+            currentWaveSpawnPositions.Clear();
+
             for (int i = 0; i < mobCount; i++)
             {
                 SpawnSingleMob();
@@ -130,13 +173,46 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void SpawnSingleMob()
         {
-            GameObject mob = PoolManager.Instance.GetPooledObject(PoolID.EnemyMinionPrefab);
+            GameObject mob = PoolManager.Instance.GetPooledObject(GetRandomMobPool());
             if (mob != null)
             {
-                Vector3 spawnPos = GetOffscreenSpawnPosition();
+                Vector3 spawnPos = GetValidSpawnPosition();
                 mob.transform.position = spawnPos;
                 mob.SetActive(true);
+                currentWaveSpawnPositions.Add(spawnPos);
             }
+        }
+
+        Vector3 GetValidSpawnPosition()
+        {
+            Vector3 spawnPos;
+            int attempts = 0;
+            bool validPosition;
+
+            do
+            {
+                validPosition = true;
+                spawnPos = GetOffscreenSpawnPosition();
+
+                foreach (var pos in currentWaveSpawnPositions)
+                {
+                    if (Vector3.Distance(spawnPos, pos) < minSpawnDistance)
+                    {
+                        validPosition = false;
+                        break;
+                    }
+                }
+
+                var colliders = Physics2D.OverlapCircleAll(spawnPos, minSpawnDistance);
+                if (colliders.Any(c => c.CompareTag("Enemy")))
+                {
+                    validPosition = false;
+                }
+
+                attempts++;
+            } while (!validPosition && attempts < 10);
+
+            return spawnPos;
         }
 
         void SpawnCirclePattern()
@@ -147,7 +223,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.right;
                 Vector3 spawnPos = playerTransform.position + dir * circleRadius;
 
-                GameObject mob = PoolManager.Instance.GetPooledObject(PoolID.EnemyMinionPrefab);
+                GameObject mob = PoolManager.Instance.GetPooledObject(GetRandomMobPool());
                 if (mob != null)
                 {
                     mob.transform.position = spawnPos;
@@ -158,29 +234,32 @@ namespace GoodVillageGames.Game.Core.Manager
 
         IEnumerator BossSpawnRoutine()
         {
-            // Wait for initial boss spawn time
             yield return new WaitForSeconds(initialBossSpawnInterval);
 
             while (true)
             {
                 SpawnBossWave(CalculateBossPerWave());
                 float nextInterval = CalculateBossSpawnInterval();
+                bossWaveCounter++;
                 yield return new WaitForSeconds(nextInterval);
             }
         }
 
         int CalculateBossPerWave()
         {
-            float cycles = SceneTimerManager.Instance.GetRunTime() / initialBossSpawnInterval;
-            return baseBossPerWave + Mathf.FloorToInt(bossIncreasePerCycle * cycles);
+            currentBossWaveTier++;
+            int randomIncrease = Random.Range(
+                minBossIncrease + currentBossWaveTier,
+                maxBossIncrease + currentBossWaveTier
+            );
+            return baseBossPerWave + randomIncrease;
         }
 
         float CalculateBossSpawnInterval()
         {
-            float time = SceneTimerManager.Instance.GetRunTime();
             return Mathf.Max(
                 minBossSpawnInterval,
-                initialBossSpawnInterval - (spawnBossRateIncrease * time)
+                initialBossSpawnInterval - (bossIntervalDecreasePerWave * bossWaveCounter)
             );
         }
 
@@ -213,14 +292,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         PoolID GetRandomBossPool()
         {
-            // Calculate total weight
-            int totalWeight = 0;
-            foreach (var entry in bossPools)
-            {
-                totalWeight += entry.weight;
-            }
-
-            // Select random weighted entry
+            int totalWeight = bossPools.Sum(entry => entry.weight);
             int randomValue = Random.Range(0, totalWeight);
             int accumulatedWeight = 0;
 
@@ -232,20 +304,12 @@ namespace GoodVillageGames.Game.Core.Manager
                     return entry.poolID;
                 }
             }
-
-            return bossPools[0].poolID; // Fallback to first entry
+            return bossPools[0].poolID;
         }
 
         PoolID GetRandomMobPool()
         {
-            // Calculate total weight
-            int totalWeight = 0;
-            foreach (var entry in minionPools)
-            {
-                totalWeight += entry.weight;
-            }
-
-            // Select random weighted entry
+            int totalWeight = minionPools.Sum(entry => entry.weight);
             int randomValue = Random.Range(0, totalWeight);
             int accumulatedWeight = 0;
 
@@ -257,8 +321,7 @@ namespace GoodVillageGames.Game.Core.Manager
                     return entry.poolID;
                 }
             }
-
-            return minionPools[0].poolID; // Fallback to first entry
+            return minionPools[0].poolID;
         }
 
         Vector3 GetOffscreenSpawnPosition()
@@ -271,8 +334,6 @@ namespace GoodVillageGames.Game.Core.Manager
                     mainCamera.nearClipPlane
                 )
             );
-
-            // Offset... Just to make sure...
             spawnPoint += (Vector3)randomDir * 3f;
             spawnPoint.z = 0;
             return spawnPoint;
