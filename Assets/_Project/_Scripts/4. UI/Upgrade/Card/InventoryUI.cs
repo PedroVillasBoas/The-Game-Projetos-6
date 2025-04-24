@@ -82,10 +82,8 @@ namespace GoodVillageGames.Game.General.UI
                 if (prefab != null)
                 {
                     var newElement = CreateUpgradeElement(prefab, upgrade);
-                    // Placing at the CORRECT position to maintain the order that the player got the upgrade
-                    int targetIndex = fullList.LastIndexOf(upgrade);
-                    uiUpgradesList.Insert(targetIndex, newElement);
-                    currentDisplayedUpgrades.Insert(targetIndex, upgrade);
+                    uiUpgradesList.Insert(uiUpgradesList.Count, newElement);
+                    currentDisplayedUpgrades.Insert(currentDisplayedUpgrades.Count, upgrade);
                 }
             }
         }

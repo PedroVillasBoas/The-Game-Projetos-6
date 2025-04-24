@@ -21,6 +21,7 @@ namespace GoodVillageGames.Game.Core.Manager
         [SerializeField, Group("Mobs")] private float spawnRateIncrease = 0.05f;
         [SerializeField, Group("Mobs")] private int baseMobsPerWave = 2;
         [SerializeField, Group("Mobs")] private float mobsIncreasePerMinute = 0.5f;
+        [SerializeField, Group("Mobs")] private List<BossPoolEntry> minionPools = new();
 
         [Title("Circle Spawn")]
         [SerializeField, Group("Special Spawn")] private float circleSpawnCooldown = 10f;
@@ -98,8 +99,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             while (true)
             {
-                if (Time.time - lastCircleSpawnTime > circleSpawnCooldown &&
-                    Random.value < 0.1f) // 10% chance check
+                if (Time.time - lastCircleSpawnTime > circleSpawnCooldown && Random.value < 0.1f) // 10% chance check
                 {
                     SpawnCirclePattern();
                     lastCircleSpawnTime = Time.time;
@@ -179,7 +179,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             float time = SceneTimerManager.Instance.GetRunTime();
             return Mathf.Max(
-                minBossSpawnInterval, 
+                minBossSpawnInterval,
                 initialBossSpawnInterval - (spawnBossRateIncrease * time)
             );
         }
@@ -202,7 +202,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             PoolID selectedPool = GetRandomBossPool();
             GameObject boss = PoolManager.Instance.GetPooledObject(selectedPool);
-            
+
             if (boss != null)
             {
                 Vector3 spawnPos = GetOffscreenSpawnPosition();
@@ -210,7 +210,8 @@ namespace GoodVillageGames.Game.Core.Manager
                 boss.SetActive(true);
             }
         }
-            PoolID GetRandomBossPool()
+
+        PoolID GetRandomBossPool()
         {
             // Calculate total weight
             int totalWeight = 0;
@@ -233,6 +234,31 @@ namespace GoodVillageGames.Game.Core.Manager
             }
 
             return bossPools[0].poolID; // Fallback to first entry
+        }
+
+        PoolID GetRandomMobPool()
+        {
+            // Calculate total weight
+            int totalWeight = 0;
+            foreach (var entry in minionPools)
+            {
+                totalWeight += entry.weight;
+            }
+
+            // Select random weighted entry
+            int randomValue = Random.Range(0, totalWeight);
+            int accumulatedWeight = 0;
+
+            foreach (var entry in minionPools)
+            {
+                accumulatedWeight += entry.weight;
+                if (randomValue < accumulatedWeight)
+                {
+                    return entry.poolID;
+                }
+            }
+
+            return minionPools[0].poolID; // Fallback to first entry
         }
 
         Vector3 GetOffscreenSpawnPosition()

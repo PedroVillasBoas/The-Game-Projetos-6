@@ -223,9 +223,17 @@ namespace GoodVillageGames.Game.Core.Global
                 };
             }
             Debug.Log($"Enemy Score: {enemyScore}");
-
-            currentSession.totalScore = (int)((upgradeScore + enemyScore) * (currentSession.difficulty+1));
+            // +1 because it's an enum, the first difficulty is 0.
+            currentSession.totalScore = (int)((upgradeScore + enemyScore) * (currentSession.difficulty + 1));
             Debug.Log($"Final Score: {currentSession.totalScore}");
+        }
+
+        public GameSessionData GetLastSession()
+        {
+            if (sessions.Count == 0)
+                return null;
+
+            return sessions[^1];
         }
 
         private void SaveToFile(bool isFinalSave = false)
@@ -325,14 +333,14 @@ namespace GoodVillageGames.Game.Core.Global
         {
             string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
 
-        // PersistentDataPath in the Unity Editor for Testing/Debug
-        #if UNITY_EDITOR
+            // PersistentDataPath in the Unity Editor for Testing/Debug
+#if UNITY_EDITOR
             return Path.Combine(Application.persistentDataPath, fileName);
-        #else
+#else
             // In builds, save to the game's root folder (next to the executable)
             string rootPath = Directory.GetParent(Application.dataPath).FullName;
             return Path.Combine(rootPath, fileName);
-        #endif
+#endif
         }
 
         // Event Handlers

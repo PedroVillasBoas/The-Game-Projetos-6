@@ -19,7 +19,11 @@ namespace GoodVillageGames.Game.Core.Pickups
         {
             _poolObject = GetComponent<PooledObject>();
             owner = GetComponent<IDTriggerOwner>();
-        } 
+        }
+
+        // When it goes back to the pool, it loses the target
+        // prevents automatic collection of the exp when a previous EXP is spawnned a second time
+        void OnDisable() => _target = null;
 
         void Update()
         {

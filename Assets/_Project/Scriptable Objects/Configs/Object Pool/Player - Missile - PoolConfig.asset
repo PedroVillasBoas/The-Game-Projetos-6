@@ -13,5 +13,5 @@ MonoBehaviour:
   m_Name: Player - Missile - PoolConfig
   m_EditorClassIdentifier: 
   _initialPoolSize: 1
-  _autoExpand: 0
-  _expandAmount: 0
+  _autoExpand: 1
+  _expandAmount: 1

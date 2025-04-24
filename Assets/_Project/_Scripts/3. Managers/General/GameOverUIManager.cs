@@ -8,7 +8,7 @@ using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
-    public class GameOverUIManager : MonoBehaviour 
+    public class GameOverUIManager : MonoBehaviour
     {
         [Title("Animation Settings")]
         [SerializeField] private float initialDelay = 1f;
@@ -18,7 +18,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         [Title("Upgrade Rarities")]
         [SerializeField] private List<TextMeshProUGUI> upgradesRaritiesTexts;
-        
+
         [Title("Stats")]
         [SerializeField] private List<string> statsNames;
         [SerializeField] private List<TextMeshProUGUI> statsTexts;
@@ -35,7 +35,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void Awake()
         {
-            currentSession = GlobalFileManager.Instance.CurrentSession;
+            currentSession = GlobalFileManager.Instance.GetLastSession();
             InitializeDictionaries();
         }
 
@@ -70,10 +70,10 @@ namespace GoodVillageGames.Game.Core.Manager
 
             // Animate upgrades first
             yield return StartCoroutine(AnimateUpgradeCounts());
-            
+
             // Then animate stats
             yield return StartCoroutine(AnimateStats());
-            
+
             // Finally animate score
             yield return StartCoroutine(AnimateFinalScore());
 

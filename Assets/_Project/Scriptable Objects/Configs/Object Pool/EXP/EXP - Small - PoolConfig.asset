@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be173046fcf5cf94d949dd7a5f7f524c, type: 3}
   m_Name: EXP - Small - PoolConfig
   m_EditorClassIdentifier: 
-  _initialPoolSize: 40
+  _initialPoolSize: 80
   _autoExpand: 1
-  _expandAmount: 10
+  _expandAmount: 20
