@@ -1381,6 +1381,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -270.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2011638984282663186, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2064359465959546708, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1400,6 +1404,14 @@ PrefabInstance:
     - target: {fileID: 2064359465959546708, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 2326645322225139269, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142199570328460176, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3212350313468084613, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1515,6 +1527,34 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410353589181650413, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1608165671}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: OnTrigger
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: GoodVillageGames.Game.Core.Util.EnableObjectOnTrigger, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3438372634888961626, guid: fb36f387e08438046ab963803df00766, type: 3}
@@ -1636,6 +1676,10 @@ PrefabInstance:
     - target: {fileID: 4063061809269953886, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 4125097880154892646, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4155978132921085784, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1809,6 +1853,10 @@ PrefabInstance:
       propertyPath: animator
       value: 
       objectReference: {fileID: 1565753727}
+    - target: {fileID: 6153061847557875834, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6204503747281376278, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1916,6 +1964,10 @@ PrefabInstance:
     - target: {fileID: 6560967097761852592, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 7093886841161824545, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7568820971513459904, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
@@ -2197,6 +2249,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6067210359097538441, guid: fb36f387e08438046ab963803df00766, type: 3}
       insertIndex: -1
       addedObject: {fileID: 326908954}
+    - targetCorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1608165673}
+    - targetCorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1608165672}
   m_SourcePrefab: {fileID: 100100000, guid: fb36f387e08438046ab963803df00766, type: 3}
 --- !u!224 &326908949 stripped
 RectTransform:
@@ -2874,7 +2932,7 @@ MonoBehaviour:
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -2905,7 +2963,7 @@ MonoBehaviour:
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -10117,6 +10175,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1055098067}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1189598732 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+  m_PrefabInstance: {fileID: 326908948}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1213289047
 GameObject:
   m_ObjectHideFlags: 0
@@ -20457,6 +20520,73 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 8240160465331310490, guid: b442c319291beba448f847c5467c5198, type: 3}
   m_PrefabInstance: {fileID: 1411734196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1450736181 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+  m_PrefabInstance: {fileID: 1500188256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1450736182
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450736181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1450736183
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1450736181}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1481257461
 GameObject:
   m_ObjectHideFlags: 0
@@ -20800,22 +20930,22 @@ PrefabInstance:
     - target: {fileID: 4745216763317138780, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
-      objectReference: {fileID: 1565753728}
+      objectReference: {fileID: 1500188262}
     - target: {fileID: 4745216763317138780, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 4745216763317138780, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: QuitGamePopUp
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4745216763317138780, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: GoodVillageGames.Game.Handlers.UI.UIEventsHandler, Assembly-CSharp
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 4745216763317138780, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
-      value: UnityEngine.Object, UnityEngine
+      value: 
       objectReference: {fileID: 0}
     - target: {fileID: 5987136897979805936, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       propertyPath: m_Name
@@ -20856,6 +20986,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5987136897979805936, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1500188260}
+    - targetCorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1450736183}
+    - targetCorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1450736182}
     - targetCorrespondingSourceObject: {fileID: 3287543002628601193, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1500188262}
@@ -26163,6 +26299,79 @@ ParticleSystem:
         m_PostInfinity: 2
         m_RotationOrder: 4
     vectorLabel1_3: W
+--- !u!114 &1608165671 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8978484285052749879, guid: fb36f387e08438046ab963803df00766, type: 3}
+  m_PrefabInstance: {fileID: 326908948}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189598732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 52cdcdc0782d6b24ebba356b713b6d4d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1608165672
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189598732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1608165673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1189598732}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1618449948
 GameObject:
   m_ObjectHideFlags: 0

@@ -369,14 +369,8 @@ namespace GoodVillageGames.Game.Core.Global
         {
             string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
 
-            // PersistentDataPath in the Unity Editor for Testing/Debug
-#if UNITY_EDITOR
-            return Path.Combine(Application.persistentDataPath, fileName);
-#else
-            // In builds, save to the game's root folder (next to the executable)
             string rootPath = Directory.GetParent(Application.dataPath).FullName;
             return Path.Combine(rootPath, fileName);
-#endif
         }
 
         // Event Handlers
