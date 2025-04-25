@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1001 &8761467281933626640
+--- !u!1001 &4177333713422076746
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -8,10 +8,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 1166336593235004347, guid: 01069057d8db26f41994df26663cd80f, type: 3}
-      propertyPath: Preload
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 1166336593235004347, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: EventReference.Path
       value: event:/SFX/Enemies/Medium/Enemy - Medium - OnShoot
@@ -34,27 +30,31 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1308518401107695966, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.5
+      value: 1.4
       objectReference: {fileID: 0}
     - target: {fileID: 1509443463735666403, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 2
+      value: 2.5
       objectReference: {fileID: 0}
+    - target: {fileID: 3133115512367017853, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: _baseStats
+      value: 
+      objectReference: {fileID: 11400000, guid: 9bfd7b04662dfea498c857158d9f4172, type: 2}
     - target: {fileID: 3133115512367017853, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: enemyDeathVFX
       value: 
-      objectReference: {fileID: 5861517717905073195, guid: a92542b26ef46c74f96382ba6f54c908, type: 3}
+      objectReference: {fileID: 7295418743099576616, guid: 79a6f727f5795da498e0487cfe01c0ca, type: 3}
     - target: {fileID: 3133115512367017853, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: enemyBaseStats
       value: 
-      objectReference: {fileID: 11400000, guid: cf1d0e28fc3acc849ac173ac19b49583, type: 2}
+      objectReference: {fileID: 11400000, guid: 9bfd7b04662dfea498c857158d9f4172, type: 2}
+    - target: {fileID: 3133115512367017853, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: specialActionCooldownAmount
+      value: 15
+      objectReference: {fileID: 0}
     - target: {fileID: 3329101964384452745, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_Name
-      value: Enemy - Boss - Medium
-      objectReference: {fileID: 0}
-    - target: {fileID: 5135626842525096118, guid: 01069057d8db26f41994df26663cd80f, type: 3}
-      propertyPath: Preload
-      value: 1
+      value: Enemy - Boss - Hard - Second
       objectReference: {fileID: 0}
     - target: {fileID: 5135626842525096118, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: EventReference.Path
@@ -75,10 +75,6 @@ PrefabInstance:
     - target: {fileID: 5135626842525096118, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: EventReference.Guid.Data4
       value: 1169753926
-      objectReference: {fileID: 0}
-    - target: {fileID: 5276793825247461907, guid: 01069057d8db26f41994df26663cd80f, type: 3}
-      propertyPath: Preload
-      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5276793825247461907, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: EventReference.Path
@@ -103,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 5478649772149036439, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 21300000, guid: f7e025760d8f6354483d18a05cdeda9b, type: 3}
+      objectReference: {fileID: 7781157793525614439, guid: 089c05586b3c57f45a87ded8223aeac8, type: 3}
     - target: {fileID: 6075631289826775303, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -147,7 +143,7 @@ PrefabInstance:
     - target: {fileID: 7308296986641824259, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: damagePrefab
       value: 
-      objectReference: {fileID: 4616880569728933006, guid: 946578b3539533c40980075f8433c2db, type: 3}
+      objectReference: {fileID: 4456500207233633640, guid: 9a968ebe5e13e9b4291ccec015fea38c, type: 3}
     m_RemovedComponents: []
     m_RemovedGameObjects:
     - {fileID: 5262867832221071143, guid: 01069057d8db26f41994df26663cd80f, type: 3}

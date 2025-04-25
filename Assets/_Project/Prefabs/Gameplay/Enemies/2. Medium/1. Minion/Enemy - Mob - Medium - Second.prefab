@@ -104,6 +104,10 @@ PrefabInstance:
       propertyPath: enemyDeathVFX
       value: 
       objectReference: {fileID: 3480555760374182462, guid: 170c6246299250246a3dad633e78af27, type: 3}
+    - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: enemyBaseStats
+      value: 
+      objectReference: {fileID: 11400000, guid: e557eea81fdb28a4fb4851b9fc591223, type: 2}
     - target: {fileID: 6599250306331955322, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_LocalPosition.y
       value: 1

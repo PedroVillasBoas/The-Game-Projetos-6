@@ -10,7 +10,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2167390253478804577, guid: c56a4967afefa6e4e9504e00448776b1, type: 3}
       propertyPath: m_Name
-      value: FX_Enemy_C_Death_Small
+      value: FX_Enemy_Mob_Medium_OnDeath
       objectReference: {fileID: 0}
     - target: {fileID: 2167390253478804590, guid: c56a4967afefa6e4e9504e00448776b1, type: 3}
       propertyPath: m_LocalPosition.x
@@ -51,6 +51,14 @@ PrefabInstance:
     - target: {fileID: 2167390253478804590, guid: c56a4967afefa6e4e9504e00448776b1, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167390253478804591, guid: c56a4967afefa6e4e9504e00448776b1, type: 3}
+      propertyPath: m_SortingLayer
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 2167390253478804591, guid: c56a4967afefa6e4e9504e00448776b1, type: 3}
+      propertyPath: m_SortingLayerID
+      value: 1664819705
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
