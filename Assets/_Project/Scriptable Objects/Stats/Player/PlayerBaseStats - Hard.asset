@@ -9,23 +9,21 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 77884ed3d36ff1f458f3d1515d280eb0, type: 3}
-  m_Name: EnemyStats - Boss - Easy
+  m_Script: {fileID: 11500000, guid: 6031012b18ea61b44980126caad31f46, type: 3}
+  m_Name: PlayerBaseStats - Hard
   m_EditorClassIdentifier: 
-  Name: Name
+  Name: U.S.S. Enterprise
   EntityVisualPrefab: {fileID: 0}
-  MaxHealth: 20
-  CurrentHealth: 20
-  MaxSpeed: 2
+  MaxHealth: 50
+  CurrentHealth: 50
+  MaxSpeed: 15
   MaxDefense: 0
-  Acceleration: 1.5
+  Acceleration: 4
   Experience: 0
   BaseAttackDamage: 2
-  AttackSpeed: 1
-  MaxBoostTime: 0
-  MaxBoostSpeed: 0
-  BoostRechargeRate: 0
-  BaseMissileDamage: 0
-  BaseMissileCooldown: 0
-  DoActionRadius: 17
-  EnemyType: 8
+  AttackSpeed: 0.7
+  MaxBoostTime: 0.7
+  MaxBoostSpeed: 30
+  BoostRechargeRate: 0.05
+  BaseMissileDamage: 6
+  BaseMissileCooldown: 12

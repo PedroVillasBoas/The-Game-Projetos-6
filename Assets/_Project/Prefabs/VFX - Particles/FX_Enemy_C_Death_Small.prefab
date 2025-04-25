@@ -5,11 +5,24 @@ PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Modification:
+    serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
     - target: {fileID: 7047838003272070804, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
       propertyPath: looping
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047838003272070804, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047838003272070804, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047838003272070804, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: playOnAwake
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7047838003272070804, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
       propertyPath: InitialModule.startColor.maxColor.b
@@ -83,9 +96,24 @@ PrefabInstance:
       propertyPath: m_Name
       value: FX_Enemy_C_Death_Small
       objectReference: {fileID: 0}
+    - target: {fileID: 7047838004579773270, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: stopAction
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047838004579773270, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: lengthInSec
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7047838004579773270, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
+      propertyPath: playOnAwake
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7047838004579773273, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}
-      propertyPath: m_Materials.Array.data[0]
+      propertyPath: 'm_Materials.Array.data[0]'
       value: 
       objectReference: {fileID: 2100000, guid: 3bdce532dc1859b4698bcd9a5581e105, type: 2}
     m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5383c19e014fd7b499b6002bfe47c921, type: 3}

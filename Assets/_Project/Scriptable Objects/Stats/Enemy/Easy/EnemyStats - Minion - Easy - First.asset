@@ -27,5 +27,5 @@ MonoBehaviour:
   BoostRechargeRate: 0
   BaseMissileDamage: 0
   BaseMissileCooldown: 0
-  DoActionRadius: 5
+  DoActionRadius: 7
   EnemyType: 0

@@ -150,10 +150,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.strings.bank
   Name: Master.strings
   StudioPath: bank:/Master.strings
-  lastModified: 638810359379357779
+  lastModified: 638811347308812077
   FileSizes:
   - Name: Desktop
-    Value: 3218
+    Value: 3362
   Exists: 1
 --- !u!114 &-5846774782066055049
 MonoBehaviour:
@@ -364,6 +364,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &-1751303372549023494
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Medium/Enemy - Medium - OnHit
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Medium/Enemy - Medium - OnHit
+  Guid:
+    Data1: 755086285
+    Data2: 1152984121
+    Data3: 725764281
+    Data4: 278382855
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 920
 --- !u!114 &-1655893409947692122
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -580,12 +607,15 @@ MonoBehaviour:
   - {fileID: -9053101757906346205}
   - {fileID: 3820091497287447900}
   - {fileID: -8038150058889110597}
+  - {fileID: -1751303372549023494}
+  - {fileID: 7115605917968284824}
+  - {fileID: 4972363654823707237}
   EditorParameters: []
   MasterBanks:
   - {fileID: 2595951719732274}
   StringsBanks:
   - {fileID: -6774862291060348435}
-  cacheTime: 638811244169801514
+  cacheTime: 638811353287268156
   cacheVersion: 131624
 --- !u!114 &2595951719732274
 MonoBehaviour:
@@ -602,7 +632,7 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/Master.bank
   Name: Master
   StudioPath: bank:/Master
-  lastModified: 638810359379347799
+  lastModified: 638811347308802050
   FileSizes:
   - Name: Desktop
     Value: 1486
@@ -1015,6 +1045,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &4972363654823707237
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Medium/Enemy - Medium - OnShoot
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Medium/Enemy - Medium - OnShoot
+  Guid:
+    Data1: -472988622
+    Data2: 1111898978
+    Data3: 978211240
+    Data4: 119379759
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 680
 --- !u!114 &5005127104388921146
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1124,6 +1181,33 @@ MonoBehaviour:
   MinDistance: 1
   MaxDistance: 20
   Length: 0
+--- !u!114 &7115605917968284824
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ceb653cd98e289a4e8697a1af55201f2, type: 3}
+  m_Name: event:/SFX/Enemies/Medium/Enemy - Medium - OnDeath
+  m_EditorClassIdentifier: 
+  Path: event:/SFX/Enemies/Medium/Enemy - Medium - OnDeath
+  Guid:
+    Data1: -1150209307
+    Data2: 1322869536
+    Data3: -1806591356
+    Data4: 1169753926
+  Banks:
+  - {fileID: 7911824750875194011}
+  IsStream: 0
+  Is3D: 0
+  IsOneShot: 1
+  Parameters: []
+  MinDistance: 1
+  MaxDistance: 20
+  Length: 860
 --- !u!114 &7154738354858563869
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1167,10 +1251,10 @@ MonoBehaviour:
   Path: ../../../FMOD/VoidProtocol/Build/Desktop/SFX.bank
   Name: SFX
   StudioPath: bank:/SFX
-  lastModified: 638811244169801514
+  lastModified: 638811353287268156
   FileSizes:
   - Name: Desktop
-    Value: 1420640
+    Value: 1512736
   Exists: 1
 --- !u!114 &8309405486053141748
 MonoBehaviour:

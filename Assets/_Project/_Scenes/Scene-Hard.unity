@@ -9875,8 +9875,10 @@ Transform:
   - {fileID: 1186484686}
   - {fileID: 279953870}
   - {fileID: 228918466}
+  - {fileID: 1724972970}
   - {fileID: 491517884}
   - {fileID: 877300190}
+  - {fileID: 1292955259}
   - {fileID: 124985873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10286,6 +10288,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c544a4c9fb42044b9ed2c25bef9775b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1292955258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292955259}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Special - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1292955259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292955258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346370088
 GameObject:
   m_ObjectHideFlags: 0
@@ -26588,6 +26621,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724333882}
   m_CullTransparentMesh: 1
+--- !u!1 &1724972969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724972970}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1724972970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724972969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733932739
 GameObject:
   m_ObjectHideFlags: 0
@@ -26844,7 +26908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dcc54a2070d5b4db4f26a47582a85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseStats: {fileID: 11400000, guid: 52e5b54918ea77f41a6987928d77105e, type: 2}
+  _baseStats: {fileID: 11400000, guid: 8ea05c06f39926b4ba82df2ca78c5740, type: 2}
   PlayerEventsManager: {fileID: 0}
 --- !u!50 &1823016964
 Rigidbody2D:

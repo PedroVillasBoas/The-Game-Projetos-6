@@ -9799,24 +9799,24 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: 2972790f22a94794aa96732392148ff2, type: 2}
     poolContainer: {fileID: 1991466476}
   - poolId: 3
-    prefab: {fileID: 4087359875539187419, guid: 40444c944e7916448a5c8d9fb18cb120, type: 3}
-    config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
+    prefab: {fileID: 6903827366168117235, guid: a061cfd93b69e9c438c3b5ce118c66cf, type: 3}
+    config: {fileID: 11400000, guid: f45aa3b592c4fd54db673025e5068fab, type: 2}
     poolContainer: {fileID: 1186484685}
   - poolId: 14
-    prefab: {fileID: 6009267874362592246, guid: a7414dbf413e095448fb397ed0a88e9a, type: 3}
-    config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
+    prefab: {fileID: 5775961182904826007, guid: c51e986cf109a214eb292af4ab8bb284, type: 3}
+    config: {fileID: 11400000, guid: f45aa3b592c4fd54db673025e5068fab, type: 2}
     poolContainer: {fileID: 279953869}
   - poolId: 4
-    prefab: {fileID: 6818246206260164804, guid: 1069d8dea53ac644ab7312c58ef5e512, type: 3}
-    config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
+    prefab: {fileID: 6315634972366253465, guid: a4d02a185c1e3f147a627e7a5f278d7a, type: 3}
+    config: {fileID: 11400000, guid: 99d8027c3cfe35b49b983be876d7f8a2, type: 2}
     poolContainer: {fileID: 228918465}
   - poolId: 5
-    prefab: {fileID: 1375842065728042414, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
-    config: {fileID: 11400000, guid: 00f73a3b1fc08ba468673ad45294ffc5, type: 2}
+    prefab: {fileID: 7069289247305563344, guid: ebd76bd2ef124ac4dbd60a828040d303, type: 3}
+    config: {fileID: 11400000, guid: a556b2a791fcabd4da31094e005dc323, type: 2}
     poolContainer: {fileID: 491517883}
   - poolId: 6
-    prefab: {fileID: 3796983072366540952, guid: 7df1ed61c5ae1b24b8c117032b9bbfac, type: 3}
-    config: {fileID: 11400000, guid: 3bc373bff1704e4488da8adb990e749d, type: 2}
+    prefab: {fileID: 8960775066664405606, guid: 0523292868edcd94b968fc4b94f5acaf, type: 3}
+    config: {fileID: 11400000, guid: 7c6332185084a8f44823bb845ec1bc54, type: 2}
     poolContainer: {fileID: 877300189}
   - poolId: 7
     prefab: {fileID: 3526490630064665744, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
@@ -9875,8 +9875,10 @@ Transform:
   - {fileID: 1186484686}
   - {fileID: 279953870}
   - {fileID: 228918466}
+  - {fileID: 1724972970}
   - {fileID: 491517884}
   - {fileID: 877300190}
+  - {fileID: 1292955259}
   - {fileID: 124985873}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -10286,6 +10288,37 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c544a4c9fb42044b9ed2c25bef9775b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1292955258
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1292955259}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Special - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1292955259
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1292955258}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1346370088
 GameObject:
   m_ObjectHideFlags: 0
@@ -26588,6 +26621,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1724333882}
   m_CullTransparentMesh: 1
+--- !u!1 &1724972969
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1724972970}
+  m_Layer: 0
+  m_Name: Enemies - Boss - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1724972970
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1724972969}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1055098067}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1733932739
 GameObject:
   m_ObjectHideFlags: 0
@@ -26844,7 +26908,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32dcc54a2070d5b4db4f26a47582a85a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _baseStats: {fileID: 11400000, guid: 52e5b54918ea77f41a6987928d77105e, type: 2}
+  _baseStats: {fileID: 11400000, guid: 403927c142e88c145abbe483c45eb6b5, type: 2}
   PlayerEventsManager: {fileID: 0}
 --- !u!50 &1823016964
 Rigidbody2D:

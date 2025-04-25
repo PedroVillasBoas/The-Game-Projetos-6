@@ -10,22 +10,22 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 77884ed3d36ff1f458f3d1515d280eb0, type: 3}
-  m_Name: EnemyStats - Boss - Easy
+  m_Name: EnemyStats - Minion - Medium - First
   m_EditorClassIdentifier: 
   Name: Name
   EntityVisualPrefab: {fileID: 0}
-  MaxHealth: 20
-  CurrentHealth: 20
-  MaxSpeed: 2
+  MaxHealth: 7
+  CurrentHealth: 7
+  MaxSpeed: 3
   MaxDefense: 0
-  Acceleration: 1.5
+  Acceleration: 1
   Experience: 0
-  BaseAttackDamage: 2
-  AttackSpeed: 1
+  BaseAttackDamage: 1
+  AttackSpeed: 0.5
   MaxBoostTime: 0
   MaxBoostSpeed: 0
   BoostRechargeRate: 0
   BaseMissileDamage: 0
   BaseMissileCooldown: 0
-  DoActionRadius: 17
-  EnemyType: 8
+  DoActionRadius: 8
+  EnemyType: 2
