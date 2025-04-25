@@ -246,6 +246,73 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8240160465331310485, guid: b442c319291beba448f847c5467c5198, type: 3}
   m_PrefabInstance: {fileID: 1411734196}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &84078078 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+  m_PrefabInstance: {fileID: 326908948}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &84078079
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84078078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &84078080
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 84078078}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &94091057
 GameObject:
   m_ObjectHideFlags: 0
@@ -1388,6 +1455,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -270.5
       objectReference: {fileID: 0}
+    - target: {fileID: 2011638984282663186, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 2064359465959546708, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
       value: 1
@@ -1407,6 +1478,10 @@ PrefabInstance:
     - target: {fileID: 2064359465959546708, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchoredPosition.y
       value: -35
+      objectReference: {fileID: 0}
+    - target: {fileID: 3142199570328460176, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: Preload
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3212350313468084613, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_AnchorMax.y
@@ -1522,6 +1597,38 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3410353589181650413, guid: fb36f387e08438046ab963803df00766, type: 3}
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1500188259}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetActive
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: UnityEngine.GameObject, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_BoolArgument
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3434314608646001033, guid: fb36f387e08438046ab963803df00766, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 3438372634888961626, guid: fb36f387e08438046ab963803df00766, type: 3}
@@ -2188,7 +2295,8 @@ PrefabInstance:
       propertyPath: objectToEnable
       value: 
       objectReference: {fileID: 1500188259}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8978484285052749879, guid: fb36f387e08438046ab963803df00766, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents:
@@ -2204,6 +2312,12 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 6067210359097538441, guid: fb36f387e08438046ab963803df00766, type: 3}
       insertIndex: -1
       addedObject: {fileID: 326908954}
+    - targetCorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 84078080}
+    - targetCorrespondingSourceObject: {fileID: 7272307416330657136, guid: fb36f387e08438046ab963803df00766, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 84078079}
   m_SourcePrefab: {fileID: 100100000, guid: fb36f387e08438046ab963803df00766, type: 3}
 --- !u!224 &326908949 stripped
 RectTransform:
@@ -10286,6 +10400,73 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0c544a4c9fb42044b9ed2c25bef9775b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &1298128161 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+  m_PrefabInstance: {fileID: 1500188256}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1298128162
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298128161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1298128163
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1298128161}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1346370088
 GameObject:
   m_ObjectHideFlags: 0
@@ -20822,9 +21003,21 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 5987136897979805936, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1500188260}
+    - targetCorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1298128163}
+    - targetCorrespondingSourceObject: {fileID: 7974649537434041611, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1298128162}
     - targetCorrespondingSourceObject: {fileID: 3287543002628601193, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1500188262}
+    - targetCorrespondingSourceObject: {fileID: 3287543002628601193, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1500188264}
+    - targetCorrespondingSourceObject: {fileID: 3287543002628601193, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1500188263}
   m_SourcePrefab: {fileID: 100100000, guid: 7a39e7ccf4a3b464bb60fc5fc4379586, type: 3}
 --- !u!224 &1500188257 stripped
 RectTransform:
@@ -20872,6 +21065,68 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneSO: {fileID: 11400000, guid: b545e677a9b49a942b3756d9a04eda33, type: 2}
+--- !u!114 &1500188263
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500188261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1207942405
+      Data2: 1341651352
+      Data3: 1160113034
+      Data4: 2110713712
+    Path: event:/SFX/UI/General/Button/OnEnter
+  Event: 
+  EventPlayTrigger: 17
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
+--- !u!114 &1500188264
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1500188261}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  CollisionTag: 
+  EventReference:
+    Guid:
+      Data1: 1989225764
+      Data2: 1225335958
+      Data3: -543114317
+      Data4: 520799874
+    Path: event:/SFX/UI/General/Button/OnClick
+  Event: 
+  EventPlayTrigger: 19
+  EventStopTrigger: 0
+  AllowFadeout: 1
+  TriggerOnce: 0
+  Preload: 1
+  NonRigidbodyVelocity: 0
+  Params: []
+  OverrideAttenuation: 0
+  OverrideMinDistance: 1
+  OverrideMaxDistance: 20
 --- !u!1 &1504036562
 GameObject:
   m_ObjectHideFlags: 0
