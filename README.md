@@ -4,7 +4,7 @@
 
 ![](https://api.visitorbadge.io/api/VisitorHit?user=seuusername&repo=VoidProtocol&countColor=%2300BFFF)
 
-# 🚀 Void Protocol
+# Void Protocol
 
 **Sobreviva. Evolua. Salve a Galáxia.**  
 Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike espacial onde suas habilidades e upgrades estratégicos determinam a sobrevivência da humanidade! Enfrente hordas alienígenas em planetas com dificuldades progressivas, colete XP para melhorias poderosas e ajude-nos a desvendar um mistério científico do mundo dos jogos: 
@@ -16,7 +16,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 
 ---
 
-## 🌌 Recursos
+## Recursos
 
 - **⚔️ Combate Espacial Intenso**: Pilote uma nave ágil em ação top-down contra inimigos alienígenas.
 - **🪐 Sistema de Planetas Procedurais**: Supere 3 níveis de dificuldade únicos em diversos planetas — cada um mais caótico que o anterior.
@@ -27,7 +27,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 
 ---
 
-## 🛠️ Instalação
+## Instalação
 
 ### Executável (Em Breve)
 1. Baixe a versão mais recente na [página de releases](#).
