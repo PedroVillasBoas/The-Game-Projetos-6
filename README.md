@@ -1,22 +1,22 @@
 # Void Protocol
 
-![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![Versão](https://img.shields.io/badge/Versão-0.0.1-blue) ![Licença](https://img.shields.io/badge/Licença-MIT-blue) ![Contributors](https://badgen.net/github/contributors/PedroVillasBoas/The-Game-Projetos-6) 
+![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![Versão](https://img.shields.io/badge/Versão-0.0.2-blue) ![Licença](https://img.shields.io/badge/Licença-MIT-blue) ![Contributors](https://badgen.net/github/contributors/PedroVillasBoas/The-Game-Projetos-6) 
 
 ![](https://api.visitorbadge.io/api/VisitorHit?user=seuusername&repo=VoidProtocol&countColor=%2300BFFF)
 
-# 🚀 Void Protocol
+# Void Protocol
 
 **Sobreviva. Evolua. Salve a Galáxia.**  
 Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike espacial onde suas habilidades e upgrades estratégicos determinam a sobrevivência da humanidade! Enfrente hordas alienígenas em planetas com dificuldades progressivas, colete XP para melhorias poderosas e ajude-nos a desvendar um mistério científico do mundo dos jogos: 
 *Como a dificuldade dos jogos impacta a diversão dos jogadores?*
 
 <div align="center">
-  <img src="https://via.placeholder.com/800x400?text=Captura+de+Tela+do+Jogo" width="600" alt="Prévia do Jogo">
+  <img src="https://img.itch.zone/aW1nLzIwODc2ODQ0LnBuZw==/original/iGvAVa.png" width="600" alt="Prévia do Jogo">
 </div>
 
 ---
 
-## 🌌 Recursos
+## Recursos
 
 - **⚔️ Combate Espacial Intenso**: Pilote uma nave ágil em ação top-down contra inimigos alienígenas.
 - **🪐 Sistema de Planetas Procedurais**: Supere 3 níveis de dificuldade únicos em diversos planetas — cada um mais caótico que o anterior.
@@ -27,7 +27,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 
 ---
 
-## 🛠️ Instalação
+## Instalação
 
 ### Executável (Em Breve)
 1. Baixe a versão mais recente na [página de releases](#).
