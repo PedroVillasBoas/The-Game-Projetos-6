@@ -13,6 +13,9 @@ namespace GoodVillageGames.Game.Core.Global
     {
         public static GlobalFileManager Instance { get; private set; }
 
+        public const string FILENAME_SAVEDATA = "-VoidProtocolGameplayData.txt";
+        public static string FOLDERNAME_SAVEDATA => Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Players - Gameplay Data");
+
         // Player Data
         private string playerName = "Anonymous";
         private List<GameSessionData> sessions = new();
@@ -63,6 +66,16 @@ namespace GoodVillageGames.Game.Core.Global
             }
             Instance = this;
             DontDestroyOnLoad(gameObject);
+
+		    // Creating save directory if needed
+            try {
+                if (!Directory.Exists(FOLDERNAME_SAVEDATA))
+                    Directory.CreateDirectory(FOLDERNAME_SAVEDATA);
+            }
+            catch (Exception e)
+            {
+                Debug.LogError($"Failed to create save directory: {e.Message}");
+            }
         }
 
         void Start()
@@ -275,8 +288,8 @@ namespace GoodVillageGames.Game.Core.Global
         {
             if (currentSession == null) return;
 
-            string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
-            string path = Path.Combine(Application.persistentDataPath, fileName);
+		    string fileName = $"{playerName}{FILENAME_SAVEDATA}";
+            string path = Path.Combine(FOLDERNAME_SAVEDATA, fileName);
 
 #if UNITY_EDITOR
             Debug.Log($"Saving player data to: {path}");
