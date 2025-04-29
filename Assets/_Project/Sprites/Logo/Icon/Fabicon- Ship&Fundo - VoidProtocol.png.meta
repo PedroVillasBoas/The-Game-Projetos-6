@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 55bca0dcc69c8844faee8cb57bd042d3
+guid: 14c3edcb450690a4294b178fb414efbb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -740614543128703070
-    second: Icone-64-VoidProtocol_0
+      213: -7642171012051273979
+    second: Fabicon- Ship&Fundo - VoidProtocol 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -126,13 +126,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Icone-64-VoidProtocol_0
+      name: Fabicon- Ship&Fundo - VoidProtocol 1_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 64
-        height: 64
+        width: 1024
+        height: 1024
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -141,8 +141,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 2af43593ffec8b5f0800000000000000
-      internalID: -740614543128703070
+      spriteID: 50775e954fd81f590800000000000000
+      internalID: -7642171012051273979
       vertices: []
       indices: 
       edges: []
@@ -161,7 +161,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Icone-64-VoidProtocol_0: -740614543128703070
+      Fabicon- Ship&Fundo - VoidProtocol 1_0: -7642171012051273979
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,43 +1,43 @@
 fileFormatVersion: 2
-guid: 78ecb3bbe0e620a4ea8897a39ef32225
+guid: c56140b383b28d14db02715fc0796ec9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7348130541765306413
-    second: Logo-VoidProtocol-TextOnly_0
+      213: 5772642539132709359
+    second: Logo - Game - SemFundo - TextOnly_0
   - first:
-      213: 1213024352528884963
-    second: Logo-VoidProtocol-TextOnly_1
+      213: 2742477062205605881
+    second: Logo - Game - SemFundo - TextOnly_1
   - first:
-      213: 7014387434118580475
-    second: Logo-VoidProtocol-TextOnly_2
+      213: -5048570968683514936
+    second: Logo - Game - SemFundo - TextOnly_2
   - first:
-      213: 3167365107788911324
-    second: Logo-VoidProtocol-TextOnly_3
+      213: 1596923985935158945
+    second: Logo - Game - SemFundo - TextOnly_3
   - first:
-      213: 4090926243528817671
-    second: Logo-VoidProtocol-TextOnly_4
+      213: 8593266603751370471
+    second: Logo - Game - SemFundo - TextOnly_4
   - first:
-      213: -8637452312660436466
-    second: Logo-VoidProtocol-TextOnly_5
+      213: -7085458271897695143
+    second: Logo - Game - SemFundo - TextOnly_5
   - first:
-      213: -7949966675928388036
-    second: Logo-VoidProtocol-TextOnly_6
+      213: -8299826884811093328
+    second: Logo - Game - SemFundo - TextOnly_6
   - first:
-      213: -4223826661521436017
-    second: Logo-VoidProtocol-TextOnly_7
+      213: -8682698530810928965
+    second: Logo - Game - SemFundo - TextOnly_7
   - first:
-      213: 1814480277967863341
-    second: Logo-VoidProtocol-TextOnly_8
+      213: 2301611966522079516
+    second: Logo - Game - SemFundo - TextOnly_8
   - first:
-      213: -168043230303310496
-    second: Logo-VoidProtocol-TextOnly_9
+      213: -3145612647821639235
+    second: Logo - Game - SemFundo - TextOnly_9
   - first:
-      213: -2942308259602304720
-    second: Logo-VoidProtocol-TextOnly_10
+      213: -4342404217306070739
+    second: Logo - Game - SemFundo - TextOnly_10
   - first:
-      213: 2388272456358558820
-    second: Logo-VoidProtocol-TextOnly_11
+      213: 5301474262484222108
+    second: Logo - Game - SemFundo - TextOnly_11
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -159,13 +159,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_0
+      name: Logo - Game - SemFundo - TextOnly_0
       rect:
         serializedVersion: 2
-        x: 187
-        y: 182
-        width: 179
-        height: 163
+        x: 143
+        y: 166
+        width: 201
+        height: 203
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -174,20 +174,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d28ae11bbcdc9f560800000000000000
-      internalID: 7348130541765306413
+      spriteID: fe96058fdcb8c1050800000000000000
+      internalID: 5772642539132709359
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_1
+      name: Logo - Game - SemFundo - TextOnly_1
       rect:
         serializedVersion: 2
-        x: 377
-        y: 182
-        width: 153
-        height: 163
+        x: 360
+        y: 166
+        width: 183
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -196,20 +196,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 3e4e164c83785d010800000000000000
-      internalID: 1213024352528884963
+      spriteID: 9f70c699b5c3f0620800000000000000
+      internalID: 2742477062205605881
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_2
+      name: Logo - Game - SemFundo - TextOnly_2
       rect:
         serializedVersion: 2
-        x: 550
-        y: 182
-        width: 39
-        height: 163
+        x: 568
+        y: 165
+        width: 44
+        height: 204
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -218,20 +218,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: bf80a9f153c185160800000000000000
-      internalID: 7014387434118580475
+      spriteID: 8c3f444d37fdfe9b0800000000000000
+      internalID: -5048570968683514936
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_3
+      name: Logo - Game - SemFundo - TextOnly_3
       rect:
         serializedVersion: 2
-        x: 609
-        y: 182
-        width: 149
-        height: 163
+        x: 639
+        y: 166
+        width: 178
+        height: 202
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -240,20 +240,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: cd299bbb8cdb4fb20800000000000000
-      internalID: 3167365107788911324
+      spriteID: 1ae47f287e9692610800000000000000
+      internalID: 1596923985935158945
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_4
+      name: Logo - Game - SemFundo - TextOnly_4
       rect:
         serializedVersion: 2
-        x: 121
-        y: 57
-        width: 82
-        height: 98
+        x: 54
+        y: 27
+        width: 97
+        height: 112
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -262,20 +262,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 70cbbdb6eb3e5c830800000000000000
-      internalID: 4090926243528817671
+      spriteID: 7eee3d0727a614770800000000000000
+      internalID: 8593266603751370471
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_5
+      name: Logo - Game - SemFundo - TextOnly_5
       rect:
         serializedVersion: 2
-        x: 213
-        y: 57
-        width: 85
-        height: 98
+        x: 161
+        y: 28
+        width: 97
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -284,20 +284,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: e0a9f7382ea912880800000000000000
-      internalID: -8637452312660436466
+      spriteID: 95c4fa8fd356bad90800000000000000
+      internalID: -7085458271897695143
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_6
+      name: Logo - Game - SemFundo - TextOnly_6
       rect:
         serializedVersion: 2
-        x: 309
-        y: 57
-        width: 86
-        height: 98
+        x: 270
+        y: 28
+        width: 100
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -306,20 +306,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c3e6811dd6b0ca190800000000000000
-      internalID: -7949966675928388036
+      spriteID: 0ba09913c6711dc80800000000000000
+      internalID: -8299826884811093328
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_7
+      name: Logo - Game - SemFundo - TextOnly_7
       rect:
         serializedVersion: 2
-        x: 402
-        y: 57
-        width: 81
-        height: 98
+        x: 378
+        y: 28
+        width: 101
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -328,20 +328,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f82d037b704f165c0800000000000000
-      internalID: -4223826661521436017
+      spriteID: bb0653b60bbd08780800000000000000
+      internalID: -8682698530810928965
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_8
+      name: Logo - Game - SemFundo - TextOnly_8
       rect:
         serializedVersion: 2
-        x: 490
-        y: 57
-        width: 85
-        height: 98
+        x: 488
+        y: 28
+        width: 100
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -350,20 +350,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: d2ef93403345e2910800000000000000
-      internalID: 1814480277967863341
+      spriteID: c19365b93e7f0ff10800000000000000
+      internalID: 2301611966522079516
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_9
+      name: Logo - Game - SemFundo - TextOnly_9
       rect:
         serializedVersion: 2
-        x: 587
-        y: 57
-        width: 73
-        height: 98
+        x: 600
+        y: 28
+        width: 98
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -372,20 +372,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 06dacd6829dfaadf0800000000000000
-      internalID: -168043230303310496
+      spriteID: db18d9586f98854d0800000000000000
+      internalID: -3145612647821639235
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_10
+      name: Logo - Game - SemFundo - TextOnly_10
       rect:
         serializedVersion: 2
-        x: 672
-        y: 57
-        width: 86
-        height: 98
+        x: 709
+        y: 28
+        width: 100
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -394,20 +394,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 031f4b61a32da27d0800000000000000
-      internalID: -2942308259602304720
+      spriteID: d2140541f5eacb3c0800000000000000
+      internalID: -4342404217306070739
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Logo-VoidProtocol-TextOnly_11
+      name: Logo - Game - SemFundo - TextOnly_11
       rect:
         serializedVersion: 2
-        x: 771
-        y: 57
-        width: 68
-        height: 98
+        x: 821
+        y: 28
+        width: 90
+        height: 111
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -416,8 +416,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 46cf91c3529d42120800000000000000
-      internalID: 2388272456358558820
+      spriteID: c908f39d0ce929940800000000000000
+      internalID: 5301474262484222108
       vertices: []
       indices: 
       edges: []
@@ -436,18 +436,18 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Logo-VoidProtocol-TextOnly_0: 7348130541765306413
-      Logo-VoidProtocol-TextOnly_1: 1213024352528884963
-      Logo-VoidProtocol-TextOnly_10: -2942308259602304720
-      Logo-VoidProtocol-TextOnly_11: 2388272456358558820
-      Logo-VoidProtocol-TextOnly_2: 7014387434118580475
-      Logo-VoidProtocol-TextOnly_3: 3167365107788911324
-      Logo-VoidProtocol-TextOnly_4: 4090926243528817671
-      Logo-VoidProtocol-TextOnly_5: -8637452312660436466
-      Logo-VoidProtocol-TextOnly_6: -7949966675928388036
-      Logo-VoidProtocol-TextOnly_7: -4223826661521436017
-      Logo-VoidProtocol-TextOnly_8: 1814480277967863341
-      Logo-VoidProtocol-TextOnly_9: -168043230303310496
+      Logo - Game - SemFundo - TextOnly_0: 5772642539132709359
+      Logo - Game - SemFundo - TextOnly_1: 2742477062205605881
+      Logo - Game - SemFundo - TextOnly_10: -4342404217306070739
+      Logo - Game - SemFundo - TextOnly_11: 5301474262484222108
+      Logo - Game - SemFundo - TextOnly_2: -5048570968683514936
+      Logo - Game - SemFundo - TextOnly_3: 1596923985935158945
+      Logo - Game - SemFundo - TextOnly_4: 8593266603751370471
+      Logo - Game - SemFundo - TextOnly_5: -7085458271897695143
+      Logo - Game - SemFundo - TextOnly_6: -8299826884811093328
+      Logo - Game - SemFundo - TextOnly_7: -8682698530810928965
+      Logo - Game - SemFundo - TextOnly_8: 2301611966522079516
+      Logo - Game - SemFundo - TextOnly_9: -3145612647821639235
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

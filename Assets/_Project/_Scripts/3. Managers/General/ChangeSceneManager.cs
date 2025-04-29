@@ -1,6 +1,5 @@
 using UnityEngine;
 using DG.Tweening;
-using System.Collections;
 using UnityEngine.SceneManagement;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 
@@ -11,12 +10,6 @@ namespace GoodVillageGames.Game.Core.Manager
         // Singleton
         public static ChangeSceneManager Instance { get; private set; }
 
-        // Loading Scene
-        [SerializeField] SceneScriptableObject _loadingScene;
-
-        private SceneScriptableObject _sceneToLoad;
-        private string _lastSceneLoaded;
-
         private void Awake()
         {
             if (Instance == null)
@@ -25,43 +18,15 @@ namespace GoodVillageGames.Game.Core.Manager
                 DontDestroyOnLoad(gameObject);
             }
             else
-            {
                 Destroy(gameObject);
-            }
         }
 
-        public void ChangeScene(SceneScriptableObject _sceneSO)
+        public void ChangeScene(SceneScriptableObject targetScene)
         {
-            if (_sceneSO != null)
-            {
-                _lastSceneLoaded = UnityEngine.SceneManagement.SceneManager.GetActiveScene().name;
-                _sceneToLoad = _sceneSO;
-                DOTween.KillAll();
-                UnityEngine.SceneManagement.SceneManager.LoadScene(_sceneToLoad.Scene, LoadSceneMode.Single);
-            }
+            if (targetScene != null)
+                SceneManager.LoadScene(targetScene.Scene, LoadSceneMode.Single);
             else
-                Debug.LogError($"Trying to load Scene: {_sceneSO.Scene}");
+                Debug.LogError("Target scene is not assigned in the inspector.");
         }
-
-        public SceneScriptableObject GetPendingScene()
-        {
-            return _sceneToLoad;
-        }
-
-        public string GetLastLoadedScene()
-        {
-            return _lastSceneLoaded;
-        }
-
-        void OnEnable()
-        {
-            EventsManager.Instance.OnChangeSceneEventTriggered += ChangeScene;
-        }
-
-        void OnDisable()
-        {
-            EventsManager.Instance.OnChangeSceneEventTriggered -= ChangeScene;
-        }
-
     }
 }

@@ -7,14 +7,9 @@ namespace GoodVillageGames.Game.General.UI.Buttons
 {
     public class ChangeSceneButton : MonoBehaviour, IPointerClickHandler
     { 
-        [SerializeField] private SceneScriptableObject sceneSO;
+        [SerializeField] protected SceneScriptableObject sceneSO;
 
-        public void OnPointerClick(PointerEventData eventData)
-        {
-            ChangeScene();
-        }
-
-        private void ChangeScene()
+        public virtual void OnPointerClick(PointerEventData eventData)
         {
             ChangeSceneManager.Instance.ChangeScene(sceneSO);
         }

@@ -12,4 +12,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fdd75a3f9568d694b81cb614d757b8d5, type: 3}
   m_Name: Game Over - SceneSO
   m_EditorClassIdentifier: 
-  Scene: Scene-GameOver
+  Scene: Assets/_Project/_Scenes/Scene-GameOver.unity

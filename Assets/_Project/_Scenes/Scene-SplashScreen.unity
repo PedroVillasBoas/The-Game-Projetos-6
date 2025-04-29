@@ -267,7 +267,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 292027af82b10424284803e62be4e712, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _loadingScene: {fileID: 11400000, guid: 9404ec6d72cb2e04eb1c71d81e9450fd, type: 2}
 --- !u!4 &329876522
 Transform:
   m_ObjectHideFlags: 0
@@ -963,7 +962,7 @@ RectTransform:
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
   m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1169.5376, y: 487.3073}
+  m_SizeDelta: {x: 1154.9795, y: 481.2415}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &947199311
 MonoBehaviour:
@@ -978,14 +977,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0, g: 1, b: 0.5042522, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 78ecb3bbe0e620a4ea8897a39ef32225, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c56140b383b28d14db02715fc0796ec9, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1593,6 +1592,10 @@ PrefabInstance:
     - target: {fileID: 5525594709735803357, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5755687651235198459, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_Name
+      value: Logo - HContainer
       objectReference: {fileID: 0}
     - target: {fileID: 7764498610978677287, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_Enabled
