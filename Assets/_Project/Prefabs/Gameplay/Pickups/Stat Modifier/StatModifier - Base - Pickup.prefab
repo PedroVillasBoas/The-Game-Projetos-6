@@ -4931,6 +4931,7 @@ GameObject:
   - component: {fileID: 8831484735268071246}
   - component: {fileID: 4780578002431727309}
   - component: {fileID: 1827665687041188464}
+  - component: {fileID: 7848598641232543559}
   m_Layer: 10
   m_Name: StatModifier - Base - Pickup
   m_TagString: Untagged
@@ -5018,6 +5019,18 @@ MonoBehaviour:
   _operatorType: 0
   _value: 1
   _duration: 1
+--- !u!114 &7848598641232543559
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1483232579963802399}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2b262bf9891b31e48bbb2f1ce64bbfab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &2085641930254108381
 GameObject:
   m_ObjectHideFlags: 0
@@ -5212,8 +5225,8 @@ SortingGroup:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6697508852044796843}
   m_Enabled: 1
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
+  m_SortingLayerID: -1485221587
+  m_SortingLayer: 6
   m_SortingOrder: 0
   m_SortAtRoot: 0
 --- !u!1 &7060380770680230387
@@ -5276,9 +5289,9 @@ MonoBehaviour:
   Preload: 0
   NonRigidbodyVelocity: 0
   Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
+  OverrideAttenuation: 1
+  OverrideMinDistance: 10
+  OverrideMaxDistance: 50
 --- !u!1 &8915343971217868412
 GameObject:
   m_ObjectHideFlags: 0

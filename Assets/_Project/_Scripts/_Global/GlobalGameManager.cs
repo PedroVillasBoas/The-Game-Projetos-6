@@ -1,5 +1,6 @@
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.UI;
 
 namespace GoodVillageGames.Game.Core.Global
 {

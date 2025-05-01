@@ -1,0 +1,2 @@
+SessionID,Player,SessionStart,SessionEnd,DurationSeconds,TotalScore,Difficulty,EnemiesDefeated,UpgradesCollected,NormalAccuracy,MissileAccuracy,QuitViaPause,PlayerStats,IsFinal,TotalRunTime
+20250501164633-3fc7,Peups,16:46:33 01-05-2025,16:47:30 01-05-2025,57,02766,10,0,MinionEasyFirst:1,,66,67%,0,00%,True,MaxHealth:50|CurrentHealth:50|MaxSpeed:20|MaxDefense:0|Acceleration:5|BaseAttackDamage:5|AttackSpeed:1|MaxBoostTime:1|MaxBoostSpeed:40|BaseMissileDamage:10|BaseMissileCooldown:10|BoostRechargeRate:0,2|Experience:0|Level:1|CurrentExp:0|ExpToNextLevel:5,True,12,25438

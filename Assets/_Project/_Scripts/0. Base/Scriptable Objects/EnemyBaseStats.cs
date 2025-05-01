@@ -1,7 +1,6 @@
-using GoodVillageGames.Game.General;
-using TriInspector;
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using TriInspector;
+using GoodVillageGames.Game.Enums.Enemy;
 
 namespace GoodVillageGames.Game.General
 {
@@ -11,6 +10,6 @@ namespace GoodVillageGames.Game.General
     {
         [Title("Enemy Stats")]
         [Group("Enemy Stats")] public float DoActionRadius = 100f;
-        [Group("Enemy Stats")] public  EnemyType EnemyType;
+        [Group("Enemy Stats")] public EnemyType EnemyType;
     }
 }

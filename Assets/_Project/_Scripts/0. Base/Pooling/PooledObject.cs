@@ -1,6 +1,6 @@
 using UnityEngine;
 using GoodVillageGames.Game.Core.Manager;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Pooling;
 
 namespace GoodVillageGames.Game.Core.Pooling
 {

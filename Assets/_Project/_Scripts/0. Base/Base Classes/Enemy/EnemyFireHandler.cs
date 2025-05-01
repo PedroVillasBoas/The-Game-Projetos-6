@@ -3,10 +3,10 @@ using TriInspector;
 using System.Collections;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Core.Enemy.AI;
+using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Projectiles;
-using static GoodVillageGames.Game.Enums.Enums;
-using GoodVillageGames.Game.Core.Enemy.AI;
 
 namespace GoodVillageGames.Game.Handlers
 {

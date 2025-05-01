@@ -1,8 +1,8 @@
 using FMODUnity;
 using UnityEngine;
-using FMOD.Studio;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.Audio;
 using GoodVillageGames.Game.Handlers.UI.Audio;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Global
 {

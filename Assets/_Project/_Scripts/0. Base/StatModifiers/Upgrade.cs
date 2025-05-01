@@ -1,6 +1,6 @@
 using System;
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Stats;
 using GoodVillageGames.Game.Core.GameObjectEntity;
 
 namespace GoodVillageGames.Game.Core.Attributes.Modifiers

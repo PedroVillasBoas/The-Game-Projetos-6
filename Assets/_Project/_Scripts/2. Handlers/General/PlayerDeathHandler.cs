@@ -1,7 +1,7 @@
 using UnityEngine;
-using GoodVillageGames.Game.Core.Global;
-using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Handlers
 {

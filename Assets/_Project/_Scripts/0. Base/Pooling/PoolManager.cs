@@ -2,7 +2,7 @@ using UnityEngine;
 using TriInspector;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Pooling;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Pooling;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -10,10 +10,16 @@ namespace GoodVillageGames.Game.Core.Manager
     {
         public static PoolManager Instance { get; private set; }
 
-        [Title("Pool Setup")]
-        [SerializeField] private List<PoolEntry> poolEntries = new();
+        [Title("Pools Setup")]
+        [SerializeField] private List<PoolEntry> playerPoolEntries = new();
+        [SerializeField] private List<PoolEntry> minionsPoolEntries = new();
+        [SerializeField] private List<PoolEntry> bossesPoolEntries = new();
+        [SerializeField] private List<PoolEntry> projectilesPoolEntries = new();
+        [SerializeField] private List<PoolEntry> expPoolEntries = new();
+        [SerializeField] private List<PoolEntry> itemPoolEntries = new();
+        [SerializeField] private List<PoolEntry> dmgNumbersPoolEntries = new();
 
-        private readonly Dictionary<PoolID, ObjectPool> pools = new();
+        private readonly Dictionary<PoolID, ObjectPool> poolsDict = new();
 
         void Awake()
         {
@@ -23,41 +29,81 @@ namespace GoodVillageGames.Game.Core.Manager
                 return;
             }
             Instance = this;
+            InitializePools();
+        }
 
-            // Creating an ObjectPool for each PoolEntry
-            foreach (var entry in poolEntries)
+        // Creating an ObjectPool for each PoolEntry
+        void InitializePools()
+        {
+            var allPoolEntries = GetAllPoolEntries();
+            
+            foreach (var entry in allPoolEntries)
             {
-                if (entry.prefab == null || entry.poolId == PoolID.None)
+                if (!IsPoolEntryValid(entry))
                 {
-                    Debug.LogWarning("PoolEntry is missing a prefab or poolId. Skipping entry.");
+                    Debug.LogWarning($"Invalid PoolEntry: {(entry.prefab == null ? "Missing prefab" : "Missing PoolID")}");
                     continue;
                 }
 
-                int poolSize = entry.config != null ? entry.config.InitialPoolSize : 20;
-                bool autoExpand = entry.config != null ? entry.config.AutoExpand : true;
-                int expandAmount = entry.config != null ? entry.config.ExpandAmount : 5;
-
-                ObjectPool pool = new(entry.poolId, entry.prefab, poolSize, entry.poolContainer.transform, autoExpand, expandAmount);
-                pools.Add(entry.poolId, pool);
+                CreatePool(entry);
             }
+        }
+
+        IEnumerable<PoolEntry> GetAllPoolEntries()
+        {
+            var allEntries = new List<PoolEntry>();
+
+            allEntries.AddRange(playerPoolEntries);
+            allEntries.AddRange(minionsPoolEntries);
+            allEntries.AddRange(bossesPoolEntries);
+            allEntries.AddRange(expPoolEntries);
+            allEntries.AddRange(projectilesPoolEntries);
+            allEntries.AddRange(itemPoolEntries);
+            allEntries.AddRange(dmgNumbersPoolEntries);
+            
+            return allEntries;
+        }
+
+        bool IsPoolEntryValid(PoolEntry entry)
+        {
+            return entry.prefab != null && entry.poolId != PoolID.None;
+        }
+
+        void CreatePool(PoolEntry entry)
+        {
+            var config = entry.config;
+            var poolSize = config?.InitialPoolSize ?? 20;
+            var autoExpand = config?.AutoExpand ?? true;
+            var expandAmount = config?.ExpandAmount ?? 5;
+
+            var pool = new ObjectPool(
+                entry.poolId,
+                entry.prefab,
+                poolSize,
+                entry.poolContainer.transform,
+                autoExpand,
+                expandAmount
+            );
+
+            poolsDict.Add(entry.poolId, pool);
         }
 
         public GameObject GetPooledObject(PoolID poolId)
         {
-            if (pools.TryGetValue(poolId, out ObjectPool pool))
-            {
-                return pool.GetGameObject();
-            }
-            else
+            if (!poolsDict.TryGetValue(poolId, out var pool))
             {
                 Debug.LogWarning($"Pool with ID '{poolId}' not found.");
                 return null;
             }
+
+            return pool.GetGameObject();
         }
 
         public void ReturnPooledObject(PoolID poolId, GameObject obj)
         {
-            if (pools.TryGetValue(poolId, out ObjectPool pool))
+            if (obj == null) return;
+
+            if (poolsDict.TryGetValue(poolId, out var pool))
             {
                 pool.ReturnGameObject(obj);
             }

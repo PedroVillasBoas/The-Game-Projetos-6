@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Enums.Upgrades;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.General.UI
 {

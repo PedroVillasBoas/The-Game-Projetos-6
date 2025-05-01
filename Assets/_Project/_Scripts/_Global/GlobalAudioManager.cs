@@ -4,7 +4,8 @@ using UnityEngine;
 using FMOD.Studio;
 using TriInspector;
 using System.Collections.Generic;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.Audio;
 
 namespace GoodVillageGames.Game.Core.Global
 {

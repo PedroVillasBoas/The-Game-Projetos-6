@@ -1,9 +1,9 @@
 using UnityEngine;
 using TriInspector;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Global;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {

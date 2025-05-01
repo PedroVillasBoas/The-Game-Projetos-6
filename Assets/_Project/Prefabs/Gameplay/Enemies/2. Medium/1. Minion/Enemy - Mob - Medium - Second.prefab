@@ -99,7 +99,7 @@ PrefabInstance:
     - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: _baseStats
       value: 
-      objectReference: {fileID: 11400000, guid: 0343bbb08e203f24fb60deacd61d2bef, type: 2}
+      objectReference: {fileID: 11400000, guid: e557eea81fdb28a4fb4851b9fc591223, type: 2}
     - target: {fileID: 6142738614547953793, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: enemyDeathVFX
       value: 

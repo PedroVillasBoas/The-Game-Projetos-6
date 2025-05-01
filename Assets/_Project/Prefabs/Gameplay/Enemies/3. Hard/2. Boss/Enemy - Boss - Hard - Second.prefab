@@ -8,6 +8,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 671947489288330281, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: m_Radius
+      value: 0.8
+      objectReference: {fileID: 0}
     - target: {fileID: 1166336593235004347, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: EventReference.Path
       value: event:/SFX/Enemies/Medium/Enemy - Medium - OnShoot
@@ -144,10 +148,56 @@ PrefabInstance:
       propertyPath: damagePrefab
       value: 
       objectReference: {fileID: 4456500207233633640, guid: 9a968ebe5e13e9b4291ccec015fea38c, type: 3}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 8264780149224093637, guid: 01069057d8db26f41994df26663cd80f, type: 3}
     m_RemovedGameObjects:
     - {fileID: 5262867832221071143, guid: 01069057d8db26f41994df26663cd80f, type: 3}
     - {fileID: 8098147289171361492, guid: 01069057d8db26f41994df26663cd80f, type: 3}
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 8867386623800979541, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 4255391625771881607}
   m_SourcePrefab: {fileID: 100100000, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+--- !u!1 &4825492404112751391 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8867386623800979541, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+  m_PrefabInstance: {fileID: 4177333713422076746}
+  m_PrefabAsset: {fileID: 0}
+--- !u!70 &4255391625771881607
+CapsuleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4825492404112751391}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_ForceSendLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ForceReceiveLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_ContactCaptureLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_CallbackLayers:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_CompositeOperation: 0
+  m_CompositeOrder: 0
+  m_Offset: {x: 0, y: -0.6678593}
+  m_Size: {x: 1.8307766, y: 3.326384}
+  m_Direction: 0

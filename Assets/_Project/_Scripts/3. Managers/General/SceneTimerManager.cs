@@ -1,7 +1,7 @@
 using UnityEngine;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Util.Timer;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {

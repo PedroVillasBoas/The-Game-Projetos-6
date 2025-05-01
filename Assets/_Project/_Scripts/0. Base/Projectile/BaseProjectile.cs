@@ -5,7 +5,7 @@ using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Pooling;
 using GoodVillageGames.Game.Core.Util.Timer;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Projectiles;
 
 namespace GoodVillageGames.Game.Core.Projectiles
 {

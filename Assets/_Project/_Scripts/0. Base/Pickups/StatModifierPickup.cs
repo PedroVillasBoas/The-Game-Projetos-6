@@ -1,9 +1,9 @@
 using System;
 using UnityEngine;
+using GoodVillageGames.Game.Enums.Stats;
 using GoodVillageGames.Game.Core.Attributes;
-using GoodVillageGames.Game.Core.Attributes.Modifiers;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.Core.Pickups
 {

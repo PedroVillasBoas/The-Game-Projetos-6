@@ -1,7 +1,10 @@
 using System;
-using GoodVillageGames.Game.Core.Attributes.Modifiers;
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.UI;
+using GoodVillageGames.Game.Enums.Enemy;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
+
 
 namespace GoodVillageGames.Game.Core.Global
 {

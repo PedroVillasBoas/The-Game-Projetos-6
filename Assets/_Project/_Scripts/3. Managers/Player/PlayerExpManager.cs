@@ -1,4 +1,5 @@
 using UnityEngine;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Pickups;
@@ -69,7 +70,7 @@ namespace GoodVillageGames.Game.Core.Manager
             _currentLevel++;
             IncreaseMaxExp();
             PlayerAudioHandler.Instance.PlayPlayerLevelUpSFX();
-            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.UpgradeScreen);
+            GlobalEventsManager.Instance.ChangeGameState(GameState.UpgradeScreen);
         }
 
         void OnTriggerEnter2D(Collider2D collision)

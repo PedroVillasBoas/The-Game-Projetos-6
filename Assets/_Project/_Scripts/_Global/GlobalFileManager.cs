@@ -6,6 +6,10 @@ using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Manager;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
+using GoodVillageGames.Game.Enums.Enemy;
+using GoodVillageGames.Game.Enums.Upgrades;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.Projectiles;
 
 namespace GoodVillageGames.Game.Core.Global
 {

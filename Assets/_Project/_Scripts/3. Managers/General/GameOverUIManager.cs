@@ -4,7 +4,7 @@ using TriInspector;
 using System.Collections;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Global;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Upgrades;
 
 namespace GoodVillageGames.Game.Core.Manager
 {

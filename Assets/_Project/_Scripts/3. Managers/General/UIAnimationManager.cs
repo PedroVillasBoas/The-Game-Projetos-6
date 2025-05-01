@@ -1,9 +1,10 @@
 using UnityEngine;
 using DG.Tweening;
 using System.Collections;
+using GoodVillageGames.Game.Enums.UI;
+using GoodVillageGames.Game.Core.Global;
 using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.ScriptableObjects;
-using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Core.Manager
 {

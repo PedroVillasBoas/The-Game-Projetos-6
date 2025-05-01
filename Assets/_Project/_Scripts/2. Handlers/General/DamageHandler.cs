@@ -5,6 +5,7 @@ using GoodVillageGames.Game.Core.Enemy;
 using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Projectiles;
 using GoodVillageGames.Game.Core.Global;
+using GoodVillageGames.Game.Enums.Pooling;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -34,7 +35,7 @@ namespace GoodVillageGames.Game.Handlers
 
         private void PoolDamageNumber()
         {
-            GameObject dmInstance = PoolManager.Instance.GetPooledObject(Enums.Enums.PoolID.DamageNumbers);
+            GameObject dmInstance = PoolManager.Instance.GetPooledObject(PoolID.DamageNumbers);
             if (dmInstance.TryGetComponent(out DamageNumbers component))
             {
                 component.SetInfo(_damageAmount.ToString());

@@ -1,11 +1,12 @@
 using System;
 using UnityEngine;
+using GoodVillageGames.Game.Core;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Global;
-using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Manager.UI;
+using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Core;
 
 namespace GoodVillageGames.Game.Handlers
 {
@@ -49,7 +50,7 @@ namespace GoodVillageGames.Game.Handlers
 
         private void HandleDeath()
         {
-            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.PlayerDied);
+            GlobalEventsManager.Instance.ChangeGameState(GameState.PlayerDied);
             gameObject.SetActive(false);
         }
 

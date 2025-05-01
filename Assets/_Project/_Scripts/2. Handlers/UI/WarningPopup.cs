@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Util.Timer;
 
@@ -45,7 +46,7 @@ namespace GoodVillageGames.Game.Handlers.UI
         {
             if (gameOver)
             {
-                GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.PlayerDied);
+                GlobalEventsManager.Instance.ChangeGameState(GameState.PlayerDied);
                 timer.Stop();
                 timerText.text = "00:000";
 

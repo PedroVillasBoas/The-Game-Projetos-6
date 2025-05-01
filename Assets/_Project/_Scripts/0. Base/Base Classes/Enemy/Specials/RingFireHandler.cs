@@ -1,7 +1,7 @@
 using UnityEngine;
 using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.Projectiles;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Handlers
 {

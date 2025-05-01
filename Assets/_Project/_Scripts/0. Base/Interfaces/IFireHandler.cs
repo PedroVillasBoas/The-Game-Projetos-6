@@ -1,5 +1,5 @@
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Pooling;
 
 namespace GoodVillageGames.Game.Interfaces
 {

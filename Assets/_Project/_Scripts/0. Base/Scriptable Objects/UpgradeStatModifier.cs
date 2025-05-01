@@ -1,6 +1,6 @@
 using UnityEngine;
 using TriInspector;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Upgrades;
 
 namespace GoodVillageGames.Game.Core.Attributes.Modifiers
 {

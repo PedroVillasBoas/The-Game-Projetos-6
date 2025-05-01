@@ -1,6 +1,6 @@
 namespace GoodVillageGames.Game.Enums
 {
-    public class Enums
+    public partial class Enums
     {
         public enum AnimationID
         {
@@ -46,26 +46,6 @@ namespace GoodVillageGames.Game.Enums
             DEFAULT_DIFFICULTY_SELECT,
         }
 
-        public enum UIState
-        {
-            PLAYING_UI_ANIM,
-            NORMAL_UI,
-            NoAnimationPlaying,
-        }
-
-        public enum GameState
-        {
-            MainMenu,
-            Tutorial,
-            GameBegin,
-            GameContinue,
-            GamePaused,
-            UpgradeScreen,
-            PlayerDied,
-            GameOver,
-            SplashScreen,
-        }
-
         public enum UIButtonActionType
         {
             UIChange,
@@ -89,124 +69,6 @@ namespace GoodVillageGames.Game.Enums
             Mods,
             Settings,
             GameOver,
-        }
-
-        public enum ProjectileStatsEnum
-        {
-            ProjectileDamage,
-            ProjectileAmount,
-            ProjectileTravelSpeed,
-            ProjectileLifetime,
-            ProjectileExplosionRadius,
-        }
-
-        public enum PoolID
-        {
-            None,
-            PlayerProjectile,
-            PlayerMissile,
-            EnemyMinionPrefab,
-            EnemyBossPrefab,
-            EnemyMinionProjectile,
-            EnemyBossProjectile,
-            PickupEXPTiny,
-            PickupEXPSmall,
-            PickupEXPLarge,
-            PickupEXPGigantic,
-            PickupItemDamage,
-            PickupItemSpeed,
-            PickupItemAttackSpeed,
-            EnemyMinionSecondPrefab,
-            EnemyBossSecondPrefab,
-            EnemyBossSpecialProjectile,
-            DamageNumbers,
-        }
-
-        public enum StatType
-        {
-            None,
-            MaxHealth,
-            CurrentHealth,
-            MaxSpeed,
-            MaxDefense,
-            BaseAttackDamage,
-            AttackSpeed,
-            MaxBoostTime,
-            MaxBoostSpeed,
-            BaseMissileDamage,
-            BaseMissileCooldown,
-            BoostRechargeRate,
-            Acceleration,
-            Experience,
-        }
-
-        public enum OperatorType
-        {
-            None,
-            Add,
-            Multiply,
-            Sub,
-        }
-        public enum UpgradeRarity
-        {
-            Common,
-            Uncommon,
-            Rare,
-            Epic,
-            Legendary,
-        }
-
-        public enum EnemyType
-        {
-            MinionEasyFirst,
-            MinionEasySecond,
-            MinionMediumFirst,
-            MinionMediumSecond,
-            MinionHardFirst,
-            MinionHardSecond,
-            BossEasyFirst,
-            BossEasySecond,
-            BossMediumFirst,
-            BossMediumSecond,
-            BossHardFirst,
-            BossHardSecond,
-        }
-
-        public enum GameDifficulty
-        {
-            Easy,
-            Medium,
-            Hard,
-        }
-
-        public enum ProjectileType
-        {
-            Enemy,
-            Basic,
-            Missile,
-        }
-        
-        public enum GameSceneAudio
-        {
-            SplashScreen = 0,
-            MainMenu = 1,
-            InGame = 2,
-            GameOver = 3,
-            Tutorial = 4,
-        }
-
-        public enum GameAudioFilter
-        {
-            InGame = 0,
-            Paused = 1,
-        }
-
-        public enum GameAudioBus
-        {
-            Master,
-            Music,
-            SFX,
-            Ambient,
         }
     }
 }

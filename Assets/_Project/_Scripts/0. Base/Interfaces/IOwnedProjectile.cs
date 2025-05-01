@@ -1,4 +1,4 @@
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Projectiles;
 
 namespace GoodVillageGames.Game.Interfaces
 {

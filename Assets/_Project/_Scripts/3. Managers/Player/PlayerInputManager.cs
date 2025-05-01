@@ -1,8 +1,9 @@
 using UnityEngine;
 using UnityEngine.InputSystem;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Handlers;
+using GoodVillageGames.Game.Enums.UI;
 using GoodVillageGames.Game.Core.Global;
-using static GoodVillageGames.Game.Enums.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {

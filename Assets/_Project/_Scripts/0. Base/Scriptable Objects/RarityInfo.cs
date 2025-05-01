@@ -1,5 +1,5 @@
 using UnityEngine;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Upgrades;
 
 namespace GoodVillageGames.Game.Core.ScriptableObjects
 {

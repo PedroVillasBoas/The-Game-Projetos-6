@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.General.UI;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
@@ -171,7 +172,7 @@ namespace GoodVillageGames.Game.Handlers.UI
 
             PlayerUpgraderManager.Instance.AddUpgradeToPlayer(currentUpgradeSelected);
             currentUpgradeSelected = null;
-            GlobalEventsManager.Instance.ChangeGameState(Enums.Enums.GameState.GameContinue);
+            GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);
         }
 
         public void SetCurrentUpgrade(UpgradeStatModifier upgrade)

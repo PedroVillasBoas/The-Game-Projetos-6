@@ -1,15 +1,15 @@
 using UnityEngine;
 using TriInspector;
 using System.Collections;
+using GoodVillageGames.Game.Core;
 using GoodVillageGames.Game.Interfaces;
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Projectiles;
-using static GoodVillageGames.Game.Enums.Enums;
 using GoodVillageGames.Game.Core.Manager.Player;
 using GoodVillageGames.Game.Core.GameObjectEntity;
-using GoodVillageGames.Game.Core.Global;
-using GoodVillageGames.Game.Core;
 
 namespace GoodVillageGames.Game.Handlers
 {

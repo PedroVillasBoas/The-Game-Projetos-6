@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.UI;
 using GoodVillageGames.Game.Core.Global;
-using static GoodVillageGames.Game.Enums.Enums;
+using GoodVillageGames.Game.Enums.Audio;
 
 namespace GoodVillageGames.Game.Handlers.UI.Options
 {
