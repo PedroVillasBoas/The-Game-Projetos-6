@@ -1,6 +1,5 @@
 using UnityEngine;
 using TriInspector;
-using Unity.Mathematics;
 using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Pooling;
@@ -73,19 +72,8 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         public virtual void DoAction()
         {
-            if (gameObject.name.StartsWith("Player - Missile"))
-            {
-                var instance = Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
-                if (instance.TryGetComponent(out DamageInAreaOnSpawn damageArea))
-                {
-                    damageArea.SetInfo(ProjectileDamageHandler.Damage);
-                }
-            }
-            else
-            {
-                Instantiate(hitVFXPrefab, transform.position, quaternion.identity);
-            }
-                pooledObject.ReturnToPool();
+            Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
+            pooledObject.ReturnToPool();
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)

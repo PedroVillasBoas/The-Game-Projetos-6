@@ -2,18 +2,13 @@ using UnityEngine;
 using System.Collections;
 using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.MobSpawning;
+using System.Linq;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
     public class RegularMobSpawningManager : MobSpawn
     {
         public static RegularMobSpawningManager Instance { get; private set; }
-
-        // Coroutines
-        private Coroutine regularSpawnRoutine;
-
-        // Flag
-        private bool isSpawning;
 
         void Awake()
         {
@@ -23,24 +18,42 @@ namespace GoodVillageGames.Game.Core.Manager
                 Destroy(gameObject);
         }
 
-        protected override void BeginSpawnCoroutine()
+        protected override void SpawnWave(int mobAmountToSpawn)
         {
-            throw new System.NotImplementedException();
+            Debug.Log($"Mobs Spawnned this wave: {mobAmountToSpawn}");
+            currentWaveSpawnPositions.Clear();
+
+            for (int i = 0; i < mobAmountToSpawn; i++)
+            {
+                GameObject mob = PoolManager.Instance.GetPooledObject(GetRandomMobPool());
+                if (mob != null)
+                {
+                    Vector3 spawnPos = GetValidSpawnPosition();
+                    mob.transform.position = spawnPos;
+                    mob.SetActive(true);
+                    currentWaveSpawnPositions.Add(spawnPos);
+                }
+            }
         }
 
         protected override PoolID GetRandomMobPool()
         {
-            throw new System.NotImplementedException();
+            return PickRandomPoolID(
+            mobSpawnConfig.MobPools,
+            entry => entry.Weight,
+            entry => entry.PoolID
+            );
         }
 
-        protected override IEnumerator SpawnRoutine()
+        protected override IEnumerator SpawnCoroutine()
         {
-            throw new System.NotImplementedException();
-        }
-
-        protected override void SpawnWave(int mobAmountToSpawn)
-        {
-            throw new System.NotImplementedException();
+            while (true)
+            {
+                Debug.Log($"Starting wave {waveCounter + 1} at {Time.time}");
+                SpawnWave(CalculateMobsPerWave());
+                waveCounter++;
+                yield return new WaitForSeconds(CalculateSpawnInterval());
+            }
         }
     }
 }

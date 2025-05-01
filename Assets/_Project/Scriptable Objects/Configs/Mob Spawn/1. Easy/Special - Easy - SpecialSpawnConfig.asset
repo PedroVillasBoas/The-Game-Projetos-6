@@ -1,0 +1,28 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 85e142236534b3844bd83da6791cb39e, type: 3}
+  m_Name: Special - Easy - SpecialSpawnConfig
+  m_EditorClassIdentifier: 
+  CircleSpawnCooldown: 10
+  CircleMobCount: 20
+  CircleRadius: 50
+  BaseCircleChance: 0.1
+  ChanceIncreasePerCheck: 0.05
+  MobPools:
+  - PoolID: 3
+    MobDifficulty: 0
+    Weight: 7
+  - PoolID: 6
+    MobDifficulty: 0
+    Weight: 5
+  HasSpawnDelay: 1
+  InitialSpawnDelay: 30

@@ -12,6 +12,10 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: 1.4
       objectReference: {fileID: 0}
+    - target: {fileID: 1112742299737398711, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: _poolID
+      value: 16
+      objectReference: {fileID: 0}
     - target: {fileID: 1152805483598740164, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_LocalScale.x
       value: 1.5

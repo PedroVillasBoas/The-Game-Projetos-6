@@ -148,6 +148,14 @@ PrefabInstance:
       propertyPath: damagePrefab
       value: 
       objectReference: {fileID: 4456500207233633640, guid: 9a968ebe5e13e9b4291ccec015fea38c, type: 3}
+    - target: {fileID: 8907502839408452437, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: _poolID
+      value: 26
+      objectReference: {fileID: 0}
+    - target: {fileID: 8962984234303586338, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: poolID
+      value: 32
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 8264780149224093637, guid: 01069057d8db26f41994df26663cd80f, type: 3}
     m_RemovedGameObjects:
