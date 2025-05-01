@@ -11,7 +11,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 *Como a dificuldade dos jogos impacta a diversão dos jogadores?*
 
 <div align="center">
-  <img src="https://img.itch.zone/aW1nLzIwODc2ODQ0LnBuZw==/original/iGvAVa.png" width="600" alt="Prévia do Jogo">
+  <img src="https://img.itch.zone/aW1nLzIwOTQyNDAxLnBuZw==/original/pQ%2B7PL.png" width="900" alt="Prévia do Jogo">
 </div>
 
 ---
