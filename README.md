@@ -30,7 +30,7 @@ Embarque em uma jornada cósmica em **Void Protocol**, um jogo estilo roguelike 
 ## Instalação
 
 ### Executável (Em Breve)
-1. Baixe a versão mais recente na [página de releases](#).
+1. Baixe a versão mais recente na [página do jogo](https://pedrovilasboas.itch.io/void-protocol).
 2. Extraia o arquivo ZIP.
 3. Execute `VoidProtocol.exe`.
 
