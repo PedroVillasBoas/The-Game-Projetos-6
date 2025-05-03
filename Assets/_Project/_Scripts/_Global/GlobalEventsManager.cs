@@ -22,6 +22,9 @@ namespace GoodVillageGames.Game.Core.Global
         // UI Animations State
         public event Action<UIState> OnAnimationEventTriggered;
 
+        // Game Difficulty
+        public event Action<GameDifficulty> OnGameDifficultyEventTriggered;
+
         // Data Collection
         public event Action<EnemyType> EnemyDefeatedEventTriggered;
         public event Action<UpgradeStatModifier> UpgradeCollectedEventTriggered;
@@ -37,25 +40,11 @@ namespace GoodVillageGames.Game.Core.Global
             DontDestroyOnLoad(gameObject);
         }
 
-        // Game States
-        public void ChangeGameState(GameState gameState)
-        {
-            ChangeGameStateEventTriggered?.Invoke(gameState);
-        }
-
-        public void AnimationTriggerEvent(UIState uiState)
-        {
-            OnAnimationEventTriggered?.Invoke(uiState);
-        }
-
-        public void AddDefeatedEnemy(EnemyType enemyType)
-        {
-            EnemyDefeatedEventTriggered?.Invoke(enemyType);
-        }
-
-        public void CollectUpgradeData(UpgradeStatModifier upgradeStatModifier)
-        {
-            UpgradeCollectedEventTriggered?.Invoke(upgradeStatModifier);
-        }
+        // Public Methods | Other Classes will invoke using this methods
+        public void ChangeGameState(GameState gameState)                            =>      ChangeGameStateEventTriggered?.Invoke(gameState);
+        public void AnimationTriggerEvent(UIState uiState)                          =>      OnAnimationEventTriggered?.Invoke(uiState);
+        public void GameDifficultyTriggerEvent(GameDifficulty difficulty)           =>      OnGameDifficultyEventTriggered?.Invoke(difficulty);
+        public void AddDefeatedEnemy(EnemyType enemyType)                           =>      EnemyDefeatedEventTriggered?.Invoke(enemyType);
+        public void CollectUpgradeData(UpgradeStatModifier upgradeStatModifier)     =>      UpgradeCollectedEventTriggered?.Invoke(upgradeStatModifier);
     }
 }

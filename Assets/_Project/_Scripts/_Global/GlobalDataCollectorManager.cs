@@ -1,13 +1,13 @@
-using UnityEngine;
-using GoodVillageGames.Game.DataCollection;
-using GoodVillageGames.Game.Enums;
 using System;
-using GoodVillageGames.Game.Core.Manager;
-using GoodVillageGames.Game.Enums.Upgrades;
-using GoodVillageGames.Game.Enums.Enemy;
-using GoodVillageGames.Game.Core.Attributes.Modifiers;
-using GoodVillageGames.Game.Enums.Projectiles;
+using UnityEngine;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.Enemy;
+using GoodVillageGames.Game.Core.Manager;
+using GoodVillageGames.Game.DataCollection;
+using GoodVillageGames.Game.Enums.Upgrades;
+using GoodVillageGames.Game.Enums.Projectiles;
+using GoodVillageGames.Game.Core.Attributes.Modifiers;
 
 namespace GoodVillageGames.Game.Core.Global
 {
@@ -16,6 +16,11 @@ namespace GoodVillageGames.Game.Core.Global
         public static GlobalDataCollectorManager Instance { get; private set; }
 
         private GameRunData currentRunData;
+
+        // Autosave
+        private readonly float saveInterval = 180f;
+        private float lastSaveTime;
+
 
         public GameRunData CurrentRunData => currentRunData;
 
@@ -35,6 +40,7 @@ namespace GoodVillageGames.Game.Core.Global
             GlobalEventsManager.Instance.EnemyDefeatedEventTriggered += OnEnemyDefeated;
             GlobalEventsManager.Instance.UpgradeCollectedEventTriggered += OnUpgradeCollected;
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
+            GlobalEventsManager.Instance.OnGameDifficultyEventTriggered += OnGameDifficulty;
         }
 
         void OnDestroy()
@@ -42,21 +48,37 @@ namespace GoodVillageGames.Game.Core.Global
             GlobalEventsManager.Instance.EnemyDefeatedEventTriggered -= OnEnemyDefeated;
             GlobalEventsManager.Instance.UpgradeCollectedEventTriggered -= OnUpgradeCollected;
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
+            GlobalEventsManager.Instance.OnGameDifficultyEventTriggered -= OnGameDifficulty;
         }
 
         void Update()
         {
+            if (currentRunData == null) return;
 
+            if (Time.time - lastSaveTime > saveInterval)
+            {
+                AutoSaveRunData();
+                lastSaveTime = Time.time;
+            }
+        }
+
+        void AutoSaveRunData() => SavePlayerCurrentStats();
+        void HandleGameStart() => GlobalFileManager.Instance.CurrentSession.RunData = currentRunData;
+
+        void OnGameDifficulty(GameDifficulty difficulty)
+        {
+            currentRunData = new()
+            {
+                RunStartTime = DateTime.Now,
+                RunDifficulty = (int) GlobalGameManager.Instance.CurrentDifficulty,
+            };
         }
 
         void OnGameStateChanged(GameState newState)
         {
-            if (currentRunData == null) return;
-
             switch (newState)
             {
                 case GameState.Tutorial:
-                    currentRunData = null;
                     HandleGameStart();
                     break;
 
@@ -74,12 +96,6 @@ namespace GoodVillageGames.Game.Core.Global
                     HandleRunEnd(newState);
                     break;
             }
-        }
-
-        void HandleGameStart()
-        {
-            currentRunData.RunStartTime = DateTime.Now;
-            GlobalFileManager.Instance.SaveRunDifficulty(currentRunData.RunDifficulty);
         }
 
         void SavePlayerCurrentStats()
@@ -118,6 +134,8 @@ namespace GoodVillageGames.Game.Core.Global
 
         void HandleRunEnd(GameState endState)
         {
+            if (currentRunData == null) return;
+            
             currentRunData.RunEndTime = DateTime.Now;
 
             if (currentRunData.RunStartTime != DateTime.MinValue)

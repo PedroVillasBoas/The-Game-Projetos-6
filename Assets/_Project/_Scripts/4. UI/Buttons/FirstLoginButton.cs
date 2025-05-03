@@ -29,13 +29,13 @@ namespace GoodVillageGames.Game.General.UI.Buttons
             PlayerNameSetEventTriggered?.Invoke();
         }
 
-        private string SanitizeFileName(string name)
+        string SanitizeFileName(string name)
         {
             var invalidChars = Path.GetInvalidFileNameChars();
             return string.Join("_", name.Split(invalidChars));
         }
 
-        private void ShowNameError(string message)
+        void ShowNameError(string message)
         {
             nameErrorText.SetActive(true);
             nameErrorText.GetComponent<TMP_Text>().text = message;

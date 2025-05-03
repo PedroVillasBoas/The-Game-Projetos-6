@@ -18,7 +18,7 @@ namespace GoodVillageGames.Game.Core.Global
 
         public GameState GameState { get => gameState; set => gameState = value; }
         public UIState UIState { get => uIState; set => uIState = value; }
-        public GameDifficulty CurrentDifficulty { get => currentDifficulty; set => currentDifficulty = value; }
+        public GameDifficulty CurrentDifficulty { get => currentDifficulty; private set => currentDifficulty = value; }
         public bool FirstLogin { get => firstLogin; set => firstLogin = value; }
 
         void Awake()
@@ -38,14 +38,8 @@ namespace GoodVillageGames.Game.Core.Global
             GlobalEventsManager.Instance.OnAnimationEventTriggered += OnUIAnimationStateChange;
         }
 
-        void OnChangeState(GameState state)
-        {
-            gameState = state;
-        }
-
-        void OnUIAnimationStateChange(UIState state)
-        {
-            uIState = state;
-        }
+        void OnChangeState(GameState state) => gameState = state;
+        void OnUIAnimationStateChange(UIState state) => uIState = state;
+        void OnChangeDifficulty(GameDifficulty difficulty) => currentDifficulty = difficulty;
     }
 }

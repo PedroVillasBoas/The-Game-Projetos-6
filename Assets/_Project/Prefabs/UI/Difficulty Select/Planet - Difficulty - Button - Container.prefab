@@ -95,6 +95,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: deb838f4f24e63042ab3e17933bc24bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  difficultyInfo: {fileID: 0}
+  title: {fileID: 0}
+  description: {fileID: 0}
+  planetRectTransform: {fileID: 3955636580720643788}
 --- !u!1 &5610304415138956361
 GameObject:
   m_ObjectHideFlags: 0

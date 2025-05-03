@@ -1,17 +1,12 @@
 using System;
 using System.IO;
+using System.Linq;
 using UnityEngine;
-using System.Globalization;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Enums.Enemy;
-using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.DataCollection;
 using GoodVillageGames.Game.Enums.Upgrades;
-using GoodVillageGames.Game.Enums.Projectiles;
-using GoodVillageGames.Game.Core.Attributes.Modifiers;
-using UnityEditor.Build.Pipeline;
-using System.Linq;
 
 namespace GoodVillageGames.Game.Core.Global
 {
@@ -23,10 +18,8 @@ namespace GoodVillageGames.Game.Core.Global
         public const string FILE_TXT_HEADER = "SessionID,PlayerName,GameSessionStartTime,GameSessionEndTime,IsFinal,TotalSessionDurationSeconds,TotalSessionDurationMinutes,TotalSessionDurationHours,RunStartTime,RunEndTime,RunDifficulty,TotalRunScore,TotalRunTimeSeconds,TotalRunTimeMinutes,MinionEasyFirst,MinionEasySecond,MinionMediumFirst,MinionMediumSecond,MinionHardFirst,MinionHardSecond,BossEasyFirst,BossEasySecond,BossMediumFirst,BossMediumSecond,BossHardFirst,BossHardSecond,UpgradeCommon,UpgradeUncommon,UpgradeRare,UpgradeEpic,UpgradeLegendary,NormalShotsFired,NormalShotsHit,NormalShotAccuracy,MissileShotsFired,MissileShotsHit,MissileShotAccuracy,TotalPausedCount,QuitedViaPause,StatMaxHealth,StatMaxSpeed,StatMaxDefense,StatBaseAttackDamage,StatAttackSpeed,StatMaxBoostTime,StatMaxBoostSpeed,StatBaseMissileDamage,StatBaseMissileCooldown,StatBoostRechargeRate,StatAcceleration,StatLevel";
         public static string FOLDERNAME_SAVEDATA => Path.Combine(Directory.GetParent(Application.dataPath).FullName, "Players - Gameplay Data");
 
-
         // Player Data
         private string playerName = "Anonymous";
-        private List<GameSessionData> sessions = new();
         private GameSessionData currentSession;
 
         // Autosave
@@ -61,15 +54,8 @@ namespace GoodVillageGames.Game.Core.Global
             }
         }
 
-        void Start()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
-        }
-
-        void OnDestroy()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
-        }
+        void Start() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
+        void OnDestroy() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
 
         void Update()
         {
@@ -82,22 +68,28 @@ namespace GoodVillageGames.Game.Core.Global
             }
         }
 
+        #region Public Methods
+
+        public void SavePlayerRunStats(Dictionary<string, float> stats) => currentSession.RunData.PlayerStats = stats;
+
         public void SetPlayerName(string name)
         {
+            // Checar o nome digitado
             string newName = string.IsNullOrEmpty(name) ? "Anonymous" : name.Trim();
 
-            // Only reset IF name actually changes
+            // Se não for igual ao nome do playerName atual
             if (!newName.Equals(playerName, StringComparison.OrdinalIgnoreCase))
             {
                 playerName = newName;
-                sessions.Clear();
+
+                // Fechar o arquivo anterior, se tiver algum aberto
+                if (currentSession != null)
+                    CloseCurrentFile();
+
+                // Checar se o arquivo com o novo nome existe
+                string filePath = GetCurrentFilePath();
+                CheckFileExist(filePath);
             }
-
-            // Loading existing sessions IF file exists
-            string filePath = GetCurrentFilePath();
-
-            CreateNewFile(filePath);
-            StartNewSession();
         }
 
         public void ChangePlayer(string newName)
@@ -111,28 +103,45 @@ namespace GoodVillageGames.Game.Core.Global
             SetPlayerName(sanitizedName);
         }
 
-        public void SaveRunDifficulty(int difficulty) => currentSession.RunData.RunDifficulty = difficulty;
-        public void SavePlayerRunStats(Dictionary<string, float> stats) => currentSession.RunData.PlayerStats = stats;
-
-        void CreateNewFile(string filePath)
+        public void CloseCurrentFile()
         {
-            if (!File.Exists(filePath))
-                File.WriteAllText(filePath, FILE_TXT_HEADER + Environment.NewLine);
-        }
+            // Save current session if active
+            if (currentSession != null)
+            {
+                if (currentSession.RunData != null && currentSession.RunData.RunEndTime == DateTime.MinValue)
+                    EndCurrentSession(true); // Forcing save with QuitedViaPause = true
+                else
+                {
+                    currentSession.RunData = new();
+                    EndCurrentSession(true); // Probrably closed the game or changed the name before playing any run
+                }
+            }
 
-        bool CheckFileExist(string filePath)
-        {
-            return File.Exists(filePath);
+            // Reseting tracking for new player / new run
+            currentSession = null;
         }
 
         public void StartNewSession()
         {
             currentSession = new GameSessionData
             {
-                SessionID = $"{DateTime.Now:yyyyMMddHHmmss}-{Guid.NewGuid().ToString()[..4]}",
+                SessionID = $"{DateTime.Now:yyyyMMddHHmmss}-{Guid.NewGuid():N}"[..20],
                 PlayerName = playerName,
                 GameSessionStartTime = DateTime.Now,
             };
+        }
+        #endregion
+
+        #region Private Methods
+
+        void OnApplicationQuit() => CloseCurrentFile();
+
+        void CheckFileExist(string filePath)
+        {
+            if (!File.Exists(filePath))
+                File.WriteAllText(filePath, FILE_TXT_HEADER + Environment.NewLine);
+
+            StartNewSession();
         }
 
         void OnGameStateChanged(GameState newState)
@@ -159,7 +168,6 @@ namespace GoodVillageGames.Game.Core.Global
             currentSession.RunData.QuitedViaPause = quitViaPause;
 
             SaveDataInFile(isFinalSave: true);
-            sessions.Add(currentSession);
             currentSession = null;
         }
 
@@ -190,17 +198,19 @@ namespace GoodVillageGames.Game.Core.Global
             // Generating Session Fingerprint
             string sessionID = currentSession.SessionID;
 
-            // Calculating Current Duration
-            TimeSpan sessionDuration = DateTime.Now - currentSession.GameSessionStartTime;
+            // Calculating Current Durations
+            float currentSessionSeconds = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalSeconds;
+            float currentSessionMinutes = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalMinutes;
+            float currentSessionHours = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalHours;
 
             dataParts.Add(sessionID);
             dataParts.Add(playerName);
             dataParts.Add(currentSession.GameSessionStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(isFinalSave ? currentSession.GameSessionEndTime.ToString("yyyy-MM-ddTHH:mm:ssZ") : "IN_PROGRESS");
             dataParts.Add(isFinalSave.ToString());
-            dataParts.Add(sessionDuration.TotalSeconds.ToString("F2"));
-            dataParts.Add(sessionDuration.TotalMinutes.ToString("F2"));
-            dataParts.Add(sessionDuration.TotalHours.ToString("F2"));
+            dataParts.Add(currentSessionSeconds.ToString("F0"));
+            dataParts.Add(currentSessionMinutes.ToString("F0"));
+            dataParts.Add(currentSessionHours.ToString("F0"));
             dataParts.Add(currentSession.RunData.RunStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(currentSession.RunData.RunEndTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(currentSession.RunData.RunDifficulty.ToString());
@@ -238,14 +248,14 @@ namespace GoodVillageGames.Game.Core.Global
             foreach (string statHeader in headers.Skip(dataParts.Count).TakeWhile(h => h.StartsWith("Stat")))
             {
                 string statKey = statHeader.Replace("Stat", "");
-                
+
                 if (statKey == "Level" && currentSession.RunData.PlayerStats.TryGetValue(statKey, out float level))
                 {
                     dataParts.Add(((int)level).ToString());
                 }
                 else if (currentSession.RunData.PlayerStats.TryGetValue(statKey, out float value))
                 {
-                    dataParts.Add(value.ToString("F2"));
+                    dataParts.Add(value.ToString("F1"));
                 }
                 else
                 {
@@ -257,27 +267,11 @@ namespace GoodVillageGames.Game.Core.Global
 
         }
 
-        public void CloseCurrentFile()
-        {
-            // Save current session if active
-            if (currentSession != null && currentSession.RunData.RunEndTime == DateTime.MinValue)
-            {
-                EndCurrentSession(true); // Forcing save with QuitedViaPause = true
-            }
-
-            // Reseting tracking for new player / new run
-            sessions.Clear(); // AINDA NÃO SEI PRA QUE TÔ USANDO ISSO
-            currentSession = null;
-        }
-
         string GetCurrentFilePath()
         {
-            string fileName = $"{playerName} - VoidProtocolGameplayData.txt";
-
-            string rootPath = Directory.GetParent(Application.dataPath).FullName;
-            return Path.Combine(rootPath, fileName);
+            string fileName = $"{playerName}{FILENAME_SAVEDATA}";
+            return Path.Combine(FOLDERNAME_SAVEDATA, fileName);
         }
-
-        void OnApplicationQuit() => CloseCurrentFile();
+        #endregion
     }
 }

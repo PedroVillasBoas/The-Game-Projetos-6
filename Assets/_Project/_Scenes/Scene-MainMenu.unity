@@ -2140,6 +2140,21 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1449822762}
   m_CullTransparentMesh: 1
+--- !u!224 &1463801003 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 4403212465081323336, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1463801004 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 2750942395048764339, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
+--- !u!224 &1463801005 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3318250194911775010, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+  m_PrefabInstance: {fileID: 7035158847425050198}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1524492003
 GameObject:
   m_ObjectHideFlags: 0
@@ -2153,7 +2168,6 @@ GameObject:
   - component: {fileID: 1524492006}
   - component: {fileID: 1524492005}
   - component: {fileID: 1524492008}
-  - component: {fileID: 1524492011}
   - component: {fileID: 1524492012}
   - component: {fileID: 1524492013}
   m_Layer: 5
@@ -2292,37 +2306,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputField: {fileID: 1995209882}
   nameErrorText: {fileID: 1071568780}
---- !u!114 &1524492011
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1524492003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9a6610d2e704f1648819acc8d7460285, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  CollisionTag: 
-  EventReference:
-    Guid:
-      Data1: 1207942405
-      Data2: 1341651352
-      Data3: 1160113034
-      Data4: 2110713712
-    Path: event:/SFX/UI/General/Button/OnEnter
-  Event: 
-  EventPlayTrigger: 17
-  EventStopTrigger: 0
-  AllowFadeout: 1
-  TriggerOnce: 0
-  Preload: 0
-  NonRigidbodyVelocity: 0
-  Params: []
-  OverrideAttenuation: 0
-  OverrideMinDistance: 1
-  OverrideMaxDistance: 20
 --- !u!114 &1524492012
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2348,7 +2331,7 @@ MonoBehaviour:
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -2379,7 +2362,7 @@ MonoBehaviour:
   EventStopTrigger: 0
   AllowFadeout: 1
   TriggerOnce: 0
-  Preload: 0
+  Preload: 1
   NonRigidbodyVelocity: 0
   Params: []
   OverrideAttenuation: 0
@@ -4535,6 +4518,10 @@ PrefabInstance:
       propertyPath: difficultyInfo
       value: 
       objectReference: {fileID: 11400000, guid: 76f64ac535acd7b4e8e92a96fed6d2dc, type: 2}
+    - target: {fileID: 4985714817076505745, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: planetRectTransform
+      value: 
+      objectReference: {fileID: 1463801004}
     - target: {fileID: 5087080912456650464, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 1
@@ -4615,6 +4602,10 @@ PrefabInstance:
       propertyPath: difficultyInfo
       value: 
       objectReference: {fileID: 11400000, guid: 6c3f86b4666a3374a9340c19c0e395e7, type: 2}
+    - target: {fileID: 5553312471908402688, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: planetRectTransform
+      value: 
+      objectReference: {fileID: 1463801005}
     - target: {fileID: 5565219043984285838, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -4783,6 +4774,10 @@ PrefabInstance:
       propertyPath: difficultyInfo
       value: 
       objectReference: {fileID: 11400000, guid: 687b2231f014b4a438ba11669da51f0d, type: 2}
+    - target: {fileID: 6775319112608383082, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
+      propertyPath: planetRectTransform
+      value: 
+      objectReference: {fileID: 1463801003}
     - target: {fileID: 6848353407290879041, guid: d65dbeb5e3740824eb6223cb5c9a341e, type: 3}
       propertyPath: m_AnchorMax.x
       value: 0.5
