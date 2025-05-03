@@ -36,6 +36,14 @@ namespace GoodVillageGames.Game.Core.Global
         {
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnChangeState;
             GlobalEventsManager.Instance.OnAnimationEventTriggered += OnUIAnimationStateChange;
+            GlobalEventsManager.Instance.OnGameDifficultyEventTriggered += OnChangeDifficulty;
+        }
+
+        void OnDestroy()
+        {
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnChangeState;
+            GlobalEventsManager.Instance.OnAnimationEventTriggered += OnUIAnimationStateChange;
+            GlobalEventsManager.Instance.OnGameDifficultyEventTriggered += OnChangeDifficulty;
         }
 
         void OnChangeState(GameState state) => gameState = state;

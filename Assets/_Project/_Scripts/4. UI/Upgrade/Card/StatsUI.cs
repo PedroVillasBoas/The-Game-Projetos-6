@@ -48,6 +48,9 @@ namespace GoodVillageGames.Game.General.UI
                     // EXP does have a stat, but stats are used for modifiers, since EXP does not have mods, we get from the EXP Manager
                     if (element.Key == "Experience")
                         element.Value.text = $"{PlayerExpManager.Instance.CurrentExp}/{PlayerExpManager.Instance.ExpToNextLevel}";
+                    // Level acts the same as EXP
+                    else if (element.Key == "Level")
+                        element.Value.text = $"{PlayerExpManager.Instance.CurrentLevel}";
                     else
                         element.Value.text = $"{value}";
                 }

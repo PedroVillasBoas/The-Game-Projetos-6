@@ -32,11 +32,11 @@ namespace GoodVillageGames.Game.Core.Manager
 
         private Dictionary<UpgradeRarity, TextMeshProUGUI> rarityTextMap;
         private Dictionary<string, TextMeshProUGUI> statTextMap;
-        private GameRunData currentRunData;
+        private GameRunData currentRunData = new();
 
         void Awake()
         {
-            //currentRunData = GlobalDataCollectorManager.Instance.GetLas();
+            currentRunData = GlobalDataCollectorManager.Instance.CurrentRunData;
             InitializeDictionaries();
         }
 
@@ -49,7 +49,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void InitializeDictionaries()
         {
-            // Map upgrade rarities to their text components
+            // Mapping Upgrades Rarities to their text components
             rarityTextMap = new Dictionary<UpgradeRarity, TextMeshProUGUI>();
             for (int i = 0; i < upgradesRaritiesTexts.Count; i++)
             {
@@ -57,7 +57,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 rarityTextMap[rarity] = upgradesRaritiesTexts[i];
             }
 
-            // Map stats to their text components
+            // Mapping Stats to their text components
             statTextMap = new Dictionary<string, TextMeshProUGUI>();
             for (int i = 0; i < statsNames.Count && i < statsTexts.Count; i++)
             {
@@ -95,17 +95,37 @@ namespace GoodVillageGames.Game.Core.Manager
 
         IEnumerator AnimateStats()
         {
-            foreach (var stat in statTextMap)
+            foreach (var kv in statTextMap)
             {
-                if (currentRunData.PlayerStats.TryGetValue(stat.Key, out float value))
+                string statName = kv.Key;
+                var textElement = kv.Value;
+
+                if (!currentRunData.PlayerStats.TryGetValue(statName, out float value))
+                    continue;
+
+                if (statName == "MaxHealth")
                 {
-                    StartCoroutine(AnimateStat(stat.Value, stat.Key, value));
+                    textElement.alpha = 1f;
+                    int v = Mathf.RoundToInt(value);
+                    textElement.text = $"{v}/{v}";
+                    yield return new WaitForSeconds(elementRevealInterval);
+                }
+                else if (statName == "BoostRechargeRate")
+                {
+                    textElement.alpha = 1f;
+                    textElement.text  = value.ToString("F1");
+                    yield return new WaitForSeconds(elementRevealInterval);
+                }
+                else
+                {
+                    StartCoroutine(AnimateStat(textElement, value));
                     yield return new WaitForSeconds(elementRevealInterval);
                 }
             }
         }
 
-        IEnumerator AnimateStat(TextMeshProUGUI textElement, string statName, float targetValue)
+
+        IEnumerator AnimateStat(TextMeshProUGUI textElement, float targetValue)
         {
             // Initial hidden state
             textElement.alpha = 0;
@@ -119,15 +139,6 @@ namespace GoodVillageGames.Game.Core.Manager
                 yield return null;
             }
             textElement.alpha = 1;
-
-            // Special handling for experience
-            if (statName == "Experience")
-            {
-                var currentExp = currentRunData.PlayerStats["CurrentExp"];
-                var expToNext = currentRunData.PlayerStats["ExpToNextLevel"];
-                textElement.text = $"{currentExp:N0}/{expToNext:N0}";
-                yield break;
-            }
 
             // Animate number roll
             yield return StartCoroutine(AnimateNumberRoll(textElement, (int)targetValue));
@@ -155,11 +166,11 @@ namespace GoodVillageGames.Game.Core.Manager
             {
                 float t = (Time.time - startTime) / duration;
                 current = Mathf.Lerp(0, targetScore, t * t); // Ease out
-                totalScoreText.text = Mathf.RoundToInt(current).ToString("N0");
+                totalScoreText.text = Mathf.RoundToInt(current).ToString();
                 yield return null;
             }
 
-            totalScoreText.text = targetScore.ToString("N0");
+            totalScoreText.text = targetScore.ToString();
         }
 
         IEnumerator AnimateNumberRoll(TextMeshProUGUI textElement, int targetNumber)
@@ -170,7 +181,7 @@ namespace GoodVillageGames.Game.Core.Manager
             while (current < targetNumber)
             {
                 current = Mathf.Min(targetNumber, current + Mathf.CeilToInt(targetNumber * numberRolloverSpeed));
-                textElement.text = current.ToString("N0");
+                textElement.text = current.ToString();
                 yield return null;
             }
         }

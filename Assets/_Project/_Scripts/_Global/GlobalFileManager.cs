@@ -54,9 +54,6 @@ namespace GoodVillageGames.Game.Core.Global
             }
         }
 
-        void Start() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
-        void OnDestroy() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
-
         void Update()
         {
             if (currentSession == null) return;
@@ -70,23 +67,20 @@ namespace GoodVillageGames.Game.Core.Global
 
         #region Public Methods
 
+        public void SaveRunData(GameRunData data) => currentSession.RunData = data;
         public void SavePlayerRunStats(Dictionary<string, float> stats) => currentSession.RunData.PlayerStats = stats;
-
+        
         public void SetPlayerName(string name)
         {
-            // Checar o nome digitado
             string newName = string.IsNullOrEmpty(name) ? "Anonymous" : name.Trim();
 
-            // Se não for igual ao nome do playerName atual
             if (!newName.Equals(playerName, StringComparison.OrdinalIgnoreCase))
             {
                 playerName = newName;
 
-                // Fechar o arquivo anterior, se tiver algum aberto
                 if (currentSession != null)
                     CloseCurrentFile();
 
-                // Checar se o arquivo com o novo nome existe
                 string filePath = GetCurrentFilePath();
                 CheckFileExist(filePath);
             }
@@ -96,7 +90,7 @@ namespace GoodVillageGames.Game.Core.Global
         {
             if (currentSession != null)
             {
-                HandleSessionEnd(GameState.MainMenu);
+                HandleSessionEnd(true);
             }
 
             string sanitizedName = string.IsNullOrEmpty(newName) ? "Anonymous" : newName.Trim();
@@ -110,11 +104,6 @@ namespace GoodVillageGames.Game.Core.Global
             {
                 if (currentSession.RunData != null && currentSession.RunData.RunEndTime == DateTime.MinValue)
                     EndCurrentSession(true); // Forcing save with QuitedViaPause = true
-                else
-                {
-                    currentSession.RunData = new();
-                    EndCurrentSession(true); // Probrably closed the game or changed the name before playing any run
-                }
             }
 
             // Reseting tracking for new player / new run
@@ -130,6 +119,12 @@ namespace GoodVillageGames.Game.Core.Global
                 GameSessionStartTime = DateTime.Now,
             };
         }
+
+        public void HandleSessionEnd(bool quitViaPause)
+        {
+            EndCurrentSession(quitViaPause);
+            StartNewSession();
+        }
         #endregion
 
         #region Private Methods
@@ -144,30 +139,9 @@ namespace GoodVillageGames.Game.Core.Global
             StartNewSession();
         }
 
-        void OnGameStateChanged(GameState newState)
-        {
-            if (currentSession == null) return;
-
-            switch (newState)
-            {
-                case GameState.GameOver:
-                case GameState.MainMenu:
-                    HandleSessionEnd(newState);
-                    break;
-            }
-        }
-
-        void HandleSessionEnd(GameState endState)
-        {
-            bool quitViaPause = endState == GameState.MainMenu;
-            EndCurrentSession(quitViaPause);
-        }
-
         void EndCurrentSession(bool quitViaPause)
         {
-            currentSession.RunData.QuitedViaPause = quitViaPause;
-
-            SaveDataInFile(isFinalSave: true);
+            SaveDataInFile(quitViaPause);
             currentSession = null;
         }
 
@@ -194,14 +168,15 @@ namespace GoodVillageGames.Game.Core.Global
         {
             List<string> dataParts = new();
             string[] headers = FILE_TXT_HEADER.Split(',');
+            currentSession.GameSessionEndTime = DateTime.Now;
 
             // Generating Session Fingerprint
             string sessionID = currentSession.SessionID;
 
             // Calculating Current Durations
-            float currentSessionSeconds = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalSeconds;
-            float currentSessionMinutes = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalMinutes;
-            float currentSessionHours = (float)(DateTime.Now - currentSession.GameSessionStartTime).TotalHours;
+            float currentSessionSeconds = (float)(currentSession.GameSessionEndTime - currentSession.GameSessionStartTime).TotalSeconds;
+            float currentSessionMinutes = (float)(currentSession.GameSessionEndTime - currentSession.GameSessionStartTime).TotalMinutes;
+            float currentSessionHours = (float)(currentSession.GameSessionEndTime - currentSession.GameSessionStartTime).TotalHours;
 
             dataParts.Add(sessionID);
             dataParts.Add(playerName);

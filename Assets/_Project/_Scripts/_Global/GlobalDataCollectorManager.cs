@@ -67,10 +67,13 @@ namespace GoodVillageGames.Game.Core.Global
 
         void OnGameDifficulty(GameDifficulty difficulty)
         {
+            if (currentRunData != null) 
+                currentRunData = null;
+
             currentRunData = new()
             {
                 RunStartTime = DateTime.Now,
-                RunDifficulty = (int) GlobalGameManager.Instance.CurrentDifficulty,
+                RunDifficulty = (int)GlobalGameManager.Instance.CurrentDifficulty,
             };
         }
 
@@ -122,8 +125,14 @@ namespace GoodVillageGames.Game.Core.Global
             var filtered = new Dictionary<string, float>(desiredStats.Length + 1);
             foreach (var key in desiredStats)
             {
+
+
                 if (allStats.TryGetValue(key, out float value))
+                {
                     filtered[key] = value;
+                    if (key == "BoostRechargeRate")
+                        Debug.Log($"BoostRechargeRate = {filtered[key]}");
+                }
             }
 
             filtered["Level"] = upgrader.GetPlayerCurrentLevel();
@@ -134,8 +143,14 @@ namespace GoodVillageGames.Game.Core.Global
 
         void HandleRunEnd(GameState endState)
         {
-            if (currentRunData == null) return;
-            
+            if (currentRunData == null)
+                return;
+
+            FinalizeRun(endState == GameState.MainMenu);
+        }
+
+        private void FinalizeRun(bool quitViaPause)
+        {
             currentRunData.RunEndTime = DateTime.Now;
 
             if (currentRunData.RunStartTime != DateTime.MinValue)
@@ -144,38 +159,31 @@ namespace GoodVillageGames.Game.Core.Global
                 currentRunData.TotalRunTimeMinutes = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalMinutes;
             }
 
-            EndCurrentRun();
-        }
+            currentRunData.QuitedViaPause = quitViaPause;
 
-        void EndCurrentRun()
-        {
-            if (currentRunData == null) return;
-
-            currentRunData.RunEndTime = DateTime.Now;
-
-            // Run total time
-            if (currentRunData.RunStartTime != DateTime.MinValue && currentRunData.RunEndTime == DateTime.MinValue)
-            {
-                currentRunData.RunEndTime = DateTime.Now;
-                currentRunData.TotalRunTimeSeconds = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalSeconds;
-                currentRunData.TotalRunTimeMinutes = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalMinutes;
-            }
-            
             CalculateAccuracy();
             CalculateFinalScore();
-            GlobalFileManager.Instance.SavePlayerRunStats(currentRunData.PlayerStats);
+
+            SavePlayerCurrentStats();
+
+            GlobalFileManager.Instance.SaveRunData(currentRunData);
+            GlobalFileManager.Instance.HandleSessionEnd(currentRunData.QuitedViaPause);
         }
 
         void CalculateFinalScore()
         {
             double upgradeScore = CalculateUpgradeScore();
+            upgradeScore = upgradeScore > 0 ? upgradeScore : 1;
+
             int enemyScore = CalculateEnemyScore();
+            enemyScore = enemyScore > 0 ? enemyScore : 1;
 
 
             currentRunData.TotalRunScore = (int)((upgradeScore + enemyScore) * currentRunData.RunDifficulty);
 
-            Debug.Log($"Enemy Score: {upgradeScore}");
+            Debug.Log($"Upgrade Score: {upgradeScore}");
             Debug.Log($"Enemy Score: {enemyScore}");
+            Debug.Log($"Difficulty: {currentRunData.RunDifficulty}");
             Debug.Log($"Final Score: {currentRunData.TotalRunScore}");
         }
 
