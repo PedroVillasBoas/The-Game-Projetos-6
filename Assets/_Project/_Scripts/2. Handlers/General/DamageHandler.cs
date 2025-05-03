@@ -55,7 +55,7 @@ namespace GoodVillageGames.Game.Handlers
             if(TryGetComponent(out BaseProjectile component))
             {
                 component.DoAction();
-                GlobalFileManager.Instance.RegisterHit(ownedProjectile.Type);
+                GlobalDataCollectorManager.Instance.RegisterHit(ownedProjectile.Type);
             }
         }
     }

@@ -16,4 +16,4 @@ MonoBehaviour:
   Description: Enemies hit softly and have lower health, giving you plenty of breathing
     room. You start with boosted stats, foes spawn rarely, and bosses take extra
     time to appear. Perfect for learning the ropes at your own pace.
-  gameDifficulty: 0
+  gameDifficulty: 1

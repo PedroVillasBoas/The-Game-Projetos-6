@@ -40,6 +40,8 @@ namespace GoodVillageGames.Game.Core.MobSpawning
             get { return isSpecial ? specialMobSpawnConfig.InitialSpawnDelay : mobSpawnConfig.InitialSpawnDelay; }
         }
 
+        protected int ActiveMobCount { get; set; }
+
         #endregion
 
         #region Class Methods
@@ -82,14 +84,18 @@ namespace GoodVillageGames.Game.Core.MobSpawning
 
         protected int CalculateMobsPerWave()
         {
-            return mobSpawnConfig.BaseMobAmount + Mathf.CeilToInt(mobSpawnConfig.BaseMobAdditivePerWave * waveCounter);
+            // base + additive per wave + % of base * waveCounter
+            int additive = mobSpawnConfig.BaseMobAdditivePerWave * waveCounter;
+            int percent = Mathf.CeilToInt(mobSpawnConfig.BaseMobAmount * mobSpawnConfig.SpawnAmountMult * waveCounter);
+            return mobSpawnConfig.BaseMobAmount + additive + percent;
         }
 
         protected float CalculateSpawnInterval()
         {
             float time = SceneTimerManager.Instance.GetRunTime();
             Debug.Log($"Calculating Spawn Interval at {time} in SceneTimerManager");
-            return Mathf.Max(mobSpawnConfig.MinTimeBetweenWaves, mobSpawnConfig.InitialSpawnDelay - (mobSpawnConfig.SpawnAmountMult * time));
+            float interval = Mathf.Max(mobSpawnConfig.MinTimeBetweenWaves, mobSpawnConfig.TimeBetweenWaves - mobSpawnConfig.FlatTimeBetweenWavesDecrease * waveCounter);
+            return interval;
         }
 
         protected PoolID PickRandomPoolID<TEntry>(IReadOnlyList<TEntry> entries, Func<TEntry,int>  weightSelector, Func<TEntry,PoolID> idSelector)

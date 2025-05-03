@@ -47,12 +47,23 @@ namespace GoodVillageGames.Game.Core.Manager
 
         protected override IEnumerator SpawnCoroutine()
         {
+            // First wave
+            float nextSpawnTime = Time.time + (mobSpawnConfig.HasSpawnDelay ? mobSpawnConfig.InitialSpawnDelay : mobSpawnConfig.TimeBetweenWaves);
+
             while (true)
             {
-                Debug.Log($"Starting wave {waveCounter + 1} at {Time.time}");
-                SpawnWave(CalculateMobsPerWave());
+                // Waiting until it’s time
+                while (Time.time < nextSpawnTime)
+                    yield return null;
+
+                // Spawn!
+                int mobCount = CalculateMobsPerWave();
+                SpawnWave(mobCount);
                 waveCounter++;
-                yield return new WaitForSeconds(CalculateSpawnInterval());
+
+                // Next Wave
+                float interval = CalculateSpawnInterval();
+                nextSpawnTime += interval;
             }
         }
     }

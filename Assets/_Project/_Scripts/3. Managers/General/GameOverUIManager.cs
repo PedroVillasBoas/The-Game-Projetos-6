@@ -5,6 +5,7 @@ using System.Collections;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Enums.Upgrades;
+using GoodVillageGames.Game.DataCollection;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -31,11 +32,11 @@ namespace GoodVillageGames.Game.Core.Manager
 
         private Dictionary<UpgradeRarity, TextMeshProUGUI> rarityTextMap;
         private Dictionary<string, TextMeshProUGUI> statTextMap;
-        private GlobalFileManager.GameSessionData currentSession;
+        private GameRunData currentRunData;
 
         void Awake()
         {
-            currentSession = GlobalFileManager.Instance.GetLastSession();
+            //currentRunData = GlobalDataCollectorManager.Instance.GetLas();
             InitializeDictionaries();
         }
 
@@ -82,7 +83,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         IEnumerator AnimateUpgradeCounts()
         {
-            foreach (var entry in currentSession.upgradesCollected)
+            foreach (var entry in currentRunData.UpgradesCollected)
             {
                 if (rarityTextMap.TryGetValue(entry.Key, out var textElement))
                 {
@@ -96,7 +97,7 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             foreach (var stat in statTextMap)
             {
-                if (currentSession.playerStats.TryGetValue(stat.Key, out float value))
+                if (currentRunData.PlayerStats.TryGetValue(stat.Key, out float value))
                 {
                     StartCoroutine(AnimateStat(stat.Value, stat.Key, value));
                     yield return new WaitForSeconds(elementRevealInterval);
@@ -122,8 +123,8 @@ namespace GoodVillageGames.Game.Core.Manager
             // Special handling for experience
             if (statName == "Experience")
             {
-                var currentExp = currentSession.playerStats["CurrentExp"];
-                var expToNext = currentSession.playerStats["ExpToNextLevel"];
+                var currentExp = currentRunData.PlayerStats["CurrentExp"];
+                var expToNext = currentRunData.PlayerStats["ExpToNextLevel"];
                 textElement.text = $"{currentExp:N0}/{expToNext:N0}";
                 yield break;
             }
@@ -135,7 +136,7 @@ namespace GoodVillageGames.Game.Core.Manager
         IEnumerator AnimateFinalScore()
         {
             totalScoreText.alpha = 0;
-            var targetScore = currentSession.totalScore;
+            var targetScore = currentRunData.TotalRunScore;
 
             // Fade in
             float fadeDuration = 0.5f;

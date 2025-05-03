@@ -114,7 +114,7 @@ namespace GoodVillageGames.Game.Handlers
                 if (projectile.TryGetComponent(out BaseProjectile component))
                 {
                     component.ProjectileDamageHandler.SetDamage(Damage);
-                    GlobalFileManager.Instance.RegisterShot(component.Type);
+                    GlobalDataCollectorManager.Instance.RegisterShot(component.Type);
                     PlayerAudioHandler.Instance.PlayPlayerProjectileShootSFX();
                 }
 

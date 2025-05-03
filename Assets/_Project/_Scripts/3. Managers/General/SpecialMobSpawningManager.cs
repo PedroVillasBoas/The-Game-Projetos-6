@@ -1,4 +1,3 @@
-using System.Linq;
 using UnityEngine;
 using System.Collections;
 using GoodVillageGames.Game.Enums.Pooling;
@@ -53,10 +52,15 @@ namespace GoodVillageGames.Game.Core.Manager
             var config = specialMobSpawnConfig;
             currentCircleChance = config.BaseCircleChance;
 
+            // First wave
+            float nextSpawnTime = Time.time + (config.HasSpawnDelay ? config.InitialSpawnDelay : config.CircleSpawnCooldown);
+
             while (true)
             {
-                yield return new WaitForSeconds(config.CircleSpawnCooldown);
+                while (Time.time < nextSpawnTime)
+                    yield return null;
 
+                // Try to Spawn!
                 if (Random.value < currentCircleChance)
                 {
                     SpawnWave(config.CircleMobCount);
@@ -64,10 +68,9 @@ namespace GoodVillageGames.Game.Core.Manager
                 }
                 else
                 {
-                    currentCircleChance = Mathf.Clamp01(
-                        currentCircleChance + config.ChanceIncreasePerCheck
-                    );
+                    currentCircleChance = Mathf.Clamp01(currentCircleChance + config.ChanceIncreasePerCheck);
                 }
+                nextSpawnTime += config.CircleSpawnCooldown;
             }
         }
     }
