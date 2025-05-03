@@ -13,7 +13,6 @@ namespace GoodVillageGames.Game.General.UI
         [SerializeField] private DifficultyInfo difficultyInfo;
         [SerializeField] private TextMeshProUGUI title; 
         [SerializeField] private TextMeshProUGUI description;
-        [SerializeField] private RectTransform planetRectTransform;
 
         private RectTransform _rectTransform;
         private UIOutline _outline;
@@ -57,7 +56,6 @@ namespace GoodVillageGames.Game.General.UI
         IEnumerator AnimateSize(Vector2 targetSize)
         {
             Vector2 startSize = _rectTransform.sizeDelta;
-            Vector2 planetStartSize = planetRectTransform.sizeDelta;
             float elapsed = 0f;
 
             while (elapsed < ANIMATION_DURATION)
@@ -65,12 +63,10 @@ namespace GoodVillageGames.Game.General.UI
                 elapsed += Time.deltaTime;
                 float t = Mathf.Clamp01(elapsed / ANIMATION_DURATION);
                 _rectTransform.sizeDelta = Vector2.Lerp(startSize, targetSize, t);
-                planetRectTransform.sizeDelta = Vector2.Lerp(planetStartSize, targetSize, t);
                 yield return null;
             }
 
             _rectTransform.sizeDelta = targetSize;
-            planetRectTransform.sizeDelta = targetSize;
             _sizeCoroutine = null;
         }
 
