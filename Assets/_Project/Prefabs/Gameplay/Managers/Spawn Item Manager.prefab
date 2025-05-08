@@ -45,6 +45,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _worldBounds: {fileID: 0}
-  _minTimeBetweenSpawns: 30
-  _startTimeSpawn: 300
-  _decreaseTimeSpawn: 5
+  _minTimeBetweenSpawns: 10
+  _startTimeSpawn: 60
+  _decreaseTimeSpawn: 0.5

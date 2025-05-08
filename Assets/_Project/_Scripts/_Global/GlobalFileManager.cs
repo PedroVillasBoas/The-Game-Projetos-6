@@ -7,6 +7,7 @@ using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Enums.Enemy;
 using GoodVillageGames.Game.DataCollection;
 using GoodVillageGames.Game.Enums.Upgrades;
+using System.Globalization;
 
 namespace GoodVillageGames.Game.Core.Global
 {
@@ -52,6 +53,9 @@ namespace GoodVillageGames.Game.Core.Global
             {
                 Debug.LogError($"Failed to create save directory: {e.Message}");
             }
+
+            CultureInfo.DefaultThreadCurrentCulture    = CultureInfo.InvariantCulture;
+            CultureInfo.DefaultThreadCurrentUICulture  = CultureInfo.InvariantCulture;
         }
 
         void Update()
@@ -183,9 +187,9 @@ namespace GoodVillageGames.Game.Core.Global
             dataParts.Add(currentSession.GameSessionStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(isFinalSave ? currentSession.GameSessionEndTime.ToString("yyyy-MM-ddTHH:mm:ssZ") : "IN_PROGRESS");
             dataParts.Add(isFinalSave.ToString());
-            dataParts.Add(currentSessionSeconds.ToString("F0"));
-            dataParts.Add(currentSessionMinutes.ToString("F0"));
-            dataParts.Add(currentSessionHours.ToString("F0"));
+            dataParts.Add(currentSessionSeconds.ToString("F0", CultureInfo.InvariantCulture));
+            dataParts.Add(currentSessionMinutes.ToString("F0", CultureInfo.InvariantCulture));
+            dataParts.Add(currentSessionHours.ToString("F0", CultureInfo.InvariantCulture));
             dataParts.Add(currentSession.RunData.RunStartTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(currentSession.RunData.RunEndTime.ToString("yyyy-MM-ddTHH:mm:ssZ"));
             dataParts.Add(currentSession.RunData.RunDifficulty.ToString());
@@ -230,7 +234,7 @@ namespace GoodVillageGames.Game.Core.Global
                 }
                 else if (currentSession.RunData.PlayerStats.TryGetValue(statKey, out float value))
                 {
-                    dataParts.Add(value.ToString("F1"));
+                    dataParts.Add(value.ToString("F1", CultureInfo.InvariantCulture));
                 }
                 else
                 {

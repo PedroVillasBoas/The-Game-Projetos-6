@@ -125,14 +125,8 @@ namespace GoodVillageGames.Game.Core.Global
             var filtered = new Dictionary<string, float>(desiredStats.Length + 1);
             foreach (var key in desiredStats)
             {
-
-
                 if (allStats.TryGetValue(key, out float value))
-                {
                     filtered[key] = value;
-                    if (key == "BoostRechargeRate")
-                        Debug.Log($"BoostRechargeRate = {filtered[key]}");
-                }
             }
 
             filtered["Level"] = upgrader.GetPlayerCurrentLevel();
@@ -180,11 +174,6 @@ namespace GoodVillageGames.Game.Core.Global
 
 
             currentRunData.TotalRunScore = (int)((upgradeScore + enemyScore) * currentRunData.RunDifficulty);
-
-            Debug.Log($"Upgrade Score: {upgradeScore}");
-            Debug.Log($"Enemy Score: {enemyScore}");
-            Debug.Log($"Difficulty: {currentRunData.RunDifficulty}");
-            Debug.Log($"Final Score: {currentRunData.TotalRunScore}");
         }
 
         double CalculateUpgradeScore()
