@@ -11,7 +11,7 @@ namespace GoodVillageGames.Game.General.UI.Buttons
     {
         public SceneScriptableObject SceneNameSO { get => throw new System.NotImplementedException(); set => throw new System.NotImplementedException(); }
 
-        public void CallChangeScene()
+        public void ButtonAction()
         {
             throw new System.NotImplementedException();
         }

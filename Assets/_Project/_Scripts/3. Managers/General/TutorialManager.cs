@@ -2,8 +2,10 @@ using UnityEngine;
 using TriInspector;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Enums.UI;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Global;
+using GoodVillageGames.Game.Handlers.UI;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -20,16 +22,29 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void OnTutorialGameState(GameState gameState)
         {
-            if (gameState == GameState.Tutorial) StartTutorial();
+            if (gameState == GameState.Tutorial)
+                if (GlobalGameManager.Instance.ShowTutorial)
+                    StartTutorial();
+                else
+                    JumpTutorial();
+            
         }
 
-        private void StartTutorial()
+        void StartTutorial()
         {
             currentIndex = 0;
             ShowNextStep();
         }
 
-        private void ShowNextStep()
+        void JumpTutorial()
+        {
+            UIEventsHandler temp = FindFirstObjectByType<UIEventsHandler>();
+            temp.TurnOnPlayerInput();
+            GlobalEventsManager.Instance.ChangeGameState(GameState.GameBegin);
+            Destroy(gameObject);
+        }
+
+        void ShowNextStep()
         {
             if (currentStepInstance != null)
             {
@@ -50,16 +65,15 @@ namespace GoodVillageGames.Game.Core.Manager
             currentStepInstance.Enter();
         }
 
-        private void OnStepContinue()
+        void OnStepContinue()
         {
             currentIndex++;
             ShowNextStep();
         }
 
-        private void TutorialComplete()
+        void TutorialComplete()
         {
             GlobalEventsManager.Instance.ChangeGameState(GameState.GameBegin);
-            Debug.Log("Tutorial finished! Starting game...");
             Destroy(gameObject);
         }
     }

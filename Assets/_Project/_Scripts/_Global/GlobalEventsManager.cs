@@ -18,6 +18,7 @@ namespace GoodVillageGames.Game.Core.Global
 
         // Game State
         public event Action<GameState> ChangeGameStateEventTriggered;
+        public event Action<bool> TutorialChoiceEventTriggered;
 
         // UI Animations State
         public event Action<UIState> OnAnimationEventTriggered;
@@ -42,6 +43,7 @@ namespace GoodVillageGames.Game.Core.Global
 
         // Public Methods | Other Classes will invoke using this methods
         public void ChangeGameState(GameState gameState)                            =>      ChangeGameStateEventTriggered?.Invoke(gameState);
+        public void ChangeTutorialChoice(bool choice)                               =>      TutorialChoiceEventTriggered?.Invoke(choice);
         public void AnimationTriggerEvent(UIState uiState)                          =>      OnAnimationEventTriggered?.Invoke(uiState);
         public void GameDifficultyTriggerEvent(GameDifficulty difficulty)           =>      OnGameDifficultyEventTriggered?.Invoke(difficulty);
         public void AddDefeatedEnemy(EnemyType enemyType)                           =>      EnemyDefeatedEventTriggered?.Invoke(enemyType);
