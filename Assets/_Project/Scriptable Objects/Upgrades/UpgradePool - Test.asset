@@ -1,0 +1,29 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 94b8d5a87fc05634291142394467cb63, type: 3}
+  m_Name: UpgradePool - Test
+  m_EditorClassIdentifier: 
+  CommonUpgrades:
+  - {fileID: 11400000, guid: c3f54986bd20b1e4a91a4bcdf9aef7fb, type: 2}
+  CommonWeight: 50
+  UncommonUpgrades:
+  - {fileID: 11400000, guid: d86a698eb6480b343a71f3fb5aeac4d3, type: 2}
+  UncommonWeight: 30
+  RareUpgrades:
+  - {fileID: 11400000, guid: f11560e2cfae3c24b9e01ebba9643f15, type: 2}
+  RareWeight: 15
+  EpicUpgrades:
+  - {fileID: 11400000, guid: 6fc6c316a642fa54e9e49b7568fea147, type: 2}
+  EpicWeight: 4
+  LegendaryUpgrades:
+  - {fileID: 11400000, guid: 7767db2b1be7e5e4d908ebd73e416ce1, type: 2}
+  LegendaryWeight: 1

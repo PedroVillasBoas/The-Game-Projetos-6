@@ -1,9 +1,10 @@
 using UnityEngine;
 using System.Reflection;
 using System.Collections.Generic;
+using GoodVillageGames.Game.Handlers;
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
-using GoodVillageGames.Game.Core.Global;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -13,6 +14,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         [SerializeField] private PlayerActions player;
         private List<UpgradeStatModifier> playerUpgrades = new();
+        private HealthHandler playerHealthHandler;
 
         void Awake()
         {
@@ -23,14 +25,18 @@ namespace GoodVillageGames.Game.Core.Manager
                 Destroy(gameObject);
         }
 
+        void OnEnable() => playerHealthHandler = transform.root.GetComponentInChildren<HealthHandler>();
+
         public void AddUpgradeToPlayer(UpgradeStatModifier upgrade)
         {
             upgrade.UpgradeLogic.ApplyUpgrade(player);
             playerUpgrades.Add(upgrade);
             GlobalEventsManager.Instance.CollectUpgradeData(upgrade);
+
+            if (upgrade.UpgradeLogic.StatType == Enums.Stats.StatType.MaxHealth)
+                OnMaxHealthUpgrade(upgrade.UpgradeLogic.Value);
         }
 
-        // not using yet
         public int GetPlayerCurrentLevel()
         {
             return PlayerExpManager.Instance.CurrentLevel;
@@ -57,5 +63,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
             return statsDict;
         }
+
+        void OnMaxHealthUpgrade(float amount) => playerHealthHandler.CurrentHealth += amount;
     }
 }

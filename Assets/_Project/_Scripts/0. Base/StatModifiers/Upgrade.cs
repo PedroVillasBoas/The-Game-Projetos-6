@@ -13,6 +13,7 @@ namespace GoodVillageGames.Game.Core.Attributes.Modifiers
         private float _duration = -1f;
 
         public StatType StatType => _statType;
+        public float Value => _value;
 
         public void ApplyUpgrade(Entity entity)
         {
