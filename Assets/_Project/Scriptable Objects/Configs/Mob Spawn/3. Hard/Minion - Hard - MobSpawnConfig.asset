@@ -14,9 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   BaseMobAmount: 4
   BaseMobAdditivePerWave: 2
-  SpawnAmountMult: 0.4
-  TimeBetweenWaves: 7
-  MinTimeBetweenWaves: 0.6
+  SpawnAmountMult: 0.25
+  TimeBetweenWaves: 10
+  MinTimeBetweenWaves: 1.5
   FlatTimeBetweenWavesDecrease: 0.3
   MinSpawnDistance: 5
   MobPools:

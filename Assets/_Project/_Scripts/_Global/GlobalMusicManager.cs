@@ -48,16 +48,16 @@ namespace GoodVillageGames.Game.Core.Global
 
                 case GameState.GameBegin:
                     SetMusic(GameSceneAudio.InGame);
-                    SetAudioLowPassFilter(GameAudioFilter.InGame);
+                    //SetAudioLowPassFilter(GameAudioFilter.InGame);
                     break;
 
-                case GameState.GameContinue:
-                    SetAudioLowPassFilter(GameAudioFilter.InGame);
-                    break;
+                // case GameState.GameContinue:
+                //     SetAudioLowPassFilter(GameAudioFilter.InGame);
+                //     break;
 
-                case GameState.GamePaused:
-                    SetAudioLowPassFilter(GameAudioFilter.Paused);
-                    break;
+                // case GameState.GamePaused:
+                //     SetAudioLowPassFilter(GameAudioFilter.Paused);
+                //     break;
 
                 case GameState.GameOver:
                     SetMusic(GameSceneAudio.GameOver);

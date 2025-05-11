@@ -2858,6 +2858,10 @@ PrefabInstance:
       propertyPath: _worldBounds
       value: 
       objectReference: {fileID: 196348471}
+    - target: {fileID: 7519527055574528465, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: _playerTransform
+      value: 
+      objectReference: {fileID: 1823016962}
     - target: {fileID: 8188090714756042777, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: mainCamera
       value: 

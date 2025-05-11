@@ -15,8 +15,8 @@ MonoBehaviour:
   BaseMobAmount: 1
   BaseMobAdditivePerWave: 1
   SpawnAmountMult: 0.1
-  TimeBetweenWaves: 10
-  MinTimeBetweenWaves: 1
+  TimeBetweenWaves: 15
+  MinTimeBetweenWaves: 5
   FlatTimeBetweenWavesDecrease: 0.1
   MinSpawnDistance: 2
   MobPools:
