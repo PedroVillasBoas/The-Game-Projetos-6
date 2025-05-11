@@ -1,6 +1,6 @@
 # Void Protocol
 
-![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![Versão](https://img.shields.io/badge/Versão-0.0.2-blue) ![Licença](https://img.shields.io/badge/Licença-MIT-blue) ![Contributors](https://badgen.net/github/contributors/PedroVillasBoas/The-Game-Projetos-6) 
+![Status do Projeto](https://img.shields.io/badge/Status-Em%20Desenvolvimento-yellow) ![Versão](https://img.shields.io/badge/Versão-0.0.4-blue) ![Licença](https://img.shields.io/badge/Licença-MIT-blue) ![Contributors](https://badgen.net/github/contributors/PedroVillasBoas/The-Game-Projetos-6) 
 
 ![](https://api.visitorbadge.io/api/VisitorHit?user=seuusername&repo=VoidProtocol&countColor=%2300BFFF)
 
