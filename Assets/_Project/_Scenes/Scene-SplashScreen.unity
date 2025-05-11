@@ -1645,6 +1645,14 @@ PrefabInstance:
       propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 7799250689971479997, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7799250689971479997, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
+      propertyPath: m_AdditionalShaderChannelsFlag
+      value: 25
+      objectReference: {fileID: 0}
     - target: {fileID: 8682733435603065019, guid: b43b835e637ea9843b1f712ea58f48f3, type: 3}
       propertyPath: m_RaycastTarget
       value: 1

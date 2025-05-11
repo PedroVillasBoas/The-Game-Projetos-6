@@ -26439,7 +26439,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _expColliderDetector: {fileID: 1780143750}
   _expHandler: {fileID: 1618449951}
-  _expMultiplier: 1.015
 --- !u!1 &1823016961
 GameObject:
   m_ObjectHideFlags: 0

@@ -48,6 +48,7 @@ namespace GoodVillageGames.Game.Core.Global
 
                 case GameState.GameBegin:
                     SetMusic(GameSceneAudio.InGame);
+                    SetAmbient(GameSceneAudio.InGame);
                     //SetAudioLowPassFilter(GameAudioFilter.InGame);
                     break;
 
