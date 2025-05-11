@@ -1,7 +1,7 @@
 using System;
+using UnityEngine;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager;
-using UnityEngine;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
@@ -18,27 +18,24 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
 
         public event Action<EnemyAI> DoActionEventTriggered;
 
-        protected override void Awake()
+        protected override void OnEnable()
         {
-            base.Awake();
+            base.OnEnable();
 
-            if (enemyHealthHandler != null)
-            {
-                enemyHealthHandler.OnDeath += ExecuteDie;
-            }
+            currentState = EnemyState.Chase;
+            
+            enemyHealthHandler.OnDeath += ExecuteDie;
+            enemyDetectionCollider.PlayerInRangeActionTriggered += SetFireFlag;
         }
 
-        protected virtual void OnDestroy()
+        protected virtual void OnDisable()
         {
-            if (enemyHealthHandler != null)
-                enemyHealthHandler.OnDeath -= ExecuteDie;
-
             enemyDetectionCollider.PlayerInRangeActionTriggered -= SetFireFlag;
+            enemyHealthHandler.OnDeath -= ExecuteDie;
         }
 
         void Start()
         {
-            enemyDetectionCollider.PlayerInRangeActionTriggered += SetFireFlag;
         }
 
         public override void Update()

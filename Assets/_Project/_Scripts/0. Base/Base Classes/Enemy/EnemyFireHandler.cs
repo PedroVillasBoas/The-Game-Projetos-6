@@ -64,10 +64,7 @@ namespace GoodVillageGames.Game.Handlers
         {
             _inputValue = true;
 
-            if (_fireCoroutine == null)
-            {
-                _fireCoroutine = StartCoroutine(FiringProcess());
-            }
+            _fireCoroutine ??= StartCoroutine(FiringProcess());
 
         }
 
@@ -103,6 +100,8 @@ namespace GoodVillageGames.Game.Handlers
                 StopCoroutine(_fireCoroutine);
                 _fireCoroutine = null;
             }
+
+            ReloadHandler.CancelReload();
         }
 
         public void Fire(PoolID poolId)

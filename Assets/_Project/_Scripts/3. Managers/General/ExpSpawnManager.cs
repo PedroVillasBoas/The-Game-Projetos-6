@@ -26,25 +26,29 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             expPoolsDict = new Dictionary<EnemyType, PoolID>
             {
-                // Minion First (any difficulty) -> EXP Tiny
+                // (any difficulty) -> EXP Tiny
                 { EnemyType.MinionEasyFirst, PoolID.PickupEXPTiny },
-                { EnemyType.MinionMediumFirst, PoolID.PickupEXPTiny },
-                { EnemyType.MinionHardFirst, PoolID.PickupEXPTiny },
 
-                // Minion Second (any difficulty) -> EXP Small
+                // (any difficulty) -> EXP Small
                 { EnemyType.MinionEasySecond, PoolID.PickupEXPSmall },
-                { EnemyType.MinionMediumSecond, PoolID.PickupEXPSmall },
-                { EnemyType.MinionHardSecond, PoolID.PickupEXPSmall },
+                { EnemyType.MinionMediumFirst, PoolID.PickupEXPSmall },
 
-                // Boss First (any difficulty) -> EXP Large
-                { EnemyType.BossEasyFirst, PoolID.PickupEXPLarge },
+                // (any difficulty) -> EXP Medium
+                { EnemyType.MinionMediumSecond, PoolID.PickupEXPMedium },
+                { EnemyType.MinionHardFirst, PoolID.PickupEXPMedium },
+                { EnemyType.BossEasyFirst, PoolID.PickupEXPMedium },
+
+                // (any difficulty) -> EXP Large
+                { EnemyType.MinionHardSecond, PoolID.PickupEXPLarge },
+                { EnemyType.BossEasySecond, PoolID.PickupEXPLarge },
                 { EnemyType.BossMediumFirst, PoolID.PickupEXPLarge },
-                { EnemyType.BossHardFirst, PoolID.PickupEXPLarge },
 
-                // Boss Second (any difficulty) -> EXP Gigantic
-                { EnemyType.BossEasySecond, PoolID.PickupEXPGigantic },
+                // (any difficulty) -> EXP Gigantic
+                { EnemyType.BossHardFirst, PoolID.PickupEXPGigantic },
                 { EnemyType.BossMediumSecond, PoolID.PickupEXPGigantic },
-                { EnemyType.BossHardSecond, PoolID.PickupEXPGigantic }
+
+                // (any difficulty) -> EXP Ginormous
+                { EnemyType.BossHardSecond, PoolID.PickupEXPGinormous },
             };
         }
 

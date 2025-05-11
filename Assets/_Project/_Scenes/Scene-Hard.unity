@@ -870,6 +870,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1823016962}
+    - target: {fileID: 2093820372271867883, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: specialMobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 3458afabcf4284943b24fc63c858bfd4, type: 2}
     - target: {fileID: 3509143743910924987, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -919,6 +923,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6161749726460916406, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: mobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: c12e0f68d294aae4eb4b527990863b8f, type: 2}
+    - target: {fileID: 6161749726460916406, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1823016962}
@@ -930,6 +938,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8188090714756042777, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: mobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 2aa6c34ce20bed44c9a277bc55ea36d7, type: 2}
     - target: {fileID: 8188090714756042777, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: playerTransform
       value: 

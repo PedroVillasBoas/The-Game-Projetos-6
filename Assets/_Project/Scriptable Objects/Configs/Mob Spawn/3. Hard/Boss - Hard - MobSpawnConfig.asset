@@ -10,27 +10,27 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 9d8c0e3739e606245bd98f13db55b4d0, type: 3}
-  m_Name: Boss - Medium - MobSpawnConfig
+  m_Name: Boss - Hard - MobSpawnConfig
   m_EditorClassIdentifier: 
   BaseMobAmount: 1
   BaseMobAdditivePerWave: 1
-  SpawnAmountMult: 0.05
-  TimeBetweenWaves: 180
-  MinTimeBetweenWaves: 30
-  FlatTimeBetweenWavesDecrease: 5
-  MinSpawnDistance: 5
+  SpawnAmountMult: 0.3
+  TimeBetweenWaves: 100
+  MinTimeBetweenWaves: 10
+  FlatTimeBetweenWavesDecrease: 10
+  MinSpawnDistance: 100
   MobPools:
   - PoolID: 9
-    MobDifficulty: 0
+    MobDifficulty: 1
     Weight: 2
   - PoolID: 10
-    MobDifficulty: 1
+    MobDifficulty: 2
     Weight: 5
   - PoolID: 11
-    MobDifficulty: 2
+    MobDifficulty: 3
     Weight: 10
   - PoolID: 14
-    MobDifficulty: 2
+    MobDifficulty: 3
     Weight: 12
   HasSpawnDelay: 1
-  InitialSpawnDelay: 180
+  InitialSpawnDelay: 80

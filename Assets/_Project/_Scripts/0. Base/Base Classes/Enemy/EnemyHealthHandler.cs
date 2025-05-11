@@ -2,7 +2,6 @@ using System;
 using UnityEngine;
 using GoodVillageGames.Game.Core.Util;
 using GoodVillageGames.Game.Interfaces;
-using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
 

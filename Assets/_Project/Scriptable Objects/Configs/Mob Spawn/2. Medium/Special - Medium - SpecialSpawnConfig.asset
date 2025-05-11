@@ -12,17 +12,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 85e142236534b3844bd83da6791cb39e, type: 3}
   m_Name: Special - Medium - SpecialSpawnConfig
   m_EditorClassIdentifier: 
-  CircleSpawnCooldown: 10
-  CircleMobCount: 20
-  CircleRadius: 50
-  BaseCircleChance: 0.1
-  ChanceIncreasePerCheck: 0.05
+  CircleSpawnCooldown: 35
+  CircleMobCount: 30
+  CircleRadius: 80
+  BaseCircleChance: 0.15
+  ChanceIncreasePerCheck: 0.1
   MobPools:
   - PoolID: 4
-    MobDifficulty: 1
+    MobDifficulty: 2
     Weight: 1
   - PoolID: 7
-    MobDifficulty: 1
+    MobDifficulty: 2
     Weight: 1
   HasSpawnDelay: 1
-  InitialSpawnDelay: 30
+  InitialSpawnDelay: 25

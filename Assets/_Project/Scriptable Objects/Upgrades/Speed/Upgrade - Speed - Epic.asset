@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Hyperspace Booster
   Description: <style="Add">Increase</style> your <style="Stat">Move Speed</style>
-    by <style="Value">7</style>.
+    by <style="Value">9</style>.
   Rarity: 3
   Image: {fileID: 21300000, guid: ed3d718c8af6c2c4e9c5f9997002624c, type: 3}
   UpgradeLogic:
@@ -27,4 +27,4 @@ MonoBehaviour:
       data:
         _statType: 3
         _operatorType: 1
-        _value: 7
+        _value: 9

@@ -2794,6 +2794,10 @@ PrefabInstance:
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1823016962}
+    - target: {fileID: 2093820372271867883, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: specialMobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 11a8332e21b7c7d4cbab0678a58df79f, type: 2}
     - target: {fileID: 3509143743910924987, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
@@ -2843,6 +2847,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 519420031}
     - target: {fileID: 6161749726460916406, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: mobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: ff973494dbc0f4b4193536c6404e2b41, type: 2}
+    - target: {fileID: 6161749726460916406, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: playerTransform
       value: 
       objectReference: {fileID: 1823016962}
@@ -2854,6 +2862,10 @@ PrefabInstance:
       propertyPath: mainCamera
       value: 
       objectReference: {fileID: 519420031}
+    - target: {fileID: 8188090714756042777, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
+      propertyPath: mobSpawnConfig
+      value: 
+      objectReference: {fileID: 11400000, guid: 244d6fd614c232c43b6604266dca7893, type: 2}
     - target: {fileID: 8188090714756042777, guid: 11ec4a7743e0c334f94f74acd91d4801, type: 3}
       propertyPath: playerTransform
       value: 
@@ -26661,6 +26673,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: bossesPoolEntries.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: minionsPoolEntries.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: projectilesPoolEntries.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 4442581346047299351, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
       propertyPath: m_Name
       value: Pool Manager

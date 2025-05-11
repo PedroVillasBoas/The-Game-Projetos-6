@@ -26439,7 +26439,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _expColliderDetector: {fileID: 1780143750}
   _expHandler: {fileID: 1618449951}
-  _expMultiplier: 3
+  _expMultiplier: 1.015
 --- !u!1 &1823016961
 GameObject:
   m_ObjectHideFlags: 0
@@ -28048,6 +28048,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: bossesPoolEntries.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: minionsPoolEntries.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 348894287999711163, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: projectilesPoolEntries.Array.size
+      value: 4
+      objectReference: {fileID: 0}
     - target: {fileID: 4442581346047299351, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
       propertyPath: m_Name
       value: Pool Manager

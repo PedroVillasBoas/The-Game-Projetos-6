@@ -21,7 +21,7 @@ MonoBehaviour:
   Acceleration: 5
   Experience: 0
   BaseAttackDamage: 5
-  AttackSpeed: 1
+  AttackSpeed: 1.5
   MaxBoostTime: 1
   MaxBoostSpeed: 40
   BoostRechargeRate: 0.2

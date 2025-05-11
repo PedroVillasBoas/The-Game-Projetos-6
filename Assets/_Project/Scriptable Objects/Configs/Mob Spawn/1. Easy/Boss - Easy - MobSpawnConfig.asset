@@ -21,7 +21,7 @@ MonoBehaviour:
   MinSpawnDistance: 5
   MobPools:
   - PoolID: 9
-    MobDifficulty: 0
+    MobDifficulty: 1
     Weight: 1
   HasSpawnDelay: 1
-  InitialSpawnDelay: 180
+  InitialSpawnDelay: 60

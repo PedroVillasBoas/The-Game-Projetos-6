@@ -1,8 +1,8 @@
 using UnityEngine;
 using System.Collections;
 using GoodVillageGames.Game.Interfaces;
-using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Enemy.AI;
+using GoodVillageGames.Game.Core.Attributes;
 
 namespace GoodVillageGames.Game.Handlers
 {

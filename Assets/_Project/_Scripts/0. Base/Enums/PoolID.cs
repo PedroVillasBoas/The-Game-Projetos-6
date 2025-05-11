@@ -56,8 +56,10 @@ namespace GoodVillageGames.Game.Enums.Pooling
             // EXP
         PickupEXPTiny,
         PickupEXPSmall,
+        PickupEXPMedium,
         PickupEXPLarge,
         PickupEXPGigantic,
+        PickupEXPGinormous,
             // Items
         PickupItemDamage,
         PickupItemSpeed,

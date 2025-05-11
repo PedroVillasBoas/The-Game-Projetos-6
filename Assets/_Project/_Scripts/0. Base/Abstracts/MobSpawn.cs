@@ -6,7 +6,6 @@ using System.Collections;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Core.Global;
-using GoodVillageGames.Game.Core.Manager;
 using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 
@@ -25,7 +24,7 @@ namespace GoodVillageGames.Game.Core.MobSpawning
         [Space(15), ShowIf("isSpecial", false), SerializeField] protected MobSpawnConfig mobSpawnConfig;
         [Space(15), ShowIf("isSpecial", true), SerializeField] protected SpecialMobSpawnConfig specialMobSpawnConfig;
 
-        protected int waveCounter;
+        protected int waveCounter = 1;
         protected List<Vector3> currentWaveSpawnPositions = new();
 
         // Flag
@@ -35,7 +34,7 @@ namespace GoodVillageGames.Game.Core.MobSpawning
         protected Coroutine spawnCoroutine;
 
         // Proterties
-        protected float Delay 
+        protected float Delay
         {
             get { return isSpecial ? specialMobSpawnConfig.InitialSpawnDelay : mobSpawnConfig.InitialSpawnDelay; }
         }
@@ -62,7 +61,6 @@ namespace GoodVillageGames.Game.Core.MobSpawning
         {
             while (true)
             {
-                Debug.Log($"Began Initial Delay of {gameObject.name} with Delay Amount: {delay} at {Time.time}");
                 yield return new WaitForSeconds(delay);
                 BeginSpawnCoroutine();
                 break;
@@ -84,21 +82,21 @@ namespace GoodVillageGames.Game.Core.MobSpawning
 
         protected int CalculateMobsPerWave()
         {
+            if (IsPrime(waveCounter)) return waveCounter;
+
             // base + additive per wave + % of base * waveCounter
-            int additive = mobSpawnConfig.BaseMobAdditivePerWave * waveCounter;
-            int percent = Mathf.CeilToInt(mobSpawnConfig.BaseMobAmount * mobSpawnConfig.SpawnAmountMult * waveCounter);
+            int additive = mobSpawnConfig.BaseMobAdditivePerWave * (waveCounter - 1);
+            int percent = Mathf.CeilToInt(mobSpawnConfig.BaseMobAmount * mobSpawnConfig.SpawnAmountMult * (waveCounter - 1));
             return mobSpawnConfig.BaseMobAmount + additive + percent;
         }
 
         protected float CalculateSpawnInterval()
         {
-            float time = SceneTimerManager.Instance.GetRunTime();
-            Debug.Log($"Calculating Spawn Interval at {time} in SceneTimerManager");
             float interval = Mathf.Max(mobSpawnConfig.MinTimeBetweenWaves, mobSpawnConfig.TimeBetweenWaves - mobSpawnConfig.FlatTimeBetweenWavesDecrease * waveCounter);
             return interval;
         }
 
-        protected PoolID PickRandomPoolID<TEntry>(IReadOnlyList<TEntry> entries, Func<TEntry,int>  weightSelector, Func<TEntry,PoolID> idSelector)
+        protected PoolID PickRandomPoolID<TEntry>(IReadOnlyList<TEntry> entries, Func<TEntry, int> weightSelector, Func<TEntry, PoolID> idSelector)
         {
             int totalWeight = entries.Sum(weightSelector);
             if (totalWeight <= 0)
@@ -117,13 +115,14 @@ namespace GoodVillageGames.Game.Core.MobSpawning
             return idSelector(entries[0]);
         }
 
-       protected Vector3 GetValidSpawnPosition()
+        protected Vector3 GetValidSpawnPosition()
         {
             Vector3 spawnPos;
             int attempts = 0;
             bool validPosition;
 
-            do {
+            do
+            {
                 validPosition = true;
                 spawnPos = GetOffscreenSpawnPosition();
 
@@ -159,6 +158,23 @@ namespace GoodVillageGames.Game.Core.MobSpawning
             spawnPoint += (Vector3)randomDir * spawnAreaOffset;
             spawnPoint.z = 0;
             return spawnPoint;
+        }
+
+        bool IsPrime(int waveNum)
+        {
+            if (waveNum < 2) 
+                return false;
+            if (waveNum == 2) 
+                return true;
+            if (waveNum % 2 == 0) 
+                return false;
+            int boundary = (int)Mathf.Floor(Mathf.Sqrt(waveNum));
+            for (int i = 3; i <= boundary; i += 2)
+            {
+                if (waveNum % i == 0) 
+                    return false;
+            }
+            return true;
         }
 
         #endregion

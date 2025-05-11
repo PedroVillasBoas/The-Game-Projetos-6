@@ -123,7 +123,11 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4926477981475848656}
+  - {fileID: 8788968082286429008}
+  - {fileID: 1461210715759555363}
   - {fileID: 2769002912132404262}
+  - {fileID: 3106927514500754935}
+  - {fileID: 29971438294123771}
   m_Father: {fileID: 8715007574421097245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1814464302157234867
@@ -156,6 +160,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 3449491391749136988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1821230695568933579
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2979124979481241983}
+  m_Layer: 0
+  m_Name: Boss - Hard - First - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2979124979481241983
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1821230695568933579}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2201390202617701203
 GameObject:
@@ -219,6 +254,99 @@ Transform:
   m_Children: []
   m_Father: {fileID: 3855073578096229281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3213012520144527493
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1461210715759555363}
+  m_Layer: 0
+  m_Name: Enemies - Minion - First - Hard - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1461210715759555363
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3213012520144527493}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7889934924782694323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3263021947585473031
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1870356378204189334}
+  m_Layer: 0
+  m_Name: Boss - Medium - First - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1870356378204189334
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3263021947585473031}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3449491391749136988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3283073310691784952
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2203454721728079159}
+  m_Layer: 0
+  m_Name: Boss - Medium - First - Special Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2203454721728079159
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3283073310691784952}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3316530909465870371
 GameObject:
   m_ObjectHideFlags: 0
@@ -250,9 +378,52 @@ Transform:
   m_Children:
   - {fileID: 432075377961590569}
   - {fileID: 9025920167196583044}
+  - {fileID: 7152410063046259198}
+  - {fileID: 2233754991139672088}
+  - {fileID: 4319177541775080887}
+  - {fileID: 1657392873652704055}
   - {fileID: 8829761703177038829}
   - {fileID: 7310406056290279571}
+  - {fileID: 7543820251738823513}
+  - {fileID: 2203454721728079159}
+  - {fileID: 3578799193493791916}
+  - {fileID: 7167482583503492428}
+  - {fileID: 2979124979481241983}
+  - {fileID: 6805323798165999796}
+  - {fileID: 7416714596341658882}
+  - {fileID: 7905705901131250403}
   m_Father: {fileID: 8715007574421097245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3482229026001240290
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7167482583503492428}
+  m_Layer: 0
+  m_Name: Boss - Medium - Second - Special Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7167482583503492428
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3482229026001240290}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &3577417339239845789
 GameObject:
@@ -319,6 +490,99 @@ Transform:
   - {fileID: 2574576969722869489}
   m_Father: {fileID: 8715007574421097245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3628056258659677281
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 8788968082286429008}
+  m_Layer: 0
+  m_Name: Enemies - Minion - First - Medium - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &8788968082286429008
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3628056258659677281}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7889934924782694323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &3842380017933770438
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4319177541775080887}
+  m_Layer: 0
+  m_Name: Minion - Hard - First - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4319177541775080887
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3842380017933770438}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4097493112068939446
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7905705901131250403}
+  m_Layer: 0
+  m_Name: Boss - Hard - Second - Special Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7905705901131250403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4097493112068939446}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4114325758314454180
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +644,104 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 922113974792534337}
+  - {fileID: 1870356378204189334}
+  - {fileID: 1168390848721751856}
+  - {fileID: 847206124272439855}
+  - {fileID: 1183929585559296935}
   m_Father: {fileID: 8715007574421097245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4136817286267063593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7416714596341658882}
+  m_Layer: 0
+  m_Name: Boss - Hard - Second - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7416714596341658882
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4136817286267063593}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4137261365614195716
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1168390848721751856}
+  m_Layer: 0
+  m_Name: Boss - Medium - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1168390848721751856
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4137261365614195716}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3449491391749136988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4364191690241439937
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1910495153461120320}
+  m_Layer: 0
+  m_Name: Pickup - EXP - Ginormous - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1910495153461120320
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4364191690241439937}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6075454400224371959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &4442581346047299351
 GameObject:
@@ -451,11 +812,43 @@ MonoBehaviour:
     prefab: {fileID: 6009267874362592246, guid: a7414dbf413e095448fb397ed0a88e9a, type: 3}
     config: {fileID: 11400000, guid: d22386a466ec951438c726d8efb68e96, type: 2}
     poolContainer: {fileID: 797038386579340365}
+  - poolId: 4
+    prefab: {fileID: 6903827366168117235, guid: a061cfd93b69e9c438c3b5ce118c66cf, type: 3}
+    config: {fileID: 11400000, guid: f45aa3b592c4fd54db673025e5068fab, type: 2}
+    poolContainer: {fileID: 3628056258659677281}
+  - poolId: 7
+    prefab: {fileID: 5775961182904826007, guid: c51e986cf109a214eb292af4ab8bb284, type: 3}
+    config: {fileID: 11400000, guid: f45aa3b592c4fd54db673025e5068fab, type: 2}
+    poolContainer: {fileID: 8633979036974289709}
+  - poolId: 5
+    prefab: {fileID: 5836671682279114384, guid: 2cf68ab02ac0d5049975ce203f76ca1b, type: 3}
+    config: {fileID: 11400000, guid: 564144406710a8e4eb9b60fe4ee1078f, type: 2}
+    poolContainer: {fileID: 3213012520144527493}
+  - poolId: 8
+    prefab: {fileID: 5742465193234493856, guid: 21048ab989dc68d4e9bb9a1cd014fead, type: 3}
+    config: {fileID: 11400000, guid: 564144406710a8e4eb9b60fe4ee1078f, type: 2}
+    poolContainer: {fileID: 7167350371849073491}
   bossesPoolEntries:
   - poolId: 9
     prefab: {fileID: 6818246206260164804, guid: 1069d8dea53ac644ab7312c58ef5e512, type: 3}
     config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
     poolContainer: {fileID: 1814464302157234867}
+  - poolId: 10
+    prefab: {fileID: 6315634972366253465, guid: a4d02a185c1e3f147a627e7a5f278d7a, type: 3}
+    config: {fileID: 11400000, guid: 99d8027c3cfe35b49b983be876d7f8a2, type: 2}
+    poolContainer: {fileID: 3263021947585473031}
+  - poolId: 13
+    prefab: {fileID: 6818246206260164804, guid: 1069d8dea53ac644ab7312c58ef5e512, type: 3}
+    config: {fileID: 11400000, guid: 5fd6e95469f6cb64694704f22831cb23, type: 2}
+    poolContainer: {fileID: 4137261365614195716}
+  - poolId: 11
+    prefab: {fileID: 7178086848083613757, guid: 74ce5a2cf19e0e5499ded56d9e86fac9, type: 3}
+    config: {fileID: 11400000, guid: 22019863f54c3af4faea36aa83e5843e, type: 2}
+    poolContainer: {fileID: 7778130636933058823}
+  - poolId: 14
+    prefab: {fileID: 1714611934859987907, guid: 01e58940418405243a22138e4ae395d8, type: 3}
+    config: {fileID: 11400000, guid: 22019863f54c3af4faea36aa83e5843e, type: 2}
+    poolContainer: {fileID: 6385761241509451897}
   projectilesPoolEntries:
   - poolId: 15
     prefab: {fileID: 1375842065728042414, guid: b77e28426c33b254d9576c5d701e925d, type: 3}
@@ -473,6 +866,54 @@ MonoBehaviour:
     prefab: {fileID: 3796983072366540952, guid: 7df1ed61c5ae1b24b8c117032b9bbfac, type: 3}
     config: {fileID: 11400000, guid: 3bc373bff1704e4488da8adb990e749d, type: 2}
     poolContainer: {fileID: 797038386579340365}
+  - poolId: 16
+    prefab: {fileID: 7069289247305563344, guid: ebd76bd2ef124ac4dbd60a828040d303, type: 3}
+    config: {fileID: 11400000, guid: a556b2a791fcabd4da31094e005dc323, type: 2}
+    poolContainer: {fileID: 6522076307754642808}
+  - poolId: 19
+    prefab: {fileID: 7069289247305563344, guid: ebd76bd2ef124ac4dbd60a828040d303, type: 3}
+    config: {fileID: 11400000, guid: a556b2a791fcabd4da31094e005dc323, type: 2}
+    poolContainer: {fileID: 8778258388645025111}
+  - poolId: 22
+    prefab: {fileID: 8960775066664405606, guid: 0523292868edcd94b968fc4b94f5acaf, type: 3}
+    config: {fileID: 11400000, guid: 7c6332185084a8f44823bb845ec1bc54, type: 2}
+    poolContainer: {fileID: 7256840305615475653}
+  - poolId: 25
+    prefab: {fileID: 8960775066664405606, guid: 0523292868edcd94b968fc4b94f5acaf, type: 3}
+    config: {fileID: 11400000, guid: 7c6332185084a8f44823bb845ec1bc54, type: 2}
+    poolContainer: {fileID: 5777345982638766917}
+  - poolId: 28
+    prefab: {fileID: 8960775066664405606, guid: 0523292868edcd94b968fc4b94f5acaf, type: 3}
+    config: {fileID: 11400000, guid: 7c6332185084a8f44823bb845ec1bc54, type: 2}
+    poolContainer: {fileID: 3283073310691784952}
+  - poolId: 31
+    prefab: {fileID: 8960775066664405606, guid: 0523292868edcd94b968fc4b94f5acaf, type: 3}
+    config: {fileID: 11400000, guid: 7c6332185084a8f44823bb845ec1bc54, type: 2}
+    poolContainer: {fileID: 3482229026001240290}
+  - poolId: 17
+    prefab: {fileID: 3866519861111869033, guid: e6d05572834147d4892c274e2cb46dae, type: 3}
+    config: {fileID: 11400000, guid: 2c64393ef9504db4d955ee74027939f4, type: 2}
+    poolContainer: {fileID: 3842380017933770438}
+  - poolId: 20
+    prefab: {fileID: 3866519861111869033, guid: e6d05572834147d4892c274e2cb46dae, type: 3}
+    config: {fileID: 11400000, guid: 2c64393ef9504db4d955ee74027939f4, type: 2}
+    poolContainer: {fileID: 4882033963632541590}
+  - poolId: 23
+    prefab: {fileID: 7378939001417676933, guid: 3014e0e6ffa400c489cfba1820b11025, type: 3}
+    config: {fileID: 11400000, guid: a8fff12fa02503141974d55ac7bd40e8, type: 2}
+    poolContainer: {fileID: 1821230695568933579}
+  - poolId: 26
+    prefab: {fileID: 3135977911827290711, guid: 4dea45c94866a9f4abed95071545eda8, type: 3}
+    config: {fileID: 11400000, guid: a8fff12fa02503141974d55ac7bd40e8, type: 2}
+    poolContainer: {fileID: 4136817286267063593}
+  - poolId: 29
+    prefab: {fileID: 7378939001417676933, guid: 3014e0e6ffa400c489cfba1820b11025, type: 3}
+    config: {fileID: 11400000, guid: a8fff12fa02503141974d55ac7bd40e8, type: 2}
+    poolContainer: {fileID: 6496784294627507578}
+  - poolId: 32
+    prefab: {fileID: 3135977911827290711, guid: 4dea45c94866a9f4abed95071545eda8, type: 3}
+    config: {fileID: 11400000, guid: a8fff12fa02503141974d55ac7bd40e8, type: 2}
+    poolContainer: {fileID: 4097493112068939446}
   expPoolEntries:
   - poolId: 33
     prefab: {fileID: 3526490630064665744, guid: 7c8927e5c4ab8384cabac715f15e8096, type: 3}
@@ -483,28 +924,36 @@ MonoBehaviour:
     config: {fileID: 11400000, guid: c6de76d0554a9584ebb4a78c32a27f45, type: 2}
     poolContainer: {fileID: 351530998250996582}
   - poolId: 35
+    prefab: {fileID: 1847514683064680718, guid: b1d8b3dd164361c48ba1ca51bc309818, type: 3}
+    config: {fileID: 11400000, guid: 86fb2ef93d04d5b469d7c1bd004289dd, type: 2}
+    poolContainer: {fileID: 7073083757551485021}
+  - poolId: 36
     prefab: {fileID: 6973005664180811044, guid: 3101c8b99ec70194dba682076c6a8792, type: 3}
     config: {fileID: 11400000, guid: a02c3f456a2829041a7f06289f38f979, type: 2}
     poolContainer: {fileID: 7788229556938356307}
-  - poolId: 36
+  - poolId: 37
     prefab: {fileID: 7630329631736337972, guid: 876b8f9b87fe8bb4291a7e0ebfba3ab0, type: 3}
     config: {fileID: 11400000, guid: d9613537effec27498d19c47a2cb55f9, type: 2}
     poolContainer: {fileID: 4114325758314454180}
+  - poolId: 38
+    prefab: {fileID: 8883918895375182815, guid: f3fbb38e38163ec4691f53bc841a15e4, type: 3}
+    config: {fileID: 11400000, guid: 97dadf9f6aa01a84c83a8f5ecd1f4ed3, type: 2}
+    poolContainer: {fileID: 4364191690241439937}
   itemPoolEntries:
-  - poolId: 37
+  - poolId: 39
     prefab: {fileID: 4386042445245751209, guid: 52c9685d227b2e543b505a9cb447a16a, type: 3}
     config: {fileID: 11400000, guid: 036383e26807f2d4ba8eeb73356ceec2, type: 2}
     poolContainer: {fileID: 7817944667782287473}
-  - poolId: 38
+  - poolId: 40
     prefab: {fileID: 6596744198202623691, guid: 25e6f4ef651dc28489dd86dee568b3f6, type: 3}
     config: {fileID: 11400000, guid: 036383e26807f2d4ba8eeb73356ceec2, type: 2}
     poolContainer: {fileID: 7000434605160386403}
-  - poolId: 39
+  - poolId: 41
     prefab: {fileID: 4357369815184168246, guid: 7d0cf6492c591bc4499250238a8f74da, type: 3}
     config: {fileID: 11400000, guid: 036383e26807f2d4ba8eeb73356ceec2, type: 2}
     poolContainer: {fileID: 3577417339239845789}
   dmgNumbersPoolEntries:
-  - poolId: 40
+  - poolId: 42
     prefab: {fileID: 3118112529909685808, guid: 044921a9e140c22428b81630c8e231a2, type: 3}
     config: {fileID: 11400000, guid: 83233ac8cf34e0b4c8e16bbe8328dd9b, type: 2}
     poolContainer: {fileID: 5602536278773583545}
@@ -539,9 +988,42 @@ Transform:
   m_Children:
   - {fileID: 3402208824578460011}
   - {fileID: 143432852794174382}
+  - {fileID: 1220246275206627328}
   - {fileID: 5154808083511687783}
   - {fileID: 713229844489089050}
+  - {fileID: 1910495153461120320}
   m_Father: {fileID: 8715007574421097245}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &4882033963632541590
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1657392873652704055}
+  m_Layer: 0
+  m_Name: Minion - Hard - Second - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1657392873652704055
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4882033963632541590}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &5233284838581248305
 GameObject:
@@ -605,6 +1087,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1456304846270068163}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &5777345982638766917
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3578799193493791916}
+  m_Layer: 0
+  m_Name: Boss - Medium - Second - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3578799193493791916
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5777345982638766917}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &6020589590250437274
 GameObject:
   m_ObjectHideFlags: 0
@@ -638,6 +1151,99 @@ Transform:
   - {fileID: 4044849503546418595}
   m_Father: {fileID: 8715007574421097245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6385761241509451897
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1183929585559296935}
+  m_Layer: 0
+  m_Name: Boss - Hard - Second - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1183929585559296935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6385761241509451897}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3449491391749136988}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6496784294627507578
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6805323798165999796}
+  m_Layer: 0
+  m_Name: Boss - Hard - First - Special Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6805323798165999796
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6496784294627507578}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &6522076307754642808
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7152410063046259198}
+  m_Layer: 0
+  m_Name: Minion - Medium - First - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7152410063046259198
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6522076307754642808}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7000434605160386403
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,6 +1274,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 192998526207242508}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7073083757551485021
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1220246275206627328}
+  m_Layer: 0
+  m_Name: Pickup - EXP - Medium - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1220246275206627328
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7073083757551485021}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 6075454400224371959}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7121104060288716681
 GameObject:
@@ -701,6 +1338,68 @@ Transform:
   - {fileID: 6569290088750157132}
   m_Father: {fileID: 8715007574421097245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7167350371849073491
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 29971438294123771}
+  m_Layer: 0
+  m_Name: Enemies - Minion - Second - Hard - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &29971438294123771
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167350371849073491}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7889934924782694323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7256840305615475653
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7543820251738823513}
+  m_Layer: 0
+  m_Name: Boss - Medium - First - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7543820251738823513
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7256840305615475653}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7670544517167648975
 GameObject:
   m_ObjectHideFlags: 0
@@ -731,6 +1430,37 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4722520913422547802}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7778130636933058823
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 847206124272439855}
+  m_Layer: 0
+  m_Name: Boss - Hard - First - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &847206124272439855
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7778130636933058823}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3449491391749136988}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7788229556938356307
 GameObject:
@@ -848,6 +1578,68 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8568148502791045862}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 3855073578096229281}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8633979036974289709
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3106927514500754935}
+  m_Layer: 0
+  m_Name: Enemies - Minion - Second - Medium - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3106927514500754935
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8633979036974289709}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7889934924782694323}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &8778258388645025111
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2233754991139672088}
+  m_Layer: 0
+  m_Name: Minion - Medium - Second - Projectiles - PoolContainer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2233754991139672088
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8778258388645025111}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}

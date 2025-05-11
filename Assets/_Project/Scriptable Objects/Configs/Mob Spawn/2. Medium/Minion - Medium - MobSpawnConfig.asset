@@ -13,24 +13,24 @@ MonoBehaviour:
   m_Name: Minion - Medium - MobSpawnConfig
   m_EditorClassIdentifier: 
   BaseMobAmount: 2
-  BaseMobAdditivePerWave: 1
+  BaseMobAdditivePerWave: 2
   SpawnAmountMult: 0.2
-  TimeBetweenWaves: 5
-  MinTimeBetweenWaves: 1
-  FlatTimeBetweenWavesDecrease: 0.1
+  TimeBetweenWaves: 8
+  MinTimeBetweenWaves: 0.8
+  FlatTimeBetweenWavesDecrease: 0.2
   MinSpawnDistance: 2
   MobPools:
   - PoolID: 3
-    MobDifficulty: 0
+    MobDifficulty: 1
     Weight: 2
   - PoolID: 6
-    MobDifficulty: 0
+    MobDifficulty: 1
     Weight: 4
   - PoolID: 4
-    MobDifficulty: 1
+    MobDifficulty: 2
     Weight: 10
   - PoolID: 7
-    MobDifficulty: 1
+    MobDifficulty: 2
     Weight: 15
   HasSpawnDelay: 1
   InitialSpawnDelay: 2

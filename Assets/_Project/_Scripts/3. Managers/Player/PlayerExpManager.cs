@@ -13,8 +13,9 @@ namespace GoodVillageGames.Game.Core.Manager
 
         [SerializeField] private CircleCollider2D _expColliderDetector;
         [SerializeField] private PlayerExpHandler _expHandler;
+        [SerializeField] private float _expMultiplier = 1.005f;
 
-        [SerializeField] private float _expMultiplier = 1.5f;
+        private readonly int expInicial = 5;
         private int _currentExp = 0;
         private int _maxExp = 5;
         private int _currentLevel = 1;
@@ -33,10 +34,8 @@ namespace GoodVillageGames.Game.Core.Manager
 
         }
 
-        void Start()
-        {
-            _expHandler.OnExpCollectedEventTriggered += AddExp;
-        }
+        void Start() => _expHandler.OnExpCollectedEventTriggered += AddExp;
+        void OnDisable() => _expHandler.OnExpCollectedEventTriggered -= AddExp;
 
         public void AddExp(int expAmount)
         {
@@ -62,7 +61,9 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void IncreaseMaxExp()
         {
-            _maxExp = Mathf.RoundToInt(_maxExp * _expMultiplier);
+            _maxExp = Mathf.CeilToInt(
+                expInicial * Mathf.Pow(_expMultiplier, _currentLevel - 1)
+            );
         }
 
         public void LevelUp()

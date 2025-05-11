@@ -1,4 +1,5 @@
 using UnityEngine;
+using TriInspector;
 using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Enums.Pooling;
@@ -10,39 +11,38 @@ namespace GoodVillageGames.Game.Core.Manager
     {
         public static ItemSpawnerManager Instance { get; private set; }
 
-        [SerializeField] private SpriteRenderer _worldBounds;
-        [SerializeField] private float _minTimeBetweenSpawns = 30f;
-        [SerializeField] private float _startTimeSpawn = 300f;
-        [SerializeField] private float _decreaseTimeSpawn = 5f;
+        [Title("References")]
+        [SerializeField] private Transform _playerTransform;
+
+        [Title("Spawn Radius")]
+        [SerializeField] private float _minRadius = 50f;
+        [SerializeField] private float _maxRadius = 150f;
+
+        [Title("Timing")]
+        [SerializeField] private float _minTimeBetweenSpawns = 10f;
+        [SerializeField] private float _startTimeSpawn = 30f;
+        [SerializeField] private float _decreaseTimeSpawn = 0.5f;
 
         private CountdownTimer _countdownTimer;
-
-        private readonly PoolID[] _availableItems = { PoolID.PickupItemDamage, PoolID.PickupItemSpeed, PoolID.PickupItemAttackSpeed };
-
+        private readonly PoolID[] _availableItems = {
+            PoolID.PickupItemDamage,
+            PoolID.PickupItemSpeed,
+            PoolID.PickupItemAttackSpeed
+        };
 
         void Awake()
         {
-            // Singleton
-            if (Instance == null)
-                Instance = this;
-            else
-                Destroy(gameObject);
+            if (Instance == null) Instance = this;
+            else Destroy(gameObject);
         }
 
-        void OnEnable()
-        {
-            _countdownTimer = new(_startTimeSpawn);
-        }
-
-        void OnDisable()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnStartRun;
-        }
+        void OnEnable()  => _countdownTimer = new(_startTimeSpawn);
+        void OnDisable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnStartRun;
 
         void Start()
         {
             GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnStartRun;
-            _countdownTimer.OnTimerStop = () => SpawnItem();
+            _countdownTimer.OnTimerStop = SpawnItem;
         }
 
         void Update()
@@ -50,20 +50,18 @@ namespace GoodVillageGames.Game.Core.Manager
             _countdownTimer.Tick(Time.deltaTime);
         }
 
-        public Vector2 GetRandomPositionWithinSprite()
+        public Vector2 GetRandomPositionAroundPlayer()
         {
-            if (_worldBounds == null)
+            if (_playerTransform == null)
             {
-                Debug.LogError("SpriteRenderer was not found!");
+                Debug.LogError("Player Transform not assigned!");
                 return Vector2.zero;
             }
 
-            Bounds bounds = _worldBounds.bounds;
-
-            float randomX = Random.Range(bounds.min.x, bounds.max.x);
-            float randomY = Random.Range(bounds.min.y, bounds.max.y);
-
-            return new Vector2(randomX, randomY);
+            Vector2 dir = Random.insideUnitCircle.normalized;
+            float dist = Random.Range(_minRadius, _maxRadius);
+            // Spawn point
+            return (Vector2)_playerTransform.position + dir * dist;
         }
 
         public PoolID GetRandomItemPoolID()
@@ -74,32 +72,23 @@ namespace GoodVillageGames.Game.Core.Manager
 
         void SpawnItem()
         {
-            GameObject item = PoolManager.Instance.GetPooledObject(GetRandomItemPoolID());
-
+            var item = PoolManager.Instance.GetPooledObject(GetRandomItemPoolID());
             if (item != null)
             {
-                Vector3 spawnPos = GetRandomPositionWithinSprite();
-                item.transform.position = spawnPos;
+                item.transform.position = GetRandomPositionAroundPlayer();
                 item.SetActive(true);
             }
-
             ResetSpawnTimer();
         }
 
         void ResetSpawnTimer()
         {
-            if (_startTimeSpawn - _decreaseTimeSpawn >= _minTimeBetweenSpawns)
-            {
-                _startTimeSpawn -= _decreaseTimeSpawn;
-                _countdownTimer.Reset(_startTimeSpawn);
-            }
-            else
-            {
-                _countdownTimer.Reset(_minTimeBetweenSpawns);
-            }
+            float next = Mathf.Max(_minTimeBetweenSpawns, _startTimeSpawn - _decreaseTimeSpawn);
+            _startTimeSpawn = next;
+            _countdownTimer.Reset(next);
         }
 
-        private void OnStartRun(GameState gameState)
+        void OnStartRun(GameState gameState)
         {
             if (gameState == GameState.GameBegin)
                 _countdownTimer.Start();

@@ -1,5 +1,5 @@
-using GoodVillageGames.Game.Interfaces;
 using UnityEngine;
+using GoodVillageGames.Game.Interfaces;
 
 namespace GoodVillageGames.Game.Core.Enemy
 {

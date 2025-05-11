@@ -2,7 +2,6 @@ using UnityEngine;
 using System.Collections;
 using GoodVillageGames.Game.Enums.Pooling;
 using GoodVillageGames.Game.Core.MobSpawning;
-using System.Linq;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -20,7 +19,6 @@ namespace GoodVillageGames.Game.Core.Manager
 
         protected override void SpawnWave(int mobAmountToSpawn)
         {
-            Debug.Log($"Mobs Spawnned this wave: {mobAmountToSpawn}");
             currentWaveSpawnPositions.Clear();
 
             for (int i = 0; i < mobAmountToSpawn; i++)
