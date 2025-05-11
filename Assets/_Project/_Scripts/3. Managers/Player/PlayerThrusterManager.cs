@@ -2,6 +2,8 @@ using UnityEngine;
 using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Util;
 using GoodVillageGames.Game.Core.Manager.Player;
+using GoodVillageGames.Game.Core.Global;
+using GoodVillageGames.Game.Enums;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -22,12 +24,23 @@ namespace GoodVillageGames.Game.Core.Manager
         void Start()
         {
             if (transform.root.TryGetComponent<PlayerActions>(out var player))
-            {
                 _playerEventsManager = player.PlayerEventsManager;
-            }
 
             _playerEventsManager.OnPlayerMovingEventTriggered.AddListener(OnPlayerMovingEvent);
             _playerEventsManager.OnPlayerBoostVFXEventTriggered.AddListener(OnPlayerBoostingEvent);
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
+        }
+
+        void OnDisable()
+        {
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
+        }
+
+        void OnGameStateChanged(GameState state)
+        {
+            if (state != GameState.PlayerDied) return;
+
+            DeactivateThrusters();
         }
 
         void OnPlayerMovingEvent(Vector2 vector)

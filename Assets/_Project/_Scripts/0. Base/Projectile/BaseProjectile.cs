@@ -39,23 +39,13 @@ namespace GoodVillageGames.Game.Core.Projectiles
             }
         }
 
-        protected virtual void OnEnable()
-        {
-            if (_timer != null) 
-            {
-                _timer.Reset(lifeTime);
-                _timer.Start();
-            }
-            else 
-                CreateTimer();
-        }
+        protected virtual void OnEnable() => CreateTimer();
 
         protected virtual void Update()
         {
             LaunchProjectile();
 
-            if (_timer != null)
-                _timer.Tick(Time.deltaTime);
+            _timer?.Tick(Time.deltaTime);
         }
 
         protected void CreateTimer()
@@ -72,13 +62,14 @@ namespace GoodVillageGames.Game.Core.Projectiles
 
         public virtual void DoAction()
         {
+            if (_timer != null) _timer = null;
+
             Instantiate(hitVFXPrefab, transform.position, Quaternion.identity);
             pooledObject.ReturnToPool();
         }
 
         protected virtual void OnCollisionEnter2D(Collision2D collision)
         {
-            _timer.Stop();
             DoAction();
         }
     }

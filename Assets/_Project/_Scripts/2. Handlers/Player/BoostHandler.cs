@@ -1,4 +1,6 @@
 using UnityEngine;
+using GoodVillageGames.Game.Enums;
+using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.Manager.Player;
@@ -20,12 +22,16 @@ namespace GoodVillageGames.Game.Handlers
         {
             _playerEventsManager = transform.root.GetComponentInChildren<PlayerEventsManager>();
             _playerEventsManager.OnPlayerBoostingEventTriggered.AddListener(OnBoostingChanged);
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += OnGameStateChanged;
         }
 
         void OnDestroy()
         {
             if (_playerEventsManager != null)
                 _playerEventsManager.OnPlayerBoostingEventTriggered.RemoveListener(OnBoostingChanged);
+                
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= OnGameStateChanged;
+            
         }
 
         void Start()
@@ -53,7 +59,7 @@ namespace GoodVillageGames.Game.Handlers
             _canBoost = _boostTimeLeft > 0;
         }
 
-        private void ConsumeBoost()
+        void ConsumeBoost()
         {
             if (_canBoost)
             {
@@ -66,7 +72,7 @@ namespace GoodVillageGames.Game.Handlers
             }
         }
 
-        private void RechargeBoost()
+        void RechargeBoost()
         {
             if (!_isBoosting)
             {
@@ -83,6 +89,14 @@ namespace GoodVillageGames.Game.Handlers
         public void OnBoostingChanged(bool value)
         {
             _isBoosting = value;
+        }
+
+        void OnGameStateChanged(GameState state)
+        {
+            if (state != GameState.PlayerDied || state != GameState.UpgradeScreen) return;
+
+            _isBoosting = false;
+            _canBoost = false;
         }
     }
 }
