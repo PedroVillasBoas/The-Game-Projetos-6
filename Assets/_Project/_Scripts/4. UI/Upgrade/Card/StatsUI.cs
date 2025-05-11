@@ -31,6 +31,7 @@ namespace GoodVillageGames.Game.General.UI
         void UpdatePlayerStatsValues()
         {
             playerStats = PlayerUpgraderManager.Instance.GetPlayerStats();
+            playerStats["Level"] = PlayerExpManager.Instance.CurrentLevel;
         }
 
         void UpdateElementsValues()
@@ -49,8 +50,8 @@ namespace GoodVillageGames.Game.General.UI
                     if (element.Key == "Experience")
                         element.Value.text = $"{PlayerExpManager.Instance.CurrentExp}/{PlayerExpManager.Instance.ExpToNextLevel}";
                     // Level acts the same as EXP
-                    else if (element.Key == "Level")
-                        element.Value.text = $"{PlayerExpManager.Instance.CurrentLevel}";
+                    // else if (element.Key == "Level")
+                    //     element.Value.text = $"{PlayerExpManager.Instance.CurrentLevel}";
                     else
                         element.Value.text = $"{value}";
                 }
