@@ -13,26 +13,15 @@ namespace GoodVillageGames.Game.Core.Manager
 
         public bool isInGame = true;
 
-        void OnDisable()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleCursor;
-        }
-
-        void Start()
-        {
-            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleCursor;
-        }
+        void OnDisable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleCursor;
+        void Start() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleCursor;
 
         void Update()
         {
             if (isInGame)
-            {
                 EnableAimCursor();
-            }
             else
-            {
                 EnableUICursor();
-            }
         }
 
         void EnableAimCursor()
@@ -57,9 +46,7 @@ namespace GoodVillageGames.Game.Core.Manager
             Cursor.visible = true;
 
             if (instanceGameCursor != null)
-            {
                 Destroy(instanceGameCursor);
-            }
         }
 
         void ToggleCursor(GameState state)
