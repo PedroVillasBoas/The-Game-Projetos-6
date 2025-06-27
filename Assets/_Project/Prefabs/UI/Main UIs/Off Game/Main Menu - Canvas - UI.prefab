@@ -929,35 +929,8 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 4017299273519271325, guid: 1645bf8854c20174eac6b4457d5b6647, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 3641902113361437046}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1645bf8854c20174eac6b4457d5b6647, type: 3}
---- !u!1 &7819740552551430291 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4017299273519271325, guid: 1645bf8854c20174eac6b4457d5b6647, type: 3}
-  m_PrefabInstance: {fileID: 6576694706280232206}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &3641902113361437046
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7819740552551430291}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e494418d122764590f0263016e88ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _zoomConfigs:
-  - <AnimationTransitionID>k__BackingField: 2
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 1
-    <Duration>k__BackingField: 1
-    <ComponentToAnimate>k__BackingField: {fileID: 9189303721094600349}
-    <FinalSize>k__BackingField: {x: 200, y: 200}
 --- !u!224 &9189303721094600349 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 2649220428442280851, guid: 1645bf8854c20174eac6b4457d5b6647, type: 3}
@@ -2494,15 +2467,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 3741330895135647544, guid: a51e4811123db87499f48f7bed720242, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2377256202844089934}
-    - targetCorrespondingSourceObject: {fileID: 8458156129851090376, guid: a51e4811123db87499f48f7bed720242, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2284744990094772506}
-    - targetCorrespondingSourceObject: {fileID: 8458156129851090376, guid: a51e4811123db87499f48f7bed720242, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7884784809803275839}
-    - targetCorrespondingSourceObject: {fileID: 8528861568648238522, guid: a51e4811123db87499f48f7bed720242, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 7052919753612246810}
     - targetCorrespondingSourceObject: {fileID: 1288319342181690944, guid: a51e4811123db87499f48f7bed720242, type: 3}
       insertIndex: -1
       addedObject: {fileID: 5843045060233092925}
@@ -2515,118 +2479,9 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 8458156129851090376, guid: a51e4811123db87499f48f7bed720242, type: 3}
   m_PrefabInstance: {fileID: 9008667443367501448}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2284744990094772506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604713118498224960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a9e494418d122764590f0263016e88ec, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _zoomConfigs:
-  - <AnimationTransitionID>k__BackingField: 2
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 1
-    <Duration>k__BackingField: 1
-    <ComponentToAnimate>k__BackingField: {fileID: 2779439740653261418}
-    <FinalSize>k__BackingField: {x: 600, y: 600}
-  - <AnimationTransitionID>k__BackingField: 3
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 0
-    <Duration>k__BackingField: 2
-    <ComponentToAnimate>k__BackingField: {fileID: 2779439740653261418}
-    <FinalSize>k__BackingField: {x: 900, y: 900}
---- !u!114 &7884784809803275839
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 604713118498224960}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: af3f3faccb53b1f458f3803ebb4a930c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _moveConfigs:
-  - <AnimationTransitionID>k__BackingField: 3
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 0
-    <Duration>k__BackingField: 2
-    <ComponentToAnimate>k__BackingField: {fileID: 2779439740653261418}
-    <FinalPosition>k__BackingField: {x: 1500, y: 0}
 --- !u!1 &817875194189810482 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8528861568648238522, guid: a51e4811123db87499f48f7bed720242, type: 3}
-  m_PrefabInstance: {fileID: 9008667443367501448}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &7052919753612246810
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817875194189810482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cda7d5317b4e7843a04eb09e217e6ab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _hologramConfigs:
-  - <AnimationTransitionID>k__BackingField: 2
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 0
-    <Duration>k__BackingField: 0.05
-    <FinalSize>k__BackingField: {x: 600, y: 630}
-    <SizeChangeDuration>k__BackingField: 0.5
-    <ComponentToAnimate>k__BackingField: {fileID: 923668731555321267}
-    <EnableChildrenOnComplete>k__BackingField: 1
-    <DisableChildren>k__BackingField: 0
-    <DisableAt>k__BackingField: 0
-    <Blink>k__BackingField: 1
-    <ComponentToAnimate2>k__BackingField: {fileID: 6737790119237755846}
-    <TargetAlpha>k__BackingField: 0
-    <BlinkLoops>k__BackingField: 10
-  - <AnimationTransitionID>k__BackingField: 3
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 0
-    <Duration>k__BackingField: 0.05
-    <FinalSize>k__BackingField: {x: 600, y: 0}
-    <SizeChangeDuration>k__BackingField: 0.7
-    <ComponentToAnimate>k__BackingField: {fileID: 923668731555321267}
-    <EnableChildrenOnComplete>k__BackingField: 0
-    <DisableChildren>k__BackingField: 1
-    <DisableAt>k__BackingField: 0.5
-    <Blink>k__BackingField: 0
-    <ComponentToAnimate2>k__BackingField: {fileID: 6737790119237755846}
-    <TargetAlpha>k__BackingField: 0
-    <BlinkLoops>k__BackingField: 1
-  - <AnimationTransitionID>k__BackingField: 5
-    <UIAnimationType>k__BackingField: 1
-    <InsertPosition>k__BackingField: 0
-    <Duration>k__BackingField: 0.05
-    <FinalSize>k__BackingField: {x: 600, y: 630}
-    <SizeChangeDuration>k__BackingField: 0.5
-    <ComponentToAnimate>k__BackingField: {fileID: 923668731555321267}
-    <EnableChildrenOnComplete>k__BackingField: 1
-    <DisableChildren>k__BackingField: 0
-    <DisableAt>k__BackingField: 0
-    <Blink>k__BackingField: 1
-    <ComponentToAnimate2>k__BackingField: {fileID: 6737790119237755846}
-    <TargetAlpha>k__BackingField: 0
-    <BlinkLoops>k__BackingField: 10
---- !u!224 &923668731555321267 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 8202375014133418811, guid: a51e4811123db87499f48f7bed720242, type: 3}
-  m_PrefabInstance: {fileID: 9008667443367501448}
-  m_PrefabAsset: {fileID: 0}
---- !u!224 &2779439740653261418 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6599949355895360738, guid: a51e4811123db87499f48f7bed720242, type: 3}
   m_PrefabInstance: {fileID: 9008667443367501448}
   m_PrefabAsset: {fileID: 0}
 --- !u!224 &5274348290425793072 stripped
@@ -2659,17 +2514,6 @@ MonoBehaviour:
     <ObjectToToggle>k__BackingField:
     - {fileID: 604713118498224960}
     - {fileID: 817875194189810482}
---- !u!114 &6737790119237755846 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 2343075930542865742, guid: a51e4811123db87499f48f7bed720242, type: 3}
-  m_PrefabInstance: {fileID: 9008667443367501448}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 817875194189810482}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &6924324474609844120 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2097854042588995856, guid: a51e4811123db87499f48f7bed720242, type: 3}

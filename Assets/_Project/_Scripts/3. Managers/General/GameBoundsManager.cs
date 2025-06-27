@@ -19,7 +19,8 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             if (collision.gameObject.TryGetComponent(out PlayerActions player))
             {
-                warningPopup.SetActive(false);
+                if (warningPopup != null)
+                    warningPopup.SetActive(false);
             }
         }
 
@@ -27,7 +28,8 @@ namespace GoodVillageGames.Game.Core.Manager
         {
             if (collision.gameObject.TryGetComponent(out PlayerActions player))
             {
-                warningPopup.SetActive(true);
+                if (warningPopup != null)
+                    warningPopup.SetActive(true);
             }
         }
     }

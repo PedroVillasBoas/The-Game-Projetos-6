@@ -63,11 +63,10 @@ namespace GoodVillageGames.Game.Core.Global
         }
 
         void AutoSaveRunData() => SavePlayerCurrentStats();
-        void HandleGameStart() => GlobalFileManager.Instance.CurrentSession.RunData = currentRunData;
 
         void OnGameDifficulty(GameDifficulty difficulty)
         {
-            if (currentRunData != null) 
+            if (currentRunData != null)
                 currentRunData = null;
 
             currentRunData = new()
@@ -82,21 +81,15 @@ namespace GoodVillageGames.Game.Core.Global
             switch (newState)
             {
                 case GameState.Tutorial:
-                    HandleGameStart();
+                    SavePlayerCurrentStats();
                     break;
 
                 case GameState.PlayerDied:
                     SavePlayerCurrentStats();
                     break;
 
-                case GameState.GamePaused:
-                    SavePlayerCurrentStats();
-                    currentRunData.TotalPausedCount++;
-                    break;
-
                 case GameState.GameOver:
-                case GameState.MainMenu:
-                    HandleRunEnd(newState);
+                    FinalizeRun();
                     break;
             }
         }
@@ -132,36 +125,6 @@ namespace GoodVillageGames.Game.Core.Global
             filtered["Level"] = upgrader.GetPlayerCurrentLevel();
 
             currentRunData.PlayerStats = filtered;
-            GlobalFileManager.Instance.SavePlayerRunStats(filtered);
-        }
-
-        void HandleRunEnd(GameState endState)
-        {
-            if (currentRunData == null)
-                return;
-
-            FinalizeRun(endState == GameState.MainMenu);
-        }
-
-        private void FinalizeRun(bool quitViaPause)
-        {
-            currentRunData.RunEndTime = DateTime.Now;
-
-            if (currentRunData.RunStartTime != DateTime.MinValue)
-            {
-                currentRunData.TotalRunTimeSeconds = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalSeconds;
-                currentRunData.TotalRunTimeMinutes = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalMinutes;
-            }
-
-            currentRunData.QuitedViaPause = quitViaPause;
-
-            CalculateAccuracy();
-            CalculateFinalScore();
-
-            SavePlayerCurrentStats();
-
-            GlobalFileManager.Instance.SaveRunData(currentRunData);
-            GlobalFileManager.Instance.HandleSessionEnd(currentRunData.QuitedViaPause);
         }
 
         void CalculateFinalScore()
@@ -272,6 +235,24 @@ namespace GoodVillageGames.Game.Core.Global
                     currentRunData.MissileShotsHit++;
                     break;
             }
+        }
+
+        private void FinalizeRun()
+        {
+            currentRunData.RunEndTime = DateTime.Now;
+
+            if (currentRunData.RunStartTime != DateTime.MinValue)
+            {
+                currentRunData.TotalRunTimeSeconds = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalSeconds;
+                currentRunData.TotalRunTimeMinutes = (float)(currentRunData.RunEndTime - currentRunData.RunStartTime).TotalMinutes;
+            }
+
+            CalculateAccuracy();
+            CalculateFinalScore();
+
+            SavePlayerCurrentStats();
+
+            GlobalFileManager.Instance.SaveScoreOnFile(currentRunData);
         }
     }
 }

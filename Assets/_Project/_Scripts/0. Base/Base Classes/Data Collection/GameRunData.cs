@@ -8,7 +8,6 @@ namespace GoodVillageGames.Game.DataCollection
     /// <summary>
     /// Centralized class that hold the data for a player single RUN
     /// </summary>
-    /// <see cref="GameSessionData"/>
     [Serializable]
     public class GameRunData
     {
@@ -26,8 +25,6 @@ namespace GoodVillageGames.Game.DataCollection
         public int MissileShotsFired;
         public int MissileShotsHit;
         public float MissileShotAccuracy;
-        public int TotalPausedCount;
-        public bool QuitedViaPause;
         public Dictionary<string, float> PlayerStats = new();
     }
 }
