@@ -15,19 +15,19 @@ namespace GoodVillageGames.Game.General.UI.Animations
             switch (value)
             {
                 case "Move":
-                        temp.radial = 30;
-                        _starsParticleSystem.Play();
-                        break;
-                
+                    temp.radial = 30;
+                    _starsParticleSystem.Play();
+                    break;
+
                 case "MoveBack":
-                        temp.radial = -30;
-                        _starsParticleSystem.Play();
-                        break;
-                
+                    temp.radial = -30;
+                    _starsParticleSystem.Play();
+                    break;
+
                 case "Stop":
-                        _starsParticleSystem.Stop();
-                        break;
-                
+                    _starsParticleSystem.Stop();
+                    break;
+
                 default:
                     Debug.Log("Value unknown to the moving stars.");
                     break;
