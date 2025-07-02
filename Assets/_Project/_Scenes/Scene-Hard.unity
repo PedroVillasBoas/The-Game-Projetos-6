@@ -3655,6 +3655,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: maxActiveMobAmount
+      value: 200
+      objectReference: {fileID: 0}
     - target: {fileID: 4442581346047299351, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
       propertyPath: m_Name
       value: Pool Manager
@@ -26395,7 +26399,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _expColliderDetector: {fileID: 1780143750}
   _expHandler: {fileID: 1618449951}
-  _expMultiplier: 3
 --- !u!1 &1823016961
 GameObject:
   m_ObjectHideFlags: 0

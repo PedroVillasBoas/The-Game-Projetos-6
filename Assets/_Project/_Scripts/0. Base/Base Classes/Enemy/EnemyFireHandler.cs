@@ -44,7 +44,7 @@ namespace GoodVillageGames.Game.Handlers
             _entityBase.DoActionEventTriggered += UpdateEnemyFire;
         }
 
-        void OnDisable()
+        void OnDestroy()
         {
             if (_entityBase != null)
             {

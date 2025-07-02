@@ -28,6 +28,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 {
                     Vector3 spawnPos = GetValidSpawnPosition();
                     mob.transform.position = spawnPos;
+                    MobSpawnAdvisor.Instance.IncrementActiveMobCount();
                     mob.SetActive(true);
                     currentWaveSpawnPositions.Add(spawnPos);
                 }
@@ -51,13 +52,18 @@ namespace GoodVillageGames.Game.Core.Manager
             while (true)
             {
                 // Waiting until it’s time
-                while (Time.time < nextSpawnTime)
-                    yield return null;
+                yield return new WaitUntil(() => Time.time >= nextSpawnTime);
 
                 // Spawn!
-                int mobCount = CalculateMobsPerWave();
-                SpawnWave(mobCount);
-                waveCounter++;
+                int desiredMobCount = CalculateMobsPerWave();
+                int allowedMobCount = MobSpawnAdvisor.Instance.GetAllowedSpawnCount();
+                int mobCountToSpawn = Mathf.Min(desiredMobCount, allowedMobCount);
+
+                if (mobCountToSpawn > 0)
+                {
+                    SpawnWave(mobCountToSpawn);
+                    waveCounter++;
+                }
 
                 // Next Wave
                 float interval = CalculateSpawnInterval();

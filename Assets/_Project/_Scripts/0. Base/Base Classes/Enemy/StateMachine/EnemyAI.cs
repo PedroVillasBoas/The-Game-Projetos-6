@@ -17,25 +17,30 @@ namespace GoodVillageGames.Game.Core.Enemy.AI
         public EnemyState currentState = EnemyState.Chase;
 
         public event Action<EnemyAI> DoActionEventTriggered;
+        private bool hasBeenActivated = false;
+
 
         protected override void OnEnable()
         {
             base.OnEnable();
-
             currentState = EnemyState.Chase;
-            
+
             enemyHealthHandler.OnDeath += ExecuteDie;
             enemyDetectionCollider.PlayerInRangeActionTriggered += SetFireFlag;
         }
 
-        protected virtual void OnDisable()
+        private void OnDisable()
+        {
+            if (hasBeenActivated && MobSpawnAdvisor.Instance != null)
+                MobSpawnAdvisor.Instance.DecrementActiveMobCount();
+            
+            hasBeenActivated = true;
+        }
+
+        protected virtual void OnDestroy()
         {
             enemyDetectionCollider.PlayerInRangeActionTriggered -= SetFireFlag;
             enemyHealthHandler.OnDeath -= ExecuteDie;
-        }
-
-        void Start()
-        {
         }
 
         public override void Update()

@@ -26278,7 +26278,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   _expColliderDetector: {fileID: 1780143750}
   _expHandler: {fileID: 1618449951}
-  _expMultiplier: 3
 --- !u!1 &1823016961
 GameObject:
   m_ObjectHideFlags: 0
@@ -26689,6 +26688,26 @@ PrefabInstance:
       propertyPath: projectilesPoolEntries.Array.size
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: maxActiveMobAmount
+      value: 150
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: mobsPoolContainers.Array.size
+      value: 4
+      objectReference: {fileID: 0}
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: 'mobsPoolContainers.Array.data[1]'
+      value: 
+      objectReference: {fileID: 1847720666}
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: 'mobsPoolContainers.Array.data[2]'
+      value: 
+      objectReference: {fileID: 1847720665}
+    - target: {fileID: 1314986342518672576, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+      propertyPath: 'mobsPoolContainers.Array.data[3]'
+      value: 
+      objectReference: {fileID: 1847720664}
     - target: {fileID: 4442581346047299351, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
       propertyPath: m_Name
       value: Pool Manager
@@ -26738,6 +26757,21 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+--- !u!1 &1847720664 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8633979036974289709, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+  m_PrefabInstance: {fileID: 1847720663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1847720665 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 3628056258659677281, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+  m_PrefabInstance: {fileID: 1847720663}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &1847720666 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 797038386579340365, guid: 3ff18f8bef2b2734d867cc38aeea0cb8, type: 3}
+  m_PrefabInstance: {fileID: 1847720663}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1851115389
 GameObject:
   m_ObjectHideFlags: 0

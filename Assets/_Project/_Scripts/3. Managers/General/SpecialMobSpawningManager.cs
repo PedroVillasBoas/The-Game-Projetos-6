@@ -32,7 +32,7 @@ namespace GoodVillageGames.Game.Core.Manager
 
         protected override void SpawnWave(int mobAmountToSpawn)
         {
-            for (int i = 0; i < specialMobSpawnConfig.CircleMobCount; i++)
+            for (int i = 0; i < mobAmountToSpawn; i++)
             {
                 float angle = i * (360f / specialMobSpawnConfig.CircleMobCount);
                 Vector3 dir = Quaternion.Euler(0, 0, angle) * Vector3.right;
@@ -42,6 +42,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 if (mob != null)
                 {
                     mob.transform.position = spawnPos;
+                    MobSpawnAdvisor.Instance.IncrementActiveMobCount();
                     mob.SetActive(true);
                 }
             }
@@ -57,14 +58,21 @@ namespace GoodVillageGames.Game.Core.Manager
 
             while (true)
             {
-                while (Time.time < nextSpawnTime)
-                    yield return null;
+                yield return new WaitUntil(() => Time.time >= nextSpawnTime);
 
                 // Try to Spawn!
                 if (Random.value < currentCircleChance)
                 {
-                    SpawnWave(config.CircleMobCount);
-                    currentCircleChance = config.BaseCircleChance;
+                    int desiredMobCount = config.CircleMobCount;
+                    int allowedMobCount = MobSpawnAdvisor.Instance.GetAllowedSpawnCount();
+                    int mobCountToSpawn = Mathf.Min(desiredMobCount, allowedMobCount);
+
+                    if (mobCountToSpawn > 0)
+                    {
+                        SpawnWave(mobCountToSpawn);
+                        if (mobCountToSpawn == desiredMobCount)
+                            currentCircleChance = config.BaseCircleChance;
+                    }
                 }
                 else
                 {

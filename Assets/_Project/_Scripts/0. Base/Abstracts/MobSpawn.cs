@@ -29,6 +29,7 @@ namespace GoodVillageGames.Game.Core.MobSpawning
 
         // Flag
         protected bool isSpawning;
+        protected bool canSpawn;
 
         // Coroutines
         protected Coroutine spawnCoroutine;

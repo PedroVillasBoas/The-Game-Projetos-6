@@ -102,6 +102,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7889934924782694323}
+  - component: {fileID: 1314986342518672576}
   m_Layer: 0
   m_Name: Minions Pools
   m_TagString: Untagged
@@ -130,6 +131,25 @@ Transform:
   - {fileID: 29971438294123771}
   m_Father: {fileID: 8715007574421097245}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1314986342518672576
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671065623766803477}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 201c7df414bbd1c4eafcb7262c66df72, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mobsPoolContainers:
+  - {fileID: 9058208920711521962}
+  - {fileID: 3628056258659677281}
+  - {fileID: 3213012520144527493}
+  - {fileID: 797038386579340365}
+  - {fileID: 8633979036974289709}
+  - {fileID: 7167350371849073491}
 --- !u!1 &1814464302157234867
 GameObject:
   m_ObjectHideFlags: 0

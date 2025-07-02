@@ -4,6 +4,7 @@ using GoodVillageGames.Game.General;
 using GoodVillageGames.Game.Handlers;
 using GoodVillageGames.Game.Core.Pooling;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using GoodVillageGames.Game.Core.Manager;
 
 namespace GoodVillageGames.Game.Core.Enemy.AI
 {
