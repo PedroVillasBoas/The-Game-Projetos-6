@@ -16,11 +16,11 @@ MonoBehaviour:
   EntityVisualPrefab: {fileID: 0}
   MaxHealth: 100
   CurrentHealth: 100
-  MaxSpeed: 5
+  MaxSpeed: 15
   MaxDefense: 0
   Acceleration: 3
   Experience: 0
-  BaseAttackDamage: 10
+  BaseAttackDamage: 15
   AttackSpeed: 2
   MaxBoostTime: 0
   MaxBoostSpeed: 0

@@ -14,14 +14,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Name
   EntityVisualPrefab: {fileID: 0}
-  MaxHealth: 10
-  CurrentHealth: 10
-  MaxSpeed: 5
+  MaxHealth: 18
+  CurrentHealth: 18
+  MaxSpeed: 7
   MaxDefense: 0
-  Acceleration: 2
+  Acceleration: 2.7
   Experience: 0
-  BaseAttackDamage: 2
-  AttackSpeed: 0.6
+  BaseAttackDamage: 9
+  AttackSpeed: 1.5
   MaxBoostTime: 0
   MaxBoostSpeed: 0
   BoostRechargeRate: 0
