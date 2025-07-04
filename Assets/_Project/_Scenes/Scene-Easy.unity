@@ -836,6 +836,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 312820810}
+  - component: {fileID: 312820811}
   m_Layer: 6
   m_Name: Aim
   m_TagString: Untagged
@@ -861,6 +862,18 @@ Transform:
   - {fileID: 2032888575}
   m_Father: {fileID: 1823016962}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &312820811
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 312820809}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: bcc717764f20fd9459254119bfb4f722, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &326908948
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -25965,7 +25978,6 @@ GameObject:
   - component: {fileID: 1823016964}
   - component: {fileID: 1823016966}
   - component: {fileID: 1823016963}
-  - component: {fileID: 1823016965}
   - component: {fileID: 1823016967}
   m_Layer: 6
   m_Name: Player
@@ -26034,18 +26046,6 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!114 &1823016965
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1823016961}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: bcc717764f20fd9459254119bfb4f722, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!70 &1823016966
 CapsuleCollider2D:
   m_ObjectHideFlags: 0

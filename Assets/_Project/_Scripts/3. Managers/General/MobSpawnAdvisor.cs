@@ -22,11 +22,6 @@ namespace GoodVillageGames.Game.Core.Manager
                 Destroy(gameObject);
         }
 
-        void Update()
-        {
-            Debug.Log($"Total mobs: {totalActiveMobs}");
-        }
-
         public void IncrementActiveMobCount() => totalActiveMobs++;
         public void DecrementActiveMobCount() => totalActiveMobs--;
 
