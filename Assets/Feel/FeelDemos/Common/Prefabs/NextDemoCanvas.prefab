@@ -440,7 +440,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: v5.5
+  m_Text: v5.4
 --- !u!1 &8516721323258378253
 GameObject:
   m_ObjectHideFlags: 0
@@ -925,9 +925,7 @@ MonoBehaviour:
           ButtonText: Automatic Shaker Setup
         Owner: {fileID: 3209280001990082502}
         DebugActive: 0
-        Source: 0
         Sfx: {fileID: 8300000, guid: 8378807d371fc264f9628946390df8d1, type: 3}
-        AudioResourceToPlay: {fileID: 0}
         RandomSfx: []
         SequentialOrder: 0
         SequentialOrderHoldLast: 0
