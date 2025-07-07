@@ -16,6 +16,7 @@ namespace GoodVillageGames.Game.Handlers
         private Stats _stats;
     
         public event Action OnDeath;
+        public event Action OnTookHit;
         public event Action<float> OnHealthChanged;
         public event Action<float> OnMaxHealthChanged;
 
@@ -38,6 +39,7 @@ namespace GoodVillageGames.Game.Handlers
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth);
+            OnTookHit?.Invoke();
             PlayerAudioHandler.Instance.PlayPlayerHitSFX();
             UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
 

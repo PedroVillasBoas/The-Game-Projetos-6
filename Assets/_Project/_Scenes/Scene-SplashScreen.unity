@@ -1566,7 +1566,7 @@ MonoBehaviour:
   volume: {fileID: 1092520133}
   startIntensity: 0
   endIntensity: 1
-  lerpDuration: 1
+  lerpDuration: 2
   autoReverse: 0
   shouldLoop: 0
 --- !u!1 &1148975393

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Enums.Upgrades;
 using GoodVillageGames.Game.DataCollection;
+using GoodVillageGames.Game.General.UI.Feel;
 
 namespace GoodVillageGames.Game.Core.Manager
 {
@@ -29,6 +30,9 @@ namespace GoodVillageGames.Game.Core.Manager
 
         [Title("Button")]
         [SerializeField] private GameObject proceedButton;
+
+        [Title("Button")]
+        [SerializeField] private PlayChromaticAberrationFeedback feedback;
 
         private Dictionary<UpgradeRarity, TextMeshProUGUI> rarityTextMap;
         private Dictionary<string, TextMeshProUGUI> statTextMap;
@@ -167,6 +171,7 @@ namespace GoodVillageGames.Game.Core.Manager
                 float t = (Time.time - startTime) / duration;
                 current = Mathf.Lerp(0, targetScore, t * t); // Ease out
                 totalScoreText.text = Mathf.RoundToInt(current).ToString();
+                feedback.Play();
                 yield return null;
             }
 
@@ -182,6 +187,7 @@ namespace GoodVillageGames.Game.Core.Manager
             {
                 current = Mathf.Min(targetNumber, current + Mathf.CeilToInt(targetNumber * numberRolloverSpeed));
                 textElement.text = current.ToString();
+                feedback.Play();
                 yield return null;
             }
         }

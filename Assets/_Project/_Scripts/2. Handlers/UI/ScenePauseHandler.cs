@@ -1,10 +1,11 @@
-using System;
 using UnityEngine;
 using System.Collections;
+using UnityEngine.Rendering;
 using UnityEngine.InputSystem;
 using GoodVillageGames.Game.Enums;
 using GoodVillageGames.Game.Enums.UI;
 using GoodVillageGames.Game.Core.Global;
+using UnityEngine.Rendering.Universal;
 
 namespace GoodVillageGames.Game.Handlers.UI
 {
@@ -15,6 +16,15 @@ namespace GoodVillageGames.Game.Handlers.UI
     public class ScenePauseHandler : MonoBehaviour
     {
         [SerializeField] private InputActionReference pauseAction;
+
+        [SerializeField] private Volume worldVolume;
+        [SerializeField] private Volume uiVolume;
+
+        // UI PP properties
+        private Bloom uiBloom;
+        private Vignette uiVignette;
+        private LensDistortion uiLensDistortion;
+        private ChromaticAberration uiChromaticAberration;
 
         public static ScenePauseHandler Instance { get; private set; }
 
@@ -27,7 +37,18 @@ namespace GoodVillageGames.Game.Handlers.UI
                 Instance = this;
             else
                 Destroy(gameObject);
-            
+
+            if (uiVolume == null)
+            {
+                Debug.LogError("ScenePauseHandler: Post Process Volume is not assigned!");
+                return;
+            }
+
+            uiVolume.profile.TryGet(out uiBloom);
+            uiVolume.profile.TryGet(out uiLensDistortion);
+            uiVolume.profile.TryGet(out uiVignette);
+            uiVolume.profile.TryGet(out uiChromaticAberration);
+
             PauseTimeScale();
         }
 
@@ -48,7 +69,8 @@ namespace GoodVillageGames.Game.Handlers.UI
 
             isProcessingPause = true;
 
-            try{
+            try
+            {
                 switch (GlobalGameManager.Instance.GameState)
                 {
                     case GameState.GameBegin:
@@ -63,7 +85,8 @@ namespace GoodVillageGames.Game.Handlers.UI
                         break;
                 }
             }
-            finally{
+            finally
+            {
                 StartCoroutine(ResetPauseProcessing());
             }
         }
@@ -81,22 +104,55 @@ namespace GoodVillageGames.Game.Handlers.UI
             if (shouldPause)
             {
                 GlobalEventsManager.Instance.ChangeGameState(GameState.GamePaused);
+                PauseWorldPostProcessing(true);
+                PauseUIPostProcessing(true);
                 Time.timeScale = 0f;
             }
             else
             {
                 GlobalEventsManager.Instance.ChangeGameState(GameState.GameContinue);
+                PauseWorldPostProcessing(false);
+                PauseUIPostProcessing(false);
                 Time.timeScale = 1f;
+            }
+        }
+
+        void PauseWorldPostProcessing(bool isPaused)
+        {
+            worldVolume.enabled = !isPaused;
+        }
+
+        void PauseUIPostProcessing(bool isPaused)
+        {
+            if (isPaused)
+            {
+                uiBloom.active = true;
+                uiLensDistortion.active = true;
+                uiVignette.active = true;
+
+                uiChromaticAberration.intensity.value = 0.25f;
+            }
+            else
+            {
+                uiBloom.active = false;
+                uiLensDistortion.active = false;
+                uiVignette.active = false;
+
+                uiChromaticAberration.intensity.value = 0.09f;
             }
         }
 
         public void PauseTimeScale()
         {
+            PauseWorldPostProcessing(true);
+            PauseUIPostProcessing(true);
             Time.timeScale = 0f;
         }
 
         public void ReturnToOriginalTimeScale()
         {
+            PauseWorldPostProcessing(false);
+            PauseUIPostProcessing(false);
             Time.timeScale = 1f;
         }
     }

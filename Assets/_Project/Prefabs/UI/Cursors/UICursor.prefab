@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 2833288768472432368}
   - component: {fileID: 3030351839575699187}
   - component: {fileID: 7443600271235303845}
-  m_Layer: 5
+  m_Layer: 18
   m_Name: UICursor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
