@@ -7,11 +7,14 @@ using GoodVillageGames.Game.Core.Global;
 using GoodVillageGames.Game.Core.Manager.UI;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using MoreMountains.Feedbacks;
 
 namespace GoodVillageGames.Game.Handlers
 {
     public class HealthHandler : MonoBehaviour, IDamageable, IVisitable
     {
+        [SerializeField] private MMF_Player feedbackFloatingText;
+
         private float _currentHealth;
         private Stats _stats;
     
@@ -40,6 +43,7 @@ namespace GoodVillageGames.Game.Handlers
 
             OnHealthChanged?.Invoke(_currentHealth);
             OnTookHit?.Invoke();
+            feedbackFloatingText.PlayFeedbacks(this.transform.position, amount);
             PlayerAudioHandler.Instance.PlayPlayerHitSFX();
             UIEventsManager.Instance.UpdateHealthUI(_currentHealth / _stats.MaxHealth);
 

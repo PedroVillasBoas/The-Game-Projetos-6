@@ -17,7 +17,6 @@ namespace GoodVillageGames.Game.Core.Manager
         [SerializeField] private List<PoolEntry> projectilesPoolEntries = new();
         [SerializeField] private List<PoolEntry> expPoolEntries = new();
         [SerializeField] private List<PoolEntry> itemPoolEntries = new();
-        [SerializeField] private List<PoolEntry> dmgNumbersPoolEntries = new();
 
         private readonly Dictionary<PoolID, ObjectPool> poolsDict = new();
 
@@ -59,7 +58,6 @@ namespace GoodVillageGames.Game.Core.Manager
             allEntries.AddRange(expPoolEntries);
             allEntries.AddRange(projectilesPoolEntries);
             allEntries.AddRange(itemPoolEntries);
-            allEntries.AddRange(dmgNumbersPoolEntries);
             
             return allEntries;
         }

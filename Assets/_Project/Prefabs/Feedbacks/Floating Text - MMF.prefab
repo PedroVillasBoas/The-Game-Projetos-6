@@ -1,0 +1,95 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &3296132919552848881
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 6466343129216784876, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: managedReferences[0].OriginalLabel
+      value: Scale
+      objectReference: {fileID: 0}
+    - target: {fileID: 6659172821923877623, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: LifeTime
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7099137272689354293, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2441605867374698822, guid: 6a8997629114fd04e8722eee1b012129, type: 2}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088418, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7785295853672088445, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_Name
+      value: Floating Text - MMF
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_fontSize
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 6a8997629114fd04e8722eee1b012129, type: 2}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_fontSizeBase
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: 2441605867374698822, guid: 6a8997629114fd04e8722eee1b012129, type: 2}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8042657054365514525, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}
+      propertyPath: 'm_ActiveFontFeatures.Array.data[0]'
+      value: 1801810542
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 0453e37c3c22e7145b8c23c7fa96de36, type: 3}

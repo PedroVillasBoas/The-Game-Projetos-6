@@ -4,12 +4,14 @@ using GoodVillageGames.Game.Core.Util;
 using GoodVillageGames.Game.Interfaces;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.GameObjectEntity;
+using MoreMountains.Feedbacks;
 
 namespace GoodVillageGames.Game.Core.Enemy
 {
     public class EnemyHealthHandler : MonoBehaviour, IDamageable, IVisitable
     {
         [SerializeField] private GameObject damagePrefab;
+        [SerializeField] private MMF_Player feedbackFloatingText;
 
         private float _currentHealth;
         private Stats _stats;
@@ -39,6 +41,7 @@ namespace GoodVillageGames.Game.Core.Enemy
             _currentHealth = Mathf.Max(_currentHealth - amount, 0);
 
             OnHealthChanged?.Invoke(_currentHealth / _stats.MaxHealth);
+            feedbackFloatingText.PlayFeedbacks(this.transform.position, amount);
             owner.NotifySubscribers("enemy-hit");
             Instantiate(damagePrefab, transform.position, Quaternion.identity);
 
