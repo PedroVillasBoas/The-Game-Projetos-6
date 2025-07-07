@@ -120,6 +120,10 @@ PrefabInstance:
       propertyPath: damagePrefab
       value: 
       objectReference: {fileID: 6060246957259854876, guid: 29244e16d826d814c95042cea1abd6fa, type: 3}
+    - target: {fileID: 7508353948498937615, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 8627553373277007063, guid: 4f54d0392b82dab4b86e903cd5000b2a, type: 3}
       propertyPath: m_Radius
       value: 0.83618575

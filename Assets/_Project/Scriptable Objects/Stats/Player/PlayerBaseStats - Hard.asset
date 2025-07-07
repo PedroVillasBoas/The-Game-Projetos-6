@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: U.S.S. Enterprise
   EntityVisualPrefab: {fileID: 0}
-  MaxHealth: 50
-  CurrentHealth: 50
+  MaxHealth: 60
+  CurrentHealth: 60
   MaxSpeed: 15
   MaxDefense: 0
   Acceleration: 4

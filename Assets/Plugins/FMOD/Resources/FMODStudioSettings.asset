@@ -410,7 +410,7 @@ MonoBehaviour:
   - SFX
   BanksToLoad: []
   LiveUpdatePort: 9264
-  EnableMemoryTracking: 1
+  EnableMemoryTracking: 0
   AndroidUseOBB: 0
   AndroidPatchBuild: 0
   MeterChannelOrdering: 0
@@ -532,7 +532,7 @@ MonoBehaviour:
       Value: 0
       HasValue: 0
     Overlay:
-      Value: 1
+      Value: 0
       HasValue: 1
     OverlayPosition:
       Value: 0

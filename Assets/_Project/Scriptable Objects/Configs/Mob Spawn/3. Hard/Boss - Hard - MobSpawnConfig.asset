@@ -33,4 +33,4 @@ MonoBehaviour:
     MobDifficulty: 3
     Weight: 12
   HasSpawnDelay: 1
-  InitialSpawnDelay: 80
+  InitialSpawnDelay: 180

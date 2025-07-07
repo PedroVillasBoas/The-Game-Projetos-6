@@ -96,6 +96,10 @@ PrefabInstance:
       propertyPath: EventReference.Guid.Data4
       value: 278382855
       objectReference: {fileID: 0}
+    - target: {fileID: 5407055256306453444, guid: 01069057d8db26f41994df26663cd80f, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 5478649772149036439, guid: 01069057d8db26f41994df26663cd80f, type: 3}
       propertyPath: m_Size.x
       value: 7.68
