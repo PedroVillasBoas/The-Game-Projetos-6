@@ -11,50 +11,44 @@ namespace GoodVillageGames.Game.Core.Manager
         public GameObject gameCursorPrefab;
         private GameObject instanceGameCursor;
 
-        public bool isInGame = true;
+        public bool IsInGame { get; private set; }
 
-        void OnDisable() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleCursor;
-        void Start() => GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleCursor;
+        void OnEnable()
+        {
+            if (gameCursorPrefab != null)
+            {
+                instanceGameCursor = Instantiate(gameCursorPrefab, transform, false);
+                instanceGameCursor.SetActive(false);
+            }
+            GlobalEventsManager.Instance.ChangeGameStateEventTriggered += ToggleCursor;
+        }
+
+        void OnDisable()
+        {
+            if (GlobalEventsManager.Instance != null)
+            {
+                GlobalEventsManager.Instance.ChangeGameStateEventTriggered -= ToggleCursor;
+            }
+        }
 
         void Update()
         {
-            if (isInGame)
-                EnableAimCursor();
-            else
-                EnableUICursor();
-        }
-
-        void EnableAimCursor()
-        {
-            Cursor.visible = false;
-            Cursor.lockState = CursorLockMode.None;
-
-            if (instanceGameCursor == null && gameCursorPrefab != null)
+            if (IsInGame && instanceGameCursor != null && instanceGameCursor.activeSelf)
             {
-                instanceGameCursor = Instantiate(gameCursorPrefab, transform, false);
+                instanceGameCursor.transform.position = Input.mousePosition;
             }
-
-            if (instanceGameCursor != null)
-            {
-                Vector3 cursorPos = Input.mousePosition;
-                instanceGameCursor.transform.position = cursorPos;
-            }
-        }
-
-        void EnableUICursor()
-        {
-            Cursor.visible = true;
-
-            if (instanceGameCursor != null)
-                Destroy(instanceGameCursor);
         }
 
         void ToggleCursor(GameState state)
         {
-            if (state == GameState.GameBegin || state == GameState.GameContinue)
-                isInGame = true;
-            else
-                isInGame = false;
+            IsInGame = state == GameState.GameBegin || state == GameState.GameContinue || state == GameState.Tutorial;
+
+            Cursor.visible = !IsInGame;
+
+            if (instanceGameCursor != null)
+            {
+                instanceGameCursor.SetActive(IsInGame);
+            }
         }
     }
 }

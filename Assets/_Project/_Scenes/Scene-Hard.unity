@@ -586,7 +586,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameCursorPrefab: {fileID: 3956446953916618798, guid: d7ae7a837bb0d1f4fa7ebf8d21787f85, type: 3}
-  isInGame: 1
 --- !u!114 &127963338
 MonoBehaviour:
   m_ObjectHideFlags: 0
