@@ -31,7 +31,7 @@ namespace GoodVillageGames.Game.Handlers.UI.Options
             _isSwitching = true;
             
             // Setting initial display state based on current screen mode
-            bool isFullscreen = Screen.fullScreenMode == FullScreenMode.ExclusiveFullScreen;
+            bool isFullscreen = Screen.fullScreenMode == FullScreenMode.FullScreenWindow;
             fullscreenToggle.isOn = isFullscreen;
             windowedToggle.isOn = !isFullscreen;
             
