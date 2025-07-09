@@ -115,7 +115,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Leaderboard - Button
+    path: Leaderboard - UI
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -145,7 +145,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Leaderboard - UI
+    path: Right Buttons - VContainer
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -185,7 +185,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1937361802
+      path: 477774787
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -194,7 +194,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 477774787
+      path: 3735868493
       attribute: 2086281974
       script: {fileID: 0}
       typeID: 1
@@ -322,7 +322,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Leaderboard - Button
+    path: Leaderboard - UI
     classID: 1
     script: {fileID: 0}
     flags: 16
@@ -352,7 +352,7 @@ AnimationClip:
       m_PostInfinity: 2
       m_RotationOrder: 4
     attribute: m_IsActive
-    path: Leaderboard - UI
+    path: Right Buttons - VContainer
     classID: 1
     script: {fileID: 0}
     flags: 16
