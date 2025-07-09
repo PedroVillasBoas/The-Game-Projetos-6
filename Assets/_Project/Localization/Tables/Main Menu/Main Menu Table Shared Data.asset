@@ -1,0 +1,116 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Main Menu Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Main Menu Table
+  m_TableCollectionNameGuidString: 4a86f122456de3c49b68c8758a71a5d9
+  m_Entries:
+  - m_Id: 29105647616
+    m_Key: playKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 123146137600
+    m_Key: optionsKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 160844541952
+    m_Key: quitKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 179219787776
+    m_Key: leaderboardKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 205329330176
+    m_Key: roadmapKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6145642393600
+    m_Key: difficultyTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6351763075072
+    m_Key: difficultySubTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6514351075328
+    m_Key: optionsTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6728411574272
+    m_Key: soundKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6901841850368
+    m_Key: masterLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6953482121216
+    m_Key: musicLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 6959064739840
+    m_Key: sfxLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7030527291392
+    m_Key: ambientLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7281006931968
+    m_Key: graphicTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7399244361728
+    m_Key: displayLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7578072707072
+    m_Key: fullscreenLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7720712597504
+    m_Key: windowLabelKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 7835317760000
+    m_Key: leaderboardTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8801056256000
+    m_Key: tutorialQuestionKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 8964084658176
+    m_Key: tutorialDescKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9366767202304
+    m_Key: tutorialConfirmKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 9412447367168
+    m_Key: tutorialDenyKey
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3452507411887685748
+  references:
+    version: 2
+    RefIds:
+    - rid: 3452507411887685748
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1752077378527
