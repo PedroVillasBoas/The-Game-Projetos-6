@@ -15,6 +15,13 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 02be30156657f8643af94d80eed8157f
   m_SerializeEntries:
+  - m_GUID: 4395bf1577430c64b9dbcdae615866d7
+    m_Address: Splash Screen Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b9cbde22b234a884f9684df5fe638efc
     m_Address: Main Menu Table_en
     m_ReadOnly: 1
