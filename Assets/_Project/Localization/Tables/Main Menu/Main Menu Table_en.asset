@@ -79,11 +79,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7578072707072
-    m_Localized: Fullscreen
+    m_Localized: FULLSCREEN
     m_Metadata:
       m_Items: []
   - m_Id: 7720712597504
-    m_Localized: Windowed
+    m_Localized: WINDOWED
     m_Metadata:
       m_Items: []
   - m_Id: 7835317760000

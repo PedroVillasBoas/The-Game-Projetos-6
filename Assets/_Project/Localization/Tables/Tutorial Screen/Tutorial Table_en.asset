@@ -1,0 +1,129 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial Table_en
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: en
+  m_SharedData: {fileID: 11400000, guid: 380b278853b79b1478a1af18b0850a59, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 621987295232
+    m_Localized: Welcome!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12668170240
+    m_Localized: "Hey there, <b>Captain</b>! In this tutorial we\u2019ll cover all
+      the basics of flying your very own starship. \n\nNext up, you\u2019ll meet
+      <b>Blangblong</b>, the friendly alien who's here to guide you on every step
+      of this adventure!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 935192752128
+    m_Localized: Hard Mode
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278092115968
+    m_Localized: 'You''re in Hard Mode.
+
+
+      Good Luck...
+
+
+      And remember...
+      Have Fun!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665519976448
+    m_Localized: Controls
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101243482112
+    m_Localized: "Use <b>W A S D</b> to move around the battlefield. \n\nSwivel your
+      aim by moving your <b>mouse</b>. \n\n<i>Let\u2019s get you cruising in style!</i>"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776329293824
+    m_Localized: Health
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128204468224
+    m_Localized: "That <style=\"Sub\">red</style> bar shows your ship\u2019s <style=\"Sub\">health</style>.
+      \n\nEvery time you get hit, it shrinks! if it ever hits zero, it's game over,
+      so keep your shields up!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 793509163008
+    m_Localized: Boost
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151843565568
+    m_Localized: "That <style=\"Stat\">yellow</style> bar is your Boost!\n\n<style=\"Stat\">Hold
+      Spacebar</style> to blast forward with a burst of speed. \n\nWhen the bar's
+      empty, you\u2019ll need to wait for a little recharge before boosting again!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 810747752448
+    m_Localized: Shooting
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170646630400
+    m_Localized: "Click <style=\"Stat\">Left Mouse Button</style> to unleash normal
+      projectiles. \n\nYour ship has a built-in attack speed, so jam/hold that trigger
+      and watch the sparks fly!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 829689229312
+    m_Localized: Missile
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187843276800
+    m_Localized: "Hit <style=\"Stat\">Right Mouse Button</style> to fire powerful
+      missiles. \n\nKeep an eye on the cooldown indicator\u2014these bad boys take
+      a moment to recharge between shots."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 845824716800
+    m_Localized: Leveling Up
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214384832512
+    m_Localized: "Vanquish enemies to collect glowing EXP shards, and snag bigger
+      EXP runes from bosses. \n\nGather enough to hit the next level and watch your
+      power soar!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861662408704
+    m_Localized: Upgrades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 236681752576
+    m_Localized: "Every time you level up, pick one upgrade from Common -> Legendary.
+      \nEach choice supercharges your ship in new ways\u2014plan wisely for maximum
+      firepower!\n\nPress <style=\"Stat\">ESC</style> to Pause the game and see your
+      Upgrades!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886656266240
+    m_Localized: Your Mission
+    m_Metadata:
+      m_Items: []
+  - m_Id: 260618645504
+    m_Localized: "Survive as long as you can, obliterate waves of foes, and rack
+      up endless upgrades. \n\nReady to become the ultimate space legend?  \n\n<i>No?!</i>
+      \n\nMe too! Let's blast off!"
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

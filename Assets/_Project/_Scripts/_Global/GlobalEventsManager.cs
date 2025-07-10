@@ -30,6 +30,9 @@ namespace GoodVillageGames.Game.Core.Global
         public event Action<EnemyType> EnemyDefeatedEventTriggered;
         public event Action<UpgradeStatModifier> UpgradeCollectedEventTriggered;
 
+        // Language / Locale
+        public event Action<int> ChangeLocaleEventTriggered;
+
         void Awake()
         {
             // Singleton
@@ -48,5 +51,6 @@ namespace GoodVillageGames.Game.Core.Global
         public void GameDifficultyTriggerEvent(GameDifficulty difficulty)           =>      OnGameDifficultyEventTriggered?.Invoke(difficulty);
         public void AddDefeatedEnemy(EnemyType enemyType)                           =>      EnemyDefeatedEventTriggered?.Invoke(enemyType);
         public void CollectUpgradeData(UpgradeStatModifier upgradeStatModifier)     =>      UpgradeCollectedEventTriggered?.Invoke(upgradeStatModifier);
+        public void ChangeLocale(int _localeID)                                     =>      ChangeLocaleEventTriggered?.Invoke(_localeID);
     }
 }

@@ -79,11 +79,11 @@ MonoBehaviour:
     m_Metadata:
       m_Items: []
   - m_Id: 7578072707072
-    m_Localized: Tela Cheia
+    m_Localized: TELA CHEIA
     m_Metadata:
       m_Items: []
   - m_Id: 7720712597504
-    m_Localized: Janela
+    m_Localized: JANELA
     m_Metadata:
       m_Items: []
   - m_Id: 7835317760000
@@ -99,11 +99,11 @@ MonoBehaviour:
       voce assista ao tutorial para uma melhor experiencia e conhecimento dos sistemas
       e controles do jogo.
 
-      
+
 
       De qualquer forma...
 
-      
+
 
       <b>Divirta-se!</b>'
     m_Metadata:

@@ -1,0 +1,108 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: Tutorial Table Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: Tutorial Table
+  m_TableCollectionNameGuidString: 380b278853b79b1478a1af18b0850a59
+  m_Entries:
+  - m_Id: 12668170240
+    m_Key: tutorialStepOneKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101243482112
+    m_Key: tutorialStepTwoKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128204468224
+    m_Key: tutorialStepThreeKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151843565568
+    m_Key: tutorialStepFourKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170646630400
+    m_Key: tutorialStepFiveKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187843276800
+    m_Key: tutorialStepSixKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214384832512
+    m_Key: tutorialStepSevenKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 236681752576
+    m_Key: tutorialStepEightKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 260618645504
+    m_Key: tutorialStepNineKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278092115968
+    m_Key: tutorialStepHardKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 621987295232
+    m_Key: tutorialStepOneTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665519976448
+    m_Key: tutorialStepTwoTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776329293824
+    m_Key: tutorialStepThreeTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 793509163008
+    m_Key: tutorialStepFourTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 810747752448
+    m_Key: tutorialStepFiveTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 829689229312
+    m_Key: tutorialStepSixTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 845824716800
+    m_Key: tutorialStepSevenTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861662408704
+    m_Key: tutorialStepEightTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886656266240
+    m_Key: tutorialStepNineTitleKey
+    m_Metadata:
+      m_Items: []
+  - m_Id: 935192752128
+    m_Key: tutorialStepHardTitleKey
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 3452507430156763141
+  references:
+    version: 2
+    RefIds:
+    - rid: 3452507430156763141
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1752147594000

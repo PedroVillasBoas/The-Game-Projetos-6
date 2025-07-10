@@ -15,9 +15,38 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_GUID: 0e578951f9ba7464f83e3501a4e2b70b
   m_SerializeEntries:
+  - m_GUID: 380b278853b79b1478a1af18b0850a59
+    m_Address: Assets/_Project/Localization/Tables/Tutorial Screen/Tutorial Table
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4a86f122456de3c49b68c8758a71a5d9
     m_Address: Assets/_Project/Localization/Tables/Main Menu/Main Menu Buttons Table
       Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 71b32fd63577fbf45bda88fe81fb8c73
+    m_Address: Assets/_Project/Localization/Tables/Game Over Screen/Game Over Table
+      Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: bdd24251b0e1c844185427e8c2d41769
+    m_Address: Assets/_Project/Localization/Tables/Pause/Pause Table Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: d3bd43f92604b66428e0463f67268294
+    m_Address: Assets/_Project/Localization/Tables/Upgrades/Upgrades Table Shared
+      Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: e387ec2b0e0055e42a787375abb3f494
+    m_Address: Assets/_Project/Localization/Tables/Warning Popup/Leave Game Area
+      Warning Table Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0

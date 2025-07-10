@@ -15,6 +15,41 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-Portuguese (pt)
   m_GUID: 53487442f51579e44a79b14af2fe3a7a
   m_SerializeEntries:
+  - m_GUID: 755ea78aa1a99a843b99168deac600cc
+    m_Address: Game Over Table_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 77de0f54de9d356418b463c3f0d0da45
+    m_Address: Pause Table_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9c74890e83b6e1148a223bf5f788921f
+    m_Address: Leave Game Area Warning Table_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: 9ed4e2c95aafbe94492e988990a44a02
+    m_Address: Upgrades Table_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: cd9899593fbc4704b9309d19f5350323
+    m_Address: Tutorial Table_pt
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-pt
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: dde6c1fbee91d4f418cc34c2d5eb0e39
     m_Address: Splash Screen Table_pt
     m_ReadOnly: 1

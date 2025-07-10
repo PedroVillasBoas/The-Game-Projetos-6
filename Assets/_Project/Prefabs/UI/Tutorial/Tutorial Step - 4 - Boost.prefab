@@ -92,6 +92,14 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 2832744510818944175, guid: e586286a7e9ec124097b8087fba04a7b, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 151843565568
+      objectReference: {fileID: 0}
+    - target: {fileID: 3820915645291652751, guid: e586286a7e9ec124097b8087fba04a7b, type: 3}
+      propertyPath: m_StringReference.m_TableEntryReference.m_KeyId
+      value: 793509163008
+      objectReference: {fileID: 0}
     - target: {fileID: 4532091461856505879, guid: e586286a7e9ec124097b8087fba04a7b, type: 3}
       propertyPath: m_Name
       value: Tutorial Step - 4 - Boost

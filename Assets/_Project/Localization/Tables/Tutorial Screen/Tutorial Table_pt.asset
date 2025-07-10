@@ -1,0 +1,177 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e9620f8c34305754d8cc9a7e49e852d9, type: 3}
+  m_Name: Tutorial Table_pt
+  m_EditorClassIdentifier: 
+  m_LocaleId:
+    m_Code: pt
+  m_SharedData: {fileID: 11400000, guid: 380b278853b79b1478a1af18b0850a59, type: 2}
+  m_Metadata:
+    m_Items: []
+  m_TableData:
+  - m_Id: 621987295232
+    m_Localized: Bem-Vindo!
+    m_Metadata:
+      m_Items: []
+  - m_Id: 935192752128
+    m_Localized: Modo Dificil
+    m_Metadata:
+      m_Items: []
+  - m_Id: 278092115968
+    m_Localized: 'Voce esta no Modo Dificil.
+
+      
+
+      Boa Sorte...
+
+      
+
+      E
+      lembre-se... Divirta-se!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 776329293824
+    m_Localized: Vida
+    m_Metadata:
+      m_Items: []
+  - m_Id: 793509163008
+    m_Localized: Turbo
+    m_Metadata:
+      m_Items: []
+  - m_Id: 810747752448
+    m_Localized: Disparando
+    m_Metadata:
+      m_Items: []
+  - m_Id: 829689229312
+    m_Localized: Misseis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 845824716800
+    m_Localized: Niveis
+    m_Metadata:
+      m_Items: []
+  - m_Id: 665519976448
+    m_Localized: Controles
+    m_Metadata:
+      m_Items: []
+  - m_Id: 861662408704
+    m_Localized: Upgrades
+    m_Metadata:
+      m_Items: []
+  - m_Id: 886656266240
+    m_Localized: Sua Missao
+    m_Metadata:
+      m_Items: []
+  - m_Id: 12668170240
+    m_Localized: 'Ola, <b>Capitao</b>! Neste tutorial, abordaremos todos os fundamentos
+      de como pilotar sua propria nave estelar.
+
+      
+
+      A seguir, voce conhecera
+      <b>Blangblong</b>, o alienigena amigavel que esta aqui para guia-lo em cada
+      passo desta aventura!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 101243482112
+    m_Localized: 'Use <b>W A S D</b> para se mover pelo campo de batalha.
+
+      
+
+      Mova
+      sua mira movendo o <b>mouse</b>.
+
+      
+
+      <i>Vamos fazer voce cruzar
+      a galaxia em grande estilo!</i>'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 128204468224
+    m_Localized: 'Aquela barra <style="Sub">vermelha</style> mostra a <style="Sub">saude</style>
+      da sua nave.
+
+      
+
+      Toda vez que voce e atingido, ela diminui! se
+      chegar a zero, e fim de jogo, entao mantenha seus escudos levantados!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 151843565568
+    m_Localized: 'Aquela barra <style="Stat">amarela</style> e o seu Impulso!
+
+      
+
+      <style="Stat">Hold
+      Spacebar</style> para avancar com uma explosao de velocidade.
+
+      
+
+      Quando
+      a barra estiver vazia, voce precisara esperar um pouco para recarregar antes
+      de impulsionar novamente!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 170646630400
+    m_Localized: 'Clique com o <style="Stat">Botao Esquerdo do Mouse</style> para
+      disparar projeteis normais.
+
+      
+
+      Sua nave tem uma velocidade de
+      ataque propria, entao aperte/segure esse gatilho e veja as faiscas voarem!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 187843276800
+    m_Localized: "Aperte o <style=\"Stat\">Botao Direito do Mouse</style> para disparar
+      misseis poderosos.\r\n\r\nFique de olho no indicador de recarga\u2014esses
+      grandalhoes levam um momento para recarregar entre os disparos."
+    m_Metadata:
+      m_Items: []
+  - m_Id: 214384832512
+    m_Localized: 'Derrote inimigos para coletar fragmentos de EXP brilhantes, e pegue
+      runas de EXP maiores de chefes.
+
+      
+
+      Junte o suficiente para alcancar
+      o proximo nivel e veja seu poder disparar!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 236681752576
+    m_Localized: "Toda vez que voce sobe de nivel, escolha uma melhoria de Comum
+      -> Lendario.\r\nCada escolha potencializa sua nave de novas maneiras\u2014planeje
+      com sabedoria para o maximo poder de fogo!\r\n\r\nPressione <style=\"Stat\">ESC</style>
+      para Pausar o jogo e ver suas Melhorias!"
+    m_Metadata:
+      m_Items: []
+  - m_Id: 260618645504
+    m_Localized: 'Sobreviva o maximo que puder, aniquile ondas de inimigos, e acumule
+      melhorias infinitas.
+
+      
+
+      Pronto para se tornar a maior lenda do
+      espaco?
+
+      
+
+      <i>Nao?!</i>
+
+      
+
+      Eu tambem! Vamos decolar!'
+    m_Metadata:
+      m_Items: []
+  references:
+    version: 2
+    RefIds: []

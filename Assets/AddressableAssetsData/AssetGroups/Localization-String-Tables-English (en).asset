@@ -15,6 +15,13 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_GUID: 02be30156657f8643af94d80eed8157f
   m_SerializeEntries:
+  - m_GUID: 2866d1b1bc0275c44bd6e9119d6dadb6
+    m_Address: Upgrades Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: 4395bf1577430c64b9dbcdae615866d7
     m_Address: Splash Screen Table_en
     m_ReadOnly: 1
@@ -22,8 +29,36 @@ MonoBehaviour:
     - Locale-en
     - Preload
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: af8f819f44756b040835aa3fdc442ec8
+    m_Address: Tutorial Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b18c874c7e88d964cbc4811877364be2
+    m_Address: Game Over Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: b958d99f51470c94691568701a888c94
+    m_Address: Leave Game Area Warning Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: b9cbde22b234a884f9684df5fe638efc
     m_Address: Main Menu Table_en
+    m_ReadOnly: 1
+    m_SerializedLabels:
+    - Locale-en
+    - Preload
+    FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: c9ef720e7fdd53748bd8a7d9a71a7291
+    m_Address: Pause Table_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
