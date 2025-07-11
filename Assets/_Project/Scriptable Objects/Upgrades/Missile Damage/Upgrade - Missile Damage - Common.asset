@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: fa304d7dc4ce019429721f483750ce3f, type: 3}
   UpgradeLogic:
     rid: 8278828222092149069
+  PortName: Ogivas Cineticas
+  PortDescription: O <style="Stat">Dano</style> do seu Missil e <style="Add">aumentado</style>
+    em <style="Value">3</style>.
   references:
     version: 2
     RefIds:

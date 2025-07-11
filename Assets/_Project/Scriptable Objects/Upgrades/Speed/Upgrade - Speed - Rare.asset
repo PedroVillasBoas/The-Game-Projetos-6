@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 847a59840853ca44c89132850f08ce67, type: 3}
   UpgradeLogic:
     rid: 8278828222092149075
+  PortName: Impulso Quantico
+  PortDescription: <style="Add">Aumente</style> sua <style="Stat">Velocidade de Movimento</style>
+    em <style="Value">7</style>.
   references:
     version: 2
     RefIds:

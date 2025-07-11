@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Health
   Description: Your current and Maximum Health.
+  PortName: Vida
+  PortDescription: Sua Vida atual e Maxima.

@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: def88cdf15c194a489d62c005f3b9759, type: 3}
   UpgradeLogic:
     rid: 8278828222092149077
+  PortName: Acelerador de Horizonte de Eventos
+  PortDescription: <style="Add">Aumente</style> sua <style="Stat">Velocidade de Movimento</style>
+    em <style="Value">12</style>.
   references:
     version: 2
     RefIds:

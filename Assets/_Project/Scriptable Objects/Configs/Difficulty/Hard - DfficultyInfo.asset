@@ -14,6 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Merciless Gauntlet
   Description: Enemies hit harder and boast extra health, swarming you in greater
-    numbers with rapid spawns. You level up more slowly, and multiple bosses roam
-    every corner.
+    numbers with rapid spawns. Multiple bosses roam every corner.
   gameDifficulty: 2
+  PortName: Desafio sem Do
+  PortDescription: Inimigos atacam mais forte e possuem vida extra, cercando voce
+    em maior numero com surgimentos rapidos. Multiplos chefes vagam por todos os
+    cantos.

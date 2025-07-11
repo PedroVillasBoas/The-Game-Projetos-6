@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: d675fc1aecbd84c4980acf886f0fca45, type: 3}
   UpgradeLogic:
     rid: 8278828222092149041
+  PortName: Estabilizador de Fluxo de Energia
+  PortDescription: <style="Add">Adicione</style> <style="Value">0.5</style> a sua
+    <style="Stat">Taxa de Recarga de Impulso</style>.
   references:
     version: 2
     RefIds:

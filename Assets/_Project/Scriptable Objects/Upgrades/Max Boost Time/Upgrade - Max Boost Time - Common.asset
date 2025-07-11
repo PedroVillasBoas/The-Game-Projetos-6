@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 348398b538fcdbc43b1de7802ef2c07f, type: 3}
   UpgradeLogic:
     rid: 8278828222092149157
+  PortName: Reservatorio de Combustivel Auxiliar
+  PortDescription: <style="Add">Adicione</style> <style="Value">0.1</style> ao seu
+    <style="Stat">Tempo Maximo de Impulso</style>.
   references:
     version: 2
     RefIds:

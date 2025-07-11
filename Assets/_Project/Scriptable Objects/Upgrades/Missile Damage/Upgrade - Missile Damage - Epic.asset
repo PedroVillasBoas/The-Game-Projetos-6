@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 904c0c0ee252b0c4fa99d597a430cd9f, type: 3}
   UpgradeLogic:
     rid: 8278828178111463424
+  PortName: Ogivas Evisceradoras
+  PortDescription: O <style="Stat">Dano</style> do seu Missil e <style="Add">aumentado</style>
+    em <style="Value">10</style>.
   references:
     version: 2
     RefIds:

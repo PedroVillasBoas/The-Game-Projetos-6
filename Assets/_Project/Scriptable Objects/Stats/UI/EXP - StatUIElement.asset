@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: EXP
   Description: Your current EXP and how much you need for the next level.
+  PortName: EXP
+  PortDescription: Seu EXP atual e quanto voce precisa para o proximo nivel.

@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: Uncommon
   Description: How many Uncommon Upgrades you got this run.
   Rarity: 1
+  PortName: Incomum
+  PortDescription: Quantidade de Upgrades Incomuns voce pegou essa partida.

@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: a764d467e9c86a343b5e20a7a94f427f, type: 3}
   UpgradeLogic:
     rid: 8278828222092149051
+  PortName: Incinerador de Fogo Estelar
+  PortDescription: <style="Add">Adicione</style> <style="Value">8</style> ao seu
+    <style="Stat">Ataque Basico</style>.
   references:
     version: 2
     RefIds:

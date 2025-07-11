@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Damage
   Description: The Damage of your basic attack.
+  PortName: Dano
+  PortDescription: O Dano do seu ataque basico.

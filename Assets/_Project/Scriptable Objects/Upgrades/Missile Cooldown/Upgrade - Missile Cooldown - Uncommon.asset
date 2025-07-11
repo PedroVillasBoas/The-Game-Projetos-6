@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: b0d5e606b48269646b45b97a3211cd9d, type: 3}
   UpgradeLogic:
     rid: 8278828222092149065
+  PortName: Modulador de Lancamento Rapido
+  PortDescription: O <style="Stat">Tempo de Recarga</style> do seu Missil e <style="Sub">reduzido</style>
+    em <style="Value">0.7</style>.
   references:
     version: 2
     RefIds:

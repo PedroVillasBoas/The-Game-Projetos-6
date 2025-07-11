@@ -16,3 +16,7 @@ MonoBehaviour:
   Description: All parameters are at baseline. You, your foes, and every boss behave
     exactly as designed for a fair and satisfying test.
   gameDifficulty: 3
+  PortName: Encontro Balanceado
+  PortDescription: Todos os parametros estao no nivel base. Voce, seus inimigos,
+    e todos os chefes se comportam exatamente como projetado para um teste justo
+    e satisfatorio.

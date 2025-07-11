@@ -17,3 +17,8 @@ MonoBehaviour:
     room. You start with boosted stats, foes spawn rarely, and bosses take extra
     time to appear. Perfect for learning the ropes at your own pace.
   gameDifficulty: 1
+  PortName: Calmos Mares
+  PortDescription: Inimigos atacam suavemente e tem menos vida, dando a voce bastante
+    espaco para respirar. Voce comeca com atributos aumentados, inimigos aparecem
+    raramente, e chefes levam mais tempo para surgir. Perfeito para aprender o basico
+    no seu proprio ritmo.

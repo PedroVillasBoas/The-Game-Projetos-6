@@ -8,6 +8,7 @@ using UnityEngine.UI;
 using System.Collections;
 using UnityEngine.EventSystems;
 using GoodVillageGames.Game.Interfaces;
+using UnityEngine.Localization.Components;
 
 namespace GoodVillageGames.Game.General.Tutorial
 {
@@ -62,11 +63,30 @@ namespace GoodVillageGames.Game.General.Tutorial
 
             // Start typing, Text!
             _currentSpeed = typingSpeed;
-            StartCoroutine(TypeTextCoroutine());
+            StartCoroutine(InitializeAndPlay());
 
             // Start speaking, Text!
             eventInstance = RuntimeManager.CreateInstance(eventReference);
             eventInstance.start();
+        }
+
+        private IEnumerator InitializeAndPlay()
+        {
+            if (tutorialText.TryGetComponent<LocalizeStringEvent>(out var localizedStringEvent))
+            {
+                var asyncOperation = localizedStringEvent.StringReference.GetLocalizedStringAsync();
+                yield return asyncOperation;
+
+                _fullText = asyncOperation.Result;
+            }
+            else
+            {
+                _fullText = tutorialText.text;
+                Debug.LogWarning("Nenhum componente LocalizeStringEvent encontrado no texto do tutorial. Usando texto padrão.");
+            }
+
+            tutorialText.text = string.Empty;
+            StartCoroutine(TypeTextCoroutine());
         }
 
         private IEnumerator TypeTextCoroutine()

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Attack Speed
   Description: How fast you fire your basic attack.
+  PortName: Frequencia de Tiro
+  PortDescription: Quao rapido voce dispara seu ataque basico.

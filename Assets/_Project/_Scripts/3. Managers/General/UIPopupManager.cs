@@ -2,6 +2,7 @@ using UnityEngine;
 using GoodVillageGames.Game.Core.Attributes;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 using GoodVillageGames.Game.Core.Attributes.Modifiers;
+using UnityEngine.Localization.Settings;
 
 namespace GoodVillageGames.Game.General.UI
 {
@@ -26,37 +27,38 @@ namespace GoodVillageGames.Game.General.UI
             }
         }
 
+        bool IsLocalePortuguese()
+        {
+            string localeCode = LocalizationSettings.SelectedLocale.Identifier.Code;
+            return localeCode.StartsWith("pt");
+        }
+
         public void CreatePopup(UpgradeStatModifier upgrade, Vector2 screenPosition, Vector2 objectSize)
         {
-            CreatePopupInternal(
-                upgrade.Name,
-                upgrade.Rarity.ToString(),
-                upgrade.Description,
-                screenPosition,
-                objectSize
-            );
+            // Determina qual texto usar com base no idioma
+            string name = IsLocalePortuguese() ? upgrade.PortName : upgrade.Name;
+            string description = IsLocalePortuguese() ? upgrade.PortDescription : upgrade.Description;
+
+            CreatePopupInternal(name, upgrade.Rarity.ToString(), description, screenPosition, objectSize);
         }
 
         public void CreatePopup(RarityInfo rarityInfo, Vector2 screenPosition, Vector2 objectSize)
         {
-            CreatePopupInternal(
-                rarityInfo.Name,
-                "Rarity",
-                rarityInfo.Description,
-                screenPosition,
-                objectSize
-            );
+            bool isPortuguese = IsLocalePortuguese();
+            string name = isPortuguese ? rarityInfo.PortName : rarityInfo.Name;
+            string type = isPortuguese ? "Raridade" : "Rarity";
+            string description = isPortuguese ? rarityInfo.PortDescription : rarityInfo.Description;
+
+            CreatePopupInternal(name, type, description, screenPosition, objectSize);
         }
 
         public void CreatePopup(StatUIElementInfo statInfo, Vector2 screenPosition, Vector2 objectSize)
         {
-            CreatePopupInternal(
-                statInfo.Name,
-                "Stat",
-                statInfo.Description,
-                screenPosition,
-                objectSize
-            );
+            bool isPortuguese = IsLocalePortuguese();
+            string name = isPortuguese ? statInfo.PortName : statInfo.Name;
+            string description = isPortuguese ? statInfo.PortDescription : statInfo.Description;
+
+            CreatePopupInternal(name, "Stat", description, screenPosition, objectSize);
         }
 
         private void CreatePopupInternal(string name, string type, string description, Vector2 screenPosition, Vector2 objectSize)

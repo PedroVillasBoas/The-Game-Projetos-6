@@ -4,6 +4,7 @@ using UnityEngine.EventSystems;
 using GoodVillageGames.Game.Core.ScriptableObjects;
 using System.Collections;
 using GoodVillageGames.Game.Core.Global;
+using UnityEngine.Localization.Settings;
 
 
 namespace GoodVillageGames.Game.General.UI
@@ -70,10 +71,16 @@ namespace GoodVillageGames.Game.General.UI
             _sizeCoroutine = null;
         }
 
+        bool IsLocalePortuguese()
+        {
+            string localeCode = LocalizationSettings.SelectedLocale.Identifier.Code;
+            return localeCode.StartsWith("pt");
+        }
+
         void UpdateUI()
         {
-            title.text = difficultyInfo.Name;
-            description.text = difficultyInfo.Description;
+            title.text = IsLocalePortuguese() ? difficultyInfo.PortName : difficultyInfo.Name;
+            description.text = IsLocalePortuguese() ? difficultyInfo.PortDescription : difficultyInfo.Description;
         }
     }
 }

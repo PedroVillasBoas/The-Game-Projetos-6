@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: Common
   Description: How many Common Upgrades you got this run.
   Rarity: 0
+  PortName: Comum
+  PortDescription: Quantidade de Upgrades Comuns voce pegou essa partida.

@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: Epic
   Description: How many Epic Upgrades you got this run.
   Rarity: 3
+  PortName: Epico
+  PortDescription: Quantidade de Upgrades Epicos voce pegou essa partida.

@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: e5f5285acc08b1c40946c0819d6f6d0c, type: 3}
   UpgradeLogic:
     rid: 8278828222092149067
+  PortName: Matriz de Lancamento Acelerado
+  PortDescription: O <style="Stat">Tempo de Recarga</style> do seu Missil e <style="Sub">reduzido</style>
+    em <style="Value">1</style>.
   references:
     version: 2
     RefIds:

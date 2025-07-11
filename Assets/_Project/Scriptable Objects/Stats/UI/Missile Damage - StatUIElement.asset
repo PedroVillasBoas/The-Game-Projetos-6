@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Missile Damage
   Description: The Damage of your Missiles.
+  PortName: Dano de Missil
+  PortDescription: O Dano dos seus Misseis.

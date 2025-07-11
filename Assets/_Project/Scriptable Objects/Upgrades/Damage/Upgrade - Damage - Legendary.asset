@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 2b30cb03661fa9a4b8e1cdff1088f69e, type: 3}
   UpgradeLogic:
     rid: 8278828222092149052
+  PortName: Obliterafor Galactico
+  PortDescription: <style="Mult">Multiplique</style> seu <style="Stat">Ataque Basico</style>por
+    <style="Value">150%</style>.
   references:
     version: 2
     RefIds:

@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Boost Time
   Description: How long you can use the boost before the battery runs out.
+  PortName: Tempo de Nitro
+  PortDescription: Por quanto tempo voce pode usar o Nitro antes que a bateria acabe.

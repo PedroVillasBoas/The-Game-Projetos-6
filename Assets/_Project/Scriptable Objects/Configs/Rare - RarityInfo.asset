@@ -15,3 +15,5 @@ MonoBehaviour:
   Name: Rare
   Description: How many Rare Upgrades you got this run.
   Rarity: 2
+  PortName: Raro
+  PortDescription: Quantidade de Upgrades Raros voce pegou essa partida.

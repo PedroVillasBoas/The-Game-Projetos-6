@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 7257dac8fe25e4b4ebc1ce25dd1d7484, type: 3}
   UpgradeLogic:
     rid: 8278828222092149057
+  PortName: Egide do Cosmos
+  PortDescription: Voce tem <style="Value">150%</style> <style="Mult">a mais</style>
+    de <style="Stat">Vida Maxima</style>.
   references:
     version: 2
     RefIds:

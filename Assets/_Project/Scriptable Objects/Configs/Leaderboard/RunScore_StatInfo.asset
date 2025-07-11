@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Run Score
   Description: How many points were scored on this run.
+  PortName: Pontos Totais
+  PortDescription: Quantos pontos voce fez nesta partida.

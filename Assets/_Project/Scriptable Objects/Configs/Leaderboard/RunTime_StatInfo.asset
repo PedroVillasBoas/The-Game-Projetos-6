@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Run Time
   Description: How long the run lasted.
+  PortName: Tempo da Partida
+  PortDescription: Quanto tempo voce passou na partida.

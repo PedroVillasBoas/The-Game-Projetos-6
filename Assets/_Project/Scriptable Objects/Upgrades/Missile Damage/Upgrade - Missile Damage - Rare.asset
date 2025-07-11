@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: 61f02735d3847254aa68243ee3a6b45f, type: 3}
   UpgradeLogic:
     rid: 8278828222092149071
+  PortName: Ogivas de Concussao
+  PortDescription: O <style="Stat">Dano</style> do seu Missil e <style="Add">aumentado</style>
+    em <style="Value">7</style>.
   references:
     version: 2
     RefIds:

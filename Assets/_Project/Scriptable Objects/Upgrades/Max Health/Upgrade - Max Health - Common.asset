@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: a1c80cb713492b14399e417295daa67e, type: 3}
   UpgradeLogic:
     rid: 8278828222092149053
+  PortName: Blindagem de Casco Reforcada
+  PortDescription: <style="Add">Ganhe</style> <style="Value">+5</style> de <style="Stat">Vida
+    Maxima</style>.
   references:
     version: 2
     RefIds:

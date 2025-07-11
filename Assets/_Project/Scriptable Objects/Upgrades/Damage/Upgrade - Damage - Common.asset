@@ -19,6 +19,9 @@ MonoBehaviour:
   Image: {fileID: 21300000, guid: b7eb91644c9e51d47a15d1c5efec0b49, type: 3}
   UpgradeLogic:
     rid: 8278828222092149048
+  PortName: Emissor de Pulso
+  PortDescription: <style="Add">Adicione</style> <style="Value">2</style> ao seu
+    <style="Stat">Ataque Basico</style>.
   references:
     version: 2
     RefIds:

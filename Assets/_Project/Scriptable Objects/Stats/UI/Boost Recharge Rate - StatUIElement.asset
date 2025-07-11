@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Boost Recharge Rate
   Description: How fast the Boost battery charges.
+  PortName: Recarga do Nitro
+  PortDescription: Quao rapido a bateria de Nitro carrega.

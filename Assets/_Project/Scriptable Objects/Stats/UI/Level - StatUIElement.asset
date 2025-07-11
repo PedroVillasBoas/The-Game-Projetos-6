@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Level
   Description: Your current Level.
+  PortName: Nivel
+  PortDescription: Seu Nivel atual.

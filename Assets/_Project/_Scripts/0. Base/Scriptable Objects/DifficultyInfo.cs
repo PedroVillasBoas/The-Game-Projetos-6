@@ -4,10 +4,12 @@ using GoodVillageGames.Game.Enums;
 namespace GoodVillageGames.Game.Core.ScriptableObjects
 {
     [CreateAssetMenu(fileName = "DfficultyInfo", menuName = "Scriptable Objects/Info/Difficulty")]
-    public class DifficultyInfo : ScriptableObject 
-    { 
+    public class DifficultyInfo : ScriptableObject
+    {
         public string Name;
         [TextArea] public string Description;
         public GameDifficulty gameDifficulty;
+        public string PortName;
+        [TextArea] public string PortDescription;
     }
 }

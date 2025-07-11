@@ -29,14 +29,14 @@ MonoBehaviour:
   - m_Id: 278092115968
     m_Localized: 'Voce esta no Modo Dificil.
 
-      
+
 
       Boa Sorte...
 
-      
 
-      E
-      lembre-se... Divirta-se!'
+
+      E lembre-se...
+      Divirta-se!'
     m_Metadata:
       m_Items: []
   - m_Id: 776329293824
@@ -75,7 +75,7 @@ MonoBehaviour:
     m_Localized: 'Ola, <b>Capitao</b>! Neste tutorial, abordaremos todos os fundamentos
       de como pilotar sua propria nave estelar.
 
-      
+
 
       A seguir, voce conhecera
       <b>Blangblong</b>, o alienigena amigavel que esta aqui para guia-lo em cada
@@ -85,36 +85,36 @@ MonoBehaviour:
   - m_Id: 101243482112
     m_Localized: 'Use <b>W A S D</b> para se mover pelo campo de batalha.
 
-      
+
 
       Mova
       sua mira movendo o <b>mouse</b>.
 
-      
 
-      <i>Vamos fazer voce cruzar
-      a galaxia em grande estilo!</i>'
+
+      <i>Vamos fazer voce cruzar a galaxia
+      em grande estilo!</i>'
     m_Metadata:
       m_Items: []
   - m_Id: 128204468224
     m_Localized: 'Aquela barra <style="Sub">vermelha</style> mostra a <style="Sub">saude</style>
       da sua nave.
 
-      
 
-      Toda vez que voce e atingido, ela diminui! se
-      chegar a zero, e fim de jogo, entao mantenha seus escudos levantados!'
+
+      Toda vez que voce e atingido, ela diminui! se chegar
+      a zero, e fim de jogo, entao mantenha seus escudos levantados!'
     m_Metadata:
       m_Items: []
   - m_Id: 151843565568
     m_Localized: 'Aquela barra <style="Stat">amarela</style> e o seu Impulso!
 
-      
+
 
       <style="Stat">Hold
       Spacebar</style> para avancar com uma explosao de velocidade.
 
-      
+
 
       Quando
       a barra estiver vazia, voce precisara esperar um pouco para recarregar antes
@@ -125,10 +125,10 @@ MonoBehaviour:
     m_Localized: 'Clique com o <style="Stat">Botao Esquerdo do Mouse</style> para
       disparar projeteis normais.
 
-      
 
-      Sua nave tem uma velocidade de
-      ataque propria, entao aperte/segure esse gatilho e veja as faiscas voarem!'
+
+      Sua nave tem uma velocidade de ataque
+      propria, entao aperte/segure esse gatilho e veja as faiscas voarem!'
     m_Metadata:
       m_Items: []
   - m_Id: 187843276800
@@ -141,10 +141,10 @@ MonoBehaviour:
     m_Localized: 'Derrote inimigos para coletar fragmentos de EXP brilhantes, e pegue
       runas de EXP maiores de chefes.
 
-      
 
-      Junte o suficiente para alcancar
-      o proximo nivel e veja seu poder disparar!'
+
+      Junte o suficiente para alcancar o
+      proximo nivel e veja seu poder disparar!'
     m_Metadata:
       m_Items: []
   - m_Id: 236681752576
@@ -158,18 +158,22 @@ MonoBehaviour:
     m_Localized: 'Sobreviva o maximo que puder, aniquile ondas de inimigos, e acumule
       melhorias infinitas.
 
-      
 
-      Pronto para se tornar a maior lenda do
-      espaco?
 
-      
+      Pronto para se tornar a maior lenda do espaco?
+
+
 
       <i>Nao?!</i>
 
-      
 
-      Eu tambem! Vamos decolar!'
+
+      Eu
+      tambem! Vamos decolar!'
+    m_Metadata:
+      m_Items: []
+  - m_Id: 227596093943808
+    m_Localized: Prox
     m_Metadata:
       m_Items: []
   references:

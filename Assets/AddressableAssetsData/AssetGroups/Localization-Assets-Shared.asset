@@ -33,6 +33,12 @@ MonoBehaviour:
     m_ReadOnly: 1
     m_SerializedLabels: []
     FlaggedDuringContentUpdateRestriction: 0
+  - m_GUID: a5bc0eac24d444042833b7ebc02778d5
+    m_Address: Assets/_Project/Localization/Tables/Content Roadmap/Content Roadmap
+      Table Shared Data.asset
+    m_ReadOnly: 1
+    m_SerializedLabels: []
+    FlaggedDuringContentUpdateRestriction: 0
   - m_GUID: bdd24251b0e1c844185427e8c2d41769
     m_Address: Assets/_Project/Localization/Tables/Pause/Pause Table Shared Data.asset
     m_ReadOnly: 1

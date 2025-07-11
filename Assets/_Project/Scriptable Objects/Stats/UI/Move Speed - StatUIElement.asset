@@ -14,3 +14,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Name: Movement Speed
   Description: How fast you ship travels without the boost.
+  PortName: 
+  PortDescription: Quao rapido sua nave viaja sem o Nitro.
