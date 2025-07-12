@@ -2363,7 +2363,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: English
+  m_text: Portugues
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 9b99ca32cbf20674ba38c870f8a9bf39, type: 2}
   m_sharedMaterial: {fileID: -1357167070879837833, guid: 9b99ca32cbf20674ba38c870f8a9bf39, type: 2}
@@ -2390,7 +2390,7 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 50
+  m_fontSize: 49.5
   m_fontSizeBase: 14
   m_fontWeight: 400
   m_enableAutoSizing: 1
@@ -9518,7 +9518,7 @@ MonoBehaviour:
   m_Placeholder: {fileID: 0}
   m_ItemText: {fileID: 1951000032}
   m_ItemImage: {fileID: 0}
-  m_Value: 0
+  m_Value: 1
   m_MultiSelect: 0
   m_Options:
     m_Options:
